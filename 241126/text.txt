@@ -90,5 +90,28 @@ K-Beet-BQ Bowl →
 Jim in GA
 
 
-- SECTION 03 svg :
-<svg width="95" height="93" viewBox="0 0 95 93" fill="none" xmlns="http://www.w3.org/2000/svg"
+- SECTION 03 a link :
+@eatphilsfinest
+
+
+- SECTION 03 FACT :
+FINEST FACT
+#079
+We blanch our veggies so that they can cook perfectly alongside your meats!
+
+
+- FOOTER :
+PRODUCRS
+FIND PHIL'S
+OUR STORY
+
+RECIPES
+CONTACT
+FAQ
+
+PRIVACY
+TERMS
+ACCESSICILITY
+
+JOIN PHIL'S WORLD!
+We send infrequent (and fun!) emails with special deals and cool updates.
