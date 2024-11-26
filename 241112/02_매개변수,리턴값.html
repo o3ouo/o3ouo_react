@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>매개변수, 리턴값</title>
+</head>
+<body>
+  
+  <script>
+    /*
+    매개변수 
+    : 함수를 정의할 때 괄호 안에 선언하는 변수로, 함수가 실행될 때 외부에서 값을 전달받아 사용할 수 있는 매개체 역할 
+    : 매개변수는 함수 내부에서만 유효하며, 함수가 호출될 때 인자를 통해 값을 전달받음
+
+    function 함수명 ( 매개변수(parameter) ) { 실행문 }
+
+    함수명( 인자(argument) );
+    */
+
+    // 지역변수
+    function a () {
+      let b = 10
+    }
+
+    // 전역변수, 매개변수
+    let b = 10;
+
+    function a (c) {
+      b += c;
+    }
+
+    a(5);
+    a(10);
+    a(15);
+    console.log(b);
+
+    // 매개변수 
+    function x (age) {
+      console.log(age);
+    }
+    x(19);
+
+    function loop (z, y) {
+      
+      for (let i = z; i <= y; i++) {
+        console.log(i)
+      };
+
+    }
+
+    loop (10, 20);
+    loop(1, 100);
+
+    console.log('\n')
+
+    /*
+    리턴값
+    : 함수가 실행된 후 반환하는 값, 'return' 키워드를 사용하여 리턴 값을 지정 가능
+    : 함수가 실행된 후 그 결과를 호출한 곳으로 반환
+    : 함수는 하나의 값만 반환할 수 있다.
+    : return 키워드를 만나면 함수 실행은 즉시 종료
+    : 리턴 값이 명시되지 않으면 함수는 기본적으로 undefined 반환
+    */
+
+    function loop2 (z, y) {
+      
+      let k = 0
+
+      for (let i = z; i <= y; i++) {
+        k += i;
+      }
+
+      return k;
+
+    };
+
+    console.log( loop2(10, 20) );
+    console.log( loop2(1,20) );
+
+    console.log('\n')
+
+    function plus (a, b) {
+      return a + b;
+    }
+
+    let value = plus(2, 5);
+
+    value = plus(71, 50);
+
+    console.log(value);
+
+    console.log('\n')
+
+    // 평균값 구하는 함수 
+    function average(a) {
+
+      let averageV = 0;
+
+      for (let i = 0; i < a.length; i++) {
+        averageV += a[i];
+      }
+
+      return averageV / a.length;
+    }
+
+    let array = [40, 100, 70, 90];
+    console.log(average(array));
+    
+    
+
+
+
+  </script>
+
+</body>
+</html>

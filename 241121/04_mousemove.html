@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mousemove</title>
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center
+      
+      
+  }
+
+    .cursor {
+      width: 20px;
+      height: 20px;
+      background-color: lightskyblue;
+      border-radius: 100%;
+      pointer-events: none;
+      /* 클릭 대상이 되지 않도록 설정 */
+      position: fixed;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor"></div>
+
+  <div class="box"></div>
+
+  
+  <script>
+    /*
+
+    mousemove
+    : 사용자가 마우스를 움직일 때 발생하는 이벤트
+
+    clientX, clientY 
+    : 브라우저 화면 내에서의 X, Y 좌표 
+    : 스크롤 무시
+    : 검색창 무시
+
+    pageX, pageY 
+    : 문서 전체 기준의 X, Y 좌표 
+    : 스크롤 포함
+
+    screenX, screenY
+    : 모니터 화면 기준의 X, Y 좌표
+    : 검색창을 포한한 크기
+
+    offsetX, offsetY
+    : 이벤트가 발생한 요소 기준의 상대적 X, Y
+
+    */
+
+    let cursor = document.querySelector(".cursor")
+
+    document.addEventListener("mousemove", (e) => {
+      // console.log(`X: ${e.clientX}, Y: ${e.clientY}`); // 스크롤이 있든 없든 화면 내의 위치 (검색창 무시)
+      // console.log(`X: ${e.pageX}, Y: ${e.pageY}`); // 스크롤 길이를 포함한 위치
+      // console.log(`X: ${e.screenX}, Y: ${e.screenY}`); // 모니터 기준 위치 (검색창 포함 크기)
+      // console.log(`X: ${e.offsetX}, Y: ${e.offsetY}`); // 현재 마우스 위치 (해당 요소)
+
+      cursor.style.left = `${e.clientX + 15}px`;
+      cursor.style.top = `${e.clientY + 15}px`;
+
+    });
+    
+    document.addEventListener("mousemove",(e)=>{
+      let dot = document.createElement("div");
+      dot.style.position = 'fixed';
+      dot.style.width = '20px';
+      dot.style.height = '20px';
+      dot.style.backgroundColor = "#700000";
+      dot.style.borderRadius = '100%';
+      dot.style.left = `${e.clientX + 20}px`;
+      dot.style.top = `${e.clientY + 20}px`;
+      document.body.appendChild(dot)
+      setTimeout(()=>{ dot.remove()},300)
+    });
+    
+  </script>
+</body>
+</html>

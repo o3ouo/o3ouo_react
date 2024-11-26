@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변형속성</title>
+  <style>
+    .allbox {
+      width: 300px;
+      height: 300px;
+      border: 2px dashed #000;
+      margin: 50px;
+      perspective: 600px;
+      /* 원근감 영역 */
+    }
+
+    .box,
+    .box2,
+    .box3,
+    .box4,
+    .box_origin {
+      width: 100%;
+      height: 100%;
+      background-color: darkblue;
+      text-align: center;
+      align-content: center;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 700;
+      transition-duration: .5s;
+      /* 동작이나 행동을해서 css에 효과가 바뀔 때 지속되는 시간 */
+    }
+
+  </style>
+</head>
+<body>
+  <dl>
+    <dt>* transform: translate()</dt>
+    <dd>> 현재 위치를 기준으로 원하는 좌표의 값으로 축 이동할 때 사용</dd>
+    <dd>> (x, y)</dd>
+    <dd>> px, %, v.. (x, y축을 같이 써야 함)</dd>
+    <dd>> 하나의 값에 0을 주면 한 방향으로만 이동할 수 있음</dd>
+  </dl>
+  
+  <dl>
+    <dt>* transform: translateX()</dt>
+    <dd>> 현재 위치를 기준으로 X축으로 이동할 때 사용</dd>
+  </dl>
+ 
+  
+  <dl>
+    <dt>* transform: translateY()</dt>
+    <dd>> 현재 위치를 기준으로 Y축으로 이동할 때 사용</dd>
+  </dl>
+
+  <style>
+    .allbox:hover .box {
+      background-color: orange;
+      transform: translate(100px, 0);
+      /* 특정한 위치로 이동 / x, y / px, %, v.. (x, y축을 같이 써야 함)*/
+      /* 현재 위치기준으로 이동 */
+      /* 음수 값 사용 가능 */
+    }
+  </style>
+  <div class="allbox">
+    <div class="box">transform</div>
+  </div>
+
+  <hr>
+   
+  <dl>
+    <dt>* transform: scale()</dt>
+    <dd>> 사이즈 확대, 축소</dd>
+    <dd>> (x, y)</dd>
+    <dd>> 1이 기준 값</dd>
+    <dd>> 배수값 0.9 &lt; 1 &lt; 1.1 </dd>
+  </dl>
+
+  <dl>
+    <dt>* transform: scaleX()</dt>
+    <dd>> 사이즈를 X축으로 확대, 축소</dd>
+  </dl>
+
+  <dl>
+    <dt>* transform: scaleY()</dt>
+    <dd>> 사이즈를 Y축으로 확대, 축소</dd>
+  </dl>
+
+  <style>
+    .allbox:hover .box2 {
+      background-color: orange;
+      transform: scale(1.5, 1.5);
+      /* 특정한 위치로 이동 / x, y / px, %, v.. (x, y축을 같이 써야 함)*/
+      /* 현재 위치기준으로 이동 */
+      /* 음수 값 사용 가능 */
+    }
+  </style>
+  <div class="allbox">
+    <div class="box2">transform</div>
+  </div>
+
+  <hr>
+
+  <dl>
+    <dt>* transform: rotate()</dt>
+    <dd>> 특정한 값 만큼 회전</dd>
+    <dd>> deg : 각도 </dd>
+    <dd>> x, y 값을 둘 다 넣을 수 없고 하나의 값을 사용</dd>
+    <dd>> 시계 방향 </dd>
+    <dd>> 음수의 값을 사용하면 반시계 방향</dd>
+  </dl>
+
+  <dl>
+    <dt>* transform: rotateX()</dt>
+    <dd>> X축을 기점으로 회전</dd>
+  </dl>
+
+  <dl>
+    <dt>* transform: rotateY()</dt>
+    <dd>> Y축을 기점으로 회전</dd>
+    <dd>> 움직이는 부모 박스에 perspective를 넣어서 원근감 표현</dd>
+  </dl>
+
+  <style>
+    .allbox:hover .box3 {
+      background-color: orange;
+      transform: rotate(-180deg);
+      /* 특정한 위치로 이동 / x, y */
+      /* 현재 위치기준으로 이동 */
+      /* 음수 값 사용 가능 */
+    }
+  </style>
+  <div class="allbox">
+    <div class="box3">transform</div>
+  </div>
+
+  <hr>
+
+  <dl>
+    <dt>* transform: skew()</dt>
+    <dd>> 특정한 각도로 기울이기, 왜곡</dd>
+    <dd>> deg : 각도 </dd>
+    <dd>> x, y 값을 둘 다 넣으면 확인하기 힘듬</dd>
+    <dd>> 애니메이션화, 시각적 왜곡을 줄 때 사용</dd>
+  </dl>
+
+  <dl>
+    <dt>* transform: skew()</dt>
+    <dd>> X축으로 기울이기</dd>
+  </dl>
+
+  <dl>
+    <dt>* transform: skew()</dt>
+    <dd>> Y축으로 기울이기</dd>
+  </dl>
+
+  <style>
+    .allbox:hover .box4 {
+      background-color: orange;
+      transform: skewX(45deg);
+      /* 특정한 위치로 이동 / x, y*/
+      /* 현재 위치기준 */
+      /* 음수 값 사용 가능 */
+    }
+  </style>
+  <div class="allbox">
+    <div class="box4">transform</div>
+  </div> 
+
+  <br>
+
+  <dl>
+    <dt>transform-origin: right bottom</dt>
+    <dd>> 요소의 중심 기점을 변경 속성 / x, y</dd>
+    <dd>> px, % 위치값</dd>
+    <dd>> x - left, right, center</dd>
+    <dd>> y - top, bottom, center</dd>
+  </dl>
+
+  <style>
+    .allbox:hover .box_origin {
+      background-color: orange;
+      transform: rotateY(90deg);
+      transform-origin: left;
+      /* 특정한 위치로 이동 / x, y*/
+      /* 현재 위치기준 */
+      /* 음수 값 사용 가능 */
+    }
+  </style>
+  <div class="allbox">
+    <div class="box_origin">transform</div>
+  </div>
+  
+  <!-- 
+  다중 중첩시 띄어쓰기 구분지어 사용 
+  먼저 작성한 순서대로 표과가 부여
+  
+  transform: translateX(200px) rotate(720deg) scale(1.5, 1.5)
+
+  속성 분리해서 작성
+  translate: 400px 0;
+  rotate: 720deg;
+  scale: 1.5 1.5;
+  -->
+
+  <style>
+    .contents {
+      width: 80%;
+      height: 80vh;
+      background-color: salmon;
+      position: relative;
+    }
+
+    .item {
+      width: 50%;
+      height: 30%;
+      background-color: #000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+
+  <div class="contents">
+    <div class="item"></div>
+  </div>
+</body>
+</html>

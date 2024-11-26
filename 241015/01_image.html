@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 태그</title>
+  <style>
+    #top,
+    #bottom {
+      font-size: 2rem;
+      color: #c8c8c8;
+      background-color: lemonchiffon;
+      text-decoration: none;
+      display: block;
+      width: 150px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <a href="#bottom" id="top">Bottom</a>
+  
+  <h1>img 태그</h1>
+  <p>
+    > 이미지를 나타내줄 수 있는 태그 <br>
+    > 단독 태그 <br>
+    > Inline 성질
+  </p>
+
+  <br>
+
+  <img src="./수업자료/jpg.jpg" alt="jpg">
+  <img src="./수업자료/bg/small.jpg" alt="small">
+  <img src="./수업자료/bg_icon/img_2/gif.gif" alt="gif">
+
+  <strong>
+    * 이미지 파일 확장자 (대표적으로 많이 사용)
+  </strong>
+  <p>
+    - jpg <br>
+    > 가장 대표적인 이미지 표현 방식 <br>
+    > 이미지의 색상을 가장 잘 표현할 수 있는 확장자 <br>
+    > 투명한 배경 x <br>
+    > 용량이 가벼움
+  </p>
+  <p>
+    - png <br>
+    > 이미지의 색상을 유지 <br>
+    > 투명한 배경을 나타낼 수 있는 확장자 <br>
+    > 이미지 표현이 jpg보다 좋지 않음<br>
+    > 많이 깨짐 <br>
+    > 상품 넣을 때 많이 사용 <br>
+    > jpg보다 용량이 무거움
+  </p>
+  <p>
+    - gif <br>
+    > 움직이는 이미지 표현시 사용 <br>
+    > 투명한 배경 가능 <br>
+    > RGB 색상 표현 방식 <br>
+    > 꾸며주는 효과를 넣는 이미지를 넣을 때 사용<br>
+  </p>
+  <p>
+    - webp <br>
+    > 기존의 이미지를 웹 환경에 최적화 시켜 압축 시킨 확장자 <br>
+    > 구글에서 개발<br>
+    > 용량을 줄일 수 있다 <br>
+    > 이미지를 띄울 때 업로드 속도를 빠르게 하며 (페이지 로딩 시간 줄일 수 있음)<br>
+    > 검색 엔진(SEO)에 유리<br>
+    > 호환성 문제로 모든 브라우저에서 사용되지는 않는다 <br>
+    > 편집 소프트웨어 지원 제한 (압축 된 파일이기 때문에 포토샵 등으로 크기 조절 불가능) <br>
+    > 기존 확장자로 다시 바꿔서 편집해야 함 <br>
+    > 대표적으로 나무위키에서 사용 <br>
+  </p>
+
+  <br>
+
+  <strong>
+    * img 태그 속성 src와 a 태그 속성 href의 차이점
+  </strong>
+  <p>
+    - src <br>
+    > source의 약자 <br>
+    > 외부 리소스를 html 문서에 직접 포함할 때 사용 (저장을하고 거쳐나가는 방식) <br>
+    > 즉시 로드하여 문서에 포함시키기 때문에 페이지 파싱(페이지 출력)이 일시적으로 중단될 수 있다<br>
+    > image, script, 영상, iframe <br>
+    > img 태그를 쓸 때에는 src에 url을 연결할 수 있다 <br>
+    >> 하지만 잘 사용하지 않음 <br>
+    >> 해당 주소에서 가져온 이미지를 사용할 시 기존 주소에서 이미지를 내리면 내가 사용한 곳에서도 내려간다 <br>
+    >> 저작권 문제 <br>
+  </p>
+  <p>
+    - href <br>
+    > 현재 문서와 외부 리소스 간의 링크를 설정하는 데 사용 <br>
+    > 가지고 와서 연결만 시키는 것 <br>
+    > html 문서에 직접적으로 저장시키는 것이 아니라 외부와의 연결만을 하는 역할 <br>
+    > 즉시 로드하여 문서에 포함시키기 때문에 페이지 파싱(페이지 출력)이 일시적으로 중단될 수 있다<br>
+    > link, stylesheet 연결 시 사용 <br>
+    > 페이지 파싱(페이지 출력)이 중단되지 않고 필요할 때만 리소스를 가져와서 사용
+  </p>
+
+  <br>
+
+  <strong>
+    * img 태그 속성에는 필수적으로 alt 속성을 입력해야 한다.
+  </strong>
+  <p>
+    - alt <br>
+    > 이미지 설명 <br>
+    > 대체문 <br>
+    > 접근성에 의해 필수적으로 사용해야 한다
+  </p>
+
+  <br>
+
+  <h2>
+    * 이미지를 감싸는 태그 figure
+  </h2>
+  <p>
+    > 이미지, 영상, 그래픽 등의 멀티미디어 콘텐츠와 그에 대한 설명을 그룹화 하는 데 사용 <br>
+    > 검색엔진 최적화에 도움을 많이 줌 <br>
+    > 블럭요소의 성질을 가지고 있음 <br>
+    > 각각의 이미지를 한 장씩 넣어서 사용하는 것이 좋다 <br>
+    > 대부분의 브라우저에서 지원하므로 웹 페이지의 접근성과 검색엔진최적화(SEO) 향상에 기여 <br>
+    > 이미지 등을 담는 역할을 하는 시멘틱 태그
+  </p>
+  <figure>
+    <img src="./수업자료/png.jpg" alt="png">
+  </figure>
+  <h3>
+    * figcaption
+  </h3>
+  <p>
+    > 콘텐츠에 대한 설명 <br>
+    > 선택적으로 사용 <br>
+    > 콘텐츠의 첫 번째 또는 마지막에 배치해야 한다 <br>
+  </p>
+  <figure>
+    <figcaption>png 이미지</figcaption>
+    <img src="./수업자료/png.jpg" alt="png">
+  </figure>
+
+  <br><br>
+  <a href="#top" id="bottom">Top</a>
+  <br><br>
+</body>
+</html>

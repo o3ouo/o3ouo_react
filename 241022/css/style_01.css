@@ -1,0 +1,115 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrap {
+  width: 1000px;
+  margin: auto;
+  height: 100vh;
+  align-content: center;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  border: 2px solid #333;
+}
+
+.header .logo {
+  width: 200px;
+  height: 100%;
+  float: left;
+  background-color: yellow;
+  text-align: center;
+  align-content: center;
+}
+
+.header .nav {
+  float: right;
+  height: 100%;
+}
+
+.header .nav .top_nav,
+.header .nav .bottom_nav {
+  height: 30px;
+  background-color: yellowgreen;
+  align-content: center;
+}
+
+.header .nav .top_nav li,
+.header .nav .bottom_nav li {
+  float: left;
+  margin: 0 10px;
+}
+
+.header .nav .bottom_nav {
+  margin-top: 36px;
+}
+
+.contents {
+  margin: 10px 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.contents .content {
+  width: 700px;
+  float: left;
+}
+
+.contents .con {
+  border: 2px solid #333;
+  padding: 20px;
+  width: 100%;
+}
+
+.contents .con:nth-child(2) {
+  margin: 10px 0;
+}
+
+.contents .con .text {
+  font-size: 15px;
+}
+
+.contents .aside {
+  float: right;
+  border: 2px solid #333;
+  width: 250px;
+  padding: 20px;
+}
+
+.contents .aside .banner {
+  background-color: green;
+  margin-top: 10px;
+  padding-left: 5px;
+}
+
+.contents .aside .b_title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  align-content: center;
+  margin: 10px 0;
+  padding: 20px;
+  border: 2px solid #333;
+}
+
+.footer p {
+  font-size: 0.8rem;
+}

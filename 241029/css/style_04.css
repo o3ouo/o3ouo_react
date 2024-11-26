@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&family=Lobster&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Song+Myung&display=swap');
+
+/* font-family: "Open Sans", sans-serif; */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+figure {
+  width: fit-content;
+  height: fit-content;
+}
+
+button {
+  cursor: pointer;
+  display: block;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  background-color: steelblue;
+}
+
+header .header_i {
+  width: 74%;
+  height: 100%;
+  margin: auto;
+  background-color: salmon;
+}
+
+header .header_i h1 {
+  float: left;
+  width: 18%;
+  /* width: 250px; */
+  height: 40px;
+  margin: 30px 2%;
+  font-size: 24px;
+  text-transform: uppercase;
+  background-color: palegoldenrod;
+  text-align: center;
+  align-content: center;
+  text-decoration: underline;
+  color: #fff;
+}
+
+header .header_i h1 span {
+  color: palevioletred;
+}
+
+header .header_i nav {
+  float: right;
+  width: 62%;
+  height: 40px;
+  margin: 30px 2%;
+  align-content: center;
+  background-color: palegreen;
+}
+
+header .header_i nav ul {
+  height: 100%;
+}
+
+header .header_i nav ul li {
+  float: left;
+  width: 17.6%;
+  height: 100%;
+  margin-right: 3%;
+  align-content: center;
+  text-align: center;
+  color: #fff;
+  background-color: palegoldenrod;
+  border-radius: 5px;
+}
+
+header .header_i ul li:last-child {
+  margin-right: 0;
+}
+
+main {
+  width: 100%;
+  padding: 100px 0;
+  background: url(../가변그리드/img/pixabay_main.jpg) no-repeat center/cover;
+  color: #fff;
+  text-align: center;
+}
+
+main>h2 {
+  margin: 32px 0;
+  font-size: 48px;
+}
+
+main button {
+  margin: 40px auto;
+  padding: 20px 40px;
+  background-color: paleturquoise;
+  border: none;
+  color: #fff;
+}
+
+section {
+  width: 74%;
+  margin: auto;
+  padding: 40px 0;
+}
+
+section>h2 {
+  text-align: center;
+}
+
+section .text {
+  width: 36%;
+  margin: 32px auto;
+  text-align: center;
+}
+
+section .contents {
+  width: 100%;
+  overflow: hidden;
+}
+
+section .contents .box {
+  width: 25%;
+  float: left;
+  padding: 3%;
+  background-color: #efefef;
+  border-right: 1px solid #ccc;
+  text-align: center;
+}
+
+section .contents .box:last-child {
+  border-right: none;
+}
+
+section .contents .box figure {
+  margin: auto;
+}
+
+section .contents .box h4 {
+  margin: 8px 0;
+}
+
+footer {
+  width: 100%;
+  height: 100px;
+  background-color: slategrey;
+  text-align: center;
+  align-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+
+  section {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  header .header_i nav {
+    display: none;
+  }
+  section .contents .box{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+
+  section .contents .box{
+    width: 100%;
+  }
+}

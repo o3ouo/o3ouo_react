@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>overflow_02</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .allbox {
+      width: 500px;
+      height: 300px;
+      border: 1px solid #000;
+      margin: 30px auto;
+    }
+
+    .box {
+      width: 250px;
+      height: 30px;
+      background-color: #f89d9d;
+      margin: 50px auto;
+    }
+
+    .a {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="allbox">
+    <div class="box"></div>
+    <div class="ㅁ"></div>
+    <div class="box"></div>
+  </div>
+
+  <!-- 
+    박스와 박스에 마진 값이 겹치는 현상이 일어났을 때 중간에 div 박스를 추가해 
+    그 박스에 overflow: hidden 처리를 하면 마진이 겹치는 현상을 상쇄 시킬 수 있다
+  -->
+</body>
+</html>

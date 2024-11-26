@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상요소선택자</title>
+</head>
+<body>
+  
+  <h1>** 가상요소선택자 : 가상의 공간 안에 내용 부여 **</h1>
+
+  <dl>
+    <dt>* ::before</dt>
+    <dd>- 특정한 요소의 앞에 삽입</dd>
+    <dd>- 내용, 가상의 요소를 부여</dd>
+
+    <dt>* ::after</dt>
+    <dd>- 특정한 요소의 뒤에 삽입</dd>
+    <dd>- 내용, 가상의 요소를 부여</dd>
+
+  </dl>
+
+  <dl>
+    <dt>* content : '내용'</dt>
+    <dd>- 컨텐츠의 내용을 입력하지 않아도 ''를 써줘야 함</dd>
+    <dd>- 쌓이는 형태로 내용을 입력하게 되면 밑으로 쌓인다</dd>
+    <dd>- 나열하고 싶다면 display: inline-block 적용해줘야 함</dd>
+  </dl>
+  <style>
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 30px;
+      background-color: #333;
+      margin: 0 5px;
+    }
+
+    h2::after {
+      content: url(../img/고죠_04.jfif);
+    }
+  </style>
+
+  <h2> 가상요소 </h2>
+
+  
+</body>
+</html>

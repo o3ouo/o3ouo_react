@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>transition(전환)</h1>
+  <p>
+    : 마우스 커서를 요소 위에 올리거나 요소를 클릭하는 등 요소의 상태 변화에 따라 가지고 있는 속성이 변경 <br>
+    : 요소의 속성이 변할 때 순간적으로 변하는 것이 아니라, 주어진 시간 동안 부드럽게 진행되도록 할 수 있음
+  </p>
+
+  <br>
+
+  <dl>
+    <dt>* transition-prorerty</dt>
+    <dd>> 일부 특정 속성값이 변경되는 경우에만 전환 효과를 지정할 수 있다</dd>
+    <dd>> 기본값은 all이며, 값을 지정하지 않으면 해당 요소의 어떤 속성이 변하더라도 모두 전환을 적용할 수 있음</dd>
+    <dd>> width와 height값이 모두 변경되는 경우 width의 속성 값만 전환하고 싶다면 width를 값으로 지정 </dd>
+    
+    <dt>* transition-duration</dt>
+    <dd>> 지속 시간을 초 단위로 설정할 수 있음</dd>
+    <dd>> 소수점을 이용해 1초보다 더 작은 시간으로 지정할 수도 있음</dd>
+    <dd>> 아무것도 지정하지 않을 경우 시간은 0s가 되기 때문에 반드시 지정해야 하는 필수 속성</dd>
+
+    <div class="box1">
+      transition-property: width; <br>
+      transition-duration: .2s;
+    </div>
+    <style>
+      .box1 {
+        width: 200px;
+        height: 50px;
+        padding: 20px;
+        background-color: yellowgreen;
+        transition-property: width;
+        transition-duration: .2s;
+      }
+
+      .box1:hover {
+        width: 300px;
+        height: 100px;
+      }
+    </style>
+    
+    <dt>ㄴ 실행 결과</dt>
+    <dd>> height값은 순간적으로 늘어나고, width 값은 2초 동안 천천히 늘어난다</dd>
+  </dl>
+
+  <p>
+    ** transition을 어느 선택자에 적용하는가에 따라 차이를 갖는다 <br>
+    ** 요소 자체에 transition을 적용하면 마우스 커서가 올라가고 내려오는 모든 순간에 전환 효과를 적용한다 <br>
+    ** hover 상태에서만 trantition을 적용하는 경우, 마우스 커서가 올라갈 때만 부드러운 변화가 일어나고, 마우스 커서가 나간 상태에서는 순간적인 변화가 일어난다
+  </p>
+
+  <br>
+
+  <dl>
+    <dt>* transition-delay</dt>
+    <dd>> 전환 속성이 일어나기 전의 지연 시간을 설정할 수 있음</dd>
+    <dd>> 지속 시간과 마찬가지로 초 단위로 지정</dd>
+
+    <div class="box2">
+      transition-duration: 2s; <br>
+      transition-delay: 2s;
+    </div>
+    <style>
+      .box2 {
+        width: 200px;
+        height: 50px;
+        padding: 10px;
+        background-color: palevioletred;
+        transition-duration: 2s;
+        transition-delay: 2s;
+      }
+
+      .box2:hover {
+        background-color: palegoldenrod;
+      }
+    </style>
+
+    <dt>ㄴ 실행 결과</dt>
+    <dd>> </dd>
+  </dl>
+</body>
+</html>

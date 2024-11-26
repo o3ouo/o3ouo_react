@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+/* 
+font-family: 'Lilita One', cursive;
+font-family: 'Source Sans Pro', sans-serif;
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+  color: #222;
+}
+
+h1, 
+h2 {
+  font-family: 'Lilita One', cursive;
+}
+
+header {
+  width: 100%;
+  height: 10vh;
+  /* vh 값을 사용할 때에는 min-height 값을 사용하는 것이 안전함 */
+  min-height: 80px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+}
+
+header .menu {
+  display: flex;
+  gap: 0 32px;
+}
+
+header .menu li {
+  font-family: 'Lilita One', cursive;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  background: url(../flex_연습3/img/mainbg.png) no-repeat center/cover;
+  background-attachment: fixed;
+  /* 아래에 있는 섹션이 올라와서 배경이 가려지는 듯한 효과 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .title {
+  text-align: center;
+}
+
+main .title h2 {
+  margin-bottom: 32px;
+  font-size: calc(40px + 5vw);
+  /* font-size: clamp(3rem,5vw,5rem); */
+  /* 최소 3rem 최대 5rem */
+  /* width 값에도 사용 가능 (min, max 값을 요약 시킴) */
+  color: #0063da;
+}
+
+main .title p {
+  color: #0063da;
+}
+
+section.menu {
+  margin: 150px 0;
+}
+
+.menu .title {
+  text-align: center;
+}
+
+.menu .title h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.menu .contents {
+  /* max-width: 1500px; */
+  width: 74%;
+  margin: 100px auto;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.menu .contents figure {
+  flex: 1 1 20%;
+  padding: 16px;
+  background-color: #F4ABC8;
+  border-radius: 100%;
+}
+
+.banner {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+}
+
+.banner .b_l {
+  flex-basis: 50%;
+  height: 100%;
+  background: url(../flex_연습3/img/gridleftBg.png) no-repeat center/cover;
+  padding: 32px;
+}
+
+.banner .b_l h2 {
+  font-size: 80px;
+}
+
+.banner .b_l p {
+  margin: 24px 0;
+  font-size: 24px;
+}
+
+.banner .b_l ul {
+  list-style: circle;
+  padding-left: 18px;
+}
+
+.banner .b_l ul li {
+  margin-bottom: 8px;
+}
+
+.banner .b_r {
+  flex-basis: 50%;
+  height: 100%;
+}
+
+.banner .b_r .view {
+  flex-basis: 100%;
+  height: 50%;
+  background: url(../flex_연습3/img/gridrightBg_1.png) no-repeat center/cover;
+  padding: 32px;
+}
+
+.banner .b_r .view h2 {
+  font-size: 40px;
+  color: #fff;
+} 
+
+.banner .b_r .view>a {
+  display: block;
+  width: 50%;
+  height: 50px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-align: center;
+  align-content: center;
+  margin-top: 32px;
+}
+
+.banner .b_r .link {
+  width: 100%;
+  height: 50%;
+  background: url(../flex_연습3/img/gridrightBg_2.png) no-repeat center/cover;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #f482af;
+}
+
+.banner .b_r .link .q_link {
+  align-self: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.banner .b_r .link .q_link a {
+  font-size: 32px;
+  text-align: center;
+}
+
+.banner .b_r .link .q_link a span {
+  font-size: 1rem;
+  display: block;
+  font-weight: 700;
+}
+
+footer {
+  width: 100%;
+  height: 10vh;
+  min-height: 80px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  align-content: center;
+}
+
+@media screen and (max-width: 1024px) {
+  
+  header {
+    background-color: rgba(255, 255, 255, .5);
+    flex-direction: column;
+    height: auto;
+    padding: 1.5rem 0;
+  }
+
+  header h1 {
+    margin-bottom: 3rem;
+  }
+
+  .menu .contents {
+    width: 95%;
+  }
+
+  .menu .contents figure {
+    flex: 1 1 30%;
+  }
+
+  .banner {
+    flex-direction: column;
+  }
+
+  .banner .b_l {
+    flex-basis: 70%;
+  }
+
+  .banner .b_r {
+    display: flex;
+  }
+
+  .banner .b_r .view {
+    height: 100%;
+  }
+
+  .banner .b_r .link {
+    height: 100%;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+
+  .banner {
+    height: 100vh;
+  }
+
+  .banner .b_r {
+    flex-direction: column;
+    flex-basis: 60%;
+  }
+
+  .banenr .b_l {
+    flex-basis: 40%;
+  }
+
+}

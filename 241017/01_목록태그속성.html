@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목록태그속성</title>
+  <style>
+    ul {
+      list-style: none;
+      /* 리스트의 스타일을 결정하는 속성 - ul, ol 사용시 기본 설정 값 none */
+    }
+
+    li {
+      float: left;
+      /* li 목록들을 옆으로 나열할 때 사용할 수 있음 */
+      margin-left: 20px;
+      /* li 목록들의 사이 간격을 넓히는 방법 */
+      color: seagreen;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    li:hover {
+      color: salmon;
+    }
+  </style>
+</head>
+
+<body>
+  <dl>
+    <dt>* ul</dt>
+    <dd>- Unordered List</dd>
+    <dd>- 순서가 없는 목록 태그</dd>
+    <dd>- 메뉴에 많이 사용</dd>
+    <dd>- 블릿(기호)</dd>
+    <dd>- ul > li</dd>
+
+    <dt>* ol</dt>
+    <dd>- Odered List</dd>
+    <dd>- 순서가 있는 목록 태그</dd>
+    <dd>- 순서 나열</dd>
+    <dd>- 숫자</dd>
+    <dd>- ol > li</dd>
+
+    <dt>* dl</dt>
+    <dd>- Description List</dd>
+    <dd>- 정의 목록 태그</dd>
+    <dd>- 용어 뜻을 나열</dd>
+    <dd>- dl(틀) > dt(내용), dd(내용 설명)</dd>
+  </dl>
+
+  <br>
+
+  <dl>
+    <dt>* 전체 선택자에 초기화 값을 설정하면 ?</dt>
+    <dd>- 목록태그의 기본 설정값을 쓰기위해서는 왼쪽의 안쪽 여백 값을 부여해야 표현 가능하다 </dd>
+  </dl>
+
+  <br>
+
+  <ul>
+    <li> <a href="#"> menu-1 </a> </li>
+    <li> <a href="#"> menu-2 </a> </li>
+    <li> <a href="#"> menu-3 </a> </li>
+    <li> <a href="#"> menu-4 </a> </li>
+    <li> <a href="#"> menu-5 </a> </li>
+  </ul>
+
+
+</body>
+
+</html>

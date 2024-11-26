@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>classlist</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      transition: .5s;
+    }
+
+    .btn2 {
+      width: 80px;
+      height: 40px;
+      border-radius: 30px;
+      margin-top: 50px;
+      padding: 4px;
+      background-color: #efefef;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transform: .5s;
+      position: relative;
+    }
+
+    .on {
+      background-color: green;
+    }
+
+    .tog {
+      width: 32px;
+      height: 32px;
+      background-color: #fff;
+      border-radius: 100%;
+      position: absolute;
+      left: 4px;
+      transition : .5s
+    }
+
+    .tog_r {
+      left: calc(100% - 36px);
+    }
+  </style>
+</head>
+<body>
+  <script>
+    /*
+    classList
+    : 자바스크립트에서 html 요소의 클래스를 쉽게 관리할 수 있게 해주는 속성
+    추가(add), 제거(remove), 교체(replace), 확인(contains), 토글(toggle)
+
+    문법 :
+    요소.classList.속성("속성값");
+
+    add
+    : 클래스 이름을 추가할 때, 그 이름에 미리 css를 지정하고 해당 요소에 이벤트가 발생했을 때, add로 클래스 이름을 추가해 스타일을 지정할 때 사용
+    : 몇 개든 추가 가능
+
+    toggle
+    : 클래스가 존재시 삭제되고, 클래스가 존재하지 않을시 추가가 됨
+    : 하나의 동작에 반복처리해서 효과를 넣을 수 있다
+
+    contains
+    : 해당 요소에 클래스가 존재시 true, 존재하지 않을시 false를 반환
+    : 다크모드, 라이트모드를 만들 수 있음
+    */
+  </script>
+
+  <button type="button" class="btn">일반</button>
+
+  <div class="btn2">
+    <div class="tog"></div>
+  </div>
+  <span>Toggle Button</span>
+
+  <p class="text">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, saepe doloribus nulla, sed ratione iusto laboriosam rerum, excepturi provident harum aperiam deserunt dolorem nisi quod nam. Repellat pariatur nihil placeat.
+  </p>
+
+  <script>
+    let btn = document.querySelector(".btn");
+    let btn2 = document.querySelector(".btn2");
+    let body = document.querySelector("body");
+    let tog = document.querySelector(".tog");
+    let text = document.querySelector(".text");
+
+    // btn을 클릭하면
+    btn.addEventListener("click", () => {
+      btn.classList.add("of", "btn3"); // on이라는 클래스 이름 추가
+      
+
+      btn.addEventListener("click", () => {
+        btn.classList.remove("btn"); // btn이라는 클래스 이름 제거
+      })
+    });
+
+    // 토글 버튼 만들기
+    btn2.addEventListener("click", () => {
+      btn2.classList.toggle("on");
+      tog.classList.toggle("tog_r");
+
+      // 만약 클래스가 존재한다면 이라는 조건문을 contains을 사용
+      if(btn2.classList.contains("on")) {
+        body.style.backgroundColor = "#000";
+        body.style.color = "#FFF";
+      
+        // replce를 사용해 클래스 이름 변경
+        text.classList.replace("text", "title");
+
+      } else { // 클래스가 존재하지 않는다면 이라는 조건문
+        body.style.backgroundColor = "#FFF";
+        body.style.color = "#000";
+
+        // replce를 사용해 클래스 이름 변경
+        text.classList.replace("title", "text");
+      }
+    });
+
+    // contains으로 존재 확인
+    console.log(btn.classList.contains("btn"));
+
+    
+  </script>
+</body>
+</html>

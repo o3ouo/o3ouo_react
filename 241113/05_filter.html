@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filter</title>
+</head>
+<body>
+  <script>
+    /*
+    filter()
+    : 콜백함수에서 리턴하는 값이 true인 것들만 모아서 새로운 배열을 만드는 함수
+    : return 옆에 조건이 있어야함. 조건이 없으면 사용되지 않음
+    : 
+    
+    문법 :
+    배열.filter(function (value, index, array) { 문장 });
+
+    value : 현재 처리중인 배열 요소 / 매개변수를 하나라도 넣는 순간 무조건 받을 수 밖에 없음
+    index (선택적) : 현재 요소의 인덱스
+    array (선택적) : forEach가 호출된 배열 자체
+    */
+
+
+    // 기존에 짝수만 가지고 올때 사용해야 하는 방법
+    let a = [];
+
+    for (let i = 0; i <= 10; i++) {
+      if (i % 2 === 0) {
+        a.push(i)
+      }
+    }
+    console.log(a);
+
+    // filter를 사용해서 짝수만 가지고 올때 사용하는 방법
+    let array = [1, 2, 3, 4, 5, 6, 7, 8];
+    array = array.filter(function (value) {
+      return value % 2 === 0;
+    });
+
+    console.log(array);
+
+    // 또 다른 방법
+    function func (...a) {
+      a = a.filter(function (value) {
+        return value % 2 === 0;
+      })
+      return a;
+    }
+    console.log(func(11, 22, 33, 44, 55, 66, 77))
+
+
+
+
+
+  </script>
+</body>
+</html>

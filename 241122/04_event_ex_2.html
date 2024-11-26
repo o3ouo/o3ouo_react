@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event 예제 2</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .slide_box {
+      width: 80%;
+      height: 500px;
+      margin: 100px auto;
+      position: relative;
+      box-shadow: 0px 0px 3px #ccc;
+    }
+
+  </style>
+
+  <script>
+
+    document.addEventListener("DOMDOMContentLoaded", () => {
+      let slidebox = document.querySelector(".slide_i");
+      let slide = document.querySelector(".slide");
+      let prevbtn = document.querySelector(".prev");
+      let nextbtn = document.querySelector(".next");
+
+      let idx = 0;
+    });
+  </script>
+</head>
+<body>
+  
+  <div class="slide_box">
+    <div class="slide_i">
+      <div class="slide">slide-1</div>
+      <div class="slide">slide-2</div>
+      <div class="slide">slide-3</div>
+      <div class="slide">slide-4</div>
+    </div>
+    <button type="button" class="prev">🌜</button>
+    <button type="button" class="next">🌛</button>
+  </div>
+
+</body>
+</html>
+</html>

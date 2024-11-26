@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&family=Lobster&family=Song+Myung&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+}
+
+figure {
+  width: fit-content;
+  height: fit-content;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrap {
+  width: 1600px;
+  margin: 24px auto;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-family: "Lobster", sans-serif;
+  margin-bottom: 10px;
+}
+
+.header .menu li{
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.header li img {
+  margin: auto;
+}
+
+.section01 {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.section01 .l_img {
+  float: left;
+}
+
+.section01 .right {
+  float: right;
+  width: 316px;
+}
+
+.section01 .box {
+  width: 100%;
+  height: 160px;
+  padding: 20px;
+  border: 5px solid #333;
+  background-image: url(../수업자료/멀티미디어/box_bg.png);
+  text-align: center;
+  align-content: top;
+}
+
+.section01 .right .box:nth-of-type(1) {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.section01 .box span {
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.section01 .box a {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.section01 .box a::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #000;
+  margin: 20px auto;
+}
+
+.section02 {
+  width: 100%;
+  margin-bottom: 30px;
+  height: 1060px;
+}
+
+.section02 .left {
+  float: left;
+  width: 758px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.section02 .left .t_img {
+  margin-bottom: 30px;
+  max-width: 100%;
+}
+
+.section02 .left .b_video {
+  max-width: 100%;
+}
+
+.section02 .right {
+  float: right;
+}
+
+.section03 {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.section03 figure:nth-child(2) {
+  margin: 20px 0;
+}
+
+.section04 {
+  width: 100%;
+  margin-bottom: 30px;
+  height: 500px;
+}
+
+.section04 .m_box {
+  float: left;
+}
+
+.section04 .right {
+  float: right;
+}
+
+.section04 .r_video {
+  width: 785px;
+  height: 340px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+
+.section04 .f_wrap {
+  background-color: darkblue;
+  color: #fff;
+  height: 150px;
+  text-align: center;
+  width: 785px;
+}
+
+.section04 .f_box {
+  display: inline-block;
+  height: 40px;
+  margin: 55px 0;
+}
+
+.section04 .f_box label {
+  height: 100%;
+  font-weight: bold;
+  float: left;
+  align-content: center;
+  text-transform: uppercase;
+  display: block;
+}
+
+.section04 .f_box input {
+  display: block;
+  float: left;
+  padding-left: 8px;
+  height: 30px;
+  margin-top: 5px;
+  margin-left: 4px;
+}
+
+.section04 .f_box button {
+  display: block;
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin: 5px 0;
+  background-color: #333;
+  font-size: 0.5rem;
+  color: #fff;
+  border: none;
+}
+
+

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여러가지 이벤트</title>
+  <style>
+    .allbox {
+      width: 300px;
+      height: 300px;
+      padding: 30px;
+      border: 1px solid #333;
+      margin: 30px;
+    }
+
+    .box {
+      width: 100%;
+      height: 100%;
+      background-color: seagreen;
+    }
+  </style>
+</head>
+
+<script>
+  /*
+  mouseover : 요소에 마우스를 올렸을 때 이벤트 실행
+  > 자식 요소로 이동해도 이벤트가 발생
+  > 버블링이 일어남
+  
+  mouseout : 요소에 마우스가 벗어났을 때 이벤트 실행
+
+  mouseenter : 요소에 마우스를 올렸을 때 이벤트 실행
+  > 외부에서 내부로 왔다 갔다 진행해야 이벤트가 발생함
+  > 자식 요소로 이동해도 추가 이벤트가 발생 안 함
+
+  mouseleave : 요소에 마우스가 벗어났을 때 이벤트 실행
+  */
+
+ document.addEventListener("DOMContentLoaded", () => {
+
+  let allbox = document.querySelector(".allbox");
+  let box = document.querySelector(".box");
+
+  // mouseover : 이벤트 중복
+  // allbox.addEventListener("mouseover", () => {
+  //   console.log('event 발생');
+  //   console.log('\n');
+  // });
+
+  // mouseenter : 이벤트 한 번 발생
+  allbox.addEventListener("mouseenter", () => {
+    console.log('event 발생');
+    console.log('\n');
+    box.style.backgroundColor='skyblue';
+  });
+
+  // // mouseleave
+  // allbox.addEventListener("mouseleave", () => {
+  //   console.log('out event 발생')
+  // });
+
+  // mouseout
+  allbox.addEventListener("mouseleave", () => {
+    console.log('out event 발생')
+    box.style.backgroundColor='seagreen';
+  });
+
+ // -------------------------------------------------------
+
+  // 노드리스트라는 유사배열객체로 잡힘 (배열이지만 map, filter는 사용할 수 없고, forEach, for문은 사용할 수 있다) 
+  // 배열 자체에는 이벤트 핸들러를 사용할 수 없다
+  let list = document.querySelectorAll('ul li');
+  console.log(list);
+
+  // 하나씩 꺼내서 사용할 때에는 갯수만큼의 반복을 해야한다
+  // list.forEach( (lists) => {
+  //   console.log(lists); // lists에는 list에 들어있는 각각의 요소들이 들어간다
+  //   lists.addEventListener("mouseenter", () => {
+  //     lists.style.color = 'blue';
+  //   });
+  // });
+
+  list.forEach( (lists) => {
+    console.log(lists);
+    lists.addEventListener("mouseleave", () => {
+      lists.style.color = 'black';
+    });
+  });
+
+  // 하나만 선택하고 싶을 때에는 인덱스 번호와 배열까지 받아와야 함
+  list.forEach( (lists, i, array) => {
+    
+    array[0].addEventListener("mouseover", () => {
+      array[0].style.color = 'red';
+    });
+  });
+
+  // 함수에 담아서 사용
+  function mouse (list) {
+    console.log(list);
+    
+    list.forEach( (lists, i, array) => {
+      lists.addEventListener("mouseenter", () => {
+        lists.style.color='blue';
+      });
+    });
+  };
+
+  mouse(list);
+
+  // 이미지 사용 이벤트
+  let item = document.querySelectorAll(".item");
+
+  item.forEach(items => {
+    let text = items.querySelector(".text");
+
+    items.addEventListener("mouseover", () => {
+      text.style.top = "0";
+    });
+
+    items.addEventListener("mouseleave", () => {
+      text.style.top = "100%"
+    })
+  });
+
+
+////////////////////////////////
+});
+
+</script>
+<body>
+
+  <ul>
+    <li>menu-1</li>
+    <li>menu-2</li>
+    <li>menu-3</li>
+    <li>menu-4</li>
+    <li>menu-5</li>
+  </ul>
+
+  <div class="allbox">
+    <div class="box"></div>
+  </div>
+
+  <style>
+    img {
+      display: block;
+    }
+    .item {
+      width: fit-content;
+      height: fit-content;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: hsla(0, 0%, 7%, 0.657);
+      color: #fff;
+      padding: 16px;
+      transition: .3s;
+    }
+  </style>
+
+  <div class="item">
+    <img src="../img/고죠_01.jfif" alt="img">
+    <div class="text">
+      <h3>title</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="../img/고죠_01.jfif" alt="img">
+    <div class="text">
+      <h3>title</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="../img/고죠_01.jfif" alt="img">
+    <div class="text">
+      <h3>title</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+  </div>
+
+</body>
+</html>

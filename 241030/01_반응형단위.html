@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응형단위</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .box {
+      /* width: calc((100% - 200px) / 2); */
+      max-width: 1000px;
+      height: 300px;
+      background-color: beige;
+      margin: 50px auto;
+    }
+
+    .item {
+      width: calc(100% / 3);
+      height: 100%;
+      background-color: paleturquoise;
+      float: left;
+      border-right: 1px solid #fff;
+    }
+
+    .ex1 {
+      width: 100%;
+      height: 100px;
+      background-color: salmon;
+      margin-bottom: 30px;
+    }
+
+    .ex2 {
+      width: 50vw;
+      height: 100px;
+      background-color: seagreen;
+    }
+
+    /* p {
+      font-size: calc(16px + 1vw);
+    } */
+    /* 일반 텍스트에 적용하는 것이 아니라 타이틀과 같은 큰 사이즈의 텍스트에 적용함 */
+
+    .text {
+      font-size: 18px;
+    }
+
+    .em {
+      font-size: 2em;
+      /* margin: 1em; */
+      padding: 1em;
+      /* 해당 요소의 기준으로 1em이 잡힌다(현재는 2em의 값인 28px이 padding 값의 1em이 된다) */
+    }
+
+    .rem {
+      font-size: 2rem;
+      /* html의 기본 사이즈인 16px */
+    }
+  </style>
+</head>
+<body>
+  <!--
+  calc(): 함수값 / 수학적 계산을 적용할 수 있게 해주는 기능 
+  
+  vw, vh: 창크기에 대한 비율
+
+  em : 반응형 단위 중 하나로, 폰트, 여백에 많이 사용 / 기준값의 배수로 표현되어지는 단위 / 기준 = 상위요소의 글자 크기
+
+  여백의 em은 자기 자신의 폰트사이즈를 기준으로 한다
+
+  rem : 반응형 단위 중 하나로, 폰트, 여백에 많이 사용 / 기준값의 배수로 표현되어지는 단위 / 기준 = html 글자 크기(무조건 html제일 상단 기준)
+
+  하나의 기준값을 정해 그 기준값의 크기가 변하면 따라 변함
+  -->
+
+  <div class="box">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <div class="box">
+    <div class="ex1">%</div>
+    <div class="ex2">vw</div>
+  </div>
+
+  <p>하이하이</p>
+
+  <!-- 
+  h1 : 2em
+  h2 : 1.5em
+  h3 : 1.117em
+  h4 : 1em
+  h5 : 0.83em
+
+  폰트들은 기본적으로 em값을 쓰고 있기 때문에 부모요소에 폰트 사이즈를 주면 자식요소도 같이 바뀐다
+  -->
+  <div class="text">
+    <h1>ㅎㅇ</h1>
+    <p class="em">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde deleniti nihil quidem! Quod ab laboriosam ullam architecto aliquam deleniti consequatur aut dolores fugiat sequi veritatis ex quisquam, necessitatibus rerum harum.
+    </p>
+    <div class="rem">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sit mollitia exercitationem vel ipsum doloribus delectus saepe esse velit ratione corrupti ullam iure sequi dolor voluptates, labore, reiciendis dicta? Dolore.</p>
+    </div>
+  </div>
+
+</body>
+</html>

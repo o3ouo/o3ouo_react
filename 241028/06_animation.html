@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animation</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .box {
+      width: 150px;
+      height: 150px;
+      background-color: #0063da;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      animation-name: test;
+      /* 표현 하고자하는 요소에 애니메이션 이름 적용 */
+
+      animation-duration: 5s;
+      /* 애니메이션 동작에 대한 시간 부여 ~ 지속될 시간 */
+
+      animation-fill-mode: forwards;
+      /* 
+      애니메이션 실행 전후에 속성 지정
+      > 애니메이션 동작에서 마지막에 원래대로 돌아오지 않고 100%에서 끝맺을 수 있다
+      > backwards : 기본값
+      > forwards : 100%에서 끝냄
+      */
+
+      animation-iteration-count: infinite;
+      /* 
+      애니메이션 횟수 = 
+      > 숫자값 : 횟수
+      > infinite : 무한
+      */
+
+      animation-direction: reverse;
+      /* 
+      애니메이션의 방향 = 
+      > reverse : 반전. 100%부터 시작해서 내려옴
+      > alternat : 교차 반복
+      > alternat-reverse : 반전 교차 반복
+      */
+
+      animation-delay: 1s;
+      /* 애니메이션 지연 시간 */
+
+      animation-timing-function: ;
+      /* 
+      애니메이션 시간별 속도감
+      > transition에 대한 속도감과 똑같고, 추가된 값이 있음
+      > steps()프레임을 끊기 듯이
+      animation
+      */
+    }
+
+    .box:hover {
+      animation-play-state: paused;
+      /* 
+      애니메이션 진행 여부 속성 
+      > running : 기본값
+      > paused : 정지
+      */
+    }
+
+    /* 
+    @keyframes 애니메이션이름 { 진행타임 } 
+    > 구간별로 스타일을 부여하여 동작을 표현
+
+    0%, from : 시작점 > 자연스럽게 바꾸고 싶다면 생략하는 것이 좋음
+    100%, to : 종료지점 > 종료지점이 없으면 자연스럽게 원래대로 되돌아 옴
+    > 필요에 따라 둘 다 생략 가능
+
+    수치에 대한 %로 중간기점 생성
+    */
+
+    /* 
+    애니메이션 속성 한 번에 부여 (합성 속성)
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+    */
+
+    @keyframes test {
+
+      0% {
+        background-color: palevioletred;
+      }
+
+      20% {
+        background-color: palegoldenrod;
+        border-radius: 100% 0 0 0;
+      }
+
+      40% {
+        border-radius: 0 100% 0 0;
+        background-color: paleturquoise;
+      }
+
+      60% {
+        border-radius: 0 0 100% 0;
+        background-color: palegreen;
+      }
+
+      80% {
+        border-radius: 0 0 0 100%;
+        background-color: peru;
+      }
+
+      100% {
+        background-color: plum;
+        border-radius: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- animation : 각각의 프레임 내에서 스타일 구현하여 동작을 만들 때 사용 -->
+
+  <div class="box">
+
+  </div>
+
+</body>
+</html>

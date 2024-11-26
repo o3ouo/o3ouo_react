@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메뉴판</title>
+  <script src="./js/script_01.js" defer></script>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .menu {
+      padding: 0 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .menu>h2 {
+      margin: 30px 0;
+      margin-bottom: 50px;
+    }
+
+    .btn {
+      width: 100%;
+      max-width: 700px;
+      background-color: salmon;
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .btn button {
+      display: block;
+      cursor: pointer;
+      background-color: transparent;
+      border: 1px solid #333;
+      padding: 8px 24px;
+    }
+
+    .contents {
+      width: 100%;
+      max-width: 1200px;
+      padding: 24px 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      background-color: salmon;
+    }
+
+    .contents .item {
+      background-color: sandybrown;
+      padding: 16px;
+      padding-bottom: 40px;
+    }
+
+    .contents .item img {
+      margin: auto;
+      margin-bottom: 24px;
+    }
+
+    .contents .item .img-info .text {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 1024px) {
+      .contents {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 767) {
+
+      .contents {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        justify-content: flex-start;
+      }
+
+      .btn button {
+        margin: 0 16px;
+      }
+    }
+</style>
+
+  <script>
+
+   
+    document.addEventListener("DOMContentLoaded", () => {
+
+      let contents = document.querySelector(".contents"); // item 넣을 부모 contents 가져오기
+      let btnbox = document.querySelector(".btn"); // btn 넣을 부모 박스 가져오기
+
+      function menubox(menuItems) { // menuItem이라는 매개변수를 받는 menubox 함수 생성 (인자로 객체로 만들어둔 menu를 받을 것임)
+
+        let menus = menuItems.map((item) => { // menus에 menuItems(menu)의 각 요소를 새로운 배열로 반환 / item은 menu의 각각의 value임
+          return `
+          <div class="item">
+            <img src= ${item.img} alt= ${item.title} class="photo">
+            <div class="img-info">
+              <div class="text">
+                <h3>${item.title}</h3>
+                <h4 class="price">${item.price}</h4>
+              </div>
+              <p class="item-text">${item.text}</p>
+            </div>
+          </div>
+          `
+          // html에 들어갈 내용, menu에 담겨있는 키값을 가져왔음
+        });
+        console.log(menus); // menu가 배열인 상태
+        menus = menus.join(""); // join()으로 배열을 문자열로 변환
+        console.log(menus); // menu가 문자열로 menus에 담겨있는 상태
+        contents.innerHTML = menus; // 부모 contents에 html로 menus 넣기 
+      };
+
+      // 카테고리 버튼 만들기
+      function menubtn() { // menubtn 함수 생성
+        // reduce() : 배열의 각 요소에 대해 주어진 함수를 실행하고 하나의 결과값으로 반환
+
+        let categories = menu.reduce( // categories에 menu
+          function (value, item) {
+            // .includes() : 요소가 배열 안에 존재하는 경우에만 true를 반환
+            if (!value.includes(item.btn)) {
+              value.push(item.btn);
+            }
+            return value;
+          },
+          ["전체"]
+        );
+
+        let c_btn = categories.map(category => {
+          return `<button type = "button" class = "cbtn" data-id = ${category}>${category}</button>`
+        }).join("");
+        // join() : 쉼표 없애기 
+
+        btnbox.innerHTML = c_btn;
+        let cbtns = btnbox.querySelectorAll(".cbtn");
+
+        cbtns.forEach(btn => {
+          btn.addEventListener("click", (e) => {
+            console.log(e.currentTarget.dataset);
+            let category = e.currentTarget.dataset.id;
+            console.log(category);
+
+            let menucategory = menu.filter(menuItem => {
+              // console.log(menuItem.btn)
+              if (menuItem.btn === category) {
+                return menuItem;
+              }
+            });
+
+            if (category === "전체") {
+              menubox(menu);
+            } else {
+              menubox(menucategory);
+            }
+          });
+        });
+
+
+      }
+ 
+      menubox(menu);
+      menubtn();
+
+      menu.unshift( {
+        id: 11,
+        title: "콜키지 프리에용",
+        btn: "주류",
+        price: 20000,
+        img: "menu/item11.jpg",
+        text: "콜키지 프리가 어딨음"
+      } )
+
+
+
+
+      ////////////////////////////////////////
+    });
+  </script>
+</head>
+
+<body>
+  <section class="menu">
+    <h2>메뉴판</h2>
+
+    <div class="btn">
+      <button type="button">aa</button>
+    </div>
+
+    <div class="contents">
+      <div class="item">
+        <img src="./menu/item1.jpg" alt="menu item" class="photo">
+        <div class="img-info">
+          <div class="text">
+            <h3>232323</h3>
+            <h4 class="price">232323</h4>
+          </div>
+          <p class="item-text">aaaa</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

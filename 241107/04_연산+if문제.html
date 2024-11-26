@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연산 + if문제</title>
+</head>
+<body>
+  
+  <script>
+
+    // 1. cm 단위를 입력시 inch 단위로 전환 > 1in = 2.54cm
+    // toFixed() > 보여질 소수점 번째를 선택
+
+    // let cm = Number(prompt('cm 입력하셈'));
+    // let inc = cm / 2.54
+    // if (isNaN(cm)) {
+    //   console.log(`${cm}는 숫자입니까?`);
+    // } else {
+    //   console.log(`${cm}cm는 ${inc.toFixed(2)}in 임`);
+    // }
+
+    // --------------------------------------------------------------------
+
+    // 2. 원화 입력시 달러로 변환 
+    // 1달러 = 1,397.56원
+
+    // let won = Number(prompt('얼마?'));
+    // let krw = 1397.56;
+
+    // console.log(`${won}원은 ${(won/krw).toFixed(2)}달러임`);
+
+    // --------------------------------------------------------------------
+
+    // 3. 상수를 입력시 그 값이 홀수? 짝수? 구분
+
+    // let num = Number(prompt('숫자 입력하셈'));
+
+    // if ((num % 2) !== 1) {
+    //   console.log(`${num} 은/는 짝수`);
+    // } else {
+    //   console.log(`${num} 은/는 홀수`);
+    // }
+    
+    // --------------------------------------------------------------------
+
+    // 4. 성적에 따른 등급 부여
+    // 100 ~ 97점 A+ , 90 ~ 96점 이상 A , 85점 이상 B , 75점 이상 C , 65점 이상 D , 그 외 F , 글자 입력시 오류라고 인지
+
+    // let test = prompt('성적 입력하셈');
+
+    // if (test > 101) {
+    //   console.log (`다시 생각해보셈`);
+    // } else if (test <= 100 && test >= 97) {
+    //   console.log ('A+');
+    // } else if (test <= 96 && test >= 90) {
+    //   console.log ('A');
+    // } else if (test <= 95 && test >= 85) {
+    //   console.log ('B');
+    // } else if (test <= 84 && test >= 75) {
+    //   console.log ('C');
+    // } else if (test <= 74 && test >= 65) {
+    //   console.log ('D');
+    // } else if (isNaN(test)) {
+    //   console.log ('오류임');
+    // } else {
+    //   console.log('F')
+    // }
+
+    // --------------------------------------------------------------------
+
+    // 5. 시간에 따라 인사말 출력
+    // 6 ~ 11시 : 아침인사 / 12 ~ 17시 : 오후 인사 / 19시 이후 : 저녁인사
+
+    // let time = new Date();
+    // let getTime = time.getHours();
+    // console.log(getTime);
+
+    // if (getTime < 12 && getTime >= 6) {
+    //   console.log('아침 ㅎㅇ');
+    // } else if (getTime >= 12 && getTime <= 15) {
+    //   console.log('오후 ㅎㅇ');
+    // } else if (getTime > 17) {
+    //   console.log('저녁 ㅎㅇ')
+    // } 
+
+    // --------------------------------------------------------------------
+
+    // 6. BMI 계산기 키(cm) / 몸무게 입력 / 몸무게 나누기 키의 제곱
+
+    let st = Number(prompt('키 몇임?'));
+    let kg = Number(prompt('몸무게 몇임?'));
+
+    let m = st / 100;
+
+    let bmi = kg / m**2;
+
+    console.log(`BMI 수치 ${bmi.toFixed(2)}`);
+    
+
+
+  </script>
+
+</body>
+</html>

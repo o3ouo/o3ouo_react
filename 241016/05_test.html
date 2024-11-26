@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test03</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .title {
+      font-size: 60px;
+      font-weight: bold;
+      margin-top: 50px;
+      margin-bottom: 100px;
+      text-align: center;
+    }
+
+    .box_wrap {
+      width: 1440px;
+      height: 700px;
+      background-color: darkred;
+      margin: auto;
+    }
+
+    .box_inner {
+      width: 700px;
+      height: 700px;
+      background-color: gainsboro;
+    }
+
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+
+    .box {
+      width: 330px;
+      height: 330px;
+      margin: 10px;
+      padding: 30px;
+      background-color: green;
+      float: left;
+      align-content: center;
+      text-align: center;
+      font-weight: 700;
+      color: white;
+    }
+
+    .last {
+      width: 680px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="title">BOX-Size 예제</p>
+
+    <div class="box_wrap">
+
+      <div class="box_inner left">
+        <div class="box">
+          <p>330 * 330</p>
+          <p>margin:10</p>
+          <p>padding:30px</p>
+        </div>
+        <div class="box">
+          <p>330 * 330</p>
+          <p>margin:10</p>
+          <p>padding:30px</p>
+        </div>
+        <div class="box">
+          <p>330 * 330</p>
+          <p>margin:10</p>
+          <p>padding:30px</p>
+        </div>
+        <div class="box">
+          <p>330 * 330</p>
+          <p>margin:10</p>
+          <p>padding:30px</p>
+        </div>
+      </div>
+
+      <div class="box_inner right">
+        <div class="box">
+          <p>330 * 330</p>
+          <p>margin:10</p>
+          <p>padding:30px</p>
+        </div>
+        <div class="box">
+          <p>330 * 330</p>
+          <p>margin:10</p>
+          <p>padding:30px</p>
+        </div>
+        
+        <div class="box last">
+          <p>? * 330</p>
+          <p>margin:10</p>
+          <p>padding:30px</p>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+
+</body>
+</html>

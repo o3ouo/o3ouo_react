@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 미디어쿼리 속성 적용시 필수 존재 ! -->
+  <title>미디어쿼리</title>
+  <style>
+    /* 
+    @media screen and (max-width: 1200px) {
+       화면에서 이하 > max 
+      body {
+        background-color: green;
+      }
+    }
+
+    @media screen and (min-width: 1400px) {
+        화면에서 이상 > min 
+
+      body {
+        background-color: darkblue;
+      }
+    }
+
+    @media screen and (min-width: 1250px) and (max-width: 1350px) {
+      body {
+        background-color: gray;
+      }
+    } 
+    */
+
+    /* 
+    portrait : 세로모드, 화면의 높이가 너비보다 큰 경우
+    landscape : 가로모드, 화면의 너비가 높이보다 큰 경우
+    */
+
+    @media (orientation:portrait) {
+
+      body {
+        background-color: green;
+      }
+    }
+
+    
+  </style>
+</head>
+<body>
+  <!-- 
+  미디어쿼리
+  : 다양한 디바이스에서 웹 콘텐츠를 최적화 하여 표시할 수 있도록 사용되는 속성
+  : viewport라는 meta 태그를 필수로 존재해야 한다
+  : 뷰포트에 따라서 css의 구분을 지어 나타내는 쿼리문
+
+  @media 종류 (화면 사이즈 기준점) {
+    css 문법
+  }
+  
+  > @media screen(또는 all) and (max-width: )
+
+  > @madia only screen > 화면 상에서만 미디어쿼리가 들어감
+
+  > and 는 하나의 조건만 사용한다면 생략 가능하지만 두 개 이상의 조건을 넣을 경우에는 무조건 사용해야 한다
+  > and 생략 시 screen은 빼야함 
+  -->
+
+  <!-- 
+  > 보통 태블릿 사이즈(1200px)부터 menu를 날리고 햄버거 메뉴로 바꿈
+  >> menu:hover 기능이 있을 경우 태블릿부터는 touch가 되서 hover 기능이 동작하지 않음
+
+  > 
+  -->
+</body>
+</html>

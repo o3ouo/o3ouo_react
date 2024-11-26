@@ -1,0 +1,48 @@
+WEB-logo
+menu-1menu-1menu-1menu-1
+Main Article
+ColorZilla for Google Chrome is an extension that assists web developers and graphic designers with color related tasks - both basic and advanced. ColorZilla includes a Color Picker, Eye Dropper, Gradient Generator and many additional advanced color tools.
+
+Main Article
+ColorZilla for Google Chrome is an extension that assists web developers and graphic designers with color related tasks - both basic and advanced. ColorZilla includes a Color Picker, Eye Dropper, Gradient Generator and many additional advanced color tools.
+
+Main Article
+ColorZilla for Google Chrome is an extension that assists web developers and graphic designers with color related tasks - both basic and advanced. ColorZilla includes a Color Picker, Eye Dropper, Gradient Generator and many additional advanced color tools.
+
+right aside
+ColorZilla for Google Chrome is an extension that assists web developers and graphic designers with color related tasks - both basic and advanced.
+
+ mailto
+TEXT
+banner
+
+html5
+divcss.cafe24.com/sim/sim.html
+
+
+  시멘틱구조를 이용해서 레이아웃 표현 
+  머리(header) > nav(h:30/왼쪽간격20)
+
+  div(body)
+  왼쪽박스(w:700)
+   >  3개의 박스  
+  오른쪽박스(계산) 
+
+  작은 박스> 패딩20 
+  선표현 
+
+  하단박스(footer)  
+
+
+
+
+
+
+
+
+
+
+
+
+
+

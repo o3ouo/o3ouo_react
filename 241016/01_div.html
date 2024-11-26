@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>div</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .bolck,
+    .inline {
+      width: 300px;
+      height: 100px;
+      background-color: seagreen;
+      margin: 30px;
+    }
+
+    .inline {
+      background-color: sandybrown;
+    }
+
+    .box {
+      background-color: salmon;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>** div : 공간 분할 태그 **</h1>
+  <ul>
+    <li>의미론적인 사용은 없음</li>
+    <li>블럭 요소</li>
+    <li>특정 공간을 만들 때 사용</li>
+  </ul>
+
+  <br>
+
+  <h2>* Bolck 요소 (box 요소) : 박스와 같이 쌓이면서 나타나는 성격</h2>
+  <ul>
+    <li>크기를 직접적으로 부여하지 않을 경우 사이즈가 auto 처리가 된다 </li>
+    <li>감싸고 있는 부모박스의 크기를 100% 사용</li>
+    <li>100%의 크기를 가지고 있어 콘텐츠를 제외하고도 사이즈가 남기 때문에 위치 정렬이 가능하다</li>
+    <li>모든 css가 적용이 되는 속성</li>
+  </ul>
+  
+  <div class="bolck"> box1 </div>
+  <div class="bolck"> box2 </div>
+  <div class="bolck"> box3 </div>
+
+  <h2>* Inline 요소 : 글자와 같이 나열되며 나타나는 성격</h2>
+  <ul>
+    <li>내용의 크기 만큼만 사이즈를 가진다</li>
+    <li>화면의 일부를 차지하는 태그</li>
+    <li>크기(size)를 가질 수 없는 요소이다</li>
+    <li>width, height, margin-top, margin-bottom 등이 적용되지 않는다</li>
+    <li>내용물을 제외하고 남는 공간이 없기 때문에 자체적으로 위치 정렬이 불가능하다</li>
+
+  </ul>
+  <span class="inline"> inline1 </span>
+  <span class="inline"> inline1 </span>
+  <span class="inline"> inline1 </span>
+
+  <br><br>
+
+  <h2>* 박스 크기에 영향을 주는 스타일</h2>
+
+  <div class="box" style="width: 300px;">width</div>
+  <p>
+    > 가로 폭, 넓이 : auto, %, px, v <br>
+    > auto : 부모박스 전체 크기를 사용 <br>
+    > 가로는 고정 값이 있어서 auto 값이 들어간다 <br>
+    > width 값에 50%를 넣으면 부모의 반틈의 크기를 사용한다
+  </p>
+
+
+  <div class="box" style="height: 50px;">height</div>
+  <p>
+    > 세로 폭, 넓이 : auto, %, px, v <br>
+    > auto : 내용물의 크기를 100% 사용 <br>
+    > 높이는 고정 값이 없기 때문에 무한 스크롤이 가능하다 <br>
+    > height 값에 50%를 넣어도 부모에 높이값이 없다면 무시하고 내용물 만큼의 크기만 가진다
+  </p>
+
+  <div class="box" style="border:5px solid gold;">border</div>
+  <p>
+    > 안쪽선 : 선의굵기 선의종류 선의색상 <br>
+    > 색상은 생략 가능 <br>
+    > 굵기, 선의 종류는 생략 불가능 (구현이 안됨) <br>
+    > solid, dotted, double, dashed <br>
+    > border-위치 : 개별적 사용 가능 <br>
+  </p>
+
+  <div class="box" style="outline
+  :5px solid gold;">outline</div>
+  <p>
+    > 바깥선 : 선의굵기 선의종류 선의색상 <br>
+    > 색상은 생략 가능 <br>
+    > 굵기, 선의 종류는 생략 불가능 (구현이 안됨) <br>
+    > solid, dotted, double, dashed <br>
+    > width 값에 포함되지 않음 <br>
+  </p>
+
+  <div class="box" style="padding: 30px;">padding</div>
+  <p>
+    > 안쪽 여백 : 안쪽으로 내용물과 박스 사이의 틈 <br>
+    > 1개 값 - 4면 전체 적용 <br>
+    > 2개 값 - 상하 좌우 <br>
+    > 4개 값 - 상 우 하 좌 (시계 방향) <br>
+    > 개별 부여 가능 - padding-위치 : 값;<br>
+  </p>
+
+  <div class="box" style="margin: 30px;">margin</div>
+  <p>
+    > 바깥 여백 : 바깥으로 혹은 다른 요소와의 틈 <br>
+    > 1개 값 - 4면 전체 적용 <br>
+    > 2개 값 - 상하 좌우 <br>
+    > 4개 값 - 상 우 하 좌 (시계 방향) <br>
+    > 개별 부여 가능 - margin-위치 : 값; <br>
+    > margin의 left, right에 auto를 사용하면 중앙 정렬이 가능하다 <br>
+    > auto : 좌우너비 계산 후 중심 배치 <br>
+    >> 블럭요소를 부모박스 내에서 수평에서의 가운데 정렬 시 사용 <br>
+    >> 반드시 폭값이 존재해야 사용 가능
+    > 높이 auto는 불가능하다 (높이에 크기를 주더라도) <br>
+    > margin-left에만 auto를 넣으면 왼쪽에 남은 여백으로 콘텐츠를 민다 <br>
+    > 반대로 right에만 auto를 넣으면 오른쪽에 남은 여백으로 콘텐츠를 민다 
+  </p>
+
+  <div class="box" style="margin-left: auto; width: 50px; height: 50px;">left</div>
+  <div class="box" style="margin-right: auto; width: 50px; height: 50px;">right</div>
+
+  <br>
+
+  <h2>* box-sizing : border-box</h2>
+  <ul>
+    <li>크기에 대한 속성 값</li>
+    <li>패딩, 안쪽선 폭 값 안으로 포함</li>
+    <li>box-sizing : content-box</li>
+  </ul>
+
+  <div class="box" style="border-radius: 10px;">border-radius</div>
+  <p>
+    > 모서리를 둥글게 표현 <br>
+    > 1개 값 - 4개의 각 모두 <br>
+    > 2개 값 - 좌상우하 우상좌하 (X자 형태) <br>
+    > 4개 값 - 좌상 시계방향 순으로 모두 <br>
+    > 개별 부여 가능 : border-top-left-radius<br>
+    > 원 제작 <br>
+  </p>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+/* 스타일 내에서의 주석 처리 방식 */
+
+/* 전체 선택자 */
+* {
+  padding: 5px; /* 안쪽 여백 */
+  margin: 5px; /* 바깥 여백 */
+}
+
+.out {
+  color: lightgreen;
+}
+
+.star {
+  color: yellowgreen;
+}
+
+/* 태그 선택자 */
+dt {
+  font-size: 1.2rem;;
+}
+
+/* 아이디 선택자 */
+#title {
+  color: lightskyblue;
+}
+
+/* 클래스 선택자 */
+.text {
+  color: lightsalmon;
+}

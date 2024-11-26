@@ -1,0 +1,119 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+iframe {
+  display: block;
+}
+
+.header {
+  width: 100%;
+  background-color: #000;
+  height: 100px;
+}
+
+.header .inner {
+  width: 1400px;
+  margin: auto;
+  color: #fff;
+  overflow: hidden;
+  height: 100%;
+  align-content: center;
+}
+
+.header .logo {
+  float: left;
+}
+
+.header .menu {
+  float: right;
+}
+
+.header .inner .menu li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.section_v {
+  width: 1400px;
+  margin: auto;
+}
+
+.section_v h2 {
+  margin: 100px 0;
+  line-height: 1.3;
+}
+
+.section_v .v_contents {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 10px;
+}
+
+.section_v .v_contents .v_box {
+  height: 100%;
+  overflow: hidden;
+  float: left;
+}
+
+.section_v .b1,
+.section_v .b4,
+.section_v .b5,
+.section_v .b8 {
+  width: 780px;
+  margin-right: 10px;
+}
+
+.section_v .b2,
+.section_v .b3,
+.section_v .b6,
+.section_v .b7 {
+  width: 600px;
+}
+
+.section_v .v_contents .v_box:first-child {
+  margin-right: 10px;
+}
+
+.section_m {
+  width: 1400px;
+  margin: 100px auto;
+}
+
+.section_m h2 {
+  margin-bottom: 15px;
+}
+
+.footer {
+  width: 100%;
+  background-color: #000;
+  height: 350px;
+  align-content: center;
+}
+
+.footer .f_inner {
+  width: 1400px;
+  margin: auto;
+}
+
+.footer .f_logo {
+  padding: 10px;
+  float: left;
+  color: #fff;
+}
+
+.footer .f_site {
+  float: right;
+}
+

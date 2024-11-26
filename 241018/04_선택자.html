@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자</title>
+</head>
+<body>
+  
+  <h3>★★★ 후손 & 자손 ★★★</h3>
+
+  <dl>
+    <dt>* 후손</dt>
+    <dd>- 해당 요소의 하위 요소에 있는 특정한 요소를 모두 선택하는 선택자</dd>
+    <dd>- 선택자a 선택자b (띄어쓰기로 구분)</dd>
+    <dd>- 위에서부터 언급해서 사용 (코드의 우선 순위)</dd>
+
+    <style>
+      .box h2 {
+        color: lightcoral;
+      }
+    </style>
+
+    <dt>* 자식</dt>
+    <dd>- 해당 요소의 바로 밑에 위치하는(하위) 특정한 요소를 모두 선택하는 선택자</dd>
+    <dd>- 선택자a > 선택자b (기호로 구분)</dd>
+
+    <style>
+      .box>h2 {
+        color: lightblue;
+      }
+    </style>
+
+  </dl>
+
+  <style>
+    .box>.box2 a {
+      text-decoration: none;
+      color: limegreen;
+    }
+  </style>
+
+  <div class="box">
+    <h1>제목-01</h1>
+    
+    <h2>제목-02</h2>
+
+    <div class="box2">
+      <h2>제목-02</h2>
+      <ul>
+        <li>리스트-01</li>
+        <li>리스트-02</li>
+        <li><a href="#">리스트-03</a></li>
+      </ul>
+      <a href="#">a</a>
+    </div>
+  </div>
+
+  <br><hr>
+
+  <dl>
+    <dt>* 동위선택자</dt>
+    <dd>- 동위관계에 있는 요소 중에 해당 요소보다 뒤에 존재하는 특정한 요소를 선택할 때 사용</dd>
+    <dd>- 선택자a + 선택자b : 선택자a 바로 뒤에 위치하는 선택자b를 선택(하나만 선택)</dd>
+    <dd>- 선택자a ~ 선택자b : 선택자a 뒤에 위치하는 모든 선택자b를 모두 선택</dd>
+  </dl>
+
+  <style>
+    .item-01 h1+h2 {
+      color: rgb(34, 185, 185);
+    }
+
+    .item-01 h1~h3 {
+      color: rgb(239, 193, 78);
+    }
+
+    .item-01 *{
+      color: rgb(30, 198, 30);
+    }
+    /* 위에서 다른 선택자에 color를 지정했기 때문에 지정된 요소 제외하고 적용이 됨 */
+  </style>
+
+  <div class="item-01">
+    <h1>제목-01</h1>
+    <h2>제목-02</h2>
+    <h2>제목-02</h2>
+    <h2>제목-02</h2>
+    <h3>제목-03</h3>
+    <h3>제목-03</h3>
+    <h3>제목-03</h3>
+  </div>
+
+  <br><hr>
+
+  <dl>
+    <dt>* 반응선택자</dt>
+    <dd>- 특정한 행동을 취했을 때 사용하는 선택자</dd>
+    <dd>- :hover > 특정한 요소에 마우스를 올렸을 때</dd>
+    <dd>- :active > 특정한 요소에 클릭을 한 순간</dd>
+    <dd>- :visited > 방문한 링크에 스타일 적용</dd>
+    <dd>- :focus > 요소에 초점이 맞춰진 경우</dd>
+  </dl>
+
+  <style>
+    .item-02 h1:hover~h2 {
+      background-color: lemonchiffon;
+    }
+
+    .item-02 h2:hover {
+      background-color: seagreen;
+    }
+
+    .item-02 h1:active{
+      color: lightcoral;
+    }
+    
+    .item-02 a:visited {
+      color: rgb(54, 238, 232);
+    }
+  </style>
+
+  <div class="item-02">
+    <a href="#">a 태그</a>
+    <h1>제목-01</h1>
+    <h2>제목-02</h2>
+    <h2>제목-02</h2>
+    <h2>제목-02</h2>
+  </div>
+
+  <br><hr>
+
+  <dl>
+    <dt>★★★구조선택자★★★</dt>
+    <dd> : 부모요소 안에서 특정한 위치의 요소를 선택할 때 사용</dd>
+    <dd>- 자식요소의 위치로 선택</dd>
+
+    <dt>선택자:first-child</dt>
+    <dd>- 부모 아래에 첫 번째 자식을 선택</dd>
+
+    <dt>선택자:last-child</dt>
+    <dd>- 부모 아래에 첫 번째 자식을 선택</dd>
+
+    <dt>선택자:ntn-child(순번)</dt>
+    <dd>- 부모 아래에 (순번)째의 자식을 선택</dd>
+    <dd>(2n) : 짝수</dd>
+    <dd>(2n+1) : 홀수</dd>
+  </dl>
+
+  <style>
+    .ul-02,
+    .ul-03 {
+      list-style: none;
+      display: flex;
+      padding: 15px;
+    }
+
+    .ul-02 li,
+    .ul-03 li {
+      padding: 10px;
+    }
+
+    .ul-02 li:first-child {
+      background-color: seagreen;
+    }
+
+    .ul-02 li:last-child {
+      background-color: sandybrown;
+    }
+
+    .ul-02 li:nth-child(3) {
+      background-color: salmon;
+    }
+    
+    .ul-03 li:nth-child(2n) {
+      background-color: skyblue;
+    }
+
+    .ul-03 li:nth-child(2n+1) {
+      background-color: slateblue;
+    }
+  </style>
+
+  <ul class="ul-02">
+    <li>item-1</li>
+    <li>item-2</li>
+    <li>item-3</li>
+    <li>item-4</li>
+    <li>item-5</li>
+    <li>item-6</li>
+  </ul>
+
+  <ul class="ul-03">
+    <li>item-1</li>
+    <li>item-2</li>
+    <li>item-3</li>
+    <li>item-4</li>
+    <li>item-5</li>
+    <li>item-6</li>
+  </ul>
+
+  <br><hr>
+
+  <dl>
+    <dt>★★★ 형태구조선택자 ★★★</dt>
+    <dd> : 부모요소 아래에 태그의 형태로 구분해서 선택</dd>
+  </dl>
+
+  <style>
+    .list h3:first-of-type {
+      background-color: pink;
+    }
+
+    .list h4:last-of-type {
+      background-color: steelblue;
+    }
+
+    .list h3:nth-of-type(2) {
+      background-color: khaki;
+    }
+    
+    .list h2:nth-last-of-type(3) {
+      background-color: sandybrown;
+    }
+  </style>
+
+  <div class="list">
+    <h2>타이틀-2 / .list h2:nth-last-of-type(3) / list에서 h2의 끝에서 세 번째</h2>
+    <h3>타이틀-3 / .list h3:first-of-type / list에서 h3의 첫 번째</h3>
+    <h2>타이틀-2</h2>
+    <h4>타이틀-4</h4>
+    <h3>타이틀-3 / .list h3:nth-of-type(2) / list에서 h3의 두 번째</h3>
+    <h4>타이틀-4</h4>
+    <h2>타이틀-2</h2>
+    <h4>타이틀-4 / .list h4:last-of-type / list에서 h4의 마지막</h4>
+    <h3>타이틀-3</h3>
+
+  </div>
+
+
+
+</body>
+</html>

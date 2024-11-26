@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>타이머함수</title>
+</head>
+<body>
+  <script>
+    /*
+    타이머함수
+    시간 = 밀리초 단위 1000ms = 1초
+    : 매개변수를 넣을 수는 있지만 굳이 넣어서 사용하지는 않음
+    : 타이머함수를 사용할 때에는 함수와 변수에 담아서 사용하면 호출할 수 있어서 내가 필요한 시점에서 on/off가 가능해진다
+
+    setTimeout((매개변수) => {}, 시간, 매개변수 값)
+    : 특정 시간 후에 함수를 한 번 호출
+
+    > 타이머 종료시
+    clearTimeout(타이머ID)    
+
+    setInterval((매개변수) => {}, 시간, 매개변수 값)
+    : 특정 시간 마다 함수를 호출
+    */
+
+    // 1초 뒤에 콘솔에 1의 값이 출력됨
+    let one = setTimeout((a) => {
+      console.log(a)
+    }, 1000, 1);
+
+    // 타이머 종료
+    clearTimeout(one);
+
+    // 1초 마다 콘솔에 1이 증가하면서 출력
+    let a = 1;
+    let loop = setInterval(() => {
+      console.log(`${a}초`);
+      a++;
+    }, 1000);
+
+    clearInterval(loop);
+
+    //
+    let hours = new Date().getHours();
+    let time = new Date(). getMinutes();
+
+    if( hours === 14 && time <= 33) {
+      let loop2 = setInterval(() => {
+        console.log(`2시 31분까지 반복`)
+      }, 2*1000)
+    }
+
+
+
+    
+
+
+  </script>
+</body>
+</html>

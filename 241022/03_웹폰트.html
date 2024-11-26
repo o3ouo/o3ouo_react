@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹 폰트</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Song+Myung&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>웹 폰트</h1>
+  <h4>webfont - 링크, 도메인, 브라우저와 상관없이 웹페이지 내에서 폰트가 연결되어지는 것</h4>
+
+  <dl>
+    <dt>* TTF</dt>
+    <dd></dd>
+    <dd>> 마이크로소프트, 애플에서 협력해서 만듬</dd>
+    <dd>> 압축 파일</dd>
+    <dd>> 대부분 TTF 사용</dd>
+    <dd>> 높은 호환성</dd>
+    <dd>> 사파리에서 사용 x</dd>
+
+    <dt>* OTF</dt>
+    <dd>> TTF의 개선 버전</dd>
+    <dd>> 고해상도 출력 작업시 사용</dd>
+    <dd>> 어도비와 마이크로소프트에서 제작</dd>
+    <dd>> 대체문자 등 발전된 기능</dd>
+    <dd>> 인쇄물, 복잡한 그래픽 디자인에 사용</dd>
+
+    <dt>* WOFF/WOFF2</dt>
+    <dd>> 웹 사용에 최적화된 포맷</dd>
+    <dd>> 웹 전용</dd>
+    <dd>> 높은 압축률</dd>
+    <dd>> 높은 보안성</dd>
+
+    <dt>* EOT</dt>
+    <dd>> 인터넷 익스플로러에서 사용되었던 포맷</dd>
+  </dl>
+
+  <br>
+  <dl>
+    <dt>* import : 호출</dt>
+    <dd>> 필요한 폰트를 import에 한 번에 담아 호출해서 연결</dd>
+  </dl>
+  <br>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+
+    .ex1 {
+      font-family: '휴먼둥근헤드라인';
+    }
+
+    .f1 {
+      font-family: "Gaegu", sans-serif;
+    }
+
+    .f2 {
+      font-family: "Song Myung", serif;
+    }
+
+    @font-face {
+      font-family: "제주";
+      src: url(./font/EF_jejudoldam/EF_jejudoldam\(TTF\).ttf);
+    }
+
+    .ex3 {
+      font-family: "제주";
+    }
+  </style>
+
+  <p class="ex1">
+    ** font-family : ''; ** <br>
+    내컴퓨터 내에서 설치된 폰트 연결
+  </p>
+
+  <p class="ex2">
+    ** CDN **<br>
+    - 링크를 이용해서 서버상의 폰트를 가져와서 웹페이지에 전달하는 방법 <br>
+    - 느려지거나 연쇄 작용 <br>
+    <span class="f1">1. 링크 태그 연결</span> <br>
+    <span class="f2">2. import 연결</span>
+  </p>
+
+  <p class="ex3">
+    ** @font-face ** <br>
+    - 링크를 이용해서 서버상의 폰트를 가져와서 웹페이지에 전달하는 방법 <br>
+    - 느려지거나 연쇄 작용 <br>
+  </p>
+
+  
+</body>
+</html>

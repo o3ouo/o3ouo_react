@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test_01</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    img {
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    figure {
+      width: fit-content;
+      height: fit-content;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    #wrap {
+      width: 1000px;
+      margin: auto;
+    }
+
+    .top {
+      background-image: url(./수업자료/0320-1.jpg);
+      height: 500px;
+      width: 100%;
+    }
+  
+    .top .left {
+      float: left;
+      width: 250px;
+      height: 250px;
+      margin-top: 250px;
+      padding: 10px 5px;
+    }
+
+    .top .right {
+      float: right;
+    }
+
+    .middle {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .middle .left {
+      width: 750px;
+      float: left;
+    }
+
+    .middle .right {
+      float: right;
+      background-color: yellow;
+      width: 250px;
+      height: 500px;
+    }
+
+    .middle .box {
+      width: 250px;
+      height: 250px;
+      background-color: yellow;
+      float: left;
+    }
+
+    .middle .box:nth-child(2n+1) {
+      background-color: red;
+    }
+
+    .bottom {
+      font-size: 14px;
+      width: 100%;
+      height: 40px;
+      background-color: #777;
+    }
+
+    .bottom .left {
+      float: left;
+      height: 100%;
+      align-content: center;
+    }
+
+    .bottom .right {
+      float: right;
+      background-color: #000;
+      width: 250px;
+      height: 100%;
+      color: #fff;
+      align-content: center;
+      text-align: center;
+    }
+
+    .bottom .left li {
+      float: left;
+      margin: 0 5px;
+      color: #fff;
+    }
+
+    .bottom .left li:not(:last-child)::after {
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 10px;
+      background-color: #fff;
+      margin-left: 10px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div class="top">
+      <div class="left">
+        <h2 class="title">GLOBAL <br> BUSUINESS</h2>
+        <p class="text">
+          GLOBAL No.1 lifestyle, <br> Nedua Shopping Leader <br>
+          라이프스타일을 선도하는 <br> 세계최고의 미디어 쇼핑리더 
+        </p>
+      </div>
+      <div class="right">
+        <figure>
+          <img src="./수업자료/0320-2.jpg" alt="img">
+        </figure>
+        <figure>
+          <img src="./수업자료/0320-3.jpg" alt="img">
+        </figure>
+      </div>
+      
+
+    </div>
+
+    <div class="middle">
+      <div class="left">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+
+      <div class="right"></div>
+    </div>
+    
+    <div class="bottom">
+      <div class="left">
+        <ul>
+          <li><a href="#">법적고지</a></li>
+          <li><a href="#">이메일무단수집거부</a></li>
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">개인정보취급방침</a></li>
+          <li><a href="#">고객센터</a></li>
+          <li><a href="#">입찰공고</a></li>
+        </ul>
+      </div>
+
+      <div class="right"> cj그룹계열사 바로가기</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>콜백함수</title>
+</head>
+<body>
+  <script>
+    /*
+    콜백함수
+    : 다른 함수의 인자로 전달되어 그 함수의 작업이 끝난 후에 실행되는 함수
+    : 비동기 작업을 처리하거나, 특정 작업이 완료된 후에 실행될 동작을 정의할 때 사용
+    : 동기적 작업을, 비동기적 작업으로 바꿀 때 사용
+    : 파일 읽어올 때, 완료된 요청 등에 콜백함수 사용
+    : 첫 번째 함수가 실행되어야 두 번째 만든 함수가 실행되는 개념    
+    */
+
+    function callBack (back) {
+      for (let i = 0; i < 3; i++) {
+        back(i);
+        // back 이라는 매개변수는 함수이므로 호출할 수 있음
+      }
+    }
+    // 첫 번째 함수식이 발동된 뒤 두 번째 함수 실행
+    // callBack이라는 함수에 call 함수가 매개변수로 들어오면서 callBack 함수 안에서 call 함수가 실행됨
+
+    function call (i) {
+      console.log(`${i}번째 함수 호출`)
+    }
+
+    callBack(call)
+
+    console.log('---------- ----------')
+
+    function hi (name, call) {
+      let message = `하이 ${name}임다`
+      call(message);
+    }
+    // 매개변수로 함수를 받아와 hi 함수 내부에서 콜백함수를 호출해 실행됨
+
+    hi ('대왕', function(bell) {
+      console.log(bell);
+    });
+    // 매개변수로 함수를 만들어 넣음
+
+    console.log(`\n`);
+
+    // 짝수 번째만 호출
+    function num (num2) {
+      
+      for (let i = 0; i <= 10; i++) {
+
+        if (i % 2 === 0) {
+          num2(i);
+        }
+      }
+
+    }
+
+    function num2 (i) {
+      console.log(`${i}번째 짝수`);
+    }
+
+    num(num2);
+
+    console.log('---------- 짝수 번째만 호출 ----------')
+
+
+
+
+  </script>
+</body>
+</html>

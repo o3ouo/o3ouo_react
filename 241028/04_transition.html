@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transition</title>
+  <style>
+    .allbox {
+      width: 700px;
+      overflow: hidden;
+      padding: 24px;
+      border: 3px dashed #000;
+      margin: 50px auto;
+    }
+
+    .box {
+      width: 30px;
+      height: 30px;
+      margin: 10px 0;
+      transition-duration: 1s;
+      /* 
+      > 동작구현에 대한 시간 값 ~ 얼마동안 
+      > s (second 초의 단위 사용) 
+      > ms 사용 가능
+      */
+
+      /* 
+      > 동작을 부여할 때 사용
+      > 위치 : top, left, right, bottom
+      > 사이즈 : width, height, padding, margin, font-size, wright ..
+      > 색상 : color, bgcolor, opcity, filter ..
+      위의 속성은 변형 가능
+
+      transition과 같이 사용 불가능한 속성
+      > display: none
+      > visibility
+      > text-decoration
+      */
+
+      transition-property: width;
+      /* 
+      > 하나의 동작구현에 대한 속성을 지정 
+      > 기본값 : all
+      > 여러 개의 동작을 선택할 때에는 쉼표로 구분해서 작성
+      */
+
+      /* 
+      > transition: 속성 시간 이징 지연;
+      */
+    }
+
+    .allbox:hover .box {
+      width: 100%;
+      /* background-color: #000; */
+    }
+
+    .b1 {
+      background-color: salmon;
+      transition-delay: 0s;
+      /* 지연시간 ~후에 */
+      transition-timing-function: ease;
+      /* 
+      > 시간에 따른 움직이는 속도의 값 
+      > 진행 속도는 같고, 리듬감에 따라 속도가 다르게 보임
+      > 기본값 : ease 
+      > 느리게 시작해서 빠르게 끝: ease-in
+      > 빠르게 시작해서 느리게 끝: ease-out
+      > 일정한 속도 : linaer
+      > ease-in -out : 느리게 시작해서 빨라졌다가 느리게 끝
+      */
+    }
+
+    .b2 {
+      background-color: sandybrown;
+      /* transition-delay: 1s; */
+      transition-timing-function: ease-in;
+
+    }
+
+    .b3 {
+      background-color: seagreen;
+      /* transition-delay: 2s; */
+      transition-timing-function: ease-out;
+
+    }
+    
+    .b4 {
+      background-color: skyblue;
+      /* transition-delay: 3s; */
+      transition-timing-function: linear;
+
+    }
+
+    .b5 {
+      background-color: slateblue;
+      /* transition-delay: 4s; */
+      transition-timing-function: ease-in-out;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="allbox">
+    <div class="box b1"></div>
+    <div class="box b2"></div>
+    <div class="box b3"></div>
+    <div class="box b4"></div>
+    <div class="box b5"></div>
+  </div>
+</body>
+</html>

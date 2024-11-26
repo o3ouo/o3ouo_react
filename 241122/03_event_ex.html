@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event 예제</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: fit-content;
+      height: fit-content;
+      overflow: hidden;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      let box = document.querySelector(".container");
+      let img = box.querySelector("img");
+
+      box.addEventListener("mousemove", (e) => {
+
+        // box 안에서의 좌표값 찾기
+        let x = e.clientX - e.target.offsetLeft;
+        // console.log(e.offsetX); // 음수로 들어가기도 하고, 중첩될 수 있음
+        let y = e.offsetY
+        console.log(x, y);
+
+        img.style.transformOrigin = `${x}px ${y}px`;
+        img.style.transform = "scale(1.4)";
+
+        box.addEventListener("mouseleave", () => {
+          img.style.transformOrigin = "center center";
+          img.style.transform = "scale(1)";
+        });
+
+      });
+
+    ////////////////////////////
+    });
+  </script>
+</head>
+<body>
+  
+<div class="container">
+  <img src="../img/gojo.jpg" alt="gojo">
+</div>
+
+</body>
+</html>

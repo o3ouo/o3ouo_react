@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>overflow</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    ul, li {
+      margin: 20px;
+    }
+
+    .ex_01 {
+      width: 200px;
+      /* height: 300px; */
+      /* 만약 높이 값을 부여하지 않는다면 자동 auto 처리가 되어 콘텐츠의 만큼의 크기를 가진다 */
+      border: 2px solid #000;
+      float: left;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .ex_02 {
+      width: 200px;
+      height: 300px;
+      border: 2px solid #000;
+      float: left;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .ex_03 {
+      width: 200px;
+      height: 300px;
+      border: 2px solid #000;
+      float: left;
+      padding: 10px;
+      margin: 10px;
+      overflow: hidden;
+    }
+
+    .ex_04 {
+      width: 200px;
+      height: 300px;
+      border: 2px solid #000;
+      float: left;
+      padding: 10px;
+      margin: 10px;
+      overflow: scroll;
+    }
+
+    .ex_04-1 {
+      width: 200px;
+      height: 300px;
+      border: 2px solid #000;
+      float: left;
+      padding: 10px;
+      margin: 10px;
+      overflow-y: scroll;
+      overflow-x: visible;
+    }
+
+    .box {
+      clear: left;
+      width: 700px;
+      height: 500px;
+      background-color: #ccc;
+      margin: auto;
+    }
+
+    .left {
+      width: 350px;
+      height: 400px;
+      background-color: rgb(48, 139, 46);
+      float: left;;
+    }
+
+    .right {
+      width: 300px;
+      height: 400px;
+      background-color: rgb(19, 113, 139);
+      float: right;
+    }
+
+    /* 
+    > float을 주지 않았을 때 부모 박스는 내용물 만큼 포함되어 나타난다
+    > 배치를 하는 순간 콘텐츠가 내용물로 잡히지 않아서 부모의 높이 값을 잃는다
+    > 이 경우 overflow: hidden 처리를 하면 float로 배치 하더라도 부모박스에 배치된 내용물의 크기 만큼의 높이 값을 쓰게 된다.
+    */
+
+  </style>
+</head>
+<body>
+
+  <h1>overflow</h1>
+  <ul>
+    <li>부모박스에 내용물이 넘치는 경우 어떻게 보여질 지 결정하는 속성</li>
+    <li>visible: 콘텐츠가 넘치는 것이 그대로 표현 / 기본 값</li>
+    <li>hidden: 부모박스에 높이 값이 정해져 있을 때 넘치는 콘텐츠의 내용물을 안 보이게 처리</li>
+    <li>> 높이 값을 정하지 않고 overflow: hidden으로 지정할 경우 콘텐츠의 내용 만큼의 높이를 가진다</li>
+    <li>> float를 사용하여 부모박스의 높이 값이 없어졌을 경우 overflow: hidden으로 부모박스의 높이를 콘텐츠 만큼의 크기로 설정할 수 있다</li>
+    <li>scroll: 안에 콘텐츠가 넘치는경우 스크롤 처리</li>
+    <li>> 무조건 넘쳐야지 스크롤 사용이 가능하다</li>
+    <li>> 내용물이 넘치지 않아도 스크롤바는 생성되지만 스크롤이 되지는 않는다</li>
+    <li>overflow-y: y축(세로)의 넘치는 내용물을 어떻게 보여질지 결정하는 속성</li>
+    <li>overflow-x: x축(가로)의 넘치는 내용물을 어떻게 보여질 지 결정하는 속성</li>
+    <li>auto, hidden, scroll, visible..</li>
+    <li>::-webkit-scrollbar</li>
+  </ul>
+
+  <div class="ex_01">
+    <h4>콘텐츠 양이 일정</h4>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore dolorem ea odit qui maxime facilis, doloremque ab molestias ut ipsum? Quaerat excepturi sapiente unde sint, consectetur libero optio tempora aut!
+    </p>
+  </div>
+
+  <div class="ex_02">
+    <h4>콘텐츠 양이 흘러넘침</h4>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore dolorem ea odit qui maxime facilis, doloremque ab molestias ut ipsum? Quaerat excepturi sapiente unde sint, consectetur libero optio tempora aut!
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum vitae possimus velit a numquam est reprehenderit natus explicabo et rem, magni maxime eligendi, quibusdam, temporibus fuga corporis porro expedita quo?
+    </p>
+  </div>
+  
+  <div class="ex_03">
+    <h4>박스 높이에 따라 콘텐츠가 안 보이게 처리</h4>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore dolorem ea odit qui maxime facilis, doloremque ab molestias ut ipsum? Quaerat excepturi sapiente unde sint, consectetur libero optio tempora aut!
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum vitae possimus velit a numquam est reprehenderit natus explicabo et rem, magni maxime eligendi, quibusdam, temporibus fuga corporis porro expedita quo?
+    </p>
+  </div>
+
+  <div class="ex_04">
+    <h4>스크롤 처리</h4>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore dolorem ea odit qui maxime facilis, doloremque ab molestias ut ipsum? Quaerat excepturi sapiente unde sint, consectetur libero optio tempora aut!
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum vitae possimus velit a numquam est reprehenderit natus explicabo et rem, magni maxime eligendi, quibusdam, temporibus fuga corporis porro expedita quo?
+    </p>
+  </div>
+  
+  <div class="ex_04-1">
+    <h4>스크롤 처리 : 세로 스크롤만</h4>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore dolorem ea odit qui maxime facilis, doloremque ab molestias ut ipsum? Quaerat excepturi sapiente unde sint, consectetur libero optio tempora aut!
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum sapiente deleniti architecto blanditiis sunt eligendi inventore? Illo adipisci, ullam eius cumque provident placeat, rerum corporis magnam qui, blanditiis deleniti voluptate!
+    </p>
+  </div>
+
+  <div class="box">
+    <div class="left">left</div>
+    <div class="right">right</div>
+  </div>
+  
+
+
+</body>
+</html>

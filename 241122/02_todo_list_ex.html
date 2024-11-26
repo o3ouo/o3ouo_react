@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>todo</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+
+      /* 드래그 방지 */
+      user-select: none;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    
+    ul {
+      list-style: none;
+    }
+
+    .list {
+      width: 100%;
+      max-width: 500px;
+      min-height: 600px;
+      border: 1px solid #333;
+      overflow: hidden;
+      padding: 16px;
+      border-radius: 30px;
+    }
+
+    .list h2 {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .list form {
+      margin-bottom: 40px;
+    }
+
+    .list form input {
+      display: block;
+      width: 90%;
+      height: 50px;
+      margin: auto;
+      padding-left: 24px;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .list .todolist {
+      width: 90%;
+      margin: auto;
+    }
+
+    .list .todolist ul li {
+      margin-bottom: 16px;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      let todoForm = document.querySelector(".todo");
+      let todoText = document.querySelector("#text");
+      let todoList = document.querySelector(".todolist");
+
+      let todo_is = "할 일";
+      let todos = [];
+
+      function deletetodo (e) {
+        console.log(e);
+        let btn = e.target;
+        let li = btn.parentNode; // 부모에 대한 값을 가져오겠다
+        todoList.removeChild(li);
+        let cleantodos = todos.filter( todo => {
+          return todo.id !== parseInt(li.id);
+        });
+        todos = cleantodos;
+      };
+
+      function save () {
+        localSorage.setItem(todo_is, JSON.stringify(todos));
+      };
+
+      function todo (text) {
+        let li = document.createElement("li");
+        let delbtn = document.createElement("button");
+        let newid = todos.length+1;
+        delbtn.innerHTML = "삭제";
+        delbtn.addEventListener("click", deletetodo)
+        li.innerHTML = text;
+        li.appendChild(delbtn);
+        li.id = newid;
+        todoList.appendChild(li);
+        let todoobj = {
+          text,
+          id: newid
+        };
+        todes.push(tododbj);
+        save();
+      };
+
+      function submit (e) {
+        e.preventDefault();
+        // 자바스크립트에서 이벤트의 기본 동작을 막고 개발자가 원하는 동작을 구현시 사용
+        let text_i = todoText.value;
+        todo(text_i);
+        todoText.value = "";
+      };
+
+      // form 박스는 데이터를 안으로 밀어넣는 것임. 그래서 submit이라는 이벤트를 줄 수 있음
+      todoForm.addEventListener("submit", submit);
+
+      //////////////////////////////////////////
+    });
+  </script>
+</head>
+<body>
+  
+  <div class="list">
+    <h2>오늘 할 일</h2>
+    <form action="#" class="todo">
+      <input type="text" placeholder="오늘 할 일" id="text">
+    </form>
+
+    <ul class="todolist">
+    </ul>
+  </div>
+
+</body>
+</html>

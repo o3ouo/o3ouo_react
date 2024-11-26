@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&family=Lobster&family=Oswald:wght@200..700&family=Song+Myung&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Oswald", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: skyblue;
+  position: relative;
+}
+
+.header .logo {
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  left: 100px;
+  color: #333;
+  align-content: center;
+}
+
+.header .menu {
+  display: inline-block;
+  position: absolute;
+  right: 100px;
+  height: 100%;
+  align-content: center;
+}
+
+.header .menu li {
+  float: left;
+  margin: 0 20px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.header .menu li:hover a {
+  color: salmon;
+}
+
+.b_img {
+  background-image: url(../position_test/main.png);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 581px;
+  position: relative;
+}
+
+.b_img .txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(135, 206, 235, .5);
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.contents {
+  width: 100%;
+  position: relative;
+}
+
+.contents .title {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 100px;
+  margin-left: -50px;
+}
+
+.contents .txt {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  width: 500px;
+  margin-left: -250px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.contents .slide {
+  position: absolute;
+  width: 500px;
+  height: 400px;
+  top: 130px;
+  left: 50%;
+  margin-left: -250px;
+  background-color: #333;
+}
+
+.contents .s_img {
+  position: relative;
+  height: 100%;
+}
+
+.contents .s_img .l_btn {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background-color: rgba(255, 255, 255, .5);
+  width: 50px;
+  height: 50px;
+  border: none;
+  margin-top: -25px;
+  color: #fff;
+}
+
+.contents .s_img .r_btn {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  background-color: rgba(255, 255, 255, .5);
+  width: 50px;
+  height: 50px;
+  border: none;
+  margin-top: -25px;
+  color: #fff;
+}
+
+

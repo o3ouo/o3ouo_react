@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>색상관련</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: rgb(238,174,202);
+      background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    }
+
+    div {
+      width: 100%;
+      height: 100px;
+      text-align: center;
+      align-content: center;
+    }
+
+    #word {
+      background-color: #008000;
+      /* 단어 표현 방식 : 색상의 이름을 직접적으로 작성 */
+    }
+
+    #hex {
+      background-color: rgb(0, 128, 0);
+      /* hex : 6자리의 웹 코드를 작성 */
+      /* 반복되는 두 자리는 한 자리로 줄여서 표현 가능 : #00/00/00 > #000 */
+    }
+
+    #rgb {
+      background-color: rgb(0, 128, 0);
+      /* rgb : red, green, blue 256가지의 색상을 조합해서 표현하는 방식 */
+      /* 각 색상당 0 ~ 256가지의 색상이 존재 */
+      /* 빛에 대한 색상 표현 방식 */
+    }
+
+    #rgba {
+      background-color: rgba(0, 128, 0, 50%);
+      /* rgba : rgb 표현방식 alpha 값 추가 */
+      /* alpha : 색상에 대한 투명도 */
+      /* 0 ~ 1 소수점, 퍼센트로 표현 */
+    }
+
+    #hsl {
+      background-color: hsl(120, 100%, 25%);
+      /* 실무에서 거의 사용되지는 않음  */
+      /* hue : 색조, saturation : 채도, lightness : 명도 */
+      /* 양 값으로 색상 지정 */
+    }
+
+    #hsla {
+      background-color: hsla(120, 100%, 25%, .5);
+      /* hsl 표현 방식에 alpha 투명 값 추가  */
+    }
+  </style>
+</head>
+<body>
+  <div id="word">단어 : 단어로 입력하는 방식</div>
+  <div id="hex">컬러코드 : #웹 번호로 입력하는 방식</div>
+  <div id="rgb">rgb : red, green, blue의 숫자 값을 입력하는 방식</div>
+  <div id="rgba">rgba : rgb 표현 방식에 alphae 값 추가</div>
+  <div id="hsl">hsl : hue, saturation, lightness의 양값을 입력하는 방식</div>
+  <div id="hsla">hsla : hsl 표현 방식에 aplha 값 추가</div>
+
+  <br>
+
+  <dl>
+    <dt>* aplha</dt>
+    <dd>> 색상의 투명도를 결정</dd>
+
+    <br>
+
+    <dt>* opacity</dt>
+    <dd>> 상속의 특징을 가지고 있음</dd>
+    <dd>> 자식요소를 포함한 모든 부분의 투명도가 적용</dd>
+    <dd>> %, 소수점</dd>
+    <dd>> opacity : 0으로 요소를 투명하게 처리</dd>
+
+    <br>
+
+    <dt>* display : none</dt>
+    <dd>> 요소 자체를 삭제</dd>
+  </dl>
+
+  <br>
+
+  <style>
+    h1 {
+      width: 300px;
+      height: 300px;
+      margin: 50px 30px;
+      background-color: #efefef;
+      text-align: center;
+      align-content: center;
+      box-shadow: 5px 5px 10px #333;
+      /* 박스에 그림자를 넣는 속성 : x축 y축 그림자크기(블러값) 그림자색상 */
+      /* 0px 0px 10px #333 > 크기를 0으로 주게되면 상하좌우 모두 넣을 수 있다 */
+      /* rgba 값을 사용해 투명도 조절 가능 */
+      text-shadow: 2px 2px 0px #f00;
+    }
+  </style>
+  <h1>box</h1>
+
+  <dl>
+    <dt>* box-shadow</dt>
+    <dd>> 박스에 그림자를 넣는 속성 : x축 y축 그림자크기(블러값) 그림자색상</dd>
+    <dd>> 0px 0px 10px #333 > 좌우 크기를 0으로 주게되면 상하좌우 모두 넣을 수 있다</dd>
+    <dd>> rgba 값을 사용해 투명도 조절 가능</dd>
+
+    <br>
+
+    <dt>* text-shadow</dt>
+    <dd>> 텍스트에 그림자를 넣는 속성 : x축 y축 그림자크기(블러값) 그림자색상</dd>
+  </dl>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문서 객체</title>
+</head>
+<body>
+  <script>
+    /*
+    html 페이지에 있는 html, head, body, title .. 등을 html 언어에서는 요소(Element), 자바스크립트에서는 엘리먼트를 문서객체라고 부름
+
+    문서객체 : 자바스크립트에서 DOM(Document Object Model)을 통해 웹페이지의 구조를 프로그래밍적으로 접근하고 조작할 수 있는 객체
+
+    선택할 요소가 1개인 경우 :
+    document.querySelector(선택자 혹은 css문법)
+
+    선택할 요소가 2개 이상인 경우 
+    : NodeList(Element들을 컬렉션으로 나타내는 객체 = 유사배열객체)
+    document.querySelectorAll(선택자 혹은 css문법)
+
+    요소의 아이디 이름(id)을 선택 :
+    document.getElementById
+
+    요소의 클래스(class) 이름 선택 
+    : HTMLCollection (유사배열객체)
+    document.getElementsByClassName
+
+    선택자.addEventListener('이벤트 종류', () => {});
+    : 자바스크립트에서 이벤트 적용시 사용할 메소드
+    
+    */
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // DOM 문서를 전부 읽고 나서 들어갈 스크립트를 적용, 제이쿼리 실행시 선언문 적는 것과 유사
+
+      alert("2");
+
+    /*
+    문서객체 글자 조작하기
+    
+    .textContent = ''; 
+    : 모든 텍스트(숨겨진 내용 포함)를 반환하며, html 태그나 스타일은 무시
+    : 사용자에게 보이는 텍스트만 필요할 때 사용
+    title1.textContent = `<a href='#'>텍스트 콘텐츠</a>`
+    
+
+    .innerText = '';
+    : 화면에 렌더링된 텍스트만 반환하며, css 스타일 고려
+    : 전체 텍스트를 빠르게 가져올 때
+    title1.textinner = `<a href='#'>innerHTML</a>`
+
+
+    .innerHTML = '';
+    : 입력된 문자열을 html 형식으로 넣어줌
+    */
+    
+    /*
+    문서객체 스타일 조작하기
+    선택자.style.스타일속성 = 값
+    */
+
+    /*
+    문서객체 속성 조작하기
+    문서객체.setAttribute(속성이름, 값) : 특정 속성에 값을 지정, 변경
+    */
+
+    let text = [
+      {
+        "name": "유아정",
+        "age": 28
+      }
+    ]
+
+    let img = document.querySelector(".a");
+    let title = document.querySelector(".title1");
+
+    title.addEventListener('click', () => {
+      title.innerHTML = `
+      name : ${text[0].name} <br>
+      age : ${text[0].age}
+      `
+      
+      title.style.color = "green";
+      title.style.backgroundColor = "pink";
+
+      img.setAttribute('src', '../img/고죠_02.jfif');
+    });
+
+      img.addEventListener('click', () => {
+      img.setAttribute('src', '../img/고죠_03.jfif');
+    });
+
+    ////////////////////////////////
+    });
+
+    // 페이지가 열리면서 script 안에 있는 문장이 실행 > 1
+    // document.addEventListsner("DOMContentLoaded", () => {})는 문서 전체를 다 읽은 뒤 실행하기 때문에 아래에 위치해 있어도 스콥 밖에 있는 1이 먼저 실행되고, 문서를 다 읽고 실행하는 2가 실행된다. 
+    alert("1");
+
+    console.log(document.querySelector("h1"));
+    // h1 태그가 밑에 있기 때문에 읽히지 않음 > null 반환
+
+    function start (text) {
+      text.textContent = "aa"
+    };
+
+
+
+
+  </script>
+
+  <div id="box">
+    <h1 class="box2">box2 : ㅎㅇ</h1>
+    <h1 class="title1">title1</h1>
+  </div>
+
+  <h1 class="box2">box2 : ㅂㄱㅂㄱ</h1>
+  <h1 class="title" onclick="실행(this)">title : ㅎㅇㅎㅇㅂㄱㅂㄱ</h1> <!-- a -->
+  <img class="a" src="../img/고죠_01.jfif" alt="a">
+
+  <script>
+    // h1 태그보다 아래에 있기 때문에 출력됨
+    // h1 태그가 두 개라도 하나만 선택됨 (먼저 읽은 순서대로)
+    let title2 = document.querySelector("h1");
+    console.log(title2);
+    
+
+    // 모든 h1 객체를 불러옴
+    let title3 = document.querySelectorAll("h1");
+    console.log(title3);
+    // NodeList 배열로 변환 후 사용할 수 있음 > Array.from(nodeList)
+    console.log(Array.from(title3));
+
+    //
+    let box = document.getElementById("box");
+    let box2 = box.getElementsByClassName("box2");
+    // box 안에 있는 class box2 언급
+    console.log(box);
+    console.log(box2);
+
+  </script>
+</body>
+</html>

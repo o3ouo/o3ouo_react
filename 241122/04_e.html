@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    img{
+      display: block;
+      max-width: 100%;
+      transition: .2s;
+    }
+    body{
+      display: flex;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+    .container{
+      width: fit-content;
+      height: fit-content;
+      overflow: hidden;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      let box = document.querySelector(".container");
+      let img = box.querySelector("img");
+
+
+      box.addEventListener("mousemove",(e)=>{
+        let x = e.clientX - e.target.offsetLeft ;
+        let y = e.offsetY
+
+        img.style.transformOrigin = `${x}px ${y}px`
+        img.style.transform = "scale(1.4)"
+      
+        box.addEventListener("mouseleave",()=>{
+          img.style.transformOrigin = `center center`
+          img.style.transform = "scale(1)"
+        });
+
+      });
+
+    });
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <img src="./bg.avif" alt="bg">
+  </div>
+  
+</body>
+</html>

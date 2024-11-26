@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex 부모요소</title>
+  <style>
+    .all {
+      width: 100%;
+      height: 100vh;
+      /* 고정값으로 화면만큼의 사이즈를 부여, 자식요소가 넘치더라도 감싸지 않음 */
+      /* min-height: 100vh; */
+      /* 최소 100vh 값이기 때문에 넘치는 자식요소 모두 감싸준다*/
+      background-color: seagreen;
+      display: flex;
+      /* flex 선언 */
+      flex-direction: row ;
+      /* 
+      축 방향 변경
+      row : 수평 (기본값)
+      column : 수직 
+      row-reverse : 수평 역순, 수평으로 뒤집는 것, 교차축이 변경되지 않음
+      column-reverse : 주축을 수직으로 바꾸고 역순으로 정렬, 수직으로 뒤집는 것, 교차축이 변경되지 않음
+      */
+      flex-wrap: wrap;
+      align-content: start;
+      /* 넘치는 내용물을 어떻게 보여줄 지 결정 */
+      /* 요소가 넘칠 때 줄바꿈 여부 */
+      /* 
+      nowrap : 넘치지 않게 (기본값), 부모박스가 줄어들면 자식요소도 줄어든다
+      wrap : 사이즈 초과시 여러 줄로 나누어 배치 
+      > align-content : start로 바로 밑으로 쌓으면서 배치 가능
+      wrap-reverse : 역순 배치 / 밑에서 위로 쌓여짐
+      */
+      flex-flow: row wrap;
+      /* 합성속성 : firection, wrap의 값을 같이 사용 */
+      justify-content: center;   
+      /* 
+      주축에서의 자식요소 정렬 지정
+      flex-start : 축의 시작점에서부터 시작 (기본값)
+      flex-and : 요소를 그대로 밀어서 축의 끝점으로 붙음
+      center : 축에서의 중앙정렬
+      space(간격)-around : 요소의 좌우 여백을 균등하게 분배해서 배치
+      space-evenly : 모든 여백을 균등하게 분배해서 배치
+      space-between : 첫 번째 요소와 마지막 요소를 양 끝에 배치하고 나머지 공간을 균등하게 분배해서 배치
+      */
+      /* align-items: center; */
+      /* 
+      교차축에서의 자식요소 정렬 지정 (한 줄일 경우)
+      wrap 처리가 되지 않은 상태에서 사용
+      flex-start : 교차축에서 시작점
+      center : 교차축에서 중앙정렬
+      flex-end : 교차축에서 끝점에 위치
+      reverse로 축방향을 바꿨을 경우 주축이 수직방향이 되고 교차축이 수평방향이 된다
+      */
+      align-content: center;
+      /* 
+      flex 박스 안에서 쓸 때와 아닐 때의 차이가 있음 
+      교차축에서의 자식요소 정렬 지정 (여러 줄 일 경우)
+      wrap 상태에서 사용  
+      flex-start : 교차축에서 시작점
+      center : 교차축에서 중앙정렬
+      flex-end : 교차축에서 끝점에 위치
+      space(간격)-around : 요소의 좌우 여백을 균등하게 분배해서 배치
+      space-evenly : 모든 여백을 균등하게 분배해서 배치
+      space-between : 첫 번째 요소와 마지막 요소를 양 끝에 배치하고 나머지 공간을 균등하게 분배해서 배치
+      시작, 중간, 끝의 위치가 바뀔 뿐 아이템은 아래로 쌓인다
+      */
+      gap: 0 100px;
+      /*
+      자식요소들 사이의 여백 부여시 사용 
+      1개 > 수평수직
+      2개 > 수평 수직
+      margin과 다른 점은 시작요소와 마지막요소의 차이이다
+      margin은 모든 자식요소에 여백이 들어가지만
+      gap은 자식요소의 사이에만 여백이 들어간다
+      */
+    }
+
+    .item {
+      width: 80px;
+      height: 80px;
+      background-color: skyblue;
+      text-align: center;
+      align-content: center;
+    }
+
+    .item:nth-child(2n) {
+      background-color: salmon;
+    }
+  </style>
+</head>
+<body>
+  <h1>flex</h1>
+  <p>
+    : 축에 대한 정렬 (주축, 교차축) <br>
+    : 부모요소에 display:flex를 지정
+    : 부모요소가 자식요소보다 작아지더라도 넘치지 않고 자식요소가 부모요소에 맞춰 크기가 줄어든다 <br>
+    > 자식요소가 고정값이더라도 줄어듬
+  </p>
+
+  <dl>
+    <dt>* 부모속성</dt>
+    <dd>> display</dd>
+    <dd>> flex-direction</dd>
+    <dd>> flex-wrap</dd>
+    <dd>> flex-flow</dd>
+    <dd>> justify-content</dd>
+    <dd>> align-content</dd>
+    <dd>> align-items</dd>
+    <dd>> gap</dd>
+
+    <br>
+
+    <dt>* 자식속성</dt>
+    <dd>> flex-grow</dd>
+    <dd>> flex-shrink</dd>
+    <dd>> flex-basis</dd>
+    <dd>> flex</dd>
+    <dd>> order</dd>
+    <dd>> align-self</dd>
+  </dl>
+
+  <dl>
+    <dt>* 주축</dt>
+    <dd>> 기본적으로 왼쪽에서 오른쪽으로 나열</dd>
+    <dd>> 수평이 주축이라면 수평은 교차축</dd>
+  </dl>
+
+  <div class="all">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+    <div class="item">10</div>
+  </div>
+ 
+</body>
+</html>

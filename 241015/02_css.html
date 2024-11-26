@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Css</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    #top,
+    #bottom {
+      font-size: 2rem;
+      color: #fff;
+      background-color: lightcoral;
+      text-decoration: none;
+      display: block;
+      width: 150px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      border-radius: 50%;
+    }
+
+    .in {
+      color: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <a href="#bottom" id="top">Bottom</a>
+
+  <h1>
+    CSS : Cascading Style Sheests
+  </h1>
+
+  <div class="box">
+    <strong>
+      * css 문법
+    </strong>
+    <pre style="font-size: 1.2rem;">
+      선택자 { 속성 : 값; ..}
+      selector { property : value; }
+    </pre>
+  </div>
+
+  <div class="box">
+    <strong>
+      * css 적용 방식 3가지
+    </strong>
+    <ol>
+      <li>
+        inline 방식 : 태그 옆에 직접적으로 부여하는 방식 (실무에서 거의 사용하지 않음)
+        <h4 style="color: lightcoral;">Inline 방식</h4>
+      </li>
+      <li>
+        내부 스타일 방식 : head 공간에 style 태그를 제작 후 css 문법을 작성해서 부여하는 방식 (실무에서 거의 사용하지 않음)
+        <h4 class="in">내부 스타일 방식</h4>
+      </li>
+      <li>
+        <span class="star">★★★★★★</span> <br>
+        외부 스타일 방식 : head 공간 안에 link 태그를 사용해서 .css 확장자를 연결 후 css 문서에 css 문법 작성해서 스타일 적용하는 방식 (실무에서 사용)<br>
+        &lt;link rel="stylesheet" href="파일이름.확장자"&gt;<br>
+        rel : 문서 정보 
+        <h4 class="out">외부 스타일 방식</h4>
+      </li>
+    </ol>
+  </div>
+
+  <div class="box">
+    <h2>** 기초 선택자 **</h2>
+
+    <dl>
+      <dt>전체 선택자</dt>
+      <dd>css : *</dd>
+      <dd>> html 내에 등장하는 모든 형태를 선택하는 선택자</dd>
+      <dd>> 초기화 값, 기본 세팅 값</dd>
+    </dl>
+    
+    <dl>
+      <dt>태그 선택자</dt>
+      <dd>css : 태그 이름</dd>
+      <dd>> html 내에 등장하는 특정한 태그를 모두 선택하는 선택자</dd>
+      <dd>> 태그에 대한 기본 설정 값</dd>
+    </dl>
+
+    <dl>
+      <dt id="title">아이디 선택자</dt>
+      <dd>css : #이름 / 태그 id="이름"</dd>
+      <dd>> 특정한 이름을 부여하여 선택하는 선택자</dd>
+      <dd>> html 화면 내에서 하나의 이름만 사용가능</dd>
+      <dd>> 주로 큰 단락, 부모박스에 많이 사용</dd>
+      <dd>> 클래스 선택자 보다 우선 순위</dd>
+    </dl>
+
+    <dl>
+      <dt class="text">클래스 선택자</dt>
+      <dd>css : .이름 / 태그 class="이름"</dd>
+      <dd>> 특정한 이름을 부여하여 선택하는 선택자</dd>
+      <dd>> html 화면 내에서 여러 개의 이름을 사용가능</dd>
+      <dd>> 주로 작은 단락, 자식 박스에 많이 사용</dd>
+      <dd>> 변화가 잦은 요소</dd>
+      <dd>> 같은 속성의 스타일을 적용했을 때에는 제일 마지막에 쓴 최신 코드가 적용된다</dd>
+      <dd></dd>
+    </dl>
+  </div>
+  
+
+  <br><br>
+  <a href="#top" id="bottom">Top</a>
+  <br><br>
+</body>
+</html>

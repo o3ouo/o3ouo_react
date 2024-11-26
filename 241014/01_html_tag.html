@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Viewport" content="windth=device-width, initial-csale=1.0">
+  <title>글자 관련 태그</title>
+  <style>
+    #top,
+    #bottom {
+      font-size: 2rem;
+      color: white;
+      background-color: lightblue;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <a href="#bottom" id="top">Bottom</a>
+  <!-- 주석 태그 -->
+  <!-- 줄바꿈 : <br> -->
+  <!-- 수평줄 : <hr> -->
+
+  <h2>
+    * 블럭(Block) 요소 : 작성한 순서대로 위에서 아래로 쌓이는 형태
+  </h2>
+
+  <h3>
+    &lt;h1&gt; ~ &lt;h6&gt; : 제목을 정의하는 태그 (Heading Tag)<br>
+    > 문서의 구조를 정의하고 검색 엔진 최적화(SEO)에 중요한 역할 <br>
+    > &lt;h1&gt; ~ &lt;h6&gt; 순서대로 사용 권장 <br>
+    > &lt;h1&gt; : 페이지에서 한 번만 사용 가능 - 로고 <br> 
+    > &lt;h2&gt; : 섹션에 해당하는 제목 <br>
+  </h3>
+
+  <p>
+    &lt;p&gt; : 단락을 정의하는 태그 (일반적 텍스트)
+  </p>
+
+  <blockquote>
+    &lt;blockquote&gt; : 긴 인용문을 나타내는 태그 <br>
+    > 앞쪽 여백이 있음
+  </blockquote>
+
+  <pre>
+    &lt;pre&gt; : 스페이스바, 탭키, 엔터 등이 그대로 적용되어 나타남
+    > br 태그를 사용하지 않아도 줄바꿈이 가능하다
+    > 잘 사용하지 않는 이유 : 일반 글자와 텍스트 스타일이 다름, 유지보수 힘듬 (ex. 스페이스의 간격을 알 수 없음)
+  </pre>
+
+  <hr>
+
+  <h2>
+    * 인라인(Inline) 요소 : 옆으로 나열되어 나타나는 형태 
+  </h2>
+
+  <b>
+    &lt;b&gt; : 텍스트를 굵게 표현시 사용 <br>
+    > 시각적인 스타일 일뿐 의미를 가지고 있지 않음
+  </b>
+
+  <br>
+
+  <strong>
+    &lt;strong&gt; : 텍스트를 굵게 표현시 사용 <br>
+    > 의미론적 : 경고, 주의사항과 같이 중요한 내용을 강조 <br>
+    > 웹 접근성을 고려하여 사용
+  </strong>
+
+  <br><br>
+
+  <i>
+    &lt;i&gt; : 텍스트를 이텔릭체 표현시 사용 <br>
+    > 의미론적 중요성은 없음
+  </i>
+
+  <br>
+
+  <em>
+    &lt;em&gt; : 텍스트를 이텔릭체 표현시 사용 <br>
+    > 의미론적 : 주위 텍스트에 비해서 강조할 때
+  </em>
+
+  <br><br>
+
+  <q>
+    &lt;q&gt; : 짧은 인용문을 나타내는  <br>
+    > 앞 뒤에 쌍따옴표 표현 <br>
+    > 의미론적 : 저자의 생각
+  </q>
+
+  <br><br>
+
+  <mark>
+    &lt;mark&gt; : 텍스트에 형관펜 효과를 주어 강조할 때 사용 <br>
+    > 의미론적 : 강조
+  </mark>
+
+  <br><br>
+
+  <span>
+    &lt;span&gt; : css등 이용하여 글자를 꾸밀 때 사용<br>
+    > 시각적으로 나눠서 스타일을 지정하고 싶을 때 사용
+    > 의미론적인 중요성은 없음
+  </span>
+
+  <br><br>
+
+  <u>
+    &lt;u&gt; : 글자에 밑줄 표현시 사용 <br>
+    > 의미론적 중요성은 없음
+  </u>
+
+  <br>
+
+  <ins>
+    &lt;ins&gt; : 글자에 밑줄 표현시 사용 <br>
+    > 의미론적 : 강조할 때
+  </ins>
+
+  <br><br>
+
+  <s>
+    &lt;s&gt; : 글자에 관통하는 선 표현시 <br>
+    > 의미론적 중요성은 없음
+  </s>
+
+  <br>
+
+  <del>
+    &lt;del&gt; : 글자에 관통하는 선 표현시 <br>
+    > 의미론적 : 문서에서 삭제된 텍스트나 지워야할 부분을 강조할 때
+  </del>
+
+  <br><br>
+
+  <p>
+    &lt;sup&gt; : 글자의 위로 붙는 <sup>위첨자</sup>
+  </p>
+
+  <p>
+    &lt;sub&gt; : 글자의 아래로 붙는 <sub>아래첨자</sub>
+  </p>
+
+  <br><br>
+
+  <ruby>
+    水
+    <rt>물수</rt> <br>
+    &lt;ruby&gt; : 일본어의 후리가나, 중국어의 병음 및 주음 한자의 득음 표기시 사용
+  </ruby>
+
+  <br><hr>
+
+  <h2>
+    특수문자표현 : Entity <br>
+    > html에서 예약된 문자
+  </h2>
+  <p>
+    non-breaking space : &nbsp;<br>
+    less than : &lt;<br>
+    greater than : &gt;<br>
+    ampersand : &amp;
+  </p>
+
+  <br><hr>
+
+  <h2>
+    목록태그 (Block 요소 성질)
+  </h2>
+  <h3>
+    &lt;li&gt; : ol, ul사이 목록태그 (list item)
+  </h3>
+  <strong>
+    - 목록 태그의 속성
+    > 중첩이 가능하며, 개수의 제한이 없다
+  </strong>
+  <h4>
+    - type=""으로 속성 입력 <br>
+    > 기호변경 disc, circle, square, none<br>
+    > 순서변경 a, A, i, I
+  </h4>
+  <h4>
+    - start="시작순서"
+  </h4>
+
+  <h3>
+    &lt;ul&gt; : 순서가 없는 목록 태그 <br>
+    > 각 항목 앞에 불릿기호 <br>
+    > 메뉴 제작시 사용 <br>
+  </h3>
+  <ul>
+    <li>menu-1</li>
+    <li>menu-2</li>
+    <li>menu-3</li>
+    <li>menu-4</li>
+    <li>menu-5</li>
+    <li>Alt + Shift + 방향키 = 복사</li>
+  </ul>
+
+  <h3>
+    &lt;ol&gt; : 순서가 있는 목록 태그 <br>
+    > 순서가 있는 항목
+  </h3>
+  <ol>
+    <li>순서</li>
+    <li>순서</li>
+    <li>순서</li>
+    <li>순서</li>
+    <li>순서</li>
+  </ol>
+
+  <br>
+
+  <h3>
+    &lt;dl&gt; : 정의 목록 태그 <br>
+    > 정의 목록을 설명한 용어와 뜻을 표현
+    > 전자명함, 
+    &lt;dt&gt; : 설명할 용어나 이름 정의
+    &lt;dd&gt; : 해당 용어에 대한 설명이나 정의를 제공
+  </h3>
+
+  <dl>
+    <dt>맥도날드 중앙로점</dt>
+    <dd>주소 : 대구광역시 중구 어딘가</dd>
+    <dd>전화번호 : 000-000-0000</dd>
+    <dd>이메일 : mmmmmmmm@aaaaaaa.com</dd>
+
+    <dt>맥도날드 월성점</dt>
+    <dd>주소 : 대구광역시 월성동 어딘가</dd>
+    <dd>전화번호 : 000-000-0000</dd>
+    <dd>이메일 : mmmmmmmm@aaaaaaa.com</dd>
+  </dl>
+
+  <br><hr>
+
+  <h2>
+    &lt;a&gt; 태그
+  </h2>
+  <p>
+    > 웹 페이지의 연결, URL 연결 시 사용 >> 다른 페이지의 전환(메뉴표현) <br>
+    > Inline 요소 <br>
+    > 글자색, 밑줄, 포인트 커서의 스타일이 기본적으로 적용되어 있음 <br>
+    > 브라우저 내에서의 전환 (a 태그의 기본 성질)<br>
+    > href="URL" 필수 작성<br>
+    > 색상에 따라 브라우저가 어떤 상태인지 알 수 있다. <br>
+    >> 파랑 : 한 번도 클릭하지 않았을 때, 보라 : 한 번 이상 접속했을 때, 빨강 : 클릭 시
+  </p>
+  <a href="#">임시 링크</a> <br>
+  <a href="https://www.naver.com">초록창</a>
+
+  <h4>
+    - target="" : 링크를 클릭 시 열리는 위치를지정 <br>
+    > _self : 현재 창에서 전환 / 기본값 <br>
+    > _blank : 새 창에서 전환 <br>
+    > _parent : 부모 프레임에서 전환 (여러 개의 프레임이 겹쳐져 있을 때 사용) <br>
+    > _top : 최상위 프레임에서 전환 (여러 개의 프레임이 겹쳐져 있을 때 사용)
+  </h4>
+  <a href="https://www.daum.net" target="_blank">파란창</a>
+
+  <h4>
+    - download : 클릭 시 파일을 다운로드하도록 설정 
+  </h4>
+  <!-- <a href="기존 파일" download="새로운 파일 이름"></a> -->
+
+  <!-- href="아이디 선택자" : 아이디 선택자 위치로 이동 -->
+
+  <h4>
+    특수한 연결 <br>
+    > 메일(mailto) <br>
+    > 전화(tel) <br>
+    > 문자(sns)
+  </h4>
+  <a href="mailto:o3ouo@daum.net">메일</a>
+  <a href="tel:00000000">전화</a>
+
+  <br>
+
+  <h4>
+    ** 파일의 경로 찾는 방법 > 작성하고 있는 문서 기점으로부터 시작 ! **
+  </h4>
+    <p>
+      현재 문서와 같은 위치에 파일 연결 > "파일이름.확장자"
+    </p>
+    <a href="sub_01.html" target="_blank">서브페이지_01</a>
+    <a href="sub_02.html" target="_blank">서브페이지_02</a>
+    <p>
+      현재 문서와 다른 위치에 파일 연결 <br>
+      - 폴더 안의 파일 연결 > "폴더이름/파일이름.확장" <br>
+      - 폴더 밖의 파일 연결 > "../파일이름.확장자"
+    </p>
+    <p>
+      현재 문서와 같은 위치에 파일 탐색 : "./"
+    </p>
+
+
+  <br><br>
+  <a href="#top" id="bottom">Top</a>
+  <br><br>
+</body>
+</html>
+

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table 태그</title>
+</head>
+<body>
+  <h1>표 관련 태그</h1>
+
+  <dl>
+    <dt>* table</dt>
+    <dd>> 표를 나타내는 태그</dd>
+    <dd>> table > tr(table row) > td</dd>
+    <dd>> table : 표를 감싸는 부모태그</dd>
+    <dd>> 표를 표현시 기본값으로 선을 표현한다</dd>
+    <dd>>> table, td {border: 2px solid #808080}</dd>
+    <dd>> table에 크기를 지정하면 td의 크기가 자동으로 분배되고 페이지를 줄이면 넘치면서 스크롤이 생긴다</dd>
+    <dd>> 크기 부여는 자신이 편한 방식으로 하면 됨</dd>
+
+    <dt>* tr </dt>
+    <dd>> 행, 표에서 위에서 아래로 만들어지는 수평줄</dd>
+
+    <dt>* td</dt>
+    <dd>> 열, 표에서 옆으로 만들어지는 칸에 해당하는 부분</dd>
+    <dd>> 안쪽에 내용물을 넣어서 표현</dd>
+    <dd>> td에 크기를 지정해도 table의 사이즈가 줄어들면 td도 줄어든다</dd>
+   
+    <dt>* th</dt>
+    <dd>> table의 heading 구분 지을 때 사용</dd>
+    <dd>> 기본적으로 적용되는 스타일 : text-align: center, font-weight: bold</dd>
+
+    <dt>* caption</dt>
+    <dd>> table의 제목 표기 > 표의 중심 배치</dd>
+    <dd>> 표 맨 아래에 입력해도 맨 상단에 위치한다</dd>
+    <dd>> 기본적으로 표 중심의 중앙정렬 됨</dd>
+
+    <dt>* 표의 병합</dt>
+    <dd>> colspan : 칸, 열에 대한 병합</dd>    
+    <dd>> rowspan : 줄, 행에 대한 병합</dd>
+    <dd>> 병합한 갯수 영역만큼 삭제하거나 주석처리 해야 한다</dd>
+
+    <dt>* thead</dt>
+    <dd>> table의 머리말을 의미</dd>
+
+    <dt>* tbody</dt>
+    <dd>> table의 내용이 들어간다는 의미</dd>
+
+    <dt>* tfoot</dt>
+    <dd>> table의 하단이라는 의미</dd>
+    <dd>> 마지막, 결과값</dd>
+  </dl>
+
+
+  <style>
+    table, td, th {
+      border: 2px solid #808080;
+    }
+
+    table:not(.col) td, th {
+      width: 150px;
+      height: 50px;
+    }
+  </style>
+
+  <table>
+    <caption>표의 제목</caption>
+    <tr>
+      <th>heading</th>
+      <th>heading</th>
+      <th>heading</th>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+  </table>
+
+  <br><br>
+
+  <table>
+    <caption>표의 병합</caption>
+    <tr>
+      <td rowspan="4">1</td>
+      <td>2</td>
+      <td colspan="3">3</td>
+      <!-- <td>4</td>
+      <td>5</td> -->
+    </tr>
+    <tr>
+      <!-- <td>6</td> -->
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <!-- <td>11</td> -->
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <!-- <td>16</td> -->
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+      <td>20</td>
+    </tr>
+  </table>
+
+  <br><br>
+
+  <table>
+    <caption>표의 구조(의미)</caption>
+    <thead>
+      <tr>
+        <th>table 머리</th>
+        <th>table 머리</th>
+        <th>table 머리</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>table 내용</td>
+        <td>table 내용</td>
+        <td>table 내용</td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <br><br>
+
+  <!-- colgroup : 테이블의 열을 그룹화하여 스타일 적용 -->
+  <!-- col : 각 열에 대한 스타일 지정 -->
+  <!-- 스타일 크기를 지정하지 않으면 나머지 크기를 가진다 -->
+  <!-- width, height, background-color를 쉽고 빠르게 주기 위해 주로 사용 -->
+  <!-- padding 등 다른 스타일은 col에 적용되지 않는다 -->
+  <style>
+    .col {
+      width: 1200px;
+    }
+  </style>
+
+  <table class="col">
+    <caption>colgroup</caption>
+    <colgroup>
+      <col style="width: 30%;">
+      <col>
+      <col style="width: 11%">
+      <col style="width: 11%">
+    </colgroup>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>21</td>
+      <td>31</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>22</td>
+      <td>32</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>23</td>
+      <td>33</td>
+      <td>43</td>
+    </tr>
+  </table>
+
+</body>
+</html>

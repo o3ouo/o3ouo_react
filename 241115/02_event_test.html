@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=|, initial-scale=1.0">
+  <title>mouse_event</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    figure {
+      width: fit-content;
+      height: fit-content;
+    }
+
+    .wrap {
+      max-width: 816px;
+      margin: 100px auto;
+      display: flex;
+    }
+
+    .left,
+    .right {
+      position: relative;
+      width: 100%;
+    }
+
+    .wrap .i {
+      position: absolute;
+      transition: .8s;
+    }
+
+    /*
+    요소들을 겹칠 때 전부 position 주지 말고, 제일 위에 위치하는 요소에만 position absolute로 위로 겹쳐서 사용
+    */
+
+  </style>
+</head>
+<body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      let box = document.querySelectorAll(".box");
+      let img2 = document.querySelector(".img2");
+      let img4 = document.querySelector(".img4");
+
+      // 개별 선택
+      // img2.addEventListener("mouseover", () => {
+      //   img2.style.opacity='0';
+      // });
+
+      // img2.addEventListener("mouseleave", () => {
+      //   img2.style.opacity='1';
+      // });
+
+      // img4.addEventListener("mouseover", () => {
+      //   img4.style.opacity='0';
+      // });
+
+      // img4.addEventListener("mouseleave", () => {
+      //   img4.style.opacity='1';
+      // });
+
+      // 전체 선택
+      function event (box) {
+        console.log(box);
+
+        box.forEach( (boxs) => { 
+          
+          // let on = boxs.querySelector(".on")  
+          boxs.addEventListener("mouseenter", () => {
+            // on.style.opacity = "0";
+
+            boxs.getElementsByClassName("on")[0].style.opacity = "0";
+          });
+
+          boxs.addEventListener("mouseleave", () => {
+            // on.style.opacity = "1";
+
+            boxs.getElementsByClassName("on")[0].style.opacity = "1";
+          });
+        });
+
+      };
+
+      event(box);
+      
+      
+
+
+
+    })
+  </script>
+
+  <div class="wrap">
+    <div class="left box">
+      <figure class="img1 i">
+        <img src="./mouse_event/view01.jpg" alt="img">
+      </figure>
+      <figure class="img2 i on">
+        <img src="./mouse_event/view02.jpg" alt="img">
+      </figure>
+    </div>
+
+    <div class="right box">
+      <figure class="img3 i">
+        <img src="./mouse_event/view03.jpg" alt="img">
+      </figure>
+      <figure class="img4 i on">
+        <img src="./mouse_event/view04.jpg" alt="img">
+      </figure>
+    </div>
+  </div>
+</body>
+</html>

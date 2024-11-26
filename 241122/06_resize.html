@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>resize</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      margin: 30px;
+      background-color: sandybrown;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box"></div>
+
+
+  <script>
+    
+    let box = document.querySelector(".box");
+
+    // box.addEventListener("mouseover", () => {
+    //   box.style.backgroundColor = "red";
+    // });
+    // box.addEventListener("mouseout", () => {
+    //   box.style.backgroundColor = "#f4a460";
+    // });
+
+    /*
+    resize
+    : 브라우저 창 크기가 변경될 때 실행되는 이벤트 반응형 웹 업데이트에 자주 사용
+    : 사이즈를 유동적으로 바꾸면서 효과를 줄 때 사용
+
+    요소.innerWidth : 영역의 가로 너비
+
+    */
+
+    // let resizetime;
+
+    // window.addEventListener("resize", () => {
+    //   console.log(innerWidth, innerHeight); // innerWidth, innerHeight : 현재 브라우저 창의 크기를 가져옴
+
+    //   clearTimeout(resizetime);
+    //   resizetime = setTimeout(() => {
+    //     console.log(innerWidth, innerHeight);
+
+    //     // 브라우저 창이 특정 사이즈 아래로 떨어졌을 때 
+    //     if(innerWidth < 768) {
+    //       document.body.style.backgroundColor = "#333";
+
+    //       // 이벤트 효과 지우기에 효과적이지 않음 (함수에 담아서 사용 권장)
+    //       box.removeEventListener("mouseover")
+    //     } else {
+    //       document.body.style.backgroundColor = "fff";
+    //     }
+        
+    //   }, 300);
+    //   // 최적화 / 0.3초 뒤에 이벤트 발생
+      
+    // })
+
+    function ho (){
+      
+      if(window.innerWidth <= 767) {
+        box.addEventListener("click", mo);
+      } else {
+        box.removeEventListener("click", mo);
+      }
+    }
+
+    function mo (){
+      alert("click");
+    }
+
+    ho();
+
+    // 효과를 만들두고 resize 이벤트가 일어났을 때 다시 한 번 효과를 적용해주는 것
+    let resizetime;
+
+    window.addEventListener("resize", () => {
+
+      clearTimeout(resizetime);
+      resizetime = setTimeout(() => {
+        ho();
+      }, 300);
+    });
+
+
+
+
+
+  </script>
+</body>
+</html>

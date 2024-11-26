@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>최대값, 최소값</title>
+  <style>
+    .box {
+      /* width: 63%; */
+      /* max-width: 1200px; */
+      /* 최대 유지하고자 하는 넓이값 0% ~ */
+      /* 
+      > max-width로 지정한 크기보다 커지지 않음
+      > 요소에 width 값을 주지 않으면 auto가 되는데 max-width 값을 주면 부모가 아무리 커져도 요소는 max-width 값을 넘기지 않는다 
+      > 부모가 max-width 값 보다 작아지면 요소도 같이 줄어든다
+      > width 값을 지정하지 않은 경우에는 0에서 부터 max-width로 지정한 값까지의 넓이를 모두 가지며 가변하는 값이 된다
+      > width에 가변값을 주지 않고 고정값을 주면 max-width를 써도 소용x
+      > 기본적으로 width에 가변값을 주고 max-width를 사용해야 함
+      */
+
+      min-width: 600px;
+      /* 최소 유지하고자 하는 넓이값 100% ~ */
+      /* 
+      > min-width로 지정한 크기보다 작아지지 않음
+      > 요소에 지정한 min-width의 크기에 도달하면 min-width 만큼의 고정값을 가지게 된다
+      */
+      height: 300px;
+      background-color: #0063da;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box"></div>
+
+  <!-- 
+  width, min-width, max-width 값을 함께 사용한다면
+  max-width의 값보다 커지지 않되, min-width의 값보다 작아지지 않는 width: %의 가변 크기를 가질 수 있다
+
+
+  -->
+</body>
+</html>

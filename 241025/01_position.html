@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position</title>
+  <style>
+    body {
+      height: 300vh;
+    }
+
+    .allbox {
+      width: 700px;
+      height: 700px;
+      border: 2px dashed #0063da;
+      margin: auto;
+    }
+
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: #0063da;
+      position: sticky;
+      top: 100px;
+      left: 100px;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>position</h1>
+  <p>
+    : 요소를 특정한 위치로 지정하여 배치하는 속성 <br>
+    : 어떻게 위치할 지 결정하는 속성 <br>
+    : top, bottom, left, right 좌표값 사용 <br>
+    : 레이아웃을 겹치거나 다른 요소들의 상대 위치로 이동할 때 사용 <br>
+    : position을 주게되면 요소는 콘텐츠 만큼의 크기를 가진다 <br>
+    
+  </p>
+
+  <dl>
+    <dt>* static</dt>
+    <dd>> 기본값</dd>
+    <dd>> 위치 영향을 받지 않음</dd>
+    <dd>> 문서의 일반적인 흐름에 따라 배치</dd>
+    <dd>> 위치 속성의 영향을 받지 않음</dd>
+
+    <dt>* relative</dt>
+    <dd>> 상대 위치</dd>
+    <dd>> 요소를 문서의 흐름에 따라 배치하지만 자신의 원래 위치를 기준으로 상대적으로 이동</dd>
+    <dd>> 무조건 현재 자신의 위치 기준에서 이동</dd>
+
+    <dt>* absolute</dt>
+    <dd>> 절대 위치</dd>
+    <dd>> 요소를 일반적인 배치 흐름과 무관하게 배치</dd>
+    <dd>> 부모 위치가 없을 때는 body가 기준이 되므로 화면상 기준으로 위치가 결정</dd>
+    <dd>> 부모 위치가 존재 시 기준 값이 부모 요소로 이동</dd>
+
+    <dt>* fixed</dt>
+    <dd>> 고정 위치</dd>
+    <dd>> 요소를 브라우저 창(뷰포트) 기준에 고정</dd>
+    <dd>> 스크롤을 해도 요소가 고정된 위치에 남아 있으면 위치가 결정</dd>
+    
+    <dt>* sticky</dt>
+    <dd>> 혼합 위치</dd>
+    <dd>> 특정 스크롤 위치에 도달하기 전까지 relative처럼 동작</dd>
+    <dd>> 특정 위치에 도달 후 fixed 처럼 동작</dd>
+    <dd>> 부모 요소의 높이 속성이 지정 되어 있어야 함</dd>
+  </dl>
+
+  <div class="allbox">
+    <div class="box"></div>
+    
+  </div>
+</body>
+</html>

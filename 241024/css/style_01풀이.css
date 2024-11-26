@@ -1,0 +1,161 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  width: 768px;
+  margin: 30px auto;
+  overflow: hidden; 
+  /* 중첩되는 margin값 살림 */
+}
+
+header select {
+  display: block;
+  width: 96px;
+  height: 32px;
+  padding-left: 8px;  
+}
+
+header h1 {
+  width: fit-content;
+  height: fit-content;
+  margin: 30px auto;
+}
+
+section {
+  width: 460px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+section .cbox {
+  margin-bottom: 24px;
+}
+
+section .cbox .check {
+  width: 100%;
+  height: 32px;
+}
+
+section .cbox .check input {
+  display: block;
+  float: left;
+  width: 16px;
+  height: 16px;
+  margin: 8px 0;
+  margin-right: 8px;
+}
+
+section .cbox .check label {
+  display: block;
+  float: left;
+  height: 100%;
+  align-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+section .cbox .check label span {
+  color: #00C850;
+}
+
+section .cbox .check button {
+  display: block;
+  float: right;
+  height: 24px;
+  padding: 0 8px;
+  margin: 4px 0;
+  border: 1px solid #00C850;
+  background-color: #fff;
+  color: #00C850;
+}
+
+section .cbox .inner {
+  width: 100%;
+  height: 88px;
+  overflow: hidden;
+  overflow-y: scroll;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  line-height: 150%;
+}
+
+section .btn {
+  width: 100%;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+section .btn button {
+  display: block;
+  width: 225px;
+  height: 60px;
+}
+
+section .btn button[type="reset"] {
+  float: left;
+  background-color: #808080;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+section .btn button[type="submit"] {
+  float: right;
+  background-color: #00C850;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+}
+
+footer p {
+  color: #808080;
+}
+
+footer p a {
+  color: #000;
+  text-decoration: underline;
+}
+
+footer ul {
+  margin: 20px 0;
+}
+
+footer li {
+  display: inline-block;
+  color: #808080;
+  letter-spacing: -0.05rem;
+}
+
+footer ul li:not(:last-child)::after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  background-color: #808080;
+  margin-left: 6px;
+}

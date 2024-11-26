@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test_01</title>
+  <style>
+    .box_wrap {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: palevioletred;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation-name: box;
+      
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+    }
+
+    .box:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes box {
+
+      50% {
+        background-color: palegreen;
+        border-radius: 100%;
+        top: 200px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box_wrap">
+    <div class="box"></div>
+  </div>
+</body>
+</html>

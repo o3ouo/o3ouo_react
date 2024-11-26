@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+figure {
+  width: fit-content;
+  height: fit-content;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.header .nav {
+  background-color: #111;
+  color: #fff;
+}
+
+.header .nav ul {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 1rem;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .m_inner {
+  max-width: 1200px;
+  height: 60px;
+  margin: auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.header .m_inner .logo {
+  align-content: center;
+}
+
+.header .m_inner .price {
+  align-content: center;
+  font-weight: 900;
+  font-size: 1.7rem;
+}
+
+.header .bottom {
+  width: 100%;
+  padding: .5rem 1rem;
+  background-color: #ccc;
+  text-align: center;
+  font-size: .8rem;
+  font-weight: 700;
+  color: #808080;
+}
+
+/* main */
+.main_inner {
+  max-width: 1000px;
+  margin: 5rem auto;
+  padding: 0 1rem;
+  display: flex;
+}
+
+.main .left,
+.main .right {
+  width: 50%;
+}
+
+.main .right {
+  flex-basis: 45%;
+}
+
+.main .right .t_box {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
+}
+
+.main .right .t_box .text {
+  margin-top: 2rem;
+}
+
+.main .right .i_box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1.5rem;
+  gap: .5rem;
+}
+
+.main .right .i_box .img {
+  cursor: pointer;
+}

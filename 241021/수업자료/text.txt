@@ -1,0 +1,31 @@
+colorZilla
+Advanced Colorful Goodies
+
+Advanced Colorful Goodies
+
+Advanced Eyedropper, ColorPicker, Color
+Analyzer and other colorful goodies
+for your Chrome and Firefox.
+
+
+Ultimate Gradient Generator
+
+A powerful online Photoshop-like CSS
+gradient editor, image to CSS converter
+and much more
+
+
+
+
+
+참고할 Gradient 사이트 
+https://www.colorzilla.com/gradient-editor/
+
+https://uigradients.com/#Alihossein
+
+https://webgradients.com/
+
+
+
+
+

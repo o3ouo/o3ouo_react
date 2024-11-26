@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글자관련속성</title>
+  <style>
+    * {
+      padding: 5px;
+      margin: 0;
+    }
+
+    dt {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 2rem;
+      background-color: lemonchiffon;
+    }
+  </style>
+</head>
+<body>
+  <!-- 코드펜 : 코드 공유 사이트 -->
+  
+  <h1 class="text">글자 관련 속성</h1>
+
+  <dl>
+    <dt style="color: lightskyblue;">* color</dt>
+    <dd>> 글자 색상 : 단어, hex(컬러코드), rgb..</dd>
+
+    <dt style="font-size: 1.5rem;">* font-size</dt>
+    <dd>> 글자 사이즈 단위 : px, em, rem, pt, v..</dd>
+    <dd>> html 기본 폰트 사이즈 : 16px</dd>
+
+    <dt style="font-weight: lighter;">* font-weight</dt>
+    <dd>> 글자의 굵기 : lighter, normal, bold</dd>
+    <dd>> 100 ~ 900 (100~300 가늘게, 400~600 중간, 700~900 굵게)</dd>
+
+    <dt style="font-style: italic;">* font-style</dt>
+    <dd>> 글자 스타일 : 이텔릭체 변경</dd>
+  
+    <dt style="font-family: 'Courier New', Courier, monospace;">* font-family</dt>
+    <dd>> 글꼴 : 내 컴퓨터에 저장된 글자가 표현</dd>
+    <dd>> 웹 폰트 제외</dd>
+
+    <dt style="letter-spacing: 1.5px;">* letter-spacing</dt>
+    <dd>> 자간 : 글자 사이의 간격</dd>
+    <dd>> px, %, em..</dd>
+
+    <dt style="line-height: 200%;">* line-height</dt>
+    <dd>> 행간 : 줄간격 사이의 간격</dd>
+    <dd>> px, %, 배율</dd>
+    <dd>> 배율 단위로 많이 사용</dd>
+
+    <dt style="text-transform: capitalize;">* text-transform</dt>
+    <dd>> 글자 변형 : 대문자, 소문자, 첫 글자만 대문자</dd>
+    <dd>> uppercase : 모두 대문자로 변경</dd>
+    <dd>> lowercase : 모두 소문자로 변경</dd>
+    <dd>> capitalize : 띄어쓰기를 기준으로 단어의 첫 글자만 대문자로 변경</dd>
+
+    <dt style="writing-mode: vertical-lr;">* writing-mode</dt>
+    <dd> 글자 쓰기 방식 : 왼쪽에서 오른쪽, 위에서 아래로</dd>
+    <dd> Horizontal : 수평</dd>
+    <dd> Vertical : 수직</dd>
+
+    <dt style="text-align: center;">* text-align</dt>
+    <dd>> 글자 수평 정렬 : left, right, center</dd>
+    <dd>> 기본 값은 left</dd>
+    <dd>> 중간 정렬 시 많이 사용</dd>
+
+    <dt style="align-content: center; height: 100px;">* align-content</dt>
+    <dd>> 글자 수직 정렬 : start, center, and</dd>
+    <dd>> 해당 영역의 높이 값이 필수</dd>
+
+    <dt style="text-decoration: underline wavy lightcoral;">* text-decoration</dt>
+    <dd>> 글자 선 : 선의 위치 (생략 불가능), 선의 종류 (생략 가능), 선의 색상 (생략 가능)</dd>
+    <dd>> 색상을 생략하면 폰트의 색상을 따라간다</dd>
+    <dd>> underline, overline, line-through</dd>
+  </dl>
+
+  <br>
+
+  <a href="#" style="color: inherit; text-decoration: none;">*** a 태그 사용 시 기본 설정 값 ***</a>
+  <dl>
+    <dt>* inherit</dt>
+    <dd>> 상위 요소의 설정을 따름</dd>
+  </dl>
+</body>
+</html>

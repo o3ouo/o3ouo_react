@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>화살표함수</title>
+</head>
+<body>
+  <script>
+    /*
+    화살표함수
+    : function 키워드 대신 '=>' 기호를 사용하여 함수를 간결하게 정의할 수 있음.
+    : 화살표 함수 사용시 실행문에 담긴 내용이 자동으로 리턴 값이 된다.
+    : 화살표 함수는 함수명을 정의해서 사용할 수는 없다.
+    : 기본적으로 익명함수 처럼 사용
+    : 특정 키워드 안에 들어가는 함수를 간략하게 쓰기 위해 사용함
+
+    function () {} >> () => {}
+    function () { return } >> () => 리턴값
+
+    
+    */
+
+    // 매개변수가 하나일 때에는 괄호를 생략 가능
+    function a (x) {
+      return x * x;
+    }
+    console.log(a(5)); // 25
+
+    let b = (a) =>  a * a;
+    console.log(b(5)); // 25
+    // 단 매개변수가 하나일 때에는 생략 가능하지만,
+    // 매개변수가 두 개 이상일 때에는 중괄호를 생략할 수 없다.
+
+    console.log('\n');
+
+    // 여러 줄로 구성된 함수는 {}, return이 생략 불가능
+    let c = (a, b) => {
+      console.log(a, b);
+      return a + b;
+    }
+    console.log(c(5, 5));
+
+    
+    let d = (a, b) => {
+      a = a**2;
+      b = b**2;
+      return a + b;
+    }
+    console.log(d(5, 5));
+
+    
+
+    
+
+  </script>
+</body>
+</html>

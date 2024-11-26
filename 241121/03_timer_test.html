@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>timer</title>
+</head>
+<body>
+  
+  <h1>시간 : <span></span></h1>
+  <button type="button" class="start">시작</button>
+  <button type="button" class="stop">정지</button>
+  <button type="button" class="reset">초기화</button>
+  <script>
+    let start = document.querySelector(".start");
+    let stop = document.querySelector(".stop");
+    let reset = document.querySelector(".reset");
+    let text = document.querySelector("h1 span");
+    let clock ;
+
+    start.addEventListener("click", () => {
+      timer();
+    });
+
+    stop.addEventListener("click", () => {
+      clearInterval(clock);
+    });
+
+    reset.addEventListener("click", () => {
+      count = '0';
+      text.textContent = `${count}초`;
+    })
+
+    let count = '0';
+    function timer () {
+      clock = setInterval(() => {
+        count++;
+        text.textContent = `${count}초`;
+      }, 1000);
+    };
+  </script>
+
+  <!-- <script>
+    let btn = document.querySelectorAll("button");
+    let txt = document.querySelector("h1 span");
+    let time = 0;
+    let timer ;
+
+    btn.forEach((btns, idx) => { // 각각의 버튼 선택
+
+      btns.addEventListener("click", () => {
+
+        if (btn[idx] === btn[0]) {
+          timer = setInterval(() => {
+            time++;
+            txt.textContent = `${time}초`
+          }, 1000);
+        } else if (btn[idx] === btn[1]) {
+          clearInterval(timer);
+        } else if (btn[idx] === btn[2]) {
+          time = 0;
+          txt.textContent = `${time}초`
+        };
+      });
+    });
+  </script> -->
+</body>
+</html>

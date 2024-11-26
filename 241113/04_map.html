@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>map</title>
+</head>
+<body>
+  <script>
+    /*
+    map
+    : 콜백함수에서 리턴한 값들을 기반으로 새로운 배열을 만드는 함수
+    : 리턴한 값이 새로 만들어짐
+    : 함수 안에서 계산한 뒤 계산한 배열들을 새로 담아오고 싶을 때 사용
+
+    문법 :
+    배열.map(function (value, index, array) { 문장 });
+
+    value : 현재 처리중인 배열 요소 / 매개변수를 하나라도 넣는 순간 무조건 받을 수 밖에 없음
+    index (선택적) : 현재 요소의 인덱스
+    array (선택적) : forEach가 호출된 배열 자체
+    */
+
+    let array = [273, 52, 103, 32, 57];
+
+    let arrays = array.map(function (value, index, array) {
+      return value * 2;
+    });
+
+    console.log(arrays)
+
+ 
+
+
+
+  </script>
+</body>
+</html>

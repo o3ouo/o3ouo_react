@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열</title>
+</head>
+<body>
+  
+  <script>
+
+  // 변수는 하나의 데이터만 가질 수 있음
+  // 변수에 배열을 할당하고, 그 배열에 여러 개의 데이터를 입력해서 사용
+
+  /*
+  배열(array) 
+  : 여러 개의 데이터를 저장할 수 있는 그릇
+  : 데이터의 구조
+
+  형식 : 
+  let 변수 = [데이터1, 데이터2, 데이터3,..];
+
+  배열의 데이터 얻기 : 변수명[방번호]
+  > 방번호(index)의 순서는 0번부터 시작
+  
+  length : 배열의 데이터가 몇 개 들어있는 지 확인할 때 사용 / 숫자 데이터로 출력
+  > 배열명.length;
+  > 배열명.length-1; : 마지막 index를 구할 때 사용
+
+  */
+  
+  // 배열을 만드는 방법 1
+  let anm = ['dog', 'cat', 'rabbit', 'lion', 'tiger', 'wolf'];
+  console.log(anm);
+
+  // 배열을 만드는 방법 2
+  let anm2 = new Array('dog', 'cat', 'rabbit', 'lion');
+  console.log(anm2); 
+
+  console.log(anm[3]); // lion
+  console.log(anm[3], anm[4]); // lion tiger
+  console.log(anm.length); // 6 
+  // index 갯수가 숫자타입으로 출력됨
+  console.log(anm.length-1);
+  // index의 마지막 번호를 숫자타입으로 출력
+
+  console.log('----------  ----------')
+
+  // 배열의 추가 : push, unshift, splice
+
+  // push : 배열의 마지막 번째에 요소를 추가
+  anm.push('nutria');
+  console.log(anm); 
+  // >(7) ['dog', 'cat', 'rabbit', 'lion', 'tiger', 'wolf', 'nutria'];
+
+  // unshift : 배열의 첫 번째에 요소를 추가
+  anm.unshift('hippo');
+  console.log(anm); 
+  // >(8) ['hippo', dog', 'cat', 'rabbit', 'lion', 'tiger', 'wolf', 'nutria'];
+
+  // splice(시작 인덱스, 제거할 요소의 개수, 추가 요소) : 원하는 순번 째에 요소를 추가, 제거
+  anm.splice(3, 0, 'monkey', 'giraffe');
+  console.log(anm); 
+  // >(10) ['hippo', dog', 'cat', 'monkey', 'giraffe', 'rabbit', 'lion', 'tiger', 'wolf', 'nutria'];
+
+  console.log('---------- 배열 추가 ----------')
+
+  // 배열의 삭제 : pop, shift, splice
+  
+  // pop : 배열의 마지막 번째에 요소를 삭제
+  anm.pop();
+  console.log(anm); 
+  // >(9) ['hippo', 'dog', 'cat', 'monkey', 'giraffe', 'rabbit', 'lion', 'tiger', 'wolf'];
+
+  // shift : 배열의 첫 번째에 요소를 삭제
+  anm.shift();
+  console.log(anm); 
+  // >(8) [dog', 'cat', 'monkey', 'giraffe', 'rabbit', 'lion', 'tiger', 'wolf'];
+
+  // splice(시작 인덱스, 제거할 요소의 개수, 추가 요소) : 원하는 순번 째에 요소를 추가, 제거
+  anm.splice(2, 2);
+  console.log(anm); 
+  // >(6) ['hippo', dog', 'cat', 'rabbit', 'lion', 'tiger', 'wolf', 'nutria'];
+
+  console.log('---------- 배열 삭제 ----------')
+
+  // 배열에 대한 기타 기능
+  document.write(anm) // 배열 자체가 화면에 나타남 (쉼표 포함)
+
+  // join('구분문자') : 배열의 구분 기호 변경
+  document.write(anm.join('')); // 배열에 쉼표 없이 나타남
+
+  // sort() : 배열을 오름차순으로 정렬
+  // 배열의 객체 관리를 할 때 사용
+  console.log(anm.sort());
+  // >(6) ['cat', 'dog', 'lion', 'rabbit', 'tiger', 'wolf']
+  console.log('---------- sort : 오름차순 ----------')
+
+  // reverse() : 배열을 역순으로 정렬
+  console.log(anm.reverse());
+  // >(6) ['wolf', 'tiger', 'rabbit', 'lion', 'dog', 'cat']
+  console.log('---------- reverse : 역순 ----------')
+
+  // slice(시작 인덱스, 끝 인덱스) : 특정 배열 값만 잘라오고 싶을 때 사용
+  // > 시작 인덱스(포함)부터 끝 인덱스 앞까지(끝 인덱스 미포함)
+  // > 재할당이 아닌 새로운 배열로 잘라온 것
+  console.log(anm.slice(2, 4)); 
+  // >(6) ['rabbit', 'lion']
+  console.log('---------- slice : 배열에서 특정 값만 잘라오기 ----------')
+
+  // indexOf() : 배열에서 처음으로 나타나는 위치를 반환, 값이 없으면 -1
+  console.log(anm.indexOf('wolf'));
+  // 0
+  console.log('---------- indexOf : 배열에서 처음으로 나타나는 위치를 반환 ----------')
+
+  // concat() : 두 개 이상의 배열을 결합하여 새로운 배열을 만들 때
+  let n = [1, 2, 3, 4];
+  let h = anm.concat(n); // 변수 anm과 n을 합쳐서 새로운 배열 생성
+  console.log(n);
+  // >(4) [1, 2, 3 4]
+  console.log(h);
+  // >(10) ['wolf', 'tiger', 'rabbit', 'lion', 'dog', 'cat', 1, 2, 3, 4]
+  console.log('---------- concat : 두 개 이상의 배열을 결합하여 새로운 배열 생성 ----------')
+
+
+
+
+
+
+
+
+  </script>
+
+
+</body>
+</html>

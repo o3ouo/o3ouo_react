@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scroll</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      height: 300vh;
+    }
+
+    header {
+      width: 100%;
+      height: 100px;
+      background-color: seagreen;
+      margin-top: 50vh;
+      transition: .3s;
+    }
+
+    button {
+      position: fixed;
+      right: 100px;
+      bottom: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <header></header>
+
+  <button type="button">top</button>
+
+  <script>
+    /*
+    scroll 
+    : 사용자가 스크롤 시 이벤트가 발생
+
+    window.scrollY : 문서의 세로 스크롤 위치 (픽셀 단위)
+    window.scrollX : 문서의 가로 스크롤 위치 (픽셀 단위)
+
+    요소.scrollTop : 특정 요소의 세로 스크롤 위치
+    요소.scrollLeft : 특정 요소의 가로 스크롤 위치
+
+    요소.scrollHeight : 특정 요소의 전체 콘텐츠의 높이
+    요소.clientHeight : 특정 요소의 화면에 보이는 높이
+
+    요소.scrollTo : 특정 요소의 위치로 이동
+
+    innerHeight : 브라우저 창의 뷰포트 높이
+    offsetHeight : 해당 레이아웃 높이를 반환
+
+    요소.offsetTop : 현재 문서에서의 요소의 세로 스크롤 위치를 찾을 때
+
+    getBoundingClientRect() : 요소의 뷰포트 기준 위치를 반환
+    + 현재 스크롤 위치 : 현재 요소의 문서 기준 위치를 구할 수 있다
+    */
+
+    let header = document.querySelector("header");
+    console.log(header.offsetHeight); // header의 높이
+    console.log(header.offsetTop); // header의 현재 스크롤 위치
+
+    window.addEventListener("scroll", () => {
+      console.log(`현재 스크롤 위치 : ${window.scrollY}`)
+
+      // header fixed
+      // if(window.scrollY > 100) {
+      //   header.style.position = "fixed";
+      // } else {
+      //   header.style.position = "static";
+      // }
+
+      // scroll이 상단과 하단에 위치 했을 때
+      // if(window.scrollY === 0) {
+      //   console.log("페이지 상단 도달")
+      // } else if (window.innerHeight + window.scrollY >= document.body.offsetHeight) { // 화면 전체 높이 + 스크롤 높이
+      //   console.log("페이지 하단 도달")
+      // }
+
+      // header fixed 2
+      // if(header.offsetHeight <= window.scrollY) {
+      //   header.style.position = "fixed";
+      //   header.style.top = "0";
+      // } else {
+      //   header.style.position = "static";
+      // }
+
+      // header가 특정 위치에서 사라졌다 나타나는 효과 구현
+      // if(window.scrollY >= header.offsetTop) {
+      //   header.style.opacity = '0';
+      // } else {
+      //   header.style.opacity = '1';
+      // }
+
+      // header가 문서 내에 위치할 때 콘솔창에 "진입" 출력
+      let rect = header.getBoundingClientRect();
+      // console.log(rect);
+
+      if(rect.top < window.innerHeight && rect.bottom >= 0) {
+        console.log("진입");
+      } else {
+        console.log("진입 해제");
+      }
+
+      // if(rect.top < 200) {
+      //   header.styel.opacity = '0';
+      // } else {
+      //   header.style.opacity = '1';
+      // }
+    });
+
+      // top 버튼 클릭하면 상단으로 이동
+      let topbtn = document.querySelector("button");
+
+      topbtn.addEventListener("click", () => {
+        window.scrollTo(0,0);
+      })
+
+  </script>
+</body>
+</html>

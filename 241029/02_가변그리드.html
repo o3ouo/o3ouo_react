@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가변 그리드</title>
+  <style>
+    img {
+      display: block;
+      max-width: 100%;
+      /* max-width : 최대치 */
+      /* 현재 내가 가지고 있는 크기만큼만 커지고 부모 박스가 줄어들면 같이 줄어든다 */
+    }
+
+    .wrap {
+      width: 63%;
+      /* 1200/1900*100 = 63.157... */
+      margin: 150px auto;
+    }
+
+    header {
+      width: 100%;
+      height: 100px;
+      background-color: palegoldenrod;
+    }
+
+    main {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    section {
+      width: 51%;
+      /* 620/1200*100 = 51.166... */
+      height: 300px;
+      background-color: paleturquoise;
+      float: left;
+    }
+
+    aside {
+      width: 45%;
+      /* 540/1200*100 = 45 */
+      height: 300px;
+      background-color: palevioletred;
+      float: right;
+    }
+
+    footer {
+      width: 100%;
+      height: 100px;
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+  가변그리드
+  웹 디자인에서 화면 크기에 따라 레이아웃이 유동적으로 변하는 시스템,
+  반응형 웹 디자인에 사용,
+  다양한 디바이스에서 일관되고 최적화된 화면을 제공
+
+  px(고정값) > %, max/min, v, calc ..(가변값)
+
+  px(고정값) > 비율% (현재 요소의 넓이 / 요소의 부모 넓이 * 100 = 넓이값.반올림)
+  하나에서 일의 자리에서 반올림 했다면 나머지 값도 일의 자리에서 반올림 한다
+
+  데스크톱은 500px까지 줄일 수 있다
+
+  ** picture : 이미지를 특정 사이즈 변경시 사용
+
+
+  -->
+
+  <div class="wrap">
+    <header>header</header>
+
+    <main>
+      <section>section</section>
+      <aside>
+        <picture>
+          <source srcset="./img/고죠_02.jfif" media="(max-width:1000px)">
+          <source srcset="./img/고죠_02.jfif" media="(max-width:1920px)">
+          <img src="./" alt="#">
+        </picture>
+      </aside>
+    </main>
+
+    <footer>footer</footer>
+  </div>
+
+</body>
+</html>

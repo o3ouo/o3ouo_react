@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex 자식요소</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .all {
+      width: 90%;
+      height: 90vh;
+      background-color: rgb(45, 47, 45);
+      display: flex;
+    }
+
+    .item {
+      /* width: 250px; */
+      width: 100%;
+      height: 250px;
+      flex: 1 1 100%;
+    }
+
+    @media screen and (max-width: 767px) {
+
+      .all {
+        flex-direction: column;
+      }
+
+      .b3 {
+        order: -1;
+      }
+    }
+
+    .b1 {
+      background-color: rgb(34, 143, 52);
+      /* flex-grow: 1; */
+      /* 
+      > 남은 공간을 어떻게 분배할 지 비율로 지정
+      > 분배에 대한 비율의 값
+      > 남은 요소의 100%를 사용
+      > 부모박스에서 남는 공간이 없어짐 
+      */
+
+      /* flex-shrink: 0; */
+      /*
+      > 감소에 대한 너비의 비율
+      > 기본값이 0이 아닌 1처리가 되어있음
+      > flex-shrink 값을 0을 준 요소는 줄어들지 않고 나머지 요소의 비율만 줄어든다
+      > 여러 요소에 shrink 값을 0을 주었을 때에는 자식요소보다 부모의 사이즈가 작아지면 자식요소를 감싸지 않고 깨진다
+      */
+
+      /* flex-basis: 30%; */
+      /* 
+      > width 값이랑 비슷함
+      > 자식요소의 기본 크기를 지정할 때 사용
+      > width 값이 같이 존재할 경우 최신코드가 적용됨
+      > 같은 스콥에서 스타일 지정 시 basis 값이 우선 적용됨
+      > 주축이 변경되어 수직이 주축이 되었을 경우 basis 값은 height에 적용됨
+      > 반응형 잡을 때 유용하게 사용
+      */
+
+      /* flex: 1 0 100%; */
+      /* 
+      합성속성 : grow shrink basis
+      */
+
+      /* order: 3; */
+      /* 자식요소의 순서 지정
+      값이 작을 수록 우선 배치
+      하나의 요소를 무조건 우선 배치 하고싶을 때 음수의 값을 사용 */
+
+      align-self: center;
+      /* 
+      > 교차축으로 원하는 위치 배치
+      > width 값이 없을 시 사용되지 않음 
+
+
+      */
+    }
+
+    .b2 {
+      background-color: rgb(36, 81, 165);
+    }
+
+    .b3 {
+      background-color: rgb(163, 96, 33);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 
+  <dl>
+    <dt>* 자식속성</dt>
+    <dd>> flex-grow</dd>
+    <dd>> flex-shrink</dd>
+    <dd>> flex-basis</dd>
+    <dd>> flex</dd>
+    <dd>> order</dd>
+    <dd>> align-self</dd>
+  </dl>
+   -->
+
+  <br>
+
+  <div class="all">
+    <div class="item b1"></div>
+    <div class="item b2"></div>
+    <div class="item b3"></div>
+  </div>
+</body>
+</html>

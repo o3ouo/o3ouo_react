@@ -1,0 +1,269 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background-color: #efefef;
+  padding: 0 16px;
+}
+
+header .header_i {
+  max-width: 1600px;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .header_i .ham{
+  width: 32px;
+  height: 40px;
+}
+
+header .header_i .ham .ham_m {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+header .header_i .ham .line {
+  width: 100%;
+  height: 4px;
+  background: #000;
+}
+
+.portfolio  {
+  width: 100%;
+  margin: 15rem 0;
+}
+
+.portfolio .p_title {
+  text-align: center;
+}
+
+.portfolio .p_title h2 {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.portfolio .p_title p {
+  font-weight: 900;
+  font-size: calc(32px + 1vw);
+  margin: 8px 0;
+  margin-bottom: 16px;
+}
+
+.portfolio .p_title button {
+  display: block;
+  margin: auto;
+  padding: 4px 16px;
+  border-radius: 30px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.portfolio .contents {
+  padding: 24px;
+  margin-top: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.portfolio .contents .box {
+  width: 100%;
+  height: 450px;
+  background-color: #ccc;
+  border-radius: 30px;
+}
+
+.portfolio .contents .box:is(:nth-child(1),:nth-child(2),:nth-child(5),:nth-child(6)) {
+  /* flex-basis: calc((100% - 48px) * 0.3); */
+  flex-basis: calc(30% - 24px);
+}
+
+.portfolio .contents .box:is(:nth-child(3),:nth-child(4)) {
+  /* flex-basis: calc((100% - 48px) * 0.4); */
+  flex-basis: 40%;
+}
+
+.news {
+  width: 100%;
+  margin-bottom: 15rem;
+  padding: 0 16px;
+}
+
+.news .s_inner {
+  max-width: 1600px;
+  margin: auto;
+}
+
+.news .s_inner .n_title {
+  margin-bottom: 10rem;
+}
+
+.news .s_inner .n_title>p {
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.news .s_inner .n_title .tit {
+  display: flex;
+  align-items: center;
+}
+
+.news .s_inner .n_title .tit h2 {
+  font-size: calc(32px + 1vw);
+}
+
+.news .s_inner .n_title .tit button {
+  display: block;
+  margin-left: 24px;
+  padding: 4px 16px;
+  border-radius: 30px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.news .s_inner .contents {
+  width: 100%;
+  display: flex;
+  gap: 0 24px;
+}
+
+.news .s_inner .contents .box .img {
+  width: 100%;
+  height: 350px;
+  background-color: #ccc;
+}
+
+.news .s_inner .contents .box .box_t {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.news .s_inner .contents .box .box_t span {
+  color: #0063da;
+  font-weight: 600;
+}
+
+footer {
+  width: 100%;
+  padding: 7rem 16px;
+  border-top: 1px solid #333;
+}
+
+footer .footer_i {
+  max-width: 1600px;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer .footer_i .fnb .menu {
+  display: flex;
+  gap: 0 24px;
+}
+
+footer .footer_i .fnb .menu>li {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+footer .footer_i .fnb .menu .submenu li {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 16px 0;
+}
+
+@media screen and (max-width: 1200px) {
+
+  header {
+    padding: 0 40px;
+  }
+
+  .portfolio .contents .box:is(:nth-child(1),:nth-child(4),:nth-child(5)) {
+    flex-basis: calc((100% - 24px) * 0.45);
+  }
+  
+  .portfolio .contents .box:is(:nth-child(2),:nth-child(3),:nth-child(6)) {
+    flex-basis: calc((100% - 24px) * 0.55);
+  }
+
+  .news {
+    padding: 0 40px;
+  }
+
+  .news .s_inner .contents {
+    flex-wrap: wrap;
+    gap: 0 40px;
+  }
+
+  .news .s_inner .contents .box {
+    flex-basis: calc((100% - 40px) / 2);
+    margin-bottom: 40px;
+  }
+
+  footer {
+    padding: 5rem 40px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+
+  header {
+    padding: 0 16px;
+  }
+
+  .portfolio .contents {
+    gap: 24px 0;
+  }
+
+  .portfolio .contents .box:is(:nth-child(1),:nth-child(4),:nth-child(5)) {
+    flex-basis: 100%;
+  }
+  
+  .portfolio .contents .box:is(:nth-child(2),:nth-child(3),:nth-child(6)) {
+    flex-basis: 100%;
+  }
+
+  .news {
+    padding: 0 16px;
+  }
+
+  .news .s_inner .contents {
+    gap: 0;
+  }
+
+  .news .s_inner .contents .box {
+    flex-basis: 100%;
+  }
+
+  footer {
+    padding: 5rem 16px;
+  }
+}

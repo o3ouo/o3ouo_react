@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상요소활용</title>
+  <style>
+    body {
+      background-image: url(../img/고죠_01.jfif);
+    }
+
+    ul li {
+      float: left;
+      margin: 0 16px;
+      list-style: none;
+    }
+
+    ul li:not(:last-child)::after {
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 10px;
+      background-color: #000;
+      margin-left: 32px;
+      /* li에 양쪽에 margin 값이 있을 때에는 margin의 두 배 값으로 설정하면 됨 */
+      /* li들이 왼쪽으로만 밀려있을 경우에는 똑같은 값을 주면 됨 */
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="#">menu-01</a></li>
+    <li><a href="#">menu-02</a></li>
+    <li><a href="#">menu-03</a></li>
+    <li><a href="#">menu-04</a></li>
+    <li><a href="#">menu-05</a></li>
+  </ul>
+</body>
+</html>

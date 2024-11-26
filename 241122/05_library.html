@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>라이브러리</title>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> -->
+  <!-- cdn으로 연결 -->
+  <link rel="stylesheet" href="./css/swiper.css">
+  <!-- css 전체 복사 후 새로운 css로 만들어서 연결 / 수정할 수 있음 -->
+  <style>
+    .sbox {
+      width: 80%;
+      height: 80vh;
+      margin: 100px auto;
+      box-shadow: 0px 0px 5px #808080;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let swiper = new Swiper(".sbox", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        // 좌우 버튼
+
+        touchRatioL: 0,
+        // 드래그 불가능 0, 가능 1
+
+        autoplay: {
+          delay : 3000,
+        },
+        // 자동 재생
+
+        centeredSlides: true,
+
+        spaceBetween: 30,
+
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        
+        loop:true, 
+        // 슬라이드를 계속 반복하고 싶을 때 loop를 사용해 마지막 이미지 뒤에 다시 처음 이미지가 반복 되도록 만듬
+       
+        slidesPerView: '2',
+        // 화면에 나타나는 이미지의 갯수를 선택
+       
+        breakpoints: {
+          767 : { 
+            slidesPerView: '2',
+          },
+          1400 : {
+            slidesPerView: '1',
+          }
+        },
+        // 반응형 설정
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <!-- 
+  1. 라이브러리에서 제공하는 css, script 파일을 html에 연결
+  -->
+
+    <!-- swiper는 객체 -->
+    <!-- Swiper -->
+    <div class="swiper mySwiper sbox">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="../img/gojo.jpg" alt="gojo">
+        </div>
+        <div class="swiper-slide">
+          <img src="../img/gojo2.jpg" alt="gojo">
+        </div>
+        <div class="swiper-slide">
+          <img src="../img/gojo3.jpg" alt="gojo">
+        </div>
+        <div class="swiper-slide">
+          <img src="../img/gojo4.jpg" alt="gojo">
+        </div>
+        <div class="swiper-slide">
+          <img src="../img/gojo5.jpg" alt="gojo">
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- 
+    
+    typeitjs
+    -->
+</body>
+</html>

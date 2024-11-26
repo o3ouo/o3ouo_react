@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table 속성</title>
+  <style>
+    table {
+      /* border: 1px solid lightblue; */
+      margin: 50px;
+      border-collapse: separate;
+      /* table과 td 사이의 선값의 유무를 결정하는 속성 */
+      /* separate : 기본값. 선과 선 사이의 틈이 생긴 상태 */
+      /* collapse : 선과 선사이의 틈을 병합 - table 표현시 */
+      /* 부모에만 콜랩스 처리를 해도 충분히 결합이 된다 */
+      border-spacing: 40px 20px;
+    }
+
+    td {
+      border: 1px solid lightblue;
+      width: 150px;
+      height: 100px;
+      empty-cells: hide;
+      text-align: center;
+      vertical-align: top;
+    }
+
+    .t {
+      border-collapse: collapse;
+      border: 1px solid #808080;
+      width: 1200px;
+      margin: auto;
+      border-left: none;
+      border-right: none;
+    }
+
+    .t :is(td,th) {
+      width: 200px;
+      height: 40px;
+      border: 1px solid #ccc;
+      border-right: none;
+      border-left: none;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    .t th {
+      border-top: 2px solid #000;
+      border-bottom: 2px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>table 속성</h1>
+
+  <dl>
+    <dt>* border-collapse</dt>
+    <dd>> table과 td사이의 선 값의 유무를 결정하는 속성</dd>
+    <dd>> separate : 기본값. 선과 선 사이의 틈이 생긴 상태</dd>
+    <dd>> collapse : 선과 선사이의 틈을 병합 - table 표현시</dd>
+    <dd>> 부모에만 collapse 처리를 해도 충분히 결합이 된다</dd>
+
+    <dt>* border-spacing</dt>
+    <dd>> 셀들의 간격을 지정하는 값</dd>
+    <dd>> collapse 처리가 되어있지 않을 때 사용할 수 있다</dd>
+    <dd>> 1개 - 수평수직 / 2개 - 수평 수직</dd>
+
+    <dt>* empty-cells</dt>
+    <dd>> 빈셀의 보여지는 유무를 결정</dd>
+    <dd>> 기본값 : show</dd>
+    <dd>> table 태그에 부여</dd>
+    <dd>> hide를 지정하면 빈셀은 보이지 않는다</dd>
+    <dd>> collapse 처리가 되어있지 않을 때 사용할 수 있다</dd>
+
+    <dt>* vertical-align</dt>
+    <dd>> 수직에 대한 정렬</dd>
+    <dd>> middle : 기본값</dd>
+    <dd>> top, middle, bottom</dd>
+    <dd>> td 태그는 기본적으로 안에 있는 요소가 수직상 중심 배치가 된다</dd>
+    <dd>> </dd>
+  </dl>
+  
+  <table>
+    <caption>table 속성</caption>
+    <tr>
+      <td>1</td>
+      <td></td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td></td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td></td>
+    </tr>
+  </table>
+
+  <br><br>
+
+  <table class="t">
+    <colgroup>
+      <col style="width: 10%">
+      <col>
+      <col style="width: 10%">
+      <col style="width: 10%">
+    </colgroup>
+    <tr>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+  </table>
+</body>
+</html>

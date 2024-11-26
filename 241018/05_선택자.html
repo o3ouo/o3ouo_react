@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자_02</title>
+</head>
+
+<body>
+
+  <dl>
+    <dt>* 속성선택자</dt>
+    <dd>- 특정한 속성이나 특정한 속성값을 가지고 있는 html 요소를 선택 시</dd>
+    <dd>- [속성이름 = "속성값"]</dd>
+    <dd>> 속성 이름을 제시하고 일반적인 속성을 불러 값을 설정할 때</dd>
+    <dd>- [속성이름$ = "속성값"]</dd>
+    <dd>> 특정한 속성명이 존재할 때 속성명의 접미사로 끝나게 되는 속성 값을 설정할 때 ex. 확장자</dd>
+    <dd>- [속성이름* = "속성값"]</dd>
+    <dd>> 특정 문자가 들어간 속성값을 불러올 때</dd>
+
+  </dl>
+
+  <style>
+    .pw {
+      background-color: salmon;
+    }
+
+    input[type="text"] {
+      background-color: seagreen;
+    }
+
+    img[src$="jfif"] {
+      border: 1px solid skyblue;
+    }
+
+    div[class*="header"] {
+      border: 1px solid sandybrown;
+      padding: 30px;
+      margin: 20px;
+    }
+  </style>
+
+  <input type="text" class="pw"> <br>
+  <input type="password" class="pw"> <br>
+
+  <img src="../img/고죠_03.jfif" alt="고죠3">
+  <img src="../img/고죠_02.jfif" alt="고죠2">
+
+  <div class="header">
+    <div class="header_i">
+      <div class="header_nav"></div>
+      <div class="header_search"></div>
+    </div>
+  </div>
+
+  <dl>
+    <dt>* input</dt>
+    <dd>> 속성에 대한 값에 따라 타입이 완전히 달라지게 된다</dd>
+    <dd>> type="text" 기본 값</dd>
+    <dd>> 패스워드 : 암호화 처리가 되어 입력된다</dd>
+  </dl>
+
+  <br>
+  <hr>
+
+  <dl>
+    <dt>* :focus </dt>
+    <dd>> 요소에 초점이 맞춰진 경우 사용할 수 있음</dd>
+  </dl>
+
+  <style>
+    .focus[type="text"]:focus {
+      background-color: slateblue;
+      color: white;
+    }
+  </style>
+  <input type="text" class="focus"> <br>
+
+  <br>
+
+  <dl>
+    <dt>* 문자선택자</dt>
+    <dd>- ::first-letter > 특정한 선택자에 첫 번째 글자를 선택</dd>
+    <dd>- ::first-line > 특정한 선택자에 첫 줄을 선택</dd>
+  </dl>
+  <style>
+    p::first-letter {
+      font-size: 30px;
+      color: rgb(255, 75, 75);
+    }
+
+    p::first-line {
+      background-color: rgb(151, 255, 61);
+    }
+  </style>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est corrupti animi maxime iusto labore molestiae sapiente
+    maiores, nisi vitae possimus eligendi illo quasi reiciendis esse rem nesciunt iste harum. Quidem.</p>
+  
+    <br>
+
+  <dl>
+    <dt>* 부정선택자</dt>
+    <dd>- 선택자:not(:nth-child(순번))</dd>
+    <dd>- 선택한 요소를 제외</dd>
+    <dd>선택자:not(:nth-child(순번), .class) 쉼표와 클래스 이름을 넣어 중첩 선택을 할 수 있다</dd>
+  </dl>
+  <style>
+    .ul-01 li:not(:nth-child(3), .t) {
+      color: rgb(255, 81, 0);
+    }
+  </style>
+  <ul class="ul-01">
+    <li>menu1</li>
+    <li class="t">menu2</li>
+    <li>menu3</li>
+    <li>menu4</li>
+    <li>menu5</li>
+  </ul>
+
+  <dl>
+    <dt>* 부정선택자</dt>
+    <dd>- 선택자:has(.class)</dd>
+    <dd>- 특정 자식요소를 포함하는 부모 요소를 선택할 수 있는 선택자</dd>
+  </dl>
+  <style>
+    .ul-02:has(.t) li{
+      color: rgb(255, 81, 0);
+    }
+  </style>
+  <ul class="ul-02">
+    <li>menu1</li>
+    <li class="t">menu2</li>
+    <li>menu3</li>
+    <li>menu4</li>
+    <li>menu5</li>
+  </ul>
+  <ul class="ul-02">
+    <li>menu1</li>
+    <li>menu2</li>
+    <li>menu3</li>
+    <li>menu4</li>
+    <li>menu5</li>
+  </ul>
+  
+  <br><hr>
+
+  <dl>
+    <dt>* :is()</dt>
+    <dd>> 여러 선택자를 하나로 묶어 간단하게 작성할 수 있는 기능적 선택자</dd>
+  </dl>
+
+  <style>
+    .box :is(h1,h2,h3) {
+      color: red;
+    }
+  </style>
+
+  <div class="box">
+    <h1>타이틀1</h1>
+    <h2>타이틀2</h2>
+    <h3>타이틀3</h3>
+  </div>
+
+</body>
+
+</html>

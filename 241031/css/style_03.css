@@ -1,0 +1,132 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  max-width: 100%;
+  height: 10vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.header .nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.main {
+  display: flex;
+}
+
+/* left */
+.main .left {
+  flex-basis: 15%;
+  padding: 2rem;
+  border-right: 1px solid #333;
+  height: 80vh;
+}
+
+.main .left .title {
+  text-decoration: underline;
+  margin-bottom: 1.5rem;
+}
+
+.main .left .c_box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.main .left .c_box .c {
+  border: 1px solid #333;
+  padding: 0.5rem 0.25rem;
+}
+
+/* contents */
+.main .contents {
+  flex-basis: 70%;
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  height: 80vh;
+}
+
+.main .contents .box {
+  width: calc((100% - 3rem) / 3);
+  height: calc((100% - 3rem) / 3);
+  background: url(../flex연습/bg.jpg) no-repeat center/cover;
+}
+
+
+/* right */
+.main .right {
+  flex-basis: 15%;
+  padding: 2rem;
+  border-left: 1px solid #333;
+  height: 80vh;
+}
+
+.main .right .title {
+  margin-bottom: 1.5rem;
+}
+
+/* footer */
+.footer {
+  width: 100%;
+  height: 10vh;
+  text-align: center;
+  align-content: center;
+  border-top: 1px solid #333;
+}
+
+@media screen and (max-width: 1024px) {
+  
+  .main {
+    flex-direction: column;
+  }
+
+  .main .left {
+    border-right: 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .main .right {
+    border-left: none;
+    border-top: 1px solid #333;
+  }
+
+  .main .contents .box {
+    height: 30vw;
+    min-height: 200px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .main .right {
+    order: -1;
+    background-color: #333;
+    color: #fff;
+  }
+
+  .main .contents .box {
+    width: calc((100% - 3rem) / 2);
+  }
+
+}

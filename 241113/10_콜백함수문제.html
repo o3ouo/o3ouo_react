@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>콜백함수 문제</title>
+</head>
+<body>
+  <script>
+
+    // 1. 배열 입력 시 100 이하의 홀수 중 3으로 나눈 나머지가 0인 수만 추출
+
+    // let array = [];
+
+    // for( let i = 0; i <= 100; i++) {
+
+    //   if( i % 2 === 1) {
+    //     array.push(i);
+    //   }
+    // };
+
+    // console.log(array);
+
+    // array = array.filter( (value) => value % 3 === 0);
+
+    // console.log(array);
+
+    let array = [1, 2, 3, 4, 5, 6];
+
+    array = array.filter( (value) => value % 2 === 1)
+    .filter( (value) => value % 3 === 0);
+
+    console.log(array);
+  
+    // 2. 숫자 입력 시 짝수를 골라내서 제곱 후 배열로 반환
+
+    let number = [1, 2, 3, 4, 5, 6];
+    let num = [];
+
+    number = number.filter( (value) => value % 2 === 0)
+    .forEach( (value) => {
+      num.push(value**2)
+    } );
+
+    console.log(num);
+
+    // 3. 10초에서 1초가 되면 종료가 되는 함수
+
+    let count = 10;
+
+    function start () {
+
+      let numCount = setInterval( () => {
+        count -= 1;
+        console.log(count);
+      }, 1000);
+    }
+
+    start();
+
+    function and () {
+
+      let countClear = setTimeout( () => {
+        clearInterval(numCount);
+      }, 10000);
+    }
+
+    and();
+
+    // 4. [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6] 배열 중 중복된 요소를 제거 후 짝수의 값만 출력
+  </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>float</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    dl {
+      margin: 10px;
+      padding: 10px;
+    }
+    dt {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .box {
+      width: 800px;
+      height: 300px;
+      border: 3px solid #333;
+      padding: 30px;
+      margin: 50px 10px;
+      align-content: center;
+      text-align: center;
+    }
+
+    img {
+      float: left;
+      margin-right: 20px;
+    }
+
+    .allBox {
+      width: 860px;
+      margin: 50px auto;
+      height: 200px;
+    }
+
+    .item {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000;
+      text-align: center;
+      align-content: center;
+      float: left;
+      margin-right: 20px;
+    }
+
+    .item:nth-child(4) {
+      margin-right: 0;
+    }
+
+    
+    .contents {
+      width: 500px;
+      height: 500px;
+      border: 5px solid sandybrown;
+      margin: 50px auto;
+    }
+
+    .left_c {
+      width: 20%;
+      height: 300px;
+      border: 5px solid salmon;
+      float: left;
+    }
+
+    .right_c {
+      width: 50%;
+      height: 300px;
+      border: 5px solid seagreen;
+      float: left;
+      margin-left: 30%;
+
+    }
+  </style>
+</head>
+<body>
+
+  <dl>
+    <dt>* float</dt>
+    <dd>> 박스를 옆으로 나열할 때 사용</dd>
+    <dd>> 왼쪽이나 오른쪽으로 배치</dd>
+    <dd>> 이미지와 텍스트를 함께 배치하거나 레이아웃 구성시 사용</dd>
+    <dd>> 같은 위치의 여러 요소 중 하나의 요소에 float를 주면 나머지 요소에도 float의 속성이 같이 들어가야 한다</dd>
+    <dd>> 배치를 하지 않는 한 Block 요소를 나열하지 못한다</dd>
+    <dd>> 부모박스가 자식요소의 크기보다 작아질 경우 자식요소는 넘쳐서 다음 라인으로 넘어간다</dd>
+    <dd>> 배치가 되는 순간 부모박스의 높이 값을 잃는다 (자식요소가 떠다니는 성질이 되기 때문에 콘텐츠의 높이가 잡히지 않는다)</dd>
+    <dd>> 배치가 된 요소끼리 묶어서 float을 사용하거나</dd>
+    <dd>> clear를 사용해서 float를 제거</dd>
+  </dl>
+
+  <div class="box">
+    <img src="img/고죠_01.jfif" alt="고죠 사토루">
+    <h1>title</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, mollitia molestiae. Qui, architecto perspiciatis dignissimos odio neque placeat autem obcaecati accusantium velit aliquam repudiandae vero fugiat accusamus eos voluptatum nemo?</p>
+  </div>
+
+  <div class="allBox">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+  </div>
+
+  <div class="contents">
+    <div class="left_c">1</div>
+    <div class="right_c">2</div>
+  </div>
+  
+</body>
+</html>

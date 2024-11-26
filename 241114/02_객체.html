@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체</title>
+</head>
+<body>
+  <script>
+    /*
+    객체 
+    : 실제로 존재하는 사물 
+    : 이름과 값으로 구성된 속성을 가진 기본 데이터 타입
+    : {} 안에 키-값 정의하여 객체를 생성
+    : 쉼표(,)로 구분지어서 생성
+    : 키:값
+    : 객체['키']
+    : 객체.키
+    */
+
+    let instructor = {
+      name: '김태완',
+      age: 20,
+      gender: 'male',
+      hobby: ['잠', '게임', '숨쉬기'],
+      birth: function (a) { return a**2 },
+      subjects: { 웹: '보통', 디자인: '좋음'},
+    };
+
+    console.log(instructor);
+    console.log(instructor['name']);
+    console.log(instructor.age);
+    console.log(instructor.hobby[2]);
+    console.log(instructor.subjects);
+    console.log('---------- 객체 속성 불러오기 ----------');
+
+    for (let i of instructor.hobby) {
+      console.log(i)
+    }
+    console.log('---------- for문으로 객체에 있는 배열의 요소 가져오기 ----------');
+
+    // 배열 안에 객체 여러개 담기
+    let students = [
+      {
+        name: '유아정',
+        age: 28,
+        gender: 'female',
+        hobby: ['술먹기', '공부하기', '밥먹기'],
+        birth: function () {},
+        subjects: {
+          web: '상',
+          design: '좋음',
+        }
+      },
+      {
+        name: '이유나',
+        age: 25,
+        gender: 'female',
+        hobby: ['귀엽기', '예쁘기', '수염둥이'],
+        birth: function (a) {return a**2},
+        subjects: {
+          web: '상',
+          design: '좋음',
+        }
+      },
+  ]
+
+  console.log(students[0]);
+  console.log(students[0].name);
+  console.log(students[1].name);
+  console.log('---------- 배열에 담은 객채 불러오기 ----------');
+
+  for (let i of students) {
+    console.log(i);
+    console.log(i.age);
+  }
+  console.log('---------- 배열에 담은 객채 for문 사용해서 불러오기 ----------');
+  
+
+    /*
+    속성과 메소드
+    배열 내부에 있는 값 > 요소 
+    객체 내부에 있는 값 > 속성
+    객체의 속성 중에 함수자료형 속성 > 메소드
+    객체.키() > 메소드 호출
+    */
+
+    // 객체 속성 중 메소드
+    console.log(students[1].birth(10));
+    console.log('---------- 객체 속성 중 메소드 ----------');
+
+    /*
+    this.키
+    : 메소드 내부에서 자기 자신이 가진 속성을 출력하고 싶을 때, 자기 자신이 가진 속성이라는 것을 표시할 때 사용
+    */
+
+    let menu = {
+      김밥: '참치김밥',
+      라면: function (라면이름) {
+        console.log( `${this.김밥}은 ${라면이름}이랑 먹습니다.` );
+      },
+    };
+
+    menu.라면('신라면');
+    console.log('---------- menu의 속성 중 라면(함수자료형)에 매개변수를 주고 호출 ----------');
+    
+    // 객체 생성, 속성 추가, 속성 제거, 속성 수정
+    let 배희정 = {
+      age: 27,
+    };
+
+    배희정.gender = 'female';
+    배희정.hobby = ['도파민분출', '내엔돌핀', '도파민중독'];
+    console.log(배희정);
+    console.log('---------- 객체 속성 추가 ----------');
+
+    delete 배희정.age;
+    console.log(배희정);
+    console.log('---------- 객체 속성 제거 ----------');
+    
+    배희정.hobby = 배희정.hobby.push('도파민찾아삼만리');
+    배희정.gender = 'male';
+    console.log(배희정);
+    console.log('---------- 객체 속성 수정 ----------');
+
+    /*
+    기본 자료형을 객체로 선언
+
+    let 객체 = new 객체 자료형 이름();
+    */
+
+    // 기본자료형의 타입 선언
+    let objectN = new Number(10); // 숫자 10을 객체로 전환
+    let objectS = new String('String'); // 글자를 객체로 전환
+    let objectB = new Boolean(true); // 불리언 객체로 전환
+    
+    console.log(objectN);
+    console.log(objectS);
+    console.log(objectB);
+    console.log('---------- 기본자료형의 타입 선언 ----------');
+
+    // 함수 추가
+    function friend (name, age) {
+      this.age = age
+      this.name = name
+    };
+
+    // 새로운 객체 생성 후 위에서 만들어 놓은 함수 넣기
+    console.log(new friend('김태완', 20));
+    console.log(new friend('이유나', 20));
+    console.log('---------- 만들어 놓은 재활용함수로 새로운 객체 생성 ----------');
+
+    // 빈 깡통에 넣기
+    let friends = new Object(); // 빈 깡통
+
+    // 빈 깡통에 속성 추가
+    friends.name = '구경희'; 
+    friends.age = 27;
+    console.log(friends);
+    console.log('---------- 빈 깡통에 속성 추가 ----------');
+
+    /*
+    객체 존재 확인(in)
+    '키' in 객체
+    */
+
+    console.log('name' in friends) // true (존재함)
+    console.log('hobby' in friends) // false (존재하지 않음)
+    console.log('---------- 객체 속성 존재 확인 ----------');
+
+
+    if (! ('info' in friends)) {
+      friends.info = ['가을여자', '상여자', '알빠노'];
+    }
+    
+    console.log(friends);
+    console.log('---------- if문으로 객체 속성 존재하지 않는다면 추가 ----------');
+
+    /*
+    JSON 객체 (일반 객체를 경량화 한 것이라고 생각하면 됨)
+    : JavaScript Object Notation
+    : 경량의 데이터 교환 형식으로 주로 웹 애플리케이션에서 서버와 클라이언트 간의 데이터를 전송할 때 사용
+    : 자바스크립트 객체 표기법을 기반으로 하지만 자바스크립트 외에도 다양한 프로그래밍 언어에서 쉽게 읽고 생성할 수 있는 언어 독립적 형식
+    */
+
+    let best = [
+    {
+      "name": "이상민",
+      "age": 26, // 숫자는 "" 없이 사용
+      "info": ['헬중', '배려왕'],
+    },
+    {
+      "name": "배희정",
+      "age": 27,
+      "info": ['아이시떼루', '알러뷰', '워아이니']
+    }
+    ];
+  
+    console.log(best);
+    console.log('---------- JSON 표기법으로 쓴 예 ----------');
+
+
+    // stringify : JSON 객체를 문자열로 나열해서 호출
+    console.log(JSON.stringify(best));
+    console.log('---------- stringify : JSON 객체를 문자열로 나열해서 호출 ----------');
+
+    // parse : 문자열로 나열된 JSON 객체를 객체 타입으로 나열해서 호출
+    let json = JSON.stringify(best);
+    console.log(JSON.parse(json));
+    console.log('---------- parse : 문자열로 나열된 JSON 객체를 객체 타입으로 나열해서 호출 ----------');
+
+    /*
+    Math() 객체
+    : 자바스크립트에서 수학적 상수와 함수를 제공하는 내장 객체
+
+    abs = 절대값을 반환
+    PI = 원주율
+    ceil = 정수를 반환(올림) // 반올림x 그냥 올림
+    floor = 정수를 반환(내림)
+    round = 정수를 반환(반올림)
+    pow(x, y) = 제곱한 값을 반환
+    sqrt() = 제곱근을 반환
+    sin = 사인
+    cos = 코사인
+    tan = 탄젠트
+    log = 로그 값
+    randeom = 0이상 1미만의 난수를 반환
+    max(x, y, ...c) = 주어진 인수 중에 가장 큰 값을 반환
+    min(x, y, ...c) = 주어진 인수 중에 가장 작은 값을 반환
+    */
+
+    console.log(Math.abs(-5));
+    console.log('----- Math.abs(-5) -----');
+    
+    console.log(Math.PI);
+    console.log('----- Math.PI -----');
+
+    console.log(Math.ceil(4.3));
+    console.log('----- Math.ceil(4.3) -----');
+
+    console.log(Math.floor(4.3));
+    console.log('----- Math.floor(4.3) -----');
+
+    console.log(Math.round(4.7));
+    console.log('----- Math.round(4.7) -----');
+
+    console.log(Math.pow(2, 3)); // 2를 세 제곱하겠다
+    console.log('----- Math.pow(2, 3) -----');
+
+    console.log(Math.sqrt(9)); // 루트 씌운다고 생각
+    console.log('----- Math.sqrt(9) -----');
+
+    console.log(Math.sin(Math.PI / 2));
+    console.log('----- Math.sin(Math.PI / 2) -----');
+
+    console.log(Math.round(Math.random() * 100));
+    console.log('----- Math.round(Math.rendom() * 100) -----');
+
+    console.log(Math.max(1, 10, 5));
+    console.log('----- Math.max(1, 10, 5) -----');
+
+    console.log(Math.min(1, 10, 5));
+    console.log('----- Math.min(1, 10, 5) -----');
+  </script>
+</body>
+</html>

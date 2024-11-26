@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test_01</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    figure {
+      width: fit-content;
+      height: fit-content;
+    }
+
+    ul, li {
+      list-style: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .header {
+      width: 661px;
+      height: 100px;
+      margin: auto;
+      margin-top: 50px;
+    }
+
+    .logo {
+      float: left;
+    }
+    
+    .search {
+      float: right;
+    }
+
+    .nav {
+      width: 990px;
+      height: 40px;
+      background-color: #2DB400;
+      align-content: center;
+      padding-left: 15px;
+      margin: auto;
+    }
+
+    .nav>li {
+      float: left;
+      margin-right: 25px;
+      color: white;
+    }
+
+    .contents_wrap {
+      width: 990px;
+      height: 390px;
+      margin: 10px auto;
+    }
+
+    .left {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .news {
+      background-color: gray;
+      height: 50px;
+      margin: 10px 0;
+      padding: 14px;
+    }
+
+    .view {
+      height: 200px;
+    }
+
+    .right {
+      float: right;      
+    }
+    .r_box {
+      border: 1px solid gray;
+      width: 326px;
+      height: 180px;
+      margin-bottom: 10px;
+      padding: 14px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <h1 class="logo">
+        <img src="./수업자료/logo.png" alt="logo">
+      </h1>
+      <figure class="search">
+        <img src="./수업자료/search.png" alt="search">
+      </figure>
+    </header>
+
+    <ul class="nav">
+      <li><a href="#">메일</a></li>
+      <li><a href="#">카페</a></li>
+      <li><a href="#">블로그</a></li>
+      <li><a href="#">지식in</a></li>
+      <li><a href="#">쇼핑</a></li>
+      <li><a href="#">tv캐스트</a></li>
+    </ul>
+
+    <section class="contents_wrap">
+      <div class="left">
+        <figure class="banner">
+          <img src="./수업자료/game.png" alt="game_banner">
+        </figure>
+
+        <div class="news">뉴스소식</div>
+        <div class="news view">뉴스보기</div>
+      </div>
+
+      <div class="right">
+        <div class="r_box">r1</div>
+        <div class="r_box">r2</div>
+      </div>
+    </section>
+    
+  </div>
+</body>
+</html>

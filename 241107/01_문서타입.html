@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문서타입</title>
+</head>
+<body>
+  
+  <script>
+
+  // 문자열(string)타입 : ""(쌍따옴표), ''(따옴표), ``(빽틱) 
+
+  let 나이 = '만 19세 + 1';
+  console.log(나이) // 만19세 + 1 (그대로 출력)
+  // 문자열타입은 연산 처리를 할 수 없다
+
+  let name = '유아정';
+  let 나이2 = `${name}, 만 ${19 + 1}세`;
+  console.log(나이2); // 유아정, 만 20세
+  // 빽틱은 문자열타입 외 다른 데이터와 함께 사용시 사용
+  // ${} : 달러와 중괄호를 이용해 정보를 담은 변수를 넣기도 하고, 연산도 가능
+
+  let 나이3 = 20;
+  console.log(String(나이3)); // 문자열타입의 20으로 변환되어 출력
+
+  console.log('String--------------------------------------------------------------------');
+
+  // 숫자(Number)타입 : 숫자 기입시  
+  // > 64비트 부동소수점형식의 연산 / 2진법 사용
+  // > 2진법 사용으로 인해 무한소수점이 됨
+
+  // 부동소수점 식에 따라 거짓으로 처리
+  console.log(0.1 + 1.1 == 1.2); // false
+
+  console.log('---------- Number ----------');
+  
+  // 불리언(Boolean)타입 : 참(true), 거짓(false) 값만 주어짐
+  console.log(true);
+  console.log(false);
+  console.log('---------- Boolean ----------');
+
+  // undefined : 값이 할당되지 않은 변수
+  let  gender;
+  console.log(gender); // undefined
+  // gender라는 변수에 아무런 값이 존재하지 않는 것
+
+  console.log('---------- Undefined ----------');
+
+
+  // null : 의도적으로 값이 없음을 나타낼 때
+
+  console.log('---------- ----------');
+
+  // NaN(Not a number의 약자) : 숫자 데이터타입에 다른 데이터 타입이 저장될 경우  
+  console.log("20"); // "20"
+  let age = "20";
+  let age2 = "20a"
+  console.log( Number(age) ); // 20
+  // 글자 타입의 "20"을 Number를 사용해 숫자 데이터타입으로 변환할 수 있다
+  console.log( Number(age2)); // NaN
+  // 숫자가 아닌 문자를 숫자 타입으로 변환할 수 없으며, 숫자가 아니라는 NaN이 출력된다
+
+  console.log('---------- NaN ----------');
+
+
+  // typeof : 데이터타입 출력
+  console.log(typeof "20"); // string
+  console.log(typeof 20); // number
+  console.log(typeof (10>20)); // bolean
+  console.log(typeof 20>10); // false > 괄호가 없어 typeof 20과 10이 비교가 된 것. 20의 타입은 Number이므로 Number>10이 비교되어 false 출력
+  console.log(typeof true) // boolean
+
+  console.log('---------- typeof ----------');
+
+  // === : 타입까지 비교 > boolean 타입으로 출력됨 (ture or false)
+  console.log(20 == "20"); // true
+  console.log(20 === "20"); // false
+
+  console.log('---------- === ----------');
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+깃허브 계정, 깃 설치
+
+vscode 에서 ctrl + ` 하면 터미널 켜짐
++ 옆 화살표 클릭 - Git bash를 켜서 바로 명령어 입력할 수 있음
+
+우클릭 - glt bash
+
+git init : 처음 실행해서하는 초기화 작업
+
+git remote add origin <- 내가 지어주는 이름인데 보통은 origin을 사용
+	ㄴ(새로운 레퍼지토리랑 연결하는 작업)
+
+git config user.name 깃허브 이름? 닉네임?
+git config user.email 깃허브 가입했을 때 사용한 이메일
+(config 뒤에 --global을 쓰면 해당 컴퓨터의 어떤 폴더를 들어가도 내 계정으로 연결할 수 있음)
+
+git add .
+(뒤에 점을 붙이면 모든 파일 선택하는 것임)
+(파일 하나만 선택하는 거면 파일 이름)
+
+git status
+(add가 제대로 올라갔는지 확인하고 싶을 때 사용)
+
+git commit -m '입력하고 싶은 내용? 타이틀'
+
+git push origin master
+(깃허브에 올리는 작업)
+
+git pull origin master
+(깃허브에 올라가 있는 파일을 로컬로 땡겨오는 작업?)
+(기존 내용 제외 새로 추가된 내용을 가져옴)
+
+git clone https://github.com/o3ouo/react.git
+(깃허브에 올라가 있는 폴더 째로 복사해서 가져옴)
+(얘는 무에서 유를 창조)

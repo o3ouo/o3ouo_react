@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체 생성, 이동, 삭제</title>
+  <style>
+    .allbox {
+      max-width: 1200px;
+      border: 1px solid #333;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .box {
+      width: 100%;
+      height: 300px;
+      background-color: lightblue;
+    }
+
+    .img {
+      display: block;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="box"></div> -->
+
+  <div class="allbox"></div>
+  <script>
+    /*
+    문서객체 동적으로 생성
+    요소.createElement("문서객체");
+
+    문서객체 이동
+    요소.appendChild("객체");
+
+    문서객체 삭제
+    요소.remove()
+    .removeChild()
+    .parentNode()
+    */
+
+    // let idx = 0;
+
+    // let all = document.querySelector(".box");
+    // let box = document.createElement("div");
+    // all.appendChild(box);
+
+    // let title = document.createElement("h2");
+    // let text = document.createElement("p");
+
+    // title.textContent = `타이틀 ${++idx}`;
+    // text.textContent = `안녕하세요`;
+
+    // box.appendChild(title);
+    // box.appendChild(text);
+
+    // box.removeChild(text);
+
+    // // parentNode : 부모 지우기
+    // console.log(box.parentNode.remove());
+
+    let item = [
+      {text: "div1", img: "../img/고죠_01.jfif", info: "info"},
+      {text: "div2", img: "../img/고죠_01.jfif", info: "info"},
+      {text: "div3", img: "../img/고죠_01.jfif", info: "info"},
+      {text: "div4", img: "../img/고죠_01.jfif", info: "info"},
+      {text: "div5", img: "../img/고죠_01.jfif", info: "info"},
+      {text: "div6", img: "../img/고죠_01.jfif", info: "info"},
+      {text: "div7", img: "../img/고죠_01.jfif", info: "info"},
+      {text: "div8", img: "../img/고죠_01.jfif", info: "info"},
+      {text: "div9", img: "../img/고죠_01.jfif", info: "info"},
+    ]
+
+    item.push({text:"div10"}, {text:"div11"}, {text:"div12"}, {text:"div13"});
+
+
+    let allbox = document.querySelector(".allbox");
+
+    item.forEach((items, idx) => {
+      let box = document.createElement("div");
+      let img = document.createElement("img");
+      img.classList.add("img");
+      box.classList.add("box");
+      box.innerHTML = `
+      <h2>${items.text}</h2>
+      <img src = ${items.img} alt = "상품이미지${idx+1}"
+      <p>상품${idx+1}에 대한 설명</p>
+      `
+
+      // box.textContent = items.text;
+      // box.appendChild(img);
+
+      allbox.appendChild(box);
+    });
+
+  </script>
+</body>
+</html>

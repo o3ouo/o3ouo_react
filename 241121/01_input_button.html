@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>입력서식</title>
+</head>
+
+<body>
+
+  <h2>inch = cm 변경</h2>
+  <!-- 1inch = 2.54cm -->
+  <input type="text" id="loginid" placeholder="inch 단위를 입력하세요">
+  <!-- <button type="button" id="btn" onclick="login()">확인</button>  -->
+  <!-- onclick을 사용해서 함수를 호출할 수 있다 -->
+
+  <button type="button" id="btn">변환</button>
+  <p></p>
+
+  <input type="password" id="pw">
+  <button type="menu" id="show">보이게</button>
+  <script>
+    /*
+    문서객체.value 
+    : 속성을 사용하여 입력된 값을 가져오기
+    : 속성을 변경하여 값을 설정할 수 있음
+    */
+    let input = document.getElementById("loginid");
+    let btn = document.getElementById("btn");
+    let text = document.querySelector("p");
+
+    // btn.addEventListener("click", () => {
+    //   // console.log(input.value);
+    //  text.textContent = input.value;
+    // });
+
+    // 실행할 코드를 담은 함수 생성 후 html의 onclick으로 click 이벤트를 만들 수 있다
+    function login () {
+      let input = document.getElementById("loginid");
+      input.value = "ㅎㅇ";
+      // 값을 지정해서 받을 수 있다
+      text.textContent = input.value;
+    }
+
+    // inch를 cm로 변환
+    // function inch () {
+    //   let input = document.getElementById("loginid");
+    //   input.value *= 2.54;
+    //   text.textContent = input.value;
+    // };
+
+    // 중첩되는 기능을 만들 때에는 함수로 기능을 만들고 이벤트에서 함수를 호출
+    function calc (inchs) {
+      let inch = Number(input.value);
+
+      if (isNaN(inch)) {
+        text.textContent = "숫자 입력하셈";
+        return;
+      }
+
+      let cm = inch * 2.54;
+      text.textContent = `${inch}inch는 ${cm}cm 입니다`
+
+      console.log(inch);
+    }
+
+    btn.addEventListener("click", () => {
+      // let inch = Number(input.value);
+
+      // if (isNaN(inch)) {
+      //   text.textContent = "숫자 입력하셈";
+      //   return;
+      // }
+
+      // let cm = inch * 2.54;
+      // text.textContent = `${inch}inch는 ${cm}cm 입니다`
+
+      // console.log(inch);
+      calc(input.value);
+    });
+
+    input.addEventListener("keydown", (e) => {
+
+      if (e.keyCode === 13) {
+        // console.log("enter")
+        // let inch = Number(input.value);
+
+        // if (isNaN(inch)) {
+        //   text.textContent = "숫자 입력하셈";
+        //   return;
+        // }
+
+        // let cm = inch * 2.54;
+        // text.textContent = `${inch}inch는 ${cm}cm 입니다`
+
+        // console.log(inch);
+        
+        calc(input.value);
+      };
+    });
+
+    // 패스워드 보이기, 숨기기
+    let pw = document.getElementById("pw");
+    let show = document.getElementById("show");
+
+    show.addEventListener("click", () => {
+
+      show.classList.toggle("on");
+
+      if (show.classList.contains("on")) {
+        show.textContent = "숨기기"
+        pw.setAttribute("type", "text");
+      } else {
+        show.textContent = "보이게"
+        pw.setAttribute("text", "password")
+      };
+    })
+
+
+
+  </script>
+</body>
+
+</html>

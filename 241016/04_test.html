@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test_02</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    #logo {
+      width: 550px;
+      height: 300px;
+      /* height: 360px; */
+      margin: 30px auto;
+      background-color: lemonchiffon;
+      text-align: center;
+      align-content: center;
+    }
+
+    #logo_nav {
+      width: 1390px;
+      /* width: 1396px; */
+      height: 50px;
+      /* height: 56px; */
+      border: 3px solid lightskyblue;
+      margin: auto;
+      text-align: center;
+      align-content: center;
+    }
+
+    .box_wrap {
+      width: 1280px; /* border-box (320 * 4) */
+      /* w : box * 4 */
+      height: 480px; /* border-box (220 * 4) */
+      /* h : box * 2 */ 
+      margin: auto;
+    }
+
+    .box {
+      width: 300px;
+      /* w: 300 + b: (2+2) + m: (10+10) + p: (15+15) = 354 */
+      height: 200px;
+      /* h: 200 + b: (2+2) + m: (20+20) + p: (10+10) = 264 */
+      margin: 20px 10px;
+      padding: 10px 15px;
+      border: 2px solid lightcoral;
+      text-align: center;
+      float: left;
+      align-content: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="logo">아이디 : 로고</div>
+  
+    <div id="logo_nav">아이디 메뉴바</div>
+
+    <div class="box_wrap">
+      <div class="box">클래스 박스</div>
+      <div class="box">클래스 박스</div>
+      <div class="box">클래스 박스</div>
+      <div class="box">클래스 박스</div>
+      <div class="box">클래스 박스</div>
+      <div class="box">클래스 박스</div>
+      <div class="box">클래스 박스</div>
+      <div class="box">클래스 박스</div>
+    </div>
+  </div>
+  
+</body>
+</html>

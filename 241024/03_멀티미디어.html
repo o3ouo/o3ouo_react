@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>멀티미디어</title>
+</head>
+<body>
+  <h1>오디오태그</h1>
+  <p>
+    : html5 에서 음악이나 오디오 같은 사운드를 재생하기 위해 사용, 태그 하나만으로 멀티미디어 기기에서 재생이 가능
+  </p>
+
+  <dl>
+    <dt>* controls</dt>
+    <dd>> 사용자의 인터페이스를 제공하여 재생, 일시정지, 볼륨 등을 제어</dd>
+    <dd>> controls 속성이 반드시 있어야 사용할 수 있다</dd>
+
+    <dt>* loop</dt>
+    <dd>> 반복 재생</dd>
+    <dd>> 무한 재생</dd>
+    
+    <dt>* muted</dt>
+    <dd>> 음소거 상태로 재생</dd>
+    
+    <dt>* autoplay</dt>
+    <dd>> 페이지 로드 시 자동 재생</dd>
+    <dd>> 크롬, 사파리, 엣지 등에서는 자체적으로 자동 재생을 제한하고 있음</dd>
+    <dd>> 사용자가 오디오를 사용하겠다고 설정을 해둬야 하고, 정말 쓰고 싶다면 스크립트로 넣어야함</dd>
+    
+    <dt>* volume</dt>
+    <dd>> 볼륨 조절 (0.0 ~ 1.0)</dd>
+    <dd>> 이렇게 사용하는 것보다 스크립트로 volume-min / volume-max 등으로 조절하는 것이 있음</dd>
+  </dl>
+  
+  <!-- <audio src="./수업자료/test_ado.mp3" controls loop muted autoplay volume=""></audio> -->
+  
+  <audio controls>
+    <source src="./수업자료/test_ado.mp3" type="audio/mp3">
+    <source src="./수업자료/test_ado.ogg" type="audio/ogg">
+  </audio>
+  <!-- 크로스브라우징 때문에 source를 사용해서 파일을 넣음 -->
+  <!-- 브라우저에서 호환이 되지 않을 시 사용 가능한 파일을 골라 내보냄 -->
+  <!-- 오디오에 오류가 있을 때 비활성화 처리가 되도록 할 수 있음 -->
+
+  <br><hr>
+
+  <h1>비디오태그</h1>
+  <p>
+    : html5에서 영상을 실행시키기 위해 사용. 비디오와 같은 영상 스트리밍을 재생할 때 사용
+  </p>
+
+  <dl>
+    <dt>* controls</dt>
+    <dd>> 사용자의 인터페이스를 제공하여 재생, 일시정지, 볼륨 등을 제어</dd>
+    <dd>> controls 속성이 반드시 있어야 사용할 수 있다</dd>
+    <dd>> controls 속성이 없을 경우 시작화면이 이미지처럼 나타남</dd>
+
+    <dt>* loop</dt>
+    <dd>> 반복 재생</dd>
+    <dd>> 무한 재생</dd>
+    
+    <dt>* muted</dt>
+    <dd>> 음소거 상태로 재생</dd>
+    
+    <dt>* autoplay</dt>
+    <dd>> 오디오와 다르게 음소거가 되어있을 경우 페이지 로드 시 자동 재생을 사용할 수 있음</dd>
+    <dd>> 사파리에서 영상 자동재생이 되지 않음</dd>
+    
+    <dt>* playsinline</dt>
+    <dd>> 전체화면이 아닌 인라인으로 재생이 되도록 만드는 것이 목적</dd>
+    <dd>> 모바일 기기에서 재생 > ios 에서 autoplay가 제대로 사용되게 만듬</dd>
+    <dd>> ios에서 자동재생 시키기 위해서 사용</dd>
+    <dd>> 시작점 초기화 후 세팅</dd>
+
+    <dt>* poster</dt>
+    <dd>> 영상이 로드 되기 전 사용자가 재생버튼 누르기 전까지 표시할 이미지 지정</dd>
+    <dd>> 썸네일</dd>
+  </dl>
+
+  <video controls muted loop autoplay playsinline poster="./수업자료/bg.jpg">
+    <source src="./수업자료/korea_video.mp4" type="video/mp4">
+  </video>
+
+  <style>
+    video {
+      display: block;
+      max-width: 100%;
+    }
+
+    .vbox {
+      width: 100%;
+    }
+  </style>
+  <div class="vbox">
+    <video controls>
+      <source src="./수업자료/korea_video.mp4" type="video/mp4">
+    </video>
+  </div>
+  <!-- 비디오를 감싼 박스의 크기를 조절해서 영상 사이즈를 조절 -->
+  <!-- 영상 자체를 늘리거나 줄이면 깨짐 -->
+  <!-- 비율에 맞춰서 사용해야 함 -->
+
+  <h1>iframe 태그</h1>
+  <p>
+    : 내부프레임 / html 문서 안에 다른 html 문서를 삽입할 수 있는 기능 <br>
+    : 유튜브 동영상, 구글 지도 등 <br>
+    : inline 요소라서 display : block 처리를 하고 사용
+  </p>
+
+  <dl>
+    <dt>* titlt</dt>
+    <dd>> 제목 부여</dd>
+  </dl>
+
+  <iframe src="./02_test풀이.html" frameborder="0" width="100%" height="1000px"></iframe>
+
+  <!-- 유튜브 -->
+  <iframe width="1280" height="720" src="https://www.youtube.com/embed/NAPVkBAoQT8" title="깊은 물에 빠뜨리는 척! 강아지 속이기ㅋㅋㅋ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  <iframe width="1280" height="720" src="https://www.youtube.com/embed/e9ja2z5ffmc" title="집 밖으로 나오자 마자 체력이 0 되는 강아지" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  <!-- 구글맵 -->
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3482267.934420917!2d-24.517785534892425!3d64.77549079320744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48d22b52a3eb6043%3A0x6f8a0434e5c1459a!2z7JWE7J207Iqs656A65Oc!5e0!3m2!1sko!2skr!4v1729743402876!5m2!1sko!2skr" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <!-- loading : 로딩 속도 개선 이유로 넣음 -->
+
+  <!-- 카카오맵 -->
+  <a href="https://map.kakao.com/?urlX=860740&urlY=662685&urlLevel=3&map_type=TYPE_MAP&map_hybrid=false" target="_blank"><img width="504" height="310" src="https://map2.daum.net/map/mapservice?FORMAT=PNG&SCALE=2.5&MX=860740&MY=662685&S=0&IW=504&IH=310&LANG=0&COORDSTM=WCONGNAMUL&logo=kakao_logo" style="border:1px solid #ccc"></a><div class="hide" style="overflow:hidden;padding:7px 11px;border:1px solid #dfdfdf;border-color:rgba(0,0,0,.1);border-radius:0 0 2px 2px;background-color:#f9f9f9;width:482px;"><strong style="float: left;"><img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/common/logo_kakaomap.png" width="72" height="16" alt="카카오맵"></strong><div style="float: right;position:relative"><a style="font-size:12px;text-decoration:none;float:left;height:15px;padding-top:1px;line-height:15px;color:#000" target="_blank" href="https://map.kakao.com/?urlX=860740&urlY=662685&urlLevel=3&map_type=TYPE_MAP&map_hybrid=false">지도 크게 보기</a></div></div>
+  <!-- 카카오맵을 가져오는 것이 아닌 div 박스로 자체를 만들어서 가져옴 -->
+  <!-- 박스로 가져오는 순간 그에 대한 기능을 잃음 -->
+
+</body>
+</html>

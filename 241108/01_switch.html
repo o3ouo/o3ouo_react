@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>switch</title>
+</head>
+<body>
+  
+  <script>
+
+    /*
+    switch
+    : 여러 조건을 처리할 때 유용한 제어문
+    : 주어진 표현식의 값을 case값과 비교하여 일치하는 경우 해당 실행문을 실행
+
+    문법 :
+    swicth (표현식) {
+      case 값 : 실행문
+      break; 
+      ㄴ break : 해당 실행문을 실행 시키고 종료
+      case 값 : 실행문
+      break;
+      case 값 : 실행문
+      break;
+      default :
+      ㄴ default : 위의 어떤 case와도 일치하지 않을 때 실행되는 실행문 (생략 가능)
+      break;
+    }
+
+    */
+    // let number = Number(prompt("숫자"));
+    // console.log(number)
+
+    // switch (number % 2) {
+    //   case 0 : 
+    //    alert("짝수임");
+    //   break;
+
+    //   case 1 :
+    //    alert("홀수임");
+    //   break;
+
+    //   default:
+    //    alert("숫자냐?");
+    //   break;
+    // };
+
+    // seitch를 이용해 현재 요일 출력하기
+    // .getDay() : 주어진 날짜의 현지 시간 기준 요일을 반환 / 0은 일요일을 나타냄
+    let time = new Date();
+    let day = time.getDay();
+    console.log(time);
+    console.log(day);
+
+    switch (day) {
+      case 0 :
+        console.log("일요일 임");
+      break;
+      case 1 :
+        console.log("월요일 임");
+      break;
+      case 2 :
+        console.log("화요일 임");
+      break;
+      case 3 :
+        console.log("수요일 임");
+      break;
+      case 4 :
+        console.log("목요일 임");
+      break; 
+      case 5 :
+        console.log("금요일 임");
+      break;
+      case 6 :
+        console.log("토요일 임");
+      break;
+      default :
+        console.log("무슨 요일인 지 모름");
+      break;
+    };
+
+
+  // 성인인가
+  let age = 21;
+
+  switch (true) {
+    case age < 20 :
+      console.log('민짜');
+    break;
+
+    case age >= 20 :
+      console.log('성인');
+    break;
+
+    default :
+      console.log('나이 확인');
+    break;
+  };
+
+
+  // 성적에 따른 등급 부여
+  // 100 ~ 97점 A+ , 90 ~ 96점 이상 A , 85점 이상 B , 75점 이상 C , 65점 이상 D , 그 외 F , 글자 입력시 오류라고 인지
+  // let test = Number(prompt('성적 입력하셈'));
+  let test = 100;
+
+  switch (true) {
+    case 100 >= test && test >= 97 :
+      console.log('A+');
+    break;
+
+    case 96 >= test && test >= 90 :
+      console.log('A+');
+    break;
+
+    case 90 > test && test >= 85 :
+      console.log('A+');
+    break;
+
+    case 85 > test && test >= 75 :
+      console.log('A+');
+    break;
+
+    case 75 > test && test >= 65 :
+      console.log('A+');
+    break;
+
+    case isNaN(test) :
+      console.log('장난?');
+    break;
+
+    default :
+      console.log('F');
+  };
+
+  // --------------------------------------------------------------------
+
+  // 시간에 따라 인사말 출력
+  // 6 ~ 11시 : 아침인사 / 12 ~ 17시 : 오후 인사 / 19시 이후 : 저녁인사
+  let getTime = time.getHours();
+
+  switch (true) {
+    case getTime >= 6 && getTime <= 11 :
+      console.log('아침 ㅎㅇ');
+    break;
+    
+    case getTime >= 12 && getTime <= 17 :
+      console.log('아침 ㅎㅇ');
+    break;
+    
+    case getTime >= 19 && getTime <= 0 :
+      console.log('아침 ㅎㅇ');
+    break;
+  };
+
+
+
+  </script>
+
+
+</body>
+</html>

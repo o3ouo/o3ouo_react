@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>입력서식 (select box)</title>
+</head>
+<body>
+
+  <select name="" id="sel">
+    <option value="" hidden>선택해라</option>
+    <option value="aaaaa">aaaaa</option>
+    <option value="bbbbb">bbbbb</option>
+    <option value="ccccc">ccccc</option>
+    <option value="ddddd">ddddd</option>
+  </select>
+
+  <p></p>
+  <span></span>
+
+  <h3>이동할 사이트를 선택</h3>
+  
+  <!-- 연결 기능을 가진 함수를 생성하고 onchange로 load() 함수 호출 --> 
+  <select name="site" id="site" onchange="load()">
+    <option value="" hidden>사이트 선택</option>
+    <option value="https://www.naver.com">네이버</option>
+    <option value="https://www.youtube.com">Youtube</option>
+    <option value="https://www.google.co.kr">Google</option>
+  </select>
+
+
+  <script>
+  /*
+  change : 값이 변경되고 포커스를 잃었을 때 발생
+  */
+
+  let select = document.getElementById("sel");
+  let p = document.querySelector("p");
+  let span = document.querySelector("span");
+
+  // 배열과 index를 따로 가져와야 함
+  select.addEventListener("change", (e) => {
+    // console.log(e.currentTarget.options)
+    // let options = e.currentTarget.options;
+    // console.log(options);
+    // let idx = e.currentTarget.options.selectedIndex;
+    // console.log(options[idx]); // <option value>bbbbb</option>
+    // p.textContent = `선택 : ${options[idx].textContent}`
+    // 옵션태그 안에서 글자만 가지고 올 때에는 textContent를 사용해야 함
+
+    p.textContent = `선택 : ${select.value}`
+    console.log(select.value)
+  });
+
+  // 사이트 선택
+  function load () {
+  let site = document.querySelector("#site");
+
+  // location : 연결, 이동 / 현재 페이지 내에서의 이동
+  // href 사용 권장
+  // window.location.href = site.value;
+
+  // 새 창으로 열 때에는 open
+  window.open(site.value);
+  }
+  </script>
+
+  <br><br><br>
+
+  <!-- 
+  단위변환 1cm
+  = 2.54inch
+  = 0.01m
+  = 10mm
+  = 0.0109361yard
+  -->
+  <input type="text" placeholder="cm 단위 입력해라" id="cm">
+  <label for="cm">cm</label>
+
+  <select name="" id="ca">
+    <option value="" hidden>변환</option>
+    <option value="0.393701">inch</option>
+    <option value="0.01">m</option>
+    <option value="10">mm</option>
+    <option value="0.0109361">yard</option>
+  </select>
+
+  <h2></h2>
+
+  <script>
+    let cm = document.querySelector("#cm");
+    let ca = document.querySelector("#ca");
+    let text = document.querySelector("h2");
+
+    ca.addEventListener("change", (e) => {
+      let cms = Number(cm.value);
+      console.log(cms * ca.value);
+      let options = e.currentTarget.options;
+      let idx = e.currentTarget.options.selectedIndex
+
+      text.textContent = `${cms}cm는 ${(cms * ca.value).toFixed(2)} ${options[idx].textContent}`
+    });
+
+  </script>
+
+  <!-- checkbox -->
+  <input type="checkbox" name="" id="checkbox">
+  <label for="checkbox" id="clab"></label>
+  <h4> 타이머 : <span></span> </h4>
+
+  <script>
+
+    let check = document.getElementById("checkbox");
+    let txt = document.querySelector("h4 span");
+    let la = document.querySelector("#clab");
+    let time = 0;
+    let timer;
+
+    check.addEventListener("change", (e) => {
+      if (e.currentTarget.checked) {
+        console.log("check");
+        // time();
+        timer = setInterval(() => {
+          time += 1;
+          txt.textContent = `${time}초`
+        },1000);
+        la.textContent = "타이머 시작"
+      } else {
+        clearInterval(timer);
+        la.textContent = "타이머 멈춤"
+      }
+    });
+
+    // 타이머 함수
+    // function time () {
+
+    //   let count = '1';
+
+    //   let clock = setInterval(() => {
+
+    //     txt.textContent = `${count}초`;
+    //     count++;
+    //   }, 1000);
+
+    // };
+
+
+  </script>
+
+</body>
+</html>

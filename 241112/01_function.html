@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>function</title>
+</head>
+<body>
+  
+<script>
+
+  /*
+  function () {}
+  함수 : 코드의 집합을 나타내는 자료형
+
+  1. 반복되는 코드를 한 번만 정의해놓고 필요할 때마다 호출하므로 반복 작업을 피할 수 있다.
+  2. 긴 프로그램을 기능별로 나눠 여러 함수로 나누어 작성하면 모듈화로 전체 코드의 가독성이 좋아진다.
+  3. 기능별(함수별) 수정이 가능하므로 유지보수가 쉽다.
+
+  익명함수
+  : 이름이 붙어있지 않은 함수
+  : 일회성, 특정 상황에서만 호출되는 함수
+  : 함수 표현식 
+  : 무조건 선언 후 호출 (할당된 이후)
+
+  let, const 함수명 = function () { 실행문 }
+
+  함수명();
+  */
+
+  // 익명함수
+  let a = function () {
+    console.log('함수 호출!');
+  }
+
+  a();
+
+  // 즉시 실행 함수
+  (function () {
+    console.log('즉시 실행 함수')
+  }) ();
+  // 초기화
+
+  /*
+  선언적 함수
+  : 이름이 있는 함수
+  : 호이스팅 가능 (함수 코드 내에서 어디에 있든 상관 없이 정의되기 전에 호츌)
+  : 어러 번 재사용 시 
+
+  function 함수명 () {
+  
+  }
+  함수명();
+  */
+
+  function 선언적함수 () {
+    console.log('선언적 함수');
+  };
+
+  선언적함수();
+
+
+  /*
+  
+  */
+  function x () {
+    console.log("x");
+  }
+
+  function y () {
+    console.log('y');
+  }
+
+  x();
+  y();
+
+</script>
+
+</body>
+</html>

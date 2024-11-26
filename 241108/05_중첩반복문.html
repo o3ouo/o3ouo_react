@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>중첩반복문</title>
+</head>
+<body>
+  
+  <script>
+  
+    // 조건문 중첩
+    // if 조건문이 참일 경우 그 조건문 안에 있는 if 조건문을 참과 거짓으로 실행
+    // let age = Number(prompt('나이'));
+    let age = 30;
+
+    if (age >= 20) {
+      console.log('성인');
+
+      if(age >= 65) {
+        console.log('노인');
+      } else if (40 >= age && age >=30 ) {
+        console.log('중년임');
+      } else {
+        console.log('성인인데 노인은 아님');
+      }
+    } else {
+      console.log('민짜');
+    };
+
+    /*
+    중첩반복문
+    : 반복문을 여러겹 중첩해 사용하면 중첩반복문
+    : -n차원 처리할 떄 사용
+
+
+    */
+
+    // ex. -n 차원
+    let a = [[1, [2,3]],[4, 5, 6]]
+
+    // 중첩반복문
+    // 외부 반복문
+    for (let i = 0; i <= 5; i++) {
+
+      // 내부 반복문
+      for (let j = 0; j <= 5; j++) {
+        console.log(`i = ${i}, j = ${j}`);
+      };
+    };
+
+    // 구구단 만들기
+    for (let i = 2; i <= 9; i++) {
+      console.log(`${i}단`);
+
+      for (let j = 1; j <= 9; j++) {
+        console.log(`${i} * ${j} = ${i * j}`);
+      };
+
+      console.log("");
+
+    }
+
+    // 중첩 반복문으로 별 피라미드 형태로 만들기
+    let star = '';
+
+    for (let i = 1; i < 10; i++) {
+      for (let j = 0; j < i; j++) {
+        star += '⭐'
+      }
+      star += '\n';
+    }
+    console.log(star);
+
+    // 중첩 반복문 사용해서 피라미드
+    let pyramid = '';
+
+    for (let i = 1; i < 15; i++) {
+
+      for (let j = 15; j > i; j--) {
+        pyramid += ' ';
+      };
+
+      for (let t = 0; t < (2 * i - 1); t++) {
+        pyramid += '*';
+      };
+
+      pyramid += '\n';
+    };
+
+    console.log(pyramid);
+
+    // 중첩 반복문 사용해서 역피라미드
+    let reverse = '';
+
+    for (let i = 1; i < 15; i++) {
+
+      for (let j = 0; j < i; j++) {
+        reverse += ' ';
+      }
+
+      for (let t = 28; t > (2 * i - 1); t--) {
+        reverse += '*';
+      }
+
+      reverse += '\n';
+    }
+
+    console.log(reverse);
+
+    // 중첩 반복문 사용해서 다이아몬드
+    let dia = '';
+
+    for (let i = 1; i < 10; i++) {
+
+      for (let j = 10; j > i; j--) {
+        dia += ' ';
+      };
+
+      for (let t = 0; t < (2 * i -1); t++) {
+        dia += '*';
+      } ;
+
+      dia += '\n';
+    }
+
+    for (let i = 1; i < 10; i++) {
+
+      for (let j = 0; j < i; j++) {
+        dia += ' ';
+      };
+
+      for (let t = 18; t > (2 * i - 1); t--) {
+        // i는 최대 9번 반복. 2 * 9 - 1 = 17
+        // t가 최소 1번을 찍으려면 17보다 큰 18을 할당해야 함
+        dia += '*';
+      };
+
+      dia += '\n';
+    };
+
+    console.log(dia);
+
+
+  </script>
+
+</body>
+</html>
