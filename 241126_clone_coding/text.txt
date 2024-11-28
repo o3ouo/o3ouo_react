@@ -1,0 +1,123 @@
+https://www.philsfinest.com/
+
+border 3px
+border-radius 30px
+
+footer color : #FFE9DE
+
+- MENU :
+Products
+Our Story
+Recipes
+Find Phil's
+
+
+- MAIN TEXT :
+CALLING ALL OMNIVORES.
+
+
+- SECTION 01 :
+United <br>
+We Grill!
+
+We believe there’s room for both meat and vegetables on our plates—and when you unite them with mouthwatering spices, delicious things happen! You might have known us as Misfit Foods, but now you can call us Phil’s Finest. Welcome!
+
+All-in-One Tasty Fun
+
+KOREAN BBQ
+Grass-Fed Beef
+
+LAO CURRY
+Grass-Fed Beef
+
+KALE CHIMICHURRI
+Chicken Sausage
+
+SMOKED CAULI BRAT
+Chicken Sausage
+
+MAPLE APPLE
+Chicken Sausage
+
+All in one tasty fun, great alone or on a bun. Try a bite and you’ll delight!
+
+Our Products
+
+
+
+- SECTION 01 FACT :
+FINEST FACT
+#456
+We swam with the sharks on Shark Tank...and lived! 
+
+
+- SECTION 02 :
+Get Your Phil
+
+MORE IS MORE
+
+More Veggies
+Veggies plus meat can’t be beat.
+
+More Flavor
+Delighted tastebuds, bye-bye recipe duds.
+
+More Fun
+Phil your grill with technicolor thrills!
+
+
+- SECTION 02 FACT :
+FINEST FACT
+#003
+Meat consumption in the U.S. has hardly changed since 1997. Something’s gotta give!
+
+
+- SECTION 03 :
+Get cookin' with our recipes
+All Recipes
+
+Weeknight Pasta →
+Lao Curry Burger →
+K-Beet-BQ Bow →
+
+...or show us your spin!
+
+“I tried each one of the sausages you sent me, smothered in sautéed pepper and onions and I love them.”
+Jim in GA
+
+“WOW! Had the Curry Carrot & Beef for dinner tonight - BEST. BURGER. EVER.”
+Cindy in CA
+
+“I love your chicken sausages so much — They’re a game-changer…”
+Madeleine in OH
+
+
+- SECTION 04 a link :
+@eatphilsfinest
+
+
+- SECTION 04 FACT :
+FINEST FACT
+#079
+We blanch our veggies so that they can cook perfectly alongside your meats!
+
+
+- FOOTER :
+PRODUCRS
+FIND PHIL'S
+OUR STORY
+
+RECIPES
+CONTACT
+FAQ
+
+PRIVACY
+TERMS
+ACCESSICILITY
+
+JOIN PHIL'S WORLD!
+We send infrequent (and fun!) emails with special deals and cool updates.
+
+
+- FOOTER img src :
+https://cdn.shopify.com/s/files/1/0614/0035/0950/files/Gander_Phils_CityscapeSmall_Inverted_v03_cream.gif?v=1643047879
