@@ -35,7 +35,25 @@ function slide(item) {
 
   let tem = item.map( items => {
     console.log(items);
+    return `
+      <li>
+        <a href="#">
+          <figure class="tem-img">
+            <img src=${items.img} alt=${items.name}>
+          </figure>
+          <div class="tem-txt">
+            <p class="tem-name">${items.name}</p>
+            <p class="tem-info">${items.info}</p>
+          </div>
+        </a>
+      </li>
+    `
   });
+
+  tem = tem.join("");
+  console.log(tem);
+
+  itemSlider.innerHTML = item;
 }
 
 slide(item);
