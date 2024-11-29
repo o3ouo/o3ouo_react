@@ -1,8 +1,14 @@
 https://www.philsfinest.com/
 
+font-family: Relative, sans-serif;
+font-weight: 300;
+letter-spacing: -.03em;
+
+padding 2rem
 border 3px
 border-radius 30px
 
+section1 color : #9CC2FF
 footer color : #FFE9DE
 
 

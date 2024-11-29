@@ -1,11 +1,49 @@
+@font-face {
+  font-family: Hammer;
+  font-style: normal;
+  font-weight: 700;
+  src: url(../font/Hammer-Bold.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: Relative;
+  font-style: normal;
+  font-weight: 300;
+  src: url(../font/Relative-Book.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: Relative Pitch;
+  font-style: normal;
+  font-weight: 500;
+  src: url(../font/Relative-12Pitch.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: plinc Cooper Nouveau;
+  font-style: normal;
+  font-weight: 500;
+  src: url(../font/PlincCooperNouveau.woff2) format("woff2");
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+html {
+  line-height: 1.15;
+}
+
+body {
+  font-family: Relative, sans-serif;
+  font-weight: 300;
+  letter-spacing: -.03em;
+}
+
 a {
-  text-align: center;
+  text-decoration: none;
   color: inherit;
 }
 
@@ -28,3 +66,234 @@ button {
   cursor: pointer;
 }
 
+/* header */
+.header {
+  width: 100%;
+  height: 75px;
+  position: fixed;
+  font-size: 1.5625rem;
+  z-index: 104;
+}
+
+.header .inner {
+  width: 100%;
+  height: 100%;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.header .nav {
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 101;
+}
+
+.header .nav-bg {
+  width: 100%;
+  height: 75px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 100;
+}
+
+.header .nav-bg.scrolled {
+  border-bottom: 3px solid #000;
+  background-color: #9CC2FF;
+  opacity: 1;
+  transition: .3s ease;
+}
+
+.header .logo.scrolled {
+  top: 0;
+  align-items: center;
+}
+
+.header .logo-box.scrolled {
+  transform: scale(0.2);
+}
+
+.header .nav .menu-list {
+  display: flex;
+  column-gap: 5rem;
+}
+
+.header .logo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  z-index: 103;
+}
+
+.header .logo-box {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  transform: scale(1);
+  transition: transform 0.5s ease, top 0.5s ease;
+}
+
+@midia (min-width: 50rem) {
+  .header {
+    height: 4.6875rem;
+  }
+}
+
+/* main */
+.main {
+  width: 100%;
+  height: 100vh;
+  background: url(../img/main.webp) no-repeat center/cover;
+}
+
+.main .inner {
+  width: 100%;
+  height: 100%;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.main-title {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 2.5rem;
+  text-align: left;
+  line-height: .75;
+  font-size: 12.5vw;
+  font-family: hammer, sans-serif;
+}
+
+/* section 01 */
+.section-01 {
+  width: 100%;
+  border: 3px solid #000;
+  background-color: #9CC2FF;
+}
+
+.section-01 .inner {
+  width: 100%;
+  position: relative;
+  padding-top: 7rem;
+  z-index: 10;
+}
+
+.section-01 .gif-img {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.section-01 .gif-img .img {
+  width: 520px;
+  transform: translateY(-100px);
+}
+
+.section-01 .welcom {
+  display: flex;
+  flex-direction: column;
+  padding-top: .5rem;
+  padding-bottom: 7rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.section-01 .welcom .title {
+  max-width: 1245px;
+  font-size: 12.5vw;
+  font-family: Hammer;
+  font-weight: inherit;
+  line-height: .8;
+}
+
+.section-01 .welcom .text {
+  max-width: 1000px;
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+  margin-top: 6rem;
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+.section-01 .fun {
+  width: 100%;
+
+}
+
+.section-01 .fun .title {
+  width: 100%;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 130px;
+  font-family: plinc Cooper Nouveau;
+  font-weight: inherit;
+  line-height: 1;
+}
+
+.section-01 .fun .item-box {
+  width: 100%;
+  position: relative;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 4rem;
+}
+
+.section-01 .fun .item-slider {
+  width: 100%;
+  display: flex;
+  column-gap: 2rem;
+  overflow: hidden;
+}
+
+.section-01 .fun .item-slider li {
+  min-width: 591.667px;
+  max-width: 591.667px;
+}
+
+.section-01 .fun .item-slider li:nth-child(2) {
+  transform: translate3d(32pw, 0px, 0px);
+} 
+
+.section-01 .fun .tem-img {
+  margin-bottom: .75rem;
+}
+
+.section-01 .fun .tem-txt {
+  text-align: center;
+  line-height: 1.1;
+}
+
+.section-01 .fun .tem-txt p:first-child {
+  font-size: 40px;  
+  font-family: Hammer;
+}
+
+.section-01 .fun .tem-txt p:last-child {
+  font-size: 32px;
+
+}
+
+.section-01 .fun .slide-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  padding: 0 1rem;
+}
