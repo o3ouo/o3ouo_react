@@ -66,13 +66,22 @@ button {
   cursor: pointer;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+}
+
 /* header */
 .header {
   width: 100%;
   height: 75px;
   position: fixed;
-  font-size: 1.5625rem;
   z-index: 104;
+  font-size: 1.5625rem;
 }
 
 .header .inner {
@@ -84,10 +93,10 @@ button {
 
 .header .nav {
   height: 100%;
-  position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  position: relative;
   z-index: 101;
 }
 
@@ -97,24 +106,11 @@ button {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0;
   z-index: 100;
-}
-
-.header .nav-bg.scrolled {
   border-bottom: 3px solid #000;
   background-color: #9CC2FF;
-  opacity: 1;
-  transition: .3s ease;
-}
-
-.header .logo.scrolled {
-  top: 0;
-  align-items: center;
-}
-
-.header .logo-box.scrolled {
-  transform: scale(0.2);
+  opacity: 0;
+  transition: .3s ease-in-out;
 }
 
 .header .nav .menu-list {
@@ -125,19 +121,20 @@ button {
 .header .logo {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0;
   display: flex;
-  justify-content: center;
   align-items: baseline;
+  justify-content: center;
+  position: absolute;
+  top: -6px;
+  left: 0;
   z-index: 103;
+  transition: .3s ease-in-out;
 }
 
 .header .logo-box {
-  display: block;
   width: fit-content;
   height: fit-content;
+  display: block;
   transform: scale(1);
   transition: transform 0.5s ease, top 0.5s ease;
 }
@@ -167,32 +164,33 @@ button {
   height: 100%;
   display: flex;
   align-items: flex-end;
-  padding-bottom: 2.5rem;
   text-align: left;
+  padding-bottom: 2.5rem;
   line-height: .75;
-  font-size: 12.5vw;
   font-family: hammer, sans-serif;
+  font-size: 12.5vw;
 }
 
 /* section 01 */
 .section-01 {
   width: 100%;
-  border: 3px solid #000;
+  position: relative;
+  border-top: 3px solid #000;
   background-color: #9CC2FF;
 }
 
 .section-01 .inner {
   width: 100%;
   position: relative;
-  padding-top: 7rem;
   z-index: 10;
+  padding-top: 7rem;
 }
 
 .section-01 .gif-img {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
   align-items: flex-start;
+  justify-content: flex-end;
   position: absolute;
   top: 0;
   right: 0;
@@ -214,63 +212,92 @@ button {
 
 .section-01 .welcom .title {
   max-width: 1245px;
-  font-size: 12.5vw;
-  font-family: Hammer;
-  font-weight: inherit;
   line-height: .8;
+  font-family: Hammer;
+  font-size: 12.5vw;
+  opacity: 0;
+  transition: .5s ease-in-out;
 }
 
 .section-01 .welcom .text {
   max-width: 1000px;
   display: flex;
-  justify-content: flex-end;
   align-self: flex-end;
+  justify-content: flex-end;
   margin-top: 6rem;
-  font-size: 40px;
   line-height: 1.1;
+  font-size: 40px;
 }
 
 .section-01 .fun {
   width: 100%;
-
 }
 
 .section-01 .fun .title {
   width: 100%;
   margin-bottom: 1rem;
   text-align: center;
-  font-size: 130px;
-  font-family: plinc Cooper Nouveau;
-  font-weight: inherit;
   line-height: 1;
+  font-family: plinc Cooper Nouveau;
+  font-size: 130px;
 }
 
 .section-01 .fun .item-box {
   width: 100%;
-  position: relative;
+  padding-bottom: 4rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-bottom: 4rem;
+}
+
+.section-01 .fun .item-box .item-box-i {
+  width: 100%;
+  position: relative;
 }
 
 .section-01 .fun .item-slider {
   width: 100%;
   display: flex;
-  column-gap: 2rem;
   overflow: hidden;
 }
 
 .section-01 .fun .item-slider li {
+  max-width: 100%;
   min-width: 591.667px;
   max-width: 591.667px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-01 .fun .item-slider li a {
+  display: block;
+  width: 100%;
 }
 
 .section-01 .fun .item-slider li:nth-child(2) {
-  transform: translate3d(32pw, 0px, 0px);
+  transform: translate3d(32px, 0px, 0px);
+} 
+
+.section-01 .fun .item-slider li:nth-child(3) {
+  transform: translate3d(64px, 0px, 0px);
+} 
+
+.section-01 .fun .item-slider li:nth-child(4) {
+  transform: translate3d(-3022.33px, 0px, 0px);
+} 
+
+.section-01 .fun .item-slider li:nth-child(5) {
+  transform: translate3d(-2990.33px, 0px, 0px);
 } 
 
 .section-01 .fun .tem-img {
+  width: 100%;
   margin-bottom: .75rem;
+}
+
+.section-01 .fun .tem-img img {
+  width: 592px;
+  height: 592px;
+  object-fit: cover;
 }
 
 .section-01 .fun .tem-txt {
@@ -279,21 +306,540 @@ button {
 }
 
 .section-01 .fun .tem-txt p:first-child {
-  font-size: 40px;  
   font-family: Hammer;
+  font-size: 40px;  
 }
 
 .section-01 .fun .tem-txt p:last-child {
   font-size: 32px;
-
 }
 
 .section-01 .fun .slide-btn {
   width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.section-01 .fun .slide-btn .pb-32 {
+  width: 100%;
+  height: 0;
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  top: 40%;
-  left: 0;
-  padding: 0 1rem;
+  position: relative;
+  padding-bottom: 32%;
 }
+
+.section-01 .fun .slide-btn .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.section-01 .fun .slide-btn .arrow:first-child {
+  left: 0;
+  margin-left: -10px;
+}
+
+.section-01 .fun .slide-btn .arrow:last-child {
+  right: 0;
+  margin-right: -10px;
+}
+
+.section-01 .fun .text-box {
+  text-align: center;
+  margin: auto;
+  padding-top: 5rem;
+  padding-bottom: 167px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-bottom: 3px solid #000;
+}
+
+.section-01 .fun .text-box .text {
+  max-width: 830px;
+  line-height: 48px;
+  margin: auto;
+  margin-bottom: 4rem;
+  font-size: 40px;
+}
+
+.section-01 .fun .text-box .btn {
+  padding: .625rem 22px;
+  line-height: 1;
+  letter-spacing: -.06em;
+  font-size: 30px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background-color: #000;
+  color: #9CC2FF;
+}
+
+.section-01 .fun .text-box .btn:hover {
+  background-color: transparent;
+  color: #000;
+  transition: .3s;
+}
+
+.section-01 .fact-box {
+  width: 325px;
+  position: absolute;
+  bottom: -3.5rem;
+  left: 1.75rem;
+  right: auto;
+  z-index: 19;
+  padding: 1.75rem;
+  border: 3px solid #000;
+  border-radius: 49px;
+  background-color: #FF9388;
+}
+
+.section-01 .fact-box-i {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-01 .fact-box p:first-child {
+  line-height: 1;
+  letter-spacing: 0;
+  font-size: 23px;
+  font-family: Relative Pitch;
+}
+
+.section-01 .fact-box p:nth-child(2) {
+  line-height: 1;
+  margin-bottom: .5rem;
+  font-family: Hammer, sans-serif;
+  font-size: 60px;
+}
+
+.section-01 .fact-box p:last-child {
+  text-align: center;
+  line-height: 1.25;
+  font-size: 20px;
+}
+
+/* section-02 */
+.section-02 {
+  position: relative;
+  background-color: #FFE9DE;
+}
+
+.section-02 .phil {
+  padding-top: 5rem;
+  padding-bottom: 99px;
+  border-bottom: 3px solid #000;
+  color: #FFE9DE;
+}
+
+.section-02 .phil .title {
+  text-align: center;
+  margin-bottom: 6rem; 
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  line-height: 1;
+  font-family: plinc Cooper Nouveau;
+  font-size: 72px;
+  color: #000;
+}
+
+.section-02 .phil .slider-box {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 88px;
+}
+
+.section-02 .phil .slider-box ul {
+  display: flex;
+  align-items: center;
+}
+
+.section-02 .phil .slider-box ul li {
+  flex: 0 0 25vw;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
+.section-02 .phil .slider-box ul li a {
+  width: 50%;
+  display: block;
+  margin: auto;
+}
+
+.section-02 .more {
+  width: 100%;
+}
+
+.section-02 .more .title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+  font-family: Hammer, sans-serif;
+  font-size: 12.5vw;
+  line-height: .75;
+}
+
+.section-02 .more .contents-box {
+  width: 100%;
+  display: flex;
+}
+
+.section-02 .more .contents-box .text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.section-02 .more .contents-box .text .t-box {
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.section-02 .more .contents-box .text .t-box p:first-child {
+  margin-bottom: 1rem;
+  font-family: Plinc Cooper Nouveau, sans-serif;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.section-02 .more .contents-box .text .t-box p:last-child {
+  line-height: 1.5;
+  font-size: 21px;
+}
+
+.section-02 .more .contents-box .img {
+  width: 50%;
+}
+
+.section-02 .fact-box {
+  width: 325px;
+  position: absolute;
+  bottom: 1.75rem;
+  left: auto;
+  right: 2rem;
+  z-index: 19;
+  padding: 1.75rem;
+  border: 3px solid #000;
+  border-radius: 49px;
+  background-color: #FFB040;
+}
+
+.section-02 .fact-box-i {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-02 .fact-box p:first-child {
+  line-height: 1;
+  letter-spacing: 0;
+  font-size: 23px;
+  font-family: Relative Pitch;
+}
+
+.section-02 .fact-box p:nth-child(2) {
+  line-height: 1;
+  margin-bottom: .5rem;
+  font-family: Hammer, sans-serif;
+  font-size: 60px;
+}
+
+.section-02 .fact-box p:last-child {
+  text-align: center;
+  line-height: 1.25;
+  font-size: 20px;
+}
+
+/* section-03 */
+.section-03 {
+  position: relative;
+  width: 100%;
+  border-top: 3px solid #000;
+  background-color: #ACFF93;
+}
+
+.section-03 .recipes {
+  padding-bottom: 5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.section-03 .recipes .top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5rem;
+  margin-bottom: 3.5rem;
+}
+
+.section-03 .recipes .top .title {
+  text-align: left;
+  line-height: 1;
+  font-family: Plinc Cooper Nouveau, sans-serif;
+  font-size: 72px;
+}
+
+.section-03 .recipes .top .btn {
+  padding: .625rem 22px;
+  line-height: 1;
+  letter-spacing: -.06em;
+  font-size: 30px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background-color: #000;
+  color: #ACFF93;
+}
+
+.section-03 .recipes .top .btn:hover {
+  background-color: transparent;
+  color: #000;
+  transition: .3s;
+}
+
+.section-03 .recipes .contents {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 1.5rem;
+}
+
+.section-03 .recipes .contents .box {
+  border: 3px solid #000;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.section-03 .recipes .contents .box a {
+  display: block;
+}
+
+.section-03 .recipes .contents .box .img {
+  width: 100%;
+  height: 0;
+  position: relative;
+  padding-bottom: 100%;
+}
+
+.section-03 .recipes .contents .box .img img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+}
+
+.section-03 .recipes .contents .box .text {
+  display: flex;
+  align-items: center;
+  padding: 1.7rem 1.5rem;
+  border-top: 3px solid #000;
+  font-family: Plinc Cooper Nouveau, sans-serif;
+  line-height: 1.1;
+  font-size: 32px;
+}
+
+.section-03 .recipes .contents .box a:hover .text {
+  background-color: #FFE9DE;
+  transition: .3s;
+}
+
+.section-03 .recipes .contents .box:first-child .text {
+  background-color: #FF8080;
+}
+
+.section-03 .recipes .contents .box:nth-child(2) .text {
+  background-color: #9CC2FF;
+}
+
+.section-03 .recipes .contents .box:last-child .text {
+  background-color: #FFB040;
+}
+
+.section-03 .spin {
+  width: 100%;
+  padding-bottom: 106px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.section-03 .spin .title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+  padding-top: 1.5rem;
+  line-height: 1;
+  font-family: Plinc Cooper Nouveau, sans-serif;
+  font-size: 72px;
+}
+
+.section-03 .spin .contents {
+  position: relative;
+}
+
+.section-03 .spin .contents .box-wrap {
+  display: flex;
+  overflow: hidden;
+}
+
+.section-03 .spin .contents .box-wrap .box {
+  width: 100%;
+  min-width: 1839px;
+  max-width: 1839px;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.section-03 .spin .contents .box-wrap .box .box-inner {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-03 .spin .contents .box-wrap .box .box-inner .img {
+  width: 50%;
+  border: 3px solid #000;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.section-03 .spin .contents .box-wrap .box .box-inner .img img {
+  width: 684px;
+  height: 690px;
+  object-fit: cover;
+}
+
+.section-03 .spin .contents .box-wrap .box .box-inner .text-box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+
+.section-03 .spin .contents .box-wrap .box .box-inner .text-box .icon {
+  margin-bottom: 1.25rem;
+}
+
+.section-03 .spin .contents .box-wrap .box .box-inner .text-box .text {
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 4rem;
+  font-size: 40px;
+}
+
+.section-03 .spin .contents .box-wrap .box .box-inner .text-box a {
+  line-height: 1;
+  letter-spacing: 0;
+  font-family: Relative Pitch, sans-serif;
+  font-size: 22px;
+  text-decoration: underline;
+}
+
+.section-03 .spin .contents .btn-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.section-03 .spin .contents .btn-wrap .arrow:first-child {
+  margin-left: 2rem;
+}
+
+.section-03 .spin .contents .btn-wrap .arrow:last-child {
+  margin-right: 2rem;
+}
+
+/* section-04 */
+.section-04 {
+  width: 100%;
+  position: relative;
+  background-color: #FFE9DE;
+}
+
+.section-04 .slider-box {
+  width: 100%;
+  padding-top: 93px;
+  padding-bottom: 2rem;
+  overflow: hidden;
+}
+
+.section-04 .slider-box ul {
+  display: flex;
+  align-items: center;
+}
+
+.section-04 .slider-box ul li {
+  width: 400px;
+  height: 3rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
+.section-04 .slider-box ul li a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.section-04 .slider-box ul li a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.section-04 .insta {
+  width: 100%;
+  position: relative;
+  padding-top: 46px;
+  padding-bottom: 88px;
+}
+
+.section-04 .insta .contents-img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.section-04 .insta .contents-img .img-grid {
+  width: 91.666667%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.section-04 .insta .contents-img .img {
+  width: 100%;
+  display: block;
+}
+

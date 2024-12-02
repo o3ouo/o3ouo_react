@@ -9,6 +9,9 @@ border 3px
 border-radius 30px
 
 section1 color : #9CC2FF
+section2 color : #FFE9DE
+section3 color : #ACFF93
+section3 color : #FFE9DE
 footer color : #FFE9DE
 
 
@@ -27,7 +30,11 @@ CALLING ALL OMNIVORES.
 United <br>
 We Grill!
 
-We believe there’s room for both meat and vegetables on our plates—and when you unite them with mouthwatering spices, delicious things happen! You might have known us as Misfit Foods, but now you can call us Phil’s Finest. Welcome!
+We believe there’s room for both meat and 
+vegetables on our plates—and when you unite them 
+with mouthwatering spices, delicious things happen! 
+You might have known us as Misfit Foods, but now 
+you can call us Phil’s Finest. Welcome!
 
 All-in-One Tasty Fun
 

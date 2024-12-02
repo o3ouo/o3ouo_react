@@ -1,33 +1,48 @@
-let navBg = document.querySelector(".header .nav-bg");
-let logo = document.querySelector(".header .logo");
-let logoBox = document.querySelector(".header .logo-box");
 
+// scrll event
 window.addEventListener("scroll", function () {
 
-  const isScrolled = window.scrollY > 0;
+  // header logo event
+  let navBg = document.querySelector(".header .nav-bg");
+  let logo = document.querySelector(".header .logo");
+  let logoBox = document.querySelector(".header .logo-box");
 
-  navBg.classList.toggle("scrolled", isScrolled);
-  logo.classList.toggle("scrolled", isScrolled);
-  logoBox.classList.toggle("scrolled", isScrolled);
+  if (this.window.scrollY > 0) {
+    navBg.style.opacity = "1";
 
-  // if (this.window.scrollY > 0) {
-  //   navBg.style.opacity = "1";
-
-  //   logo.style.top = "0";
-  //   logo.style.alignItems = "center";
+    logo.style.top = "0";
+    logo.style.alignItems = "center";
     
-  //   logoBox.style.transform = "scale(0.2)";
-  // } else {
-  //   navBg.style.opacity = "0";
+    logoBox.style.transform = "scale(0.165)";
+  } else {
+    navBg.style.opacity = "0";
 
-  //   logo.style.top = "-6px";
-  //   logo.style.alignItems = "baseline";
+    logo.style.top = "-6px";
+    logo.style.alignItems = "baseline";
 
-  //   logoBox.style.transform = "scale(1)";
-  // };
+    logoBox.style.transform = "scale(1)";
+  };
+
+  // section-01 title event
+  let titleOne = document.querySelector(".welcom .title");
+
+  if (window.scrollY >= titleOne.offsetTop + 500) {
+    titleOne.style.opacity = "1";
+    console.log("ㄱㄱ");
+  } else {
+    titleOne.style.opacity = "0";
+    console.log("ㄴㄴ");
+  };
 
 });
 
+
+// section-01 item mouseover event
+
+
+
+
+// item 객체 배열 
 let item = [
   {
     id: 1,
