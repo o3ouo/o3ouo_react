@@ -37,9 +37,42 @@ window.addEventListener("scroll", function () {
 });
 
 
+// header menu mouseover
+let product = document.querySelector(".header .menu-list a");
+let menu = document.querySelector(".header .menu");
+
+product.addEventListener("mouseover", () => {
+  menu.style.opacity = "1";
+});
+
+product.addEventListener("mouseout", () => {
+  menu.style.opacity = "0";
+});
+
 // section-01 item mouseover event
 
 
+// section-02 logo slider
+const slider = document.querySelector('.section-02 .slider ul');
+
+const clone = slider.cloneNode(true);
+
+document.querySelector(".section-02 .slider").appendChild(clone);
+
+
+// section-04 logo slider
+let roller = document.querySelector('.slider-list');
+roller.id = 'roller1';
+
+let cloneF = roller.cloneNode(true);
+clone.id = 'roller2';
+document.querySelector('.slider-wrap').appendChild(cloneF);
+
+document.querySelector('#roller1').style.left = '0px';
+document.querySelector('#roller2').style.left = document.querySelector('.slider-list ul').offsetWidth + 'px';
+
+roller.classList.add('original');
+cloneF.classList.add('clone');
 
 
 // item 객체 배열 

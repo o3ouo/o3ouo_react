@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rolling</title>
+  <style>
+    .wrap {
+      border: 1px solid #333;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .wrap .rolling-list ul {
+      padding: 0;
+      display: flex;
+    }
+
+    .wrap .rolling-list ul li {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .rolling-list.original {
+      animation: rollingleft1 50s linear infinite;
+    }
+
+    .rolling-list.clone {
+      animation: rollingleft2 50s linear infinite;
+    }
+
+    @keyframes rollingleft1 {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(-100%);
+      }
+      50.01% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes rollingleft2 {
+      0% {
+        transition: translateX(0);
+      }
+      100% {
+        transform: translateX(-200%)
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="wrap"> 
+    <div class="rolling-list">
+      <ul>
+        <li>
+          <div class="img-wrap">
+            <img src="./img/section02_logo01.webp" alt="1">
+          </div>
+        </li>
+        <li>
+          <div class="img-wrap">
+            <img src="./img/section02_logo02.webp" alt="1">
+          </div>
+        </li>
+        <li>
+          <div class="img-wrap">
+            <img src="./img/section02_logo03.webp" alt="1">
+          </div>
+        </li>
+        <li>
+          <div class="img-wrap">
+            <img src="./img/section02_logo04.webp" alt="1">
+          </div>
+        </li>
+        <li>
+          <div class="img-wrap">
+            <img src="./img/section02_logo05.webp" alt="1">
+          </div>
+        </li>
+        <li>
+          <div class="img-wrap">
+            <img src="./img/section02_logo06.webp" alt="1">
+          </div>
+        </li>
+        <li>
+          <div class="img-wrap">
+            <img src="./img/section02_logo07.webp" alt="1">
+          </div>
+        </li>
+        <li>
+          <div class="img-wrap">
+            <img src="./img/section02_logo08.webp" alt="1">
+          </div>
+        </li>
+        <li>
+          <div class="img-wrap">
+            <img src="./img/section02_logo09.webp" alt="1">
+          </div>
+        </li>
+        <li>
+          <div class="img-wrap">
+            <img src="./img/section02_logo10.webp" alt="1">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    let roller = document.querySelector('.rolling-list');
+    roller.id = 'roller1';
+
+    let clone = roller.cloneNode(true);
+    clone.id = 'roller2';
+    document.querySelector('.wrap').appendChild(clone);
+
+    document.querySelector('#roller1').style.left = '0px';
+    document.querySelector('#roller2').style.left = document.querySelector('.rolling-list ul').offsetWidth + 'px';
+
+    roller.classList.add('original');
+    clone.classList.add('clone');
+  </script>
+</body>
+</html>
