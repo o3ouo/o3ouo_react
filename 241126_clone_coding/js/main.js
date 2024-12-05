@@ -135,53 +135,129 @@ function slide(item) {
 
 slide(item);
 
-// section-01 item mouseover event
+
+// section-01 fun slide box
 const funSlider = document.querySelector(".section-01 .item-slider"); 
-const funBtnBox = document.querySelector(".section-01 .slide-btn");
+const images = document.querySelectorAll(".section-01 .item-slider img");
+const prevBtn = document.querySelector(".section-01 .prev");
+const nextBtn = document.querySelector(".section-01 .next");
 
-let isMouseOverSlider = false; // 상태 플래그
+let currentIndex = 0;
+const totalImages = images.length;
+const imagesPerView = 3; 
 
-funSlider.addEventListener("mouseover", (e) => {
-  console.log("Mouseover on slider");
-  console.log("Related Target:", e.relatedTarget);
-
-  if (!funSlider.contains(e.relatedTarget) && !isMouseOverSlider) { // 내부에서 발생한 이벤트는 무시
-    console.log("Mouse entered the slider area");
-    isMouseOverSlider = true; // 플래그 설정
-    funBtnBox.style.opacity = "1";
-    funBtnBox.style.pointerEvents = "auto";
+nextBtn.addEventListener("click", () => {
+  // 오른쪽 끝에 도달하면 멈춤
+  if (currentIndex <  totalImages - imagesPerView) {
+    currentIndex++;
+    updateSlidePosition();
   }
 });
 
-funSlider.addEventListener("mouseout", (e) => {
-  console.log("Mouseout from slider");
-  console.log("Related Target:", e.relatedTarget);
-
-  if (!funSlider.contains(e.relatedTarget)) {
-    console.log("Mouse left the slider area");
-    isMouseOverSlider = false; // 플래그 해제
-    funBtnBox.style.opacity = "0";
-    funBtnBox.style.pointerEvents = "none";
+prevBtn.addEventListener("click", () => {
+  // 왼쪽 끝에 도달하면 멈춤
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateSlidePosition();
   }
 });
+
+function updateSlidePosition() { 
+  const slideWidth = funSlider.clientWidth / imagesPerView; // 한 이미지의 폭
+  funSlider.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+}
+
+// resize 
+window.addEventListener("resize", updateSlidePosition);
+
+
+
+
+
 
 
 // > section-02 logo slider
-const slider = document.querySelector('.section-02 .slider ul');
+const slider = document.querySelector(".section-02 .slider ul");
 const clone = slider.cloneNode(true);
 document.querySelector(".section-02 .slider").appendChild(clone);
 
 
 // > section-04 logo slider
-let roller = document.querySelector('.slider-list');
-roller.id = 'roller1';
+let roller = document.querySelector(".slider-list");
+roller.id = "roller1";
 
 let cloneF = roller.cloneNode(true);
-clone.id = 'roller2';
-document.querySelector('.slider-wrap').appendChild(cloneF);
+clone.id = "roller2";
+document.querySelector(".slider-wrap").appendChild(cloneF);
 
-document.querySelector('#roller1').style.left = '0px';
-document.querySelector('#roller2').style.left = document.querySelector('.slider-list ul').offsetWidth + 'px';
+document.querySelector("#roller1").style.left = "0px";
+document.querySelector("#roller2").style.left = document.querySelector(".slider-list ul").offsetWidth + "px";
 
-roller.classList.add('original');
-cloneF.classList.add('clone');
+roller.classList.add("original");
+cloneF.classList.add("clone");
+
+
+
+
+
+
+
+
+// section-03 spin slide box
+
+// const spinBtnLeft = document.querySelector(".section-03 .spin .btn-wrap .arrow:first-child");
+// const spinBtnRight = document.querySelector(".section-03 .spin .btn-wrap .arrow:last-child");
+// const spinBoxWrap = document.querySelector(".section-03 .spin .contents .box-wrap"); // 부모 컨테이너
+// const spinBoxes = document.querySelectorAll(".section-03 .spin .box");
+
+// let currentIndex = 0; // 현재 인덱스
+// let slideWidth = spinBoxes[0].offsetWidth; // 슬라이드 너비
+// const totalSlides = spinBoxes.length; // 슬라이드 개수
+
+// // 슬라이드 복제
+// const firstClone = spinBoxes[0].cloneNode(true);
+// const lastClone = spinBoxes[totalSlides - 1].cloneNode(true);
+// spinBoxWrap.appendChild(firstClone); // 마지막 뒤에 첫 번째 추가
+// spinBoxWrap.insertBefore(lastClone, spinBoxes[0]); // 첫 번째 앞에 마지막 추가
+
+// // 초기 위치 설정 (복제된 마지막 슬라이드로 이동)
+// spinBoxWrap.style.transform = `translateX(-${slideWidth}px)`;
+
+// // 버튼 클릭 이벤트 핸들러
+// function moveSlide(direction) {
+//   // 방향에 따른 인덱스 업데이트
+//   if (direction === "left") {
+//     currentIndex--;
+//   } else {
+//     currentIndex++;
+//   }
+
+//   // 슬라이드 이동
+//   spinBoxWrap.style.transition = "transform 0.5s ease-in-out";
+//   spinBoxWrap.style.transform = `translateX(-${(currentIndex + 1) * slideWidth}px)`;
+
+//   // 무한 루프 (애니메이션이 끝난 후 이벤트 발생)
+//   spinBoxWrap.addEventListener("transitionend", () => {
+//     spinBoxWrap.style.transition = "none";
+//     if (currentIndex === -1) {
+//       currentIndex = totalSlides - 1; // 마지막 슬라이드로 이동
+//       spinBoxWrap.style.transform = `translateX(-${(currentIndex + 1) * slideWidth}px)`;
+//     }
+//     if (currentIndex === totalSlides) {
+//       currentIndex = 0; // 첫 번째 슬라이드로 이동
+//       spinBoxWrap.style.transform = `translateX(-${(currentIndex + 1) * slideWidth}px)`;
+//     }
+//   });
+// }
+
+// // 버튼 이벤트 리스너 추가
+// spinBtnLeft.addEventListener("click", () => moveSlide("left"));
+// spinBtnRight.addEventListener("click", () => moveSlide("right"));
+
+// window.addEventListener("resize", () => {
+//   slideWidth = spinBoxes[0].offsetWidth; // 새 슬라이드 너비 계산
+//   spinBoxWrap.style.transition = "none"; // 애니메이션 제거
+//   spinBoxWrap.style.transform = `translateX(-${(currentIndex + 1) * slideWidth}px)`;
+// });
+
+
