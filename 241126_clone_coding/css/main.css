@@ -152,6 +152,10 @@ h6 {
   transition: transform 0.5s ease, top 0.5s ease;
 }
 
+.header .logo-box img {
+  width: 36vw;
+}
+
 .header .menu {
   position: absolute;
   left: 0;
@@ -377,25 +381,28 @@ h6 {
 .section-01 .fun .item-box-i {
   overflow: hidden;
   display: flex;
+  width: 100%;
 }
 
 .section-01 .fun .item-slider {
   display: flex;
-  text-align: center;
   transition: transform 0.5s ease-in-out;
+  will-change: transform;
 }
 
 .section-01 .fun .item-slider li {
-  flex-shrink: 0;
-  width: calc(100% / 3);
+  flex: 0 0 calc(100% / 3);
   height: auto;
   padding-left: 1rem;
   padding-right: 1rem;
+  text-align: center;
 }
 
 .section-01 .fun .item-slider img {
+  width: 100%;
+  height: auto;
   margin: auto;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .section-01 .fun .tem-img {
@@ -405,7 +412,7 @@ h6 {
 
 .section-01 .fun .tem-img img {
   width: 592px;
-  height: 592px;
+  height: auto;
   object-fit: cover;
 }
 
@@ -791,56 +798,57 @@ h6 {
 }
 
 .section-03 .spin .contents {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.section-03 .spin .contents .box-wrap {
+.section-03 .spin .contents .btn {
+  cursor: pointer;
+}
+
+.section-03 .spin .content-box .box-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.section-03 .spin .con-wrap {
   overflow: hidden;
-  display: flex;
-  position: relative;
   width: 100%;
-  z-index: 37;
+}
+
+.section-03 .spin .con-inner {
+  display: flex;
+  width: 300%;
   transition: transform 0.5s ease-in-out;
-  will-change: transform;
 }
 
-.section-03 .spin .contents .box-wrap .box {
-  display: flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-width: 100%;
-  /* min-width: 1839px;
-  max-width: 1839px; */
-  min-height: 100%;
-  transform: none;
-  /* transform: translate3d(0px, 0px, 0px); */
-}
-
-.section-03 .spin .contents .box-wrap .box .box-inner {
+.section-03 .spin .content-box {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 75%;
+  justify-content: space-between;
+  width: calc(100% / 3);
+  padding: 0 10rem;
 }
 
-.section-03 .spin .contents .box-wrap .box .box-inner .img {
+.section-03 .spin .content-box .img {
   overflow: hidden;
   width: 50%;
   border: 3px solid #000;
   border-radius: 30px;
 }
 
-.section-03 .spin .contents .box-wrap .box .box-inner .img img {
-  /* width: 684px;
-  height: 690px; */
+.section-03 .spin .content-box img {
+  flex-shrink: 0;
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-.section-03 .spin .contents .box-wrap .box .box-inner .text-box {
+.section-03 .spin .content-box .text-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -850,18 +858,18 @@ h6 {
   padding-right: 2.25rem;
 }
 
-.section-03 .spin .contents .box-wrap .box .box-inner .text-box .icon {
+.section-03 .spin .content-box .text-box .icon {
   margin-bottom: 1.25rem;
 }
 
-.section-03 .spin .contents .box-wrap .box .box-inner .text-box .text {
+.section-03 .spin .content-box .text-box .text {
   margin-bottom: 4rem;
   font-size: 40px;
   text-align: center;
   line-height: 1.2;
 }
 
-.section-03 .spin .contents .box-wrap .box .box-inner .text-box .line-btn {
+.section-03 .spin .content-box .text-box .line-btn {
   font-family: Relative Pitch, sans-serif;
   font-size: 22px;
   letter-spacing: 0;
@@ -869,33 +877,7 @@ h6 {
   text-decoration: underline;
 }
 
-.section-03 .spin .contents .btn-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.section-03 .spin .contents .btn-wrap .arrow {
-  position: relative;
-  cursor: pointer;
-  z-index: 39;
-}
-
-.section-03 .spin .contents .btn-wrap .arrow:first-child {
-  margin-left: 2rem;
-}
-
-.section-03 .spin .contents .btn-wrap .arrow:last-child {
-  margin-right: 2rem;
-}
-
-
-/* ////////////////////////////////////////////////////////////////section-04 */
+/* ///////////////////////////////////////////////////////////////section-04 */
 .section-04 {
   position: relative;
   width: 100%;

@@ -47,19 +47,19 @@ window.addEventListener("scroll", () => {
 });
 
 
-// > header menu mouseover
+//////////////////////////////////// > header menu mouseover
 const product = document.querySelector(".header .menu-list a:first-child");
 const menu = document.querySelector(".header .menu");
 let hideTimeout;
 
-// menu show
+// & menu show
 const showMenu = () => {
   clearTimeout(hideTimeout); // 기존 타이머 취소
   menu.style.opacity = "1";
   menu.style.pointerEvents = "auto";
 };
 
-// menu hide
+// * menu hide
 const hideMenu = () => {
   hideTimeout = setTimeout(() => {
     menu.style.opacity = "0";
@@ -67,14 +67,21 @@ const hideMenu = () => {
   }, 300); 
 };
 
-// products, menu mouse event add
+// * products, menu mouse event add
 product.addEventListener("mouseover", showMenu);
 menu.addEventListener("mouseover", showMenu);
 product.addEventListener("mouseout", hideMenu);
 menu.addEventListener("mouseout", hideMenu);
 
 
-// > item 객체 배열 
+///////////////////////////// > section-01 fun slide box
+
+// 초기 DOM 요소
+const funSlider = document.querySelector(".section-01 .item-slider");
+const prevBtn = document.querySelector(".section-01 .prev");
+const nextBtn = document.querySelector(".section-01 .next");
+
+// 아이템 데이터 배열
 let item = [
   {
     id: 1,
@@ -105,78 +112,88 @@ let item = [
   },
 ];
 
-// > item slider에 객체 배열로 만들어둔 item 넣기
-let itemSlider = document.querySelector(".item-slider");
-
-function slide(item) {
-
-  let tem = item.map( items => {
-    console.log(items);
-    return `
-      <li>
-        <a href="#">
-          <figure class="tem-img">
-            <img src=${items.img} alt=${items.name}>
-          </figure>
-          <div class="tem-txt">
-            <p class="tem-name">${items.name}</p>
-            <p class="tem-info">${items.info}</p>
-          </div>
-        </a>
-      </li>
-    `
-  });
-
-  tem = tem.join("");
-  console.log(tem);
-
-  itemSlider.innerHTML = tem;
-}
-
-slide(item);
-
-
-// section-01 fun slide box
-const funSlider = document.querySelector(".section-01 .item-slider"); 
-const images = document.querySelectorAll(".section-01 .item-slider img");
-const prevBtn = document.querySelector(".section-01 .prev");
-const nextBtn = document.querySelector(".section-01 .next");
+// 슬라이더 내용 추가
+item.forEach((items) => {
+  const li = document.createElement("li");
+  li.innerHTML = createSlideItemHTML(items);
+  funSlider.appendChild(li);
+});
 
 let currentIndex = 0;
-const totalImages = images.length;
 const imagesPerView = 3; 
 
 nextBtn.addEventListener("click", () => {
-  // 오른쪽 끝에 도달하면 멈춤
-  if (currentIndex <  totalImages - imagesPerView) {
+  const totalImages = funSlider.querySelectorAll("li").length; // li 개수
+  if (currentIndex < totalImages - imagesPerView) {
     currentIndex++;
     updateSlidePosition();
   }
 });
 
 prevBtn.addEventListener("click", () => {
-  // 왼쪽 끝에 도달하면 멈춤
   if (currentIndex > 0) {
     currentIndex--;
     updateSlidePosition();
   }
 });
 
-function updateSlidePosition() { 
-  const slideWidth = funSlider.clientWidth / imagesPerView; // 한 이미지의 폭
+function updateSlidePosition() {
+  const slideWidth = document.querySelector(".section-01 .item-box-i").clientWidth / imagesPerView;
   funSlider.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
 }
 
-// resize 
+// 화면 크기 변경 대응
 window.addEventListener("resize", updateSlidePosition);
 
 
+// 슬라이드 HTML 생성 함수
+function createSlideItemHTML(item) {
+  return `
+    <a href="#">
+      <figure class="tem-img">
+        <img src="${item.img}" alt="${item.name}">
+      </figure>
+      <div class="tem-txt">
+        <p class="tem-name">${item.name}</p>
+        <p class="tem-info">${item.info}</p>
+      </div>
+    </a>`;
+}
 
 
+/////////////////// > section-03 spin slide box
+const conInner = document.querySelector(".section-03 .con-inner");
+const spinPrev = document.querySelector(".section-01 .prev");
+const spinNext = document.querySelector(".section-03 .next");
+
+let spinIndex = 0;
+const spinView = 1;
+const spinTotal = document.querySelectorAll(".section-03 .content-box").length;
+
+function update() {
+  const spinWidth = conInner.parentElement.clientWidth / spinView; // 한 슬라이드의 너비
+  conInner.style.transform = `translateX(${-spinIndex * spinWidth}px)`;
+  conInner.style.transition = "transform 0.5s ease-in-out";
+}
+
+function moveSlide(direction) {
+  if (direction === "next") {
+    spinIndex = (spinIndex + 1) % spinTotal;
+  } else if (direction === "prev") {
+    spinIndex = (spinIndex - 1 + spinTotal) % spinTotal;
+  }
+  update();
+}
+
+spinNext.addEventListener("click", () => {moveSlide("next")});
+spinPrev.addEventListener("click", () => {moveSlide("prev")});
+
+update();
+
+window.addEventListener("resize", update);
 
 
-
-// > section-02 logo slider
+////////////////////////////////// > section-02 logo slider
 const slider = document.querySelector(".section-02 .slider ul");
 const clone = slider.cloneNode(true);
 document.querySelector(".section-02 .slider").appendChild(clone);
@@ -195,69 +212,4 @@ document.querySelector("#roller2").style.left = document.querySelector(".slider-
 
 roller.classList.add("original");
 cloneF.classList.add("clone");
-
-
-
-
-
-
-
-
-// section-03 spin slide box
-
-// const spinBtnLeft = document.querySelector(".section-03 .spin .btn-wrap .arrow:first-child");
-// const spinBtnRight = document.querySelector(".section-03 .spin .btn-wrap .arrow:last-child");
-// const spinBoxWrap = document.querySelector(".section-03 .spin .contents .box-wrap"); // 부모 컨테이너
-// const spinBoxes = document.querySelectorAll(".section-03 .spin .box");
-
-// let currentIndex = 0; // 현재 인덱스
-// let slideWidth = spinBoxes[0].offsetWidth; // 슬라이드 너비
-// const totalSlides = spinBoxes.length; // 슬라이드 개수
-
-// // 슬라이드 복제
-// const firstClone = spinBoxes[0].cloneNode(true);
-// const lastClone = spinBoxes[totalSlides - 1].cloneNode(true);
-// spinBoxWrap.appendChild(firstClone); // 마지막 뒤에 첫 번째 추가
-// spinBoxWrap.insertBefore(lastClone, spinBoxes[0]); // 첫 번째 앞에 마지막 추가
-
-// // 초기 위치 설정 (복제된 마지막 슬라이드로 이동)
-// spinBoxWrap.style.transform = `translateX(-${slideWidth}px)`;
-
-// // 버튼 클릭 이벤트 핸들러
-// function moveSlide(direction) {
-//   // 방향에 따른 인덱스 업데이트
-//   if (direction === "left") {
-//     currentIndex--;
-//   } else {
-//     currentIndex++;
-//   }
-
-//   // 슬라이드 이동
-//   spinBoxWrap.style.transition = "transform 0.5s ease-in-out";
-//   spinBoxWrap.style.transform = `translateX(-${(currentIndex + 1) * slideWidth}px)`;
-
-//   // 무한 루프 (애니메이션이 끝난 후 이벤트 발생)
-//   spinBoxWrap.addEventListener("transitionend", () => {
-//     spinBoxWrap.style.transition = "none";
-//     if (currentIndex === -1) {
-//       currentIndex = totalSlides - 1; // 마지막 슬라이드로 이동
-//       spinBoxWrap.style.transform = `translateX(-${(currentIndex + 1) * slideWidth}px)`;
-//     }
-//     if (currentIndex === totalSlides) {
-//       currentIndex = 0; // 첫 번째 슬라이드로 이동
-//       spinBoxWrap.style.transform = `translateX(-${(currentIndex + 1) * slideWidth}px)`;
-//     }
-//   });
-// }
-
-// // 버튼 이벤트 리스너 추가
-// spinBtnLeft.addEventListener("click", () => moveSlide("left"));
-// spinBtnRight.addEventListener("click", () => moveSlide("right"));
-
-// window.addEventListener("resize", () => {
-//   slideWidth = spinBoxes[0].offsetWidth; // 새 슬라이드 너비 계산
-//   spinBoxWrap.style.transition = "none"; // 애니메이션 제거
-//   spinBoxWrap.style.transform = `translateX(-${(currentIndex + 1) * slideWidth}px)`;
-// });
-
 
