@@ -1,4 +1,4 @@
-// > scroll event
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> scroll event
 window.addEventListener("scroll", () => {
   // 요소가 화면에 나타나기 전에 동작시키는 공통 함수
   function handleScroll(element, offset = 200) {
@@ -7,28 +7,21 @@ window.addEventListener("scroll", () => {
 
     if (elementTop < viewportHeight - offset) {
       element.style.opacity = "1";
-      element.style.transform = "translateY(0)"; // 등장 애니메이션
     } else {
       element.style.opacity = "0";
-      element.style.transform = "translateY(20px)"; // 초기 위치 
     }
   }
 
   // * header logo event
   const navBg = document.querySelector(".header .nav-bg");
-  const logo = document.querySelector(".header .logo");
   const logoBox = document.querySelector(".header .logo-box");
 
   if (window.scrollY > 0) {
     navBg.style.opacity = "1";
-    logo.style.top = "0";
-    logo.style.alignItems = "center";
-    logoBox.style.transform = "scale(0.165)";
+    logoBox.classList.add("scroll");
   } else {
     navBg.style.opacity = "0";
-    logo.style.top = "-6px";
-    logo.style.alignItems = "baseline";
-    logoBox.style.transform = "scale(1)";
+    logoBox.classList.remove("scroll");
   }
 
   // * section-01 title event
@@ -46,8 +39,7 @@ window.addEventListener("scroll", () => {
 
 });
 
-
-//////////////////////////////////// > header menu mouseover
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> header menu mouseover
 const product = document.querySelector(".header .menu-list a:first-child");
 const menu = document.querySelector(".header .menu");
 let hideTimeout;
@@ -73,8 +65,56 @@ menu.addEventListener("mouseover", showMenu);
 product.addEventListener("mouseout", hideMenu);
 menu.addEventListener("mouseout", hideMenu);
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> header bambar click
+const hambar = document.querySelector(".header .hambar");
+const hamLineFirst = document.querySelector(".hambar .line:first-child");
+const hamLineTwo = document.querySelector(".hambar .line:nth-child(2)");
+const hamLineLast = document.querySelector(".hambar .line:last-child");
+const logoBox = document.querySelector(".header .logo-box");
+const logoImg = document.querySelector(".header .logo img");
+const hamMenu = document.querySelector(".ham-m-menu");
 
-///////////////////////////// > section-01 fun slide box
+hambar.addEventListener("click", () => {
+  hamLineFirst.classList.toggle("on");
+  hamLineTwo.classList.toggle("on");
+  hamLineLast.classList.toggle("on");
+  hamMenu.classList.toggle("on");
+
+  if (window.scrollY === 0) {
+    logoBox.classList.toggle("on");
+    logoImg.classList.toggle("on");
+    hamMenu.classList.add("line");
+  } else {
+    hamMenu.classList.remove("line");
+  }
+
+  if (logoBox.classList.contains("on")) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+});
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> mobail sub menu show
+const products = document.querySelector(".header .ham-m-menu .m>li:first-child");
+const productsBtn = document.querySelector(".header .ham-m-menu svg");
+const productsSub = document.querySelector(".header .ham-m-menu .hidden-box");
+
+let subToggle = true;
+
+function showSub() {
+  if (subToggle) {
+    productsSub.style.height = "262px";
+    productsBtn.style.transform = "rotate(180deg)";
+    subToggle =! subToggle;
+  } else {
+    productsSub.style.height = "0px";
+    productsBtn.style.transform = "rotate(0deg)";
+    subToggle =! subToggle;
+  }
+}
+
+products.addEventListener("click", showSub);
 
 // 초기 DOM 요소
 const funSlider = document.querySelector(".section-01 .item-slider");
@@ -160,8 +200,7 @@ function createSlideItemHTML(item) {
     </a>`;
 }
 
-
-/////////////////// > section-03 spin slide box
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> section-03 spin slide box
 const conInner = document.querySelector(".section-03 .con-inner");
 const spinPrev = document.querySelector(".section-01 .prev");
 const spinNext = document.querySelector(".section-03 .next");
@@ -192,19 +231,17 @@ update();
 
 window.addEventListener("resize", update);
 
-
-////////////////////////////////// > section-02 logo slider
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> section-02 logo slider
 const slider = document.querySelector(".section-02 .slider ul");
 const clone = slider.cloneNode(true);
 document.querySelector(".section-02 .slider").appendChild(clone);
 
-
-// > section-04 logo slider
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> section-04 logo slider
 let roller = document.querySelector(".slider-list");
 roller.id = "roller1";
 
 let cloneF = roller.cloneNode(true);
-clone.id = "roller2";
+cloneF.id = "roller2";
 document.querySelector(".slider-wrap").appendChild(cloneF);
 
 document.querySelector("#roller1").style.left = "0px";
