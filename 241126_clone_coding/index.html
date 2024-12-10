@@ -105,11 +105,16 @@
       <!-- //header -->
 
       <!-- main -->
-      <main class="main">
+      <main class="main pc">
         <div class="inner">
           <h2 class="main-title">
             CALLING ALL OMNIVORES.
           </h2>
+          <button class="main-btn">
+            <svg>
+              <path d="M10.9393 45.0607C11.5251 45.6464 12.4749 45.6464 13.0607 45.0607L22.6066 35.5147C23.1924 34.9289 23.1924 33.9792 22.6066 33.3934C22.0208 32.8076 21.0711 32.8076 20.4853 33.3934L12 41.8787L3.51472 33.3934C2.92893 32.8076 1.97918 32.8076 1.3934 33.3934C0.80761 33.9792 0.80761 34.9289 1.3934 35.5147L10.9393 45.0607ZM10.5 -6.55671e-08L10.5 44L13.5 44L13.5 6.55671e-08L10.5 -6.55671e-08Z"></path>
+            </svg>
+          </button>
         </div>
       </main>
       <!-- //main -->
@@ -283,35 +288,48 @@
         <div class="inner">
           <!-- recipes -->
           <div class="recipes">
+            <figure class="hidden-arrow l">
+              <img src="./img/section03_arrow_l.png" alt="arrow-left">
+            </figure>
             <div class="top">
               <h3 class="title">Get cookin' with our recipes</h3>
-              <a href="#" class="btn">All Recipes</a>
+              <div class="pc-btn">
+                <a href="#" class="btn">All Recipes</a>
+              </div>
             </div>
             <div class="contents">
-              <div class="box">
-                <a href="#">
-                  <figure class="img">
-                    <img src="./img/section03_recipe01.jpg" alt="weeknight pasta">
-                  </figure>
-                  <p class="text">Weeknight Pasta →</p>
-                </a>
+              <div class="box-wrap">
+                <div class="box">
+                  <a href="#">
+                    <figure class="img">
+                      <img src="./img/section03_recipe01.jpg" alt="weeknight pasta">
+                    </figure>
+                    <p class="text">Weeknight Pasta &nbsp;→</p>
+                  </a>
+                </div>
+                <div class="box">
+                  <a href="#">
+                    <figure class="img">
+                      <img src="./img/section03_recipe02.jpg" alt="Lao Curry Burger">
+                    </figure>
+                    <p class="text">Lao Curry Burger &nbsp;→</p>
+                  </a>
+                </div>
+                <div class="box">    
+                  <a href="#">
+                    <figure class="img">
+                      <img src="./img/section03_recipe03.jpg" alt="K-Beet-BQ Bow">
+                    </figure>
+                    <p class="text">K-Beet-BQ Bow &nbsp;→</p>
+                  </a>
+                </div>
               </div>
-              <div class="box">
-                <a href="#">
-                  <figure class="img">
-                    <img src="./img/section03_recipe02.jpg" alt="Lao Curry Burger">
-                  </figure>
-                  <p class="text">Lao Curry Burger →</p>
-                </a>
-              </div>
-              <div class="box">    
-                <a href="#">
-                  <figure class="img">
-                    <img src="./img/section03_recipe03.jpg" alt="K-Beet-BQ Bow">
-                  </figure>
-                  <p class="text">K-Beet-BQ Bow →</p>
-                </a>
-              </div>
+            </div>
+            <figure class="hidden-arrow r">
+              <img src="./img/section03_arrow_r.png" alt="arrow-right">
+            </figure>
+            <div class="btn-box">
+              <a href="#" class="btn">All Recipes</a>
             </div>
           </div>
           <!-- spin -->
@@ -371,67 +389,6 @@
                 <img src="./img/section03_arrow_r.png" alt="arrow-right">
               </figure>
             </div>
-
-            <!-- <div class="contents">
-              <div class="box-wrap">
-                <div class="box">
-                  <div class="box-inner">
-                    <figure class="img">
-                      <img src="./img/section03_slide01.jpg" alt="jim in ga">
-                    </figure>
-                    <div class="text-box">
-                      <figure class="icon">
-                        <img src="./img/section03_img.png" alt="icon">
-                      </figure>
-                      <p class="text">
-                        “I tried each one of the sausages you sent me, smothered in sautéed pepper and onions and I love them.”
-                      </p>
-                      <a href="#" class="line-btn">Jim in GA</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="box">
-                  <div class="box-inner">
-                    <figure class="img">
-                      <img src="./img/section03_slide02.jpg" alt="jim in ga">
-                    </figure>
-                    <div class="text-box">
-                      <figure class="icon">
-                        <img src="./img/section03_img.png" alt="icon">
-                      </figure>
-                      <p class="text">
-                        “I tried each one of the sausages you sent me, smothered in sautéed pepper and onions and I love them.”
-                      </p>
-                      <a href="#" class="line-btn">Cindy in CA</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="box">
-                  <div class="box-inner">
-                    <figure class="img">
-                      <img src="./img/section03_slide03.jpg" alt="jim in ga">
-                    </figure>
-                    <div class="text-box">
-                      <figure class="icon">
-                        <img src="./img/section03_img.png" alt="icon">
-                      </figure>
-                      <p class="text">
-                        “I tried each one of the sausages you sent me, smothered in sautéed pepper and onions and I love them.”
-                      </p>
-                      <a href="#" class="line-btn">Madeleine in OH</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="btn-wrap">
-                  <figure class="arrow">
-                    <img src="./img/section03_arrow_l.png" alt="arrow-left">
-                  </figure>
-                  <figure class="arrow">
-                    <img src="./img/section03_arrow_r.png" alt="arrow-right">
-                  </figure>
-              </div>
-            </div> -->
           </div>
         </div>
       </section>
@@ -474,6 +431,9 @@
           </div>
           <!-- insta -->
           <div class="insta">
+            <div class="insta-link">
+              <a href="#">@eatphilsfinest</a>
+            </div>
             <div class="contents-img">
               <div class="img-grid">
                 <a href="#" class="img">
@@ -486,9 +446,6 @@
                   <img src="./img/section04_img03.jpg" alt="insta img-03">
                 </a>
               </div>
-            </div>
-            <div class="insta-link">
-              <a href="#">@eatphilsfinest</a>
             </div>
           </div>
           <!-- fact -->
@@ -546,7 +503,7 @@
                 <div class="join-i">
                   <h4 class="title">JOIN PHIL'S WORLD!</h4>
                   <p>
-                    We send infrequent (and fun!) emails <br> 
+                    We send infrequent (and fun!) emails
                     with special deals and cool updates.
                   </p>
                   <form action="#" class="input-box">

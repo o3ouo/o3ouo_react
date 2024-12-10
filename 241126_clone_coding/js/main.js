@@ -116,6 +116,22 @@ function showSub() {
 
 products.addEventListener("click", showSub);
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> mobail main img change
+const mainImg = document.querySelector(".main");
+
+// window.onresize = function(event) {
+//   let innerWidth = window.innerWidth;
+//   innerWidth <= "1200" ? mainImg.style.background = "url(../img/main_mo.webp) no-repeat center/cover" : mainImg.style.background = "url(../img/main.webp) no-repeat center/cover";
+// }
+
+// window.addEventListener("resize", () => {
+//   if (window.innerWidth < 1201) {
+//     mainImg.style.background = "url(../img/main_mo.webp) no-repeat center/cover"
+//   }
+// });
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> section-01 item slider
+
 // 초기 DOM 요소
 const funSlider = document.querySelector(".section-01 .item-slider");
 const prevBtn = document.querySelector(".section-01 .prev");
@@ -202,7 +218,7 @@ function createSlideItemHTML(item) {
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> section-03 spin slide box
 const conInner = document.querySelector(".section-03 .con-inner");
-const spinPrev = document.querySelector(".section-01 .prev");
+const spinPrev = document.querySelector(".section-03 .prev");
 const spinNext = document.querySelector(".section-03 .next");
 
 let spinIndex = 0;
