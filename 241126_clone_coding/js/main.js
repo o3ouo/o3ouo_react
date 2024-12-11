@@ -65,7 +65,7 @@ menu.addEventListener("mouseover", showMenu);
 product.addEventListener("mouseout", hideMenu);
 menu.addEventListener("mouseout", hideMenu);
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> header bambar click
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> header hambar click
 const hambar = document.querySelector(".header .hambar");
 const hamLineFirst = document.querySelector(".hambar .line:first-child");
 const hamLineTwo = document.querySelector(".hambar .line:nth-child(2)");
@@ -119,16 +119,18 @@ products.addEventListener("click", showSub);
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> mobail main img change
 const mainImg = document.querySelector(".main");
 
-// window.onresize = function(event) {
-//   let innerWidth = window.innerWidth;
-//   innerWidth <= "1200" ? mainImg.style.background = "url(../img/main_mo.webp) no-repeat center/cover" : mainImg.style.background = "url(../img/main.webp) no-repeat center/cover";
-// }
+window.onresize = function(event) {
+  let innerWidth = window.innerWidth;
+  if (innerWidth <= "1200") {
+    mainImg.classList.remove("pc");
+    mainImg.classList.add("mobile");
+  } else {
+    mainImg.classList.remove("mobile");
+    mainImg.classList.add("pc");
+  }
+  // innerWidth <= "1200" ? mainImg.style.background = "url(../img/main_mo.webp) no-repeat center/cover" : mainImg.style.background = "url(../img/main.webp) no-repeat center/cover";
+}
 
-// window.addEventListener("resize", () => {
-//   if (window.innerWidth < 1201) {
-//     mainImg.style.background = "url(../img/main_mo.webp) no-repeat center/cover"
-//   }
-// });
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> section-01 item slider
 

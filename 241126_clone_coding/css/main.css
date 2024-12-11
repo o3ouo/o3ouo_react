@@ -362,7 +362,10 @@ h6 {
 
 .main.pc {
   background: url(../img/main.webp) no-repeat center/cover;
+}
 
+.main.mobile {
+  background: url(../img/main_mo.webp) no-repeat center/cover;
 }
 
 .main .inner {
