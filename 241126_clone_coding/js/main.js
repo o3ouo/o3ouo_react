@@ -12,7 +12,7 @@ window.addEventListener("scroll", () => {
     }
   }
 
-  // * header logo event
+  // * header logo 
   const navBg = document.querySelector(".header .nav-bg");
   const logoBox = document.querySelector(".header .logo-box");
 
@@ -24,27 +24,44 @@ window.addEventListener("scroll", () => {
     logoBox.classList.remove("scroll");
   }
 
-  // * section-01 title event
   const titleOne = document.querySelector(".welcom .title");
-  handleScroll(titleOne, 500); // 500px 여유를 두고 나타나게 설정
-
-  // * fact show
   const oneFact = document.querySelector(".section-01 .fact-box");
   const twoFact = document.querySelector(".section-02 .fact-box");
   const fourFact = document.querySelector(".section-04 .fact-box");
 
+  // * 높이가 줄어들었을 때
+let innerHeight = window.innerHeight;
+
+if (innerHeight <= "400") {
+  handleScroll(titleOne);
+  handleScroll(oneFact, 100);
+  handleScroll(twoFact, 100);
+  handleScroll(fourFact, 100);
+} else {
+  handleScroll(titleOne, 500); // 500px 여유를 두고 나타나게 설정
   handleScroll(oneFact, 200);
   handleScroll(twoFact, 200);
   handleScroll(fourFact, 200);
+}
+
+  // // * section-01 title event
+  // const titleOne = document.querySelector(".welcom .title");
+  // handleScroll(titleOne, 500); // 500px 여유를 두고 나타나게 설정
+
+  // // * fact show
+  // const oneFact = document.querySelector(".section-01 .fact-box");
+  // const twoFact = document.querySelector(".section-02 .fact-box");
+  // const fourFact = document.querySelector(".section-04 .fact-box");
 
 });
+
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> header menu mouseover
 const product = document.querySelector(".header .menu-list a:first-child");
 const menu = document.querySelector(".header .menu");
 let hideTimeout;
 
-// & menu show
+// * menu show
 const showMenu = () => {
   clearTimeout(hideTimeout); // 기존 타이머 취소
   menu.style.opacity = "1";
@@ -88,10 +105,10 @@ hambar.addEventListener("click", () => {
     hamMenu.classList.remove("line");
   }
 
-  if (logoBox.classList.contains("on")) {
-    document.body.style.overflow = "hidden";
+  if (hamMenu.classList.contains("on")) {
+    document.body.style.overflowY = "hidden";
   } else {
-    document.body.style.overflow = "auto";
+    document.body.style.overflowY = "auto";
   }
 });
 
@@ -121,24 +138,16 @@ const mainImg = document.querySelector(".main");
 
 window.onresize = function(event) {
   let innerWidth = window.innerWidth;
-  if (innerWidth <= "1200") {
+  if (innerWidth <= "767") {
     mainImg.classList.remove("pc");
     mainImg.classList.add("mobile");
   } else {
     mainImg.classList.remove("mobile");
     mainImg.classList.add("pc");
   }
-  // innerWidth <= "1200" ? mainImg.style.background = "url(../img/main_mo.webp) no-repeat center/cover" : mainImg.style.background = "url(../img/main.webp) no-repeat center/cover";
-}
-
+};
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> section-01 item slider
-
-// 초기 DOM 요소
-const funSlider = document.querySelector(".section-01 .item-slider");
-const prevBtn = document.querySelector(".section-01 .prev");
-const nextBtn = document.querySelector(".section-01 .next");
-
 // 아이템 데이터 배열
 let item = [
   {
@@ -170,6 +179,26 @@ let item = [
   },
 ];
 
+// 슬라이드 HTML 생성 함수
+function createSlideItemHTML(item) {
+  return `
+    <a href="#">
+      <figure class="tem-img">
+        <img src="${item.img}" alt="${item.name}">
+      </figure>
+      <div class="tem-txt">
+        <p class="tem-name">${item.name}</p>
+        <p class="tem-info">${item.info}</p>
+      </div>
+    </a>`;
+}
+
+const funSliderBox = document.querySelector(".section-01 .item-box-i");
+const funSlider = document.querySelector(".section-01 .item-slider");
+let funList = document.querySelectorAll(".section-01 .item-slider li");
+const prevBtn = document.querySelector(".section-01 .prev");
+const nextBtn = document.querySelector(".section-01 .next");
+
 // 슬라이더 내용 추가
 item.forEach((items) => {
   const li = document.createElement("li");
@@ -177,11 +206,29 @@ item.forEach((items) => {
   funSlider.appendChild(li);
 });
 
+// // slide list
+let funSlideList = document.querySelectorAll(".section-01 .item-slider li");
+
+console.log(funSlideList)
+
+// // slider list clone
+// const funCloneFirst = funSlideList[0].cloneNode(true);
+// const funCloneLast = funSlideList[funSlideList.length -1].cloneNode(true);
+// funSlider.insertBefore(funCloneLast, funSlideList[0]);
+// funSlider.appendChild(funCloneFirst);
+
+// 초기값
 let currentIndex = 0;
-const imagesPerView = 3; 
+let imagesPerView;
+
+if (window.innerWidth <= "1023") {
+  imagesPerView = 1;
+} else {
+  imagesPerView = 3;
+};
 
 nextBtn.addEventListener("click", () => {
-  const totalImages = funSlider.querySelectorAll("li").length; // li 개수
+  const totalImages = funSlideList.length; // li 개수
   if (currentIndex < totalImages - imagesPerView) {
     currentIndex++;
     updateSlidePosition();
@@ -196,27 +243,48 @@ prevBtn.addEventListener("click", () => {
 });
 
 function updateSlidePosition() {
-  const slideWidth = document.querySelector(".section-01 .item-box-i").clientWidth / imagesPerView;
+  const slideWidth = funSliderBox.clientWidth / imagesPerView;
   funSlider.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+  console.log(imagesPerView)
+  console.log(currentIndex);
+  console.log(slideWidth);
+  console.log((-currentIndex * slideWidth));
 }
 
 // 화면 크기 변경 대응
 window.addEventListener("resize", updateSlidePosition);
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> section-03 recipes slide box
+const recipeSlider = document.querySelector(".section-03 .recipes .box-wrap");
+const recipeBtnL = document.querySelector(".section-03 .recipes .l");
+const recipeBtnR = document.querySelector(".section-03 .recipes .r");
 
-// 슬라이드 HTML 생성 함수
-function createSlideItemHTML(item) {
-  return `
-    <a href="#">
-      <figure class="tem-img">
-        <img src="${item.img}" alt="${item.name}">
-      </figure>
-      <div class="tem-txt">
-        <p class="tem-name">${item.name}</p>
-        <p class="tem-info">${item.info}</p>
-      </div>
-    </a>`;
+let recipeIndex = 0;
+const recipeView = 1;
+const recipeTotal = document.querySelectorAll(".section-03 .recipes .box").length;
+
+function recipeUpdate() {
+  const recipeWidth = recipeSlider.parentElement.clientWidth / recipeView;
+  recipeSlider.style.transform = `translateX(${-recipeIndex * recipeWidth}px)`;
+  recipeSlider.style.transition = "transform 0.5s ease-in-out";
 }
+
+function moveSlider(direction) {
+  if (direction === "right") {
+    recipeIndex = (recipeIndex + 1) % recipeTotal;
+  } else if (direction === "left") {
+    recipeIndex = (recipeIndex - 1 + recipeTotal) % recipeTotal;
+  }
+  recipeUpdate();
+}
+
+if (window.innerWidth <= "767") {
+  recipeBtnR.addEventListener("click", () => {moveSlider("right")});
+  recipeBtnL.addEventListener("click", () => {moveSlider("left")});
+
+  recipeUpdate();
+  window.addEventListener("resize", recipeUpdate);
+};
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> section-03 spin slide box
 const conInner = document.querySelector(".section-03 .con-inner");
@@ -246,7 +314,6 @@ spinNext.addEventListener("click", () => {moveSlide("next")});
 spinPrev.addEventListener("click", () => {moveSlide("prev")});
 
 update();
-
 window.addEventListener("resize", update);
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> section-02 logo slider

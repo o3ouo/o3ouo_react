@@ -86,7 +86,6 @@ h6 {
   height: 75px;
   font-size: 1.5625rem;
   z-index: 104;
-  transform: rotate();
 }
 
 .header .inner {
@@ -495,13 +494,11 @@ h6 {
 }
 
 .section-01 .fun .item-box .btn.prev {
-  left: 0;
-  margin-left: 1rem;
+  left: 1rem;
 }
 
 .section-01 .fun .item-box .btn.next {
-  right: 0;
-  margin-right: 1rem;
+  right: 1rem;
 }
 
 .section-01 .fun .item-box:hover .btn {
@@ -822,6 +819,7 @@ h6 {
   display: none;
   position: absolute;
   top: 50%;
+  cursor: pointer;
   z-index: 39;
 }
 
@@ -847,6 +845,10 @@ h6 {
   font-size: 72px;
   text-align: left;
   line-height: 1;
+}
+
+.section-03 .recipes .contents {
+  overflow: hidden;
 }
 
 .section-03 .recipes .contents .box-wrap {
@@ -1000,7 +1002,7 @@ h6 {
   border-radius: 30px;
 }
 
-.section-03 .spin .content-box img {
+.section-03 .spin .content-box .i {
   flex-shrink: 0;
   width: 100%;
   height: auto;
@@ -1040,6 +1042,7 @@ h6 {
 .section-04 {
   position: relative;
   width: 100%;
+  border-top: 3px solid #000;
   background-color: #FFE9DE;
 }
 
@@ -1451,11 +1454,16 @@ h6 {
 }
 
 /* ///////////////////////////////////////////////////////////////////////// media query */
-/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>max-width 1200px */
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>max-width 1279px */
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1279px) {
 
   /* header */
+  .header .inner {
+    padding-right: .75rem;
+    padding-left: .75rem;
+  }
+
   .header .nav {
     display: none;
   }
@@ -1472,10 +1480,14 @@ h6 {
     transform: translateY(0) scale(1.5);
   }
 
+  /* .header .logo-box img {
+    width: 31vw;
+  }
+
   .header .logo img.on {
     width: 79px;
     transition-duration: .5s;
-  }
+  } */
 
   .header .hambar {
     display: block;
@@ -1519,20 +1531,6 @@ h6 {
     rotate(-45deg);
   }
 
-  /* main */
-  .section-01 .gif-img .img {
-    width: 300px;
-    transform: translateY(0);
-  }
-
-  .main .inner {
-    padding-bottom: 1.75rem;
-  }
-
-  .main-btn {
-    display: block;
-  }
-
   /* section-01 */
   .section-01 .welcom .title {
     width: 100%;
@@ -1542,6 +1540,11 @@ h6 {
 
   .section-01 .welcom .text {
     align-self: flex-start;
+  }
+
+  .section-01 .gif-img .img {
+    width: 300px;
+    transform: translateY(0);
   }
 
   .section-01 .fun .title {
@@ -1623,7 +1626,7 @@ h6 {
 
   /* section-01 */
   .section-01 .fun .item-slider li {
-    flex: 0 0 100vw;
+    flex: 0 0 100%;
     padding: 0;
   }
 
@@ -1804,16 +1807,21 @@ h6 {
     padding-bottom: 46px;
   }
 
+  .section-04 .insta {
+    padding-bottom: 72px;
+  }
+
   .section-04 .insta .insta-link {
     justify-content: center;
     position: static;
-    width: fit-content;
+    width: 100%;
     height: 100%;
+    margin-bottom: 1.25rem;
   }
 
   .section-04 .insta .insta-link a {
-    margin-bottom: 1.25rem;
     margin-left: 0;
+    margin-bottom: 0;
     font-size: 13vw;
     transform: rotate(0);
     pointer-events: none;
@@ -1822,7 +1830,7 @@ h6 {
 
   .section-04 .insta .contents-img .img-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 1rem;
+    column-gap: .75rem;
     width: 100%;
   }
 
@@ -1865,4 +1873,209 @@ h6 {
 
 @media screen and (max-width: 767px) {
 
+  /* header */
+  .header {
+    height: 48px;
+  }
+
+  .header .nav-bg {
+    height: 48px;
+  }
+
+  .header .logo img.on {
+    width: 60px;
+    transition-duration: .5s;
+  }
+  
+  /* main */
+  .main .inner {
+    padding-bottom: 1.75rem;
+  }
+
+  .main-btn {
+    display: block;
+  }
+
+  .main-title {
+    padding-bottom: 0;
+    font-size: 7.5vw;
+    text-align: center;
+  }
+
+  /* section-01 */
+  .section-01 .inner {
+    padding-top: 12rem;  
+  }
+
+  .section-01 .gif-img .img {
+    width: 228px;
+  }
+
+  .section-01 .welcom {
+    padding-bottom: 5rem;
+    padding-right: .75rem;
+    padding-left: .75rem;
+  }
+
+  .section-01 .welcom .text {
+    margin-top: 2.5rem;
+    font-size: 24px;
+  }
+
+  .section-01 .fun .item-box .btn {
+    width: 54px;
+  }
+
+  .section-01 .fun .item-box .btn.prev {
+    left: 1.75rem;
+  }
+
+  .section-01 .fun .item-box .btn.next {
+    right: 1.75rem;
+  }
+
+  .section-01 .fun .tem-txt .tem-name {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .section-01 .fun .tem-txt p:last-child {
+    font-size: 24px;
+    line-height: 1.1;
+  }
+
+  .section-01 .fun .text-box .text {
+    font-size: 24px;
+    line-height: 29px;
+  }
+  
+  .section-01 .fun .text-box .btn {
+    padding: .4rem 18px;
+  }
+
+  /* section-02 */
+  .section-02 .phil .title {
+    font-size: 57px;
+  }
+
+  .section-02 .phil .slider {
+    animation: rolling 5s linear forwards infinite;
+  }
+
+  .section-02 .phil .slider-box ul li {
+    flex: 0 0 70vw;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  .section-02 .more .title {
+    margin-bottom: 0;
+  }
+
+  .section-02 .more .contents-box {
+    padding-top: 87px;
+  }
+
+  .section-02 .more .contents-box .text {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .section-02 .more .contents-box .text .t-box {
+    padding-bottom: 4rem;
+  }
+
+  .section-02 .more .contents-box .img {
+    position: relative;
+    height: 0;
+    padding-bottom: 126%;
+  }
+  
+  .section-02 .more .contents-box .img img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .section-03 .recipes .top {
+    padding-top: 2.25rem;
+  }
+
+  .section-03 .recipes .contents .box {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .section-03 .recipes .hidden-arrow.l {
+    left: 1.75rem;
+  }
+
+  .section-03 .recipes .hidden-arrow.r {
+    right: 1.75rem;
+  }
+
+  .section-03 .recipes .contents .box .text {
+    height: 75px;
+    padding: 0 18px;
+  }
+
+  .section-03 .spin {
+    padding-right: .75rem;
+    padding-left: .75rem;
+  }
+
+  .section-03 .spin .title {
+    font-size: 57px;
+    text-align: center;
+  }
+
+  .section-03 .spin .contents {
+    padding: 0 .75rem;
+  }
+
+  .section-03 .spin .content-box .text-box {
+    padding-right: .5rem;
+    padding-left: .5rem;
+  }
+
+  .section-03 .spin .content-box .text-box .line-btn {
+    font-size: 16px;
+  }
+
+  /* section-04 */
+  .section-04 .slider-wrap {
+    padding-top: 46px;
+  }
+
+  .section-04 .slider-wrap ul li {
+    width: 250px;
+    margin-right: .75rem;
+    margin-left: 1.75rem;
+  }
+  
+  .slider-list.original {
+    animation: rollingleft1 15s linear infinite;
+  }
+
+  .slider-list.clone {
+    animation: rollingleft2 15s linear infinite;
+  }
+  
+  .footer .contents .f-img .img {
+    width: 100%;
+  }
+
+  .footer .contents .f-meddle .fnb ul li a {
+    font-size: 25px;
+  }
+
+  .footer {
+    overflow: hidden;
+  }
+  
 }
