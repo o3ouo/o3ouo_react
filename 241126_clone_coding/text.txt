@@ -141,14 +141,16 @@ https://cdn.shopify.com/s/files/1/0614/0035/0950/files/Gander_Phils_CityscapeSma
 1. 문제점 
  : 반응형 break point가 min-width:800px만 존재
  ㄴ 텍스트가 잘리거나 겹쳐지는 문제가 생김
- ㄴ 개선 : max-width:1279px / max-width:1023px / max-width:767px 세 구간으로 나누어 해당 사이즈에서 최적화된 사이즈로 텍스트 및 이미지 조정함
+ ㄴ 개선 : max-width:1279px / max-width:1023px / max-width:767px 세 구간으로 나누어 해당 사이즈에서 최적화된 사이즈로 텍스트 및 이미지 조정
 
 2. 문제점
- : 
+ : 해당 section 마다 느리게 나타나는 fact box
+ ㄴ 스크롤이 페이지를 벗어날 때쯤 fact box가 나타나서 사용자가 페이지를 다시 올려서 봐야하는 불편함
+ ㄴ 개선 : 스크롤에 맞춰 해당 페이지의 fact box가 나타나도록 개선
 
-
-
-
+3. 문제점
+ : 식음료를 파는 회사에서 비위 상하는 이미지 사용
+ ㄴ 개선 : 이미지를 포토샵으로 털, 손톱 등 제거
 
 
 

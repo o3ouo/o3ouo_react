@@ -30,6 +30,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: url(../img/mouse.png) 2 2, auto;
 }
 
 html {
@@ -79,7 +80,9 @@ h6 {
   font-weight: inherit;
 }
 
-/* header */
+/******************************************************* 
+                                                  header 
+*******************************************************/
 .header {
   position: fixed;
   width: 100%;
@@ -117,6 +120,10 @@ h6 {
   background-color: #9CC2FF;
   opacity: 0;
   transition: .3s ease-in-out;
+}
+
+.header .nav-bg.on {
+  background-color: transparent;
 }
 
 .header .nav .menu-list {
@@ -353,7 +360,11 @@ h6 {
   }
 }
 
-/* ////////////////////////////////////////////////////////////////main */
+
+
+/******************************************************* 
+                                                  main 
+*******************************************************/
 .main {
   width: 100%;
   height: 100vh;
@@ -402,7 +413,11 @@ h6 {
   width: 24px;
   height: 46px;
 }
-/* ////////////////////////////////////////////////////////////////section 01 */
+
+
+/******************************************************* 
+                                              section 01 
+*******************************************************/
 .section-01 {
   position: relative;
   width: 100%;
@@ -638,7 +653,10 @@ h6 {
   line-height: 1.25;
 }
 
-/* ////////////////////////////////////////////////////////////////section-02 */
+
+/******************************************************* 
+                                              section-02 
+*******************************************************/
 .section-02 {
   position: relative;
   background-color: #FFE9DE;
@@ -673,7 +691,7 @@ h6 {
   align-items: center;
   position: relative;
   width: 100%;
-  animation: rolling 20s linear forwards infinite;
+  animation: rolling 20s linear infinite;
 }
 
 .section-02 .phil .slider-box ul {
@@ -683,14 +701,14 @@ h6 {
 }
 
 .section-02 .phil .slider-box ul li {
-  flex: 0 0 25vw;
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
+  flex: 0 0 auto;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .section-02 .phil .slider-box ul li a {
   display: block;
-  width: 50%;
+  width: 100%;
   margin: auto;
 }
 
@@ -800,7 +818,10 @@ h6 {
   line-height: 1.25;
 }
 
-/* ////////////////////////////////////////////////////////////////section-03 */
+
+/******************************************************* 
+                                              section-03 
+*******************************************************/
 .section-03 {
   position: relative;
   width: 100%;
@@ -1038,7 +1059,10 @@ h6 {
   text-decoration: underline;
 }
 
-/* ///////////////////////////////////////////////////////////////section-04 */
+
+/******************************************************* 
+                                              section-04 
+*******************************************************/
 .section-04 {
   position: relative;
   width: 100%;
@@ -1058,19 +1082,16 @@ h6 {
   display: flex;
   align-items: center;
   position: relative;
-  width: 100%;
 }
 
 .section-04 .slider-wrap ul {
   display: flex;
   align-items: center;
-  flex-shrink: 0;
+  flex-shrink: 0 0 auto;
 }
 
 .section-04 .slider-wrap ul li {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
+  flex: 0 0 auto;
   width: 400px;
   height: 3rem;
   padding-right: 1.75rem;
@@ -1238,14 +1259,78 @@ h6 {
   line-height: 1.25;
 }
 
-/* ////////////////////////////////////////////////////////////////footer */
+/******************************************************* 
+                                                  footer 
+*******************************************************/
 .footer {
+  overflow: hidden;
+  position: relative;
   padding-top: 2rem;
-  padding-right: 2rem;
   padding-bottom: 2.25rem;
-  padding-left: 2rem;
   color: #FFE9DE;
   background-color: #000;
+}
+
+.footer .cloud-box {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: 25s linear infinite slide;
+}
+
+.footer .cloud {
+  position: absolute;
+  width: 197px;
+  height: 93px;
+  margin-right: 10rem;
+}
+
+.footer .cloud:first-child {
+  top: 108px;
+  left: 100%;
+  transition-duration: 10s;
+  transition-delay: 0s;
+}
+
+.footer .cloud:nth-child(2) {
+  top: 80px;
+  left: 120%;
+  transition-duration: 20s;
+  transition-delay: 10s;
+}
+
+.footer .cloud:nth-child(3) {
+  top: 148px;
+  left: 150%;
+  z-index: 59;
+  transition-duration: 30s;
+  transition-delay: 20s;
+}
+
+.footer .cloud:last-child {
+  top: 40px;
+  left: 180%;
+  z-index: 59;
+  transition-duration: 40s;
+  transition-delay: 30s;
+}
+
+.footer .cloud img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes slide {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-200%);}
+}
+
+.footer .inner {
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 
 .footer .contents {
@@ -1453,9 +1538,14 @@ h6 {
   }
 }
 
-/* ///////////////////////////////////////////////////////////////////////// media query */
-/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>max-width 1279px */
 
+/******************************************************* 
+                                            media query 
+*******************************************************/
+
+/******************************************************* 
+                                      max-width : 1279px 
+*******************************************************/
 @media screen and (max-width: 1279px) {
 
   /* header */
@@ -1479,15 +1569,6 @@ h6 {
   .header .logo-box.on {
     transform: translateY(0) scale(1.5);
   }
-
-  /* .header .logo-box img {
-    width: 31vw;
-  }
-
-  .header .logo img.on {
-    width: 79px;
-    transition-duration: .5s;
-  } */
 
   .header .hambar {
     display: block;
@@ -1560,6 +1641,10 @@ h6 {
   }
 
   /* section-02 */
+  .section-02 .phil .slider {
+    animation: rolling 10s linear infinite;
+  }
+
   .section-02 .more .title {
     padding-top: 3rem;
   }
@@ -1571,8 +1656,11 @@ h6 {
   /* footer */
   .footer {
     padding-top: .375rem;
-    padding-right: 1rem;
     padding-bottom: 1rem;
+  }
+  
+  .footer .inner {
+    padding-right: 1rem;
     padding-left: 1rem;
   }
 
@@ -1620,8 +1708,10 @@ h6 {
   }
 }
 
-/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>max-width 1023px */
 
+/******************************************************* 
+                                      max-width : 1023px 
+*******************************************************/
 @media screen and (max-width: 1023px) {
 
   /* section-01 */
@@ -1641,7 +1731,15 @@ h6 {
   }
   
   .section-01 .fun .item-box .btn {
-    width: 45px;
+    width: 54px;
+  }
+
+  .section-01 .fun .item-box .btn.prev {
+    left: 1.75rem;
+  }
+
+  .section-01 .fun .item-box .btn.next {
+    right: 1.75rem;
   }
 
   .section-01 .fact-box {
@@ -1871,6 +1969,9 @@ h6 {
 
 }
 
+/******************************************************* 
+                                      max-width : 767px 
+*******************************************************/
 @media screen and (max-width: 767px) {
 
   /* header */
@@ -1923,15 +2024,7 @@ h6 {
   }
 
   .section-01 .fun .item-box .btn {
-    width: 54px;
-  }
-
-  .section-01 .fun .item-box .btn.prev {
-    left: 1.75rem;
-  }
-
-  .section-01 .fun .item-box .btn.next {
-    right: 1.75rem;
+    width: 45px;
   }
 
   .section-01 .fun .tem-txt .tem-name {
@@ -1960,12 +2053,6 @@ h6 {
 
   .section-02 .phil .slider {
     animation: rolling 5s linear forwards infinite;
-  }
-
-  .section-02 .phil .slider-box ul li {
-    flex: 0 0 70vw;
-    padding-right: 1.25rem;
-    padding-left: 1.25rem;
   }
 
   .section-02 .more .title {
@@ -2059,13 +2146,14 @@ h6 {
   }
   
   .slider-list.original {
-    animation: rollingleft1 15s linear infinite;
+    animation: rollingleft1 30s linear infinite;
   }
 
   .slider-list.clone {
-    animation: rollingleft2 15s linear infinite;
+    animation: rollingleft2 30s linear infinite;
   }
   
+  /* footer */
   .footer .contents .f-img .img {
     width: 100%;
   }
