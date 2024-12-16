@@ -1,0 +1,83 @@
+> 기본 문법
+* window.innerHeight : 뷰의 세로 사이즈 (픽셀단위)
+* window.innerWidth : 뷰의 가로 사이즈
+
+> 익스플로러 5부터 7버전만을 위한 문법1
+* document.documentElement.clientHeight
+* document.documentElement.clientWidth
+
+> 익스플로러 5부터 7버전만을 위한 문법2
+document.body.clientHeight
+document.body.clientWidth
+
+** 뷰 바깥의 브라우저 크기까지 포함하여 알아내고 싶을 땐 outerHeight, outerWidth를 사용 **
+
+> IE, firefox, 크롬, 사파리, 오페라에도 같은 프로퍼티가 있지만 값이 항상 0
+document.documnetElement.scrollLeft : x축 방향으로 스크롤한 거리 (scrollX)
+document.documnetElement.scrollTop : y축 방향으로 스크롤한 거리 (scrollY)
+
+> chrome,safari, opera, edge, Quirks Mode
+document.body.scrollLeft : x축 방향으로 스크롤한 거리 (scrollX)
+document.body.scrollTop : y축 방향으로 스크롤한 거리 (scrollY)
+
+> Firefox, chrome, safari, opera, edge, IE>=9
+window.pageXOffset : x축 방향으로 스크롤한 거리
+window.pageXOffset : y축 방향으로 스크롤한 거리
+
+ㄴ 콘텐츠가 스크롤 되는 요소의 크기
+- scrollHeight/scrollWidth : 스크롤 바가 없을 때 차지했을 콘텐츠 전체 높이/너비
+- scrollLeft/scrollTop : 콘텐츠 영역의 왼쪽/위쪽에 보이지 않는 픽셀 너비/높이
+
+** scrollY vs pageYoffset
+ : 둘 다 스크롤 Y값을 얻는다는 것은 동일하지만, scrollY는 IE에서 동작하지 않음
+ : MDN에서는 노후 환경을 신경쓰지 않아도 된다면 둘 중 아무거나 사용해도 괜찮다고 함
+ : 하지만 IE를 버릴 수 없는 환경이기 때문에 scrollY만 쓰는 건 지향하는 것이 좋음
+ : 결론은 구형 브라우저 신경 안 써도 되면 scrollY를 사용, 구형 브라우저를 신경써야 한다면 pageYoffset을 사용
+
+> offset 크기
+Element.offsetTop : 해당 요소의 위로부터 떨어진 픽셀 거리
+Element.offsetLeft : 해당 요소의 왼쪽으로부터 떨어진 픽셀 거리
+Element.offsetHeight : 해당 요소의 픽셀 세로크기
+Element.offsetWidth : 해당 요소의 픽셀 가로크기
+
+ㄴ 요소의 너비와 높이에 패딩, 스크롤바, 테두리를 합친 크기이며 마진은 포함되지 않는다. 오프셋 크기 프로퍼티는 모두 읽기 전용이며 접근할 때마다 다시 계산한다. 따라서 이들 프로퍼티를 여러 번 호출하지 마래고 가능한 한 값을 로컬 변수에 저장해야 성능에 악영향이 없다.
+
+# 마우스 휠 이벤트 감지
+> javascript의 경우 인자값으로 e만 주면 된다.
+window.addEventListener('wheel', (e: WheelEvent) => {
+	console.log(e.deltaY, e.deltaX);
+});
+ : wheel 이벤트 감지를 사용하며 e.deltaY 값이 양수면 down wheel, 음수면 up wheel로 판단
+ : 마찬가지로 e.deltaY는 양수일 때 오른쪽, 음수일 때 왼쪽으로 판단
+
+# 스크롤을 부트럽게 하려면 behavior: 'smooth' 사용
+window.scrollTo({top:0, left:0, behavior:'smooth'})
+
+window.addEventSistener('scroll', function(){
+	console.log('gd')
+{);
+
+ : window는 전체 페이지를 의미
+ : document도 전체 페이지이지만 window가 약간 더 큰 개념
+ : scroll 이벤트리스너는 관습적으로 window에 붙임
+
+* window.scrollY
+ : 얼마나 스크롤바를 내렸는지 출력 (window.pageYOffset과 같음)
+ : window가 아닌 일반 div 박스에서의 스크롤 양을 아래고 싶으면 scrollTop을 사용
+ : element.scrollTop
+
+* window.scrollTo(x, y)
+: window의 왼쪽 모서리를 기준으로 이동
+ : 강제로 (x, y)로 스크롤 시킨다
+> window.addEventListener('scroll', function(){
+	console.log(window.scrollTo(0, 100));
+})
+
+* window.scrollBy(x, y)
+ : 현재 위치로부터 (x, y)만큼 이동]
+
+
+> 요소 위치 찾기 (절대위치)
+* getBoundingClientRect()
+ : 반환 값은 엘리먼트의 padding과 border-width를 포함해 전반적인 사각형의 위치의 크기를 px 단위로 나타낸다
+

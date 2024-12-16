@@ -80,6 +80,10 @@ h6 {
   font-weight: inherit;
 }
 
+.wrap {
+  overflow: hidden;
+}
+
 /******************************************************* 
                                                   header 
 *******************************************************/
@@ -525,17 +529,22 @@ h6 {
   width: 100%;
 }
 
-.main .animation .carrick {
+.main .animation .character {
   position: absolute;
   top: 0;
   width: 100%;
 }
 
-.main .animation .carrick .c-img {
+.main .animation .character .c-img {
   width: 20%;
   max-width: 268px;
   max-height: 365px;
-  transform: translateY(-100px) scaleX(-1);
+  transform: translate(-50%, -10%);
+  transition: transform 0.5s ease-out;
+}
+
+.main .animation .character .c-img img {
+  transition: transform 0.5s ease-out;
 }
 
 .main .animation .front {
@@ -551,10 +560,12 @@ h6 {
                                               section-01 
 *******************************************************/
 .section-01 {
+  position: relative;
   width: 100%;
   margin-top: -2px;
   padding-bottom: 86px;
   background-color: #9CC2FF;
+  z-index: 10;
 }
 
 .section-01 .title-box {
@@ -712,7 +723,7 @@ h6 {
 
 
 /******************************************************* 
-                                              section-02 
+                                              section-03 
 *******************************************************/
 .animation-box {
   position: relative;
@@ -741,19 +752,18 @@ h6 {
   object-fit: contain;
 }
 
-.animation-box .carrick {
+.animation-box .character {
   position: absolute;
   top: 0;
   width: 100%;
-  transition-delay: 75ms;
-  transition-duration: .5s;
 }
 
-.animation-box .carrick .c-img {
+.animation-box .character .c-img {
   width: 20%;
   max-width: 286px;
   max-height: 365px;
-  transform: translateY(-100px) scaleX(-1);
+  transform: translate(0, -80%) scaleX(-1);
+  transition: transform 0.5s ease-out;
 }
 
 .animation-box .front {

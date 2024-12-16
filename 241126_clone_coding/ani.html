@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스크롤 애니메이션</title>
+  <style>
+    /* 초기화 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    /* 배경 스타일 */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #87CEEB, #ffffff);
+      z-index: -1;
+    }
+
+    /* 캐릭터 스타일 */
+    .character {
+      position: fixed;
+      bottom: 10%; /* 화면 아래에 고정 */
+      z-index: 10;
+      transition: transform 0.1s ease-out; /* 부드러운 이동 */
+    }
+
+    .character img {
+      width: 200px; /* 캐릭터 이미지 크기 */
+    }
+
+    /* 내용 스타일 */
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .content h1, .content p {
+      margin-bottom: 20px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <!-- 배경 -->
+  <div class="background"></div>
+  
+  <!-- 캐릭터 -->
+  <div class="character">
+    <img src="./img/our_story/section1_carrick.gif" alt="캐릭터" />
+  </div>
+  
+  <!-- 내용 추가 -->
+  <div class="content">
+    <h1>스크롤을 내려보세요!</h1>
+    <p>스크롤을 내리면 캐릭터가 앞뒤로 움직입니다.</p>
+    <div style="height: 2000px;"></div>
+  </div>
+
+  <script>
+  // DOM 요소 가져오기
+  const character = document.querySelector('.character');
+
+  // 스크롤 이벤트 감지
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+    // 화면 너비 가져오기
+    const windowWidth = window.innerWidth;
+
+    // X축 이동값 계산 (0px ~ 화면 너비까지)
+    let moveX = (scrollY * 0.5); // 스크롤에 따라 움직이는 거리
+
+    // 이동 범위 제한 (화면 너비 - 캐릭터 크기만큼 제한)
+    const maxMoveX = windowWidth - 200; // 200은 캐릭터 이미지 너비
+    if (moveX > maxMoveX) moveX = maxMoveX;
+
+    // Y축 움직임 (물결 효과 - sin 함수 활용)
+    const moveY = Math.sin(scrollY * 0.01) * 40; // 주기와 진폭 조절
+
+    // 캐릭터에 이동값 적용
+    character.style.transform = `translate(${moveX}px, ${moveY}px)`;
+  });
+
+
+  </script>
+</body>
+</html>

@@ -2,21 +2,50 @@
 /********************************************************
                                             scroll event
 ********************************************************/
-// window.addEventListener("scroll", () => {
+let topCharrick = document.querySelector(".main .c-img img");
+let bottomCharrick = document.querySelector(".section-03 .c-img img");
 
-//   // * header logo 
-//   const navBg = document.querySelector(".header .nav-bg");
-//   const logoBox = document.querySelector(".header .logo-box");
+console.log(topCharrick.offsettop);
 
-//   if (window.scrollY > 0) {
-//     navBg.style.opacity = "1";
-//     logoBox.classList.add("scroll");
-//   } else {
-//     navBg.style.opacity = "0";
-//     logoBox.classList.remove("scroll");
-//   }
+// animation 함수
+function charrickMove(charrick, speedFactor = 0.8, yAmplitude = 10, rotationFactor = 30) {
+  const scrollY = window.scrollY;
 
-// });
+  // 화면 너비
+  const windowWidth = window.innerWidth;
+
+  // 요소 위치와 크기 
+  const rect = charrick.getBoundingClientRect();
+
+  // 요소가 보일 때의 조건을 검
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+
+  // x축 이동값 계산 (0px ~ 화면 너비까지)
+  let moveX = (scrollY * speedFactor); // 스크롤에 따라 움직이는 거리
+
+  // 이동 범위 제한 (화면 너비만큼)
+  const maxMoveX = windowWidth;
+  if (moveX > maxMoveX) {
+    moveX = maxMoveX;
+  }
+
+  // // Y축 움직임 (물결 효과 - sin 함수 활용)
+  const moveY = Math.sin(scrollY * 0.05) * yAmplitude; // 주기와 진폭 조절
+
+  // 회전 (물결과 반응하는 각도)
+  const rotate = Math.sin(scrollY * 0.01) * rotationFactor;
+
+  // 캐릭터에 이동값 적용
+  charrick.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${rotate}deg)`;
+  }
+
+}
+
+// scroll event
+window.addEventListener("scroll", () => {
+  charrickMove(topCharrick, 0.8, 10, 30);
+  charrickMove(bottomCharrick, -0.8, 10, 30)
+});
 
 
 /********************************************************
