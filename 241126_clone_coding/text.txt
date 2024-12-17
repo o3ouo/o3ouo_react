@@ -152,6 +152,16 @@ https://cdn.shopify.com/s/files/1/0614/0035/0950/files/Gander_Phils_CityscapeSma
  : 식음료를 파는 회사에서 비위 상하는 이미지 사용
  ㄴ 개선 : 이미지를 포토샵으로 털, 손톱 등 제거
 
+목표 : 
+
+기능선정 :
+
+기술 : html / css / js 
+
+js : 스크롤 했을 때 header의 bg가 생기면서 logo가 작아지고, 다시 스크롤이 제일 상단에 위치했을 땐 bg가 사라지면서 logo의 크기가 커지는 효과 구현
+
+
+
 
 
 

@@ -45,6 +45,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  overflow-x: hidden;
 }
 
 a {
@@ -137,6 +138,10 @@ h6 {
 .header .nav .menu-list a {
   border-bottom: 2px solid rgba(0, 0, 0, 0);
   transition-duration: .3s;
+}
+
+.header .nav .menu-list:first-child a:nth-child(2) {
+  border-bottom: 2px solid rgba(0, 0, 0, 1);
 }
 
 @media (hover: hover) {
@@ -414,15 +419,7 @@ h6 {
   padding-bottom: 28%;
 }
 
-.main-bg .img-box .mobile {
-  display: none;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56%;
-}
-
-.main-bg .img-box .pc .img-fit,
-.main-bg .img-box .mobile .img-fit {
+.main-bg .img-box .pc .img-fit {
   position: absolute;
   top: 0;
   right: 0;
@@ -432,8 +429,7 @@ h6 {
   height: 100%;
 }
 
-.main-bg .img-box .pc .img-fit img,
-.main-bg .img-box .mobile .img-fit img {
+.main-bg .img-box .pc .img-fit img {
   position: absolute;
   top: 0;
   right: 0;
@@ -531,20 +527,21 @@ h6 {
 
 .main .animation .character {
   position: absolute;
-  top: 0;
+  top: -10%;
+  left: -20%;
   width: 100%;
 }
 
 .main .animation .character .c-img {
   width: 20%;
-  max-width: 268px;
-  max-height: 365px;
-  transform: translate(-50%, -10%);
-  transition: transform 0.5s ease-out;
+  /* max-width: 268px;
+  max-height: 365px; */
+  transition-delay: 2s;
+  transition: transform 1s ease-out;
 }
 
 .main .animation .character .c-img img {
-  transition: transform 0.5s ease-out;
+  transform: scaleX(-1);
 }
 
 .main .animation .front {
@@ -658,7 +655,7 @@ h6 {
   max-width: 100%;
   margin-bottom: 3rem;
   font-family: Plinc Cooper Nouveau,sans-serif;
-  font-size: 80px;
+  font-size: 110px;
   line-height: 1;
   letter-spacing: -.03em;
 }
@@ -696,6 +693,7 @@ h6 {
   border: 3px solid #000;
   border-radius: 49px;
   background-color: #FF9388;
+  text-align: center;
   z-index: 1;
   transform: translateY(75%);
   transition-duration: .5s;
@@ -754,21 +752,26 @@ h6 {
 
 .animation-box .character {
   position: absolute;
-  top: 0;
+  top: -50%;
+  right: 0;
   width: 100%;
 }
 
 .animation-box .character .c-img {
   width: 20%;
-  max-width: 286px;
-  max-height: 365px;
-  transform: translate(0, -80%) scaleX(-1);
-  transition: transform 0.5s ease-out;
+  /* max-width: 286px;
+  max-height: 365px; */
+  transition-delay: 2s;
+  transition: transform 2s ease-out;
+}
+
+.animation-box .character .c-img img {
+  transform: scaleX(-1);
 }
 
 .animation-box .front {
   position: absolute;
-  bottom: -20px;
+  bottom: -40px;
   width: 100%;
   transform: scaleX(-1);
 }
@@ -823,9 +826,9 @@ h6 {
 }
 
 .content-box .text-box .top-t h3 {
-  margin-right: 2rem;
   margin-bottom: .75rem;
-  margin-left: 2rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
   font-family: Plinc Cooper Nouveau,sans-serif;
   font-size: 74px;
   line-height: 1;
@@ -836,6 +839,7 @@ h6 {
   margin-bottom: 60px;
   font-family: Plinc Cooper Nouveau,sans-serif;
   font-size: 32px;
+  line-height: 1.5;
 }
 
 .content-box .bottom-t {
@@ -873,6 +877,13 @@ h6 {
   background-color: #000;
   color: #ACFF93;
   transition-duration: .3s;
+}
+
+@media (hover: hover) {
+  .content-box .bottom-t .btn-box a:hover {
+    background-color: transparent;
+    color: #000;
+  }
 }
 
 .content-box .bottom-t .btn-box span {
@@ -1169,7 +1180,6 @@ h6 {
                                       max-width : 1279px 
 *******************************************************/
 @media screen and (max-width: 1279px) {
-
   
   /* header */
   .header .inner {
@@ -1221,6 +1231,11 @@ h6 {
     transform: 
     translateY(-.125rem)
     rotate(-45deg);
+  }
+
+  /* section-02 */
+  .section-02 .text-box .title {
+  font-size: 80px;
   }
   
   /* footer */
@@ -1303,6 +1318,63 @@ h6 {
 
   .header .nav-bg {
     height: 48px;
+  }
+  
+  .header .logo-box img {
+    width: 77.11px;
+    transition-duration: .5s;  
+  }
+
+  /* main */
+  .main {
+    padding-top: 3.125rem;
+  }
+
+
+  .main-bg .img-box {
+    margin-top: 0;
+  }
+  
+  .main-bg .img-box .pc {
+    padding-bottom: 56%;
+  }
+  
+  .main-text {
+    padding-top: 145px;
+  }
+
+  .main-text span {
+    font-size: 38px;
+  }
+
+  .main-bg {
+    padding-bottom: 4rem;
+  }
+
+  .main-bg .t {
+    font-size: 100px;
+  }
+
+  .main-cloud .c-box {
+    height: 60px;
+  }
+
+  .main-cloud .c-box:first-child {
+    width: 170px;
+  }
+  
+  .main-cloud .c-box:nth-child(2) {
+    top: 80px;
+    width: 120px;
+  }
+  
+  .main-cloud .c-box:nth-child(3) {
+    top: 148px;
+    width: 150px;
+  }
+  
+  .main-cloud .c-box:last-child {
+    width: 100px;
   }
     
   /* footer */

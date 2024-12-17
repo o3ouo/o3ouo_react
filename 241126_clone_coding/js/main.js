@@ -211,52 +211,31 @@ const nextBtn = document.querySelector(".section-01 .next");
 // 슬라이더 내용 추가
 item.forEach((items) => {
   const li = document.createElement("li");
+  li.classList.add("swiper-slide");
   li.innerHTML = createSlideItemHTML(items);
   funSlider.appendChild(li);
 });
 
-// // slide list
-let funSlideList = document.querySelectorAll(".section-01 .item-slider li");
-
-console.log(funSlideList)
-
-// 초기값
-let currentIndex = 0;
-let imagesPerView;
-
-if (window.innerWidth <= "1023") {
-  imagesPerView = 1;
-} else {
-  imagesPerView = 3;
-};
-
-nextBtn.addEventListener("click", () => {
-  const totalImages = funSlideList.length; // li 개수
-  if (currentIndex < totalImages - imagesPerView) {
-    currentIndex++;
-    updateSlidePosition();
-  }
+// swiper script
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  breakpoints: {
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+  },
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 });
-
-prevBtn.addEventListener("click", () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-    updateSlidePosition();
-  }
-});
-
-function updateSlidePosition() {
-  const slideWidth = funSliderBox.clientWidth / imagesPerView;
-  funSlider.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
-  console.log(imagesPerView)
-  console.log(currentIndex);
-  console.log(slideWidth);
-  console.log((-currentIndex * slideWidth));
-}
-
-// 화면 크기 변경 대응
-window.addEventListener("resize", updateSlidePosition);
-
 
 /********************************************************
                                   section-02 logo slider

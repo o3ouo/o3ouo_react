@@ -499,12 +499,7 @@ h6 {
 }
 
 .section-01 .fun .item-box .btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
   opacity: 0;
-  z-index: 1;
   transition-duration: .3s;
 }
 
@@ -520,42 +515,9 @@ h6 {
   opacity: 1;
 }
 
-.section-01 .fun .item-box-i {
-  overflow: hidden;
-  display: flex;
-  width: 100%;
-}
-
-.section-01 .fun .item-slider {
-  display: flex;
-  width: 100%;
-  transition: transform 0.5s ease-in-out;
-  will-change: transform;
-}
-
-.section-01 .fun .item-slider li {
-  flex: 0 0 calc(100% / 3);
-  height: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  text-align: center;
-}
-
-.section-01 .fun .item-slider img {
-  width: 100%;
-  height: auto;
-  margin: auto;
-  object-fit: cover;
-}
-
 .section-01 .fun .tem-img {
   width: 100%;
   margin-bottom: .75rem;
-}
-
-.section-01 .fun .tem-img img {
-  height: auto;
-  object-fit: cover;
 }
 
 .section-01 .fun .tem-txt {
@@ -1715,31 +1677,8 @@ h6 {
 @media screen and (max-width: 1023px) {
 
   /* section-01 */
-  .section-01 .fun .item-slider li {
-    flex: 0 0 100%;
-    padding: 0;
-  }
-
-  .section-01 .fun .item-slider li a {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  .section-01 .fun .tem-img img {
-    width: 100%;
-  }
-  
   .section-01 .fun .item-box .btn {
     width: 54px;
-  }
-
-  .section-01 .fun .item-box .btn.prev {
-    left: 1.75rem;
-  }
-
-  .section-01 .fun .item-box .btn.next {
-    right: 1.75rem;
   }
 
   .section-01 .fact-box {
@@ -2021,10 +1960,6 @@ h6 {
   .section-01 .welcom .text {
     margin-top: 2.5rem;
     font-size: 24px;
-  }
-
-  .section-01 .fun .item-box .btn {
-    width: 45px;
   }
 
   .section-01 .fun .tem-txt .tem-name {

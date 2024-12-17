@@ -1,14 +1,13 @@
 
 /********************************************************
-                                            scroll event
+                                            charater animation
 ********************************************************/
-let topCharrick = document.querySelector(".main .c-img img");
-let bottomCharrick = document.querySelector(".section-03 .c-img img");
+const topCharrick = document.querySelector(".main .c-img");
+const bottomCharrick = document.querySelector(".section-03 .c-img");
 
-console.log(topCharrick.offsettop);
 
 // animation 함수
-function charrickMove(charrick, speedFactor = 0.8, yAmplitude = 10, rotationFactor = 30) {
+function charrickMove(charrick, speedFactor = 1, yAmplitude = 10, rotationFactor = 30) {
   const scrollY = window.scrollY;
 
   // 화면 너비
@@ -16,35 +15,69 @@ function charrickMove(charrick, speedFactor = 0.8, yAmplitude = 10, rotationFact
 
   // 요소 위치와 크기 
   const rect = charrick.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
 
   // 요소가 보일 때의 조건을 검
-  if (rect.top < window.innerHeight && rect.bottom > 0) {
+  if (rect.top + rect.height > 0 && rect.top + windowHeight) {
+    // x축 스크롤에 따라 움직이는 거리
+    let moveX = (scrollY * speedFactor) % windowWidth;  
 
-  // x축 이동값 계산 (0px ~ 화면 너비까지)
-  let moveX = (scrollY * speedFactor); // 스크롤에 따라 움직이는 거리
+    console.log(`rect.top: ${rect.top}`);
+    console.log(`rect.height: ${rect.height}`);
 
-  // 이동 범위 제한 (화면 너비만큼)
-  const maxMoveX = windowWidth;
-  if (moveX > maxMoveX) {
-    moveX = maxMoveX;
+    // 이동 범위 제한 (화면 너비만큼)
+    const maxMoveX = windowWidth;
+    if (moveX > maxMoveX) {
+      moveX = maxMoveX;
+    }
+
+    // Y축
+    const moveY = Math.sin(scrollY * 0.05) * yAmplitude; // 주기와 진폭 조절
+
+    // 회전 (물결과 반응하는 각도)
+    const rotate = Math.sin(scrollY * 0.01) * rotationFactor;
+
+    // 캐릭터에 이동값 적용
+    charrick.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${rotate}deg)`;
+    
+    console.log(`moveX: ${moveX}`);
+    console.log(`moveY: ${moveY}`);
+    console.log(`rotate: ${rotate}`);
   }
+}
 
-  // // Y축 움직임 (물결 효과 - sin 함수 활용)
-  const moveY = Math.sin(scrollY * 0.05) * yAmplitude; // 주기와 진폭 조절
+/********************************************************
+                                            fact show
+********************************************************/
+const fact = document.querySelector(".section-02 .fact-box");
 
-  // 회전 (물결과 반응하는 각도)
-  const rotate = Math.sin(scrollY * 0.01) * rotationFactor;
+// 요소가 화면에 나타나기 전에 동작시키는 공통 함수
+function handleScroll(element, offset = 200) {
+  const elementTop = element.getBoundingClientRect().top;
+  const viewportHeight = window.innerHeight;
 
-  // 캐릭터에 이동값 적용
-  charrick.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${rotate}deg)`;
+  if (elementTop < viewportHeight - offset) {
+    element.style.opacity = "1";
+  } else {
+    element.style.opacity = "0";
   }
-
 }
 
 // scroll event
 window.addEventListener("scroll", () => {
-  charrickMove(topCharrick, 0.8, 10, 30);
-  charrickMove(bottomCharrick, -0.8, 10, 30)
+  charrickMove(topCharrick);
+  charrickMove(bottomCharrick, 0.6, 20, 40)
+  
+  // 높이가 줄어들었을 때
+  let innerHeight = window.innerHeight;
+
+  if (innerHeight <= "400") {
+    handleScroll(fact);
+  } else {
+    handleScroll(fact, 500);
+  }
+
+
 });
 
 
