@@ -38,6 +38,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   font-family: Relative, sans-serif;
   font-weight: 300;
   letter-spacing: -.03em;
@@ -45,7 +46,6 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  overflow-x: hidden;
 }
 
 a {
@@ -352,7 +352,6 @@ h6 {
   letter-spacing: -.01em;
 }
 
-
 @midia (min-width: 50rem) {
   .header {
     height: 4.6875rem;
@@ -364,6 +363,8 @@ h6 {
                                                     main 
 *******************************************************/
 .main {
+  overflow: hidden;
+  width: 100%;
   padding-top: 4.6875rem;
   background-color: #ACFF93;
 }
@@ -557,6 +558,7 @@ h6 {
                                               section-01 
 *******************************************************/
 .section-01 {
+  overflow: hidden;
   position: relative;
   width: 100%;
   margin-top: -2px;
@@ -694,7 +696,8 @@ h6 {
   border-radius: 49px;
   background-color: #FF9388;
   text-align: center;
-  z-index: 1;
+  opacity: 0;
+  z-index: 10;
   transform: translateY(75%);
   transition-duration: .5s;
 }
@@ -909,6 +912,7 @@ h6 {
   position: absolute;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 .footer .cloud {
@@ -1238,19 +1242,89 @@ h6 {
   font-size: 80px;
   }
   
+}
+
+
+/******************************************************* 
+                                      max-width : 1023px 
+*******************************************************/
+@media screen and (max-width: 1023px) {
+
+  /* header */ 
+  .header .logo-box img {
+    width: 10.91vw;
+    transition-duration: .5s;  
+  }
+
+  /* main */
+  .main-cloud .c-box {
+    height: 60px;
+  }
+
+  .main-cloud .c-box:first-child {
+    width: 170px;
+  }
+  
+  .main-cloud .c-box:nth-child(2) {
+    top: 80px;
+    width: 120px;
+  }
+  
+  .main-cloud .c-box:nth-child(3) {
+    top: 148px;
+    width: 150px;
+  }
+  
+  .main-cloud .c-box:last-child {
+    width: 100px;
+  }
+
+  /* section-02 */
+  .section-02 .inner {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .section-02 .text-box {
+    width: 100%;
+  }
+
+  .section-02 .right-box {
+    width: 100%;
+  }
+
+  /* section-03 */
+  .content-inner {
+    flex-direction: column;
+  }
+
+  .content-box .img-box {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .content-box .img-fit {
+    max-width: 248px;
+  }
+
+  .content-box .text-box {
+    width: 100%;
+  }
+
+  .content-box .bottom-t .t-box {
+    font-size: 21px;
+  }
+
+  
   /* footer */
   .footer {
-    padding-top: .375rem;
-    padding-bottom: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2.25rem;
   }
   
   .footer .inner {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
-
-  .footer .contents .f-img {
-    padding-bottom: 1.5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
   }
 
   .footer .contents .f-meddle {
@@ -1259,49 +1333,34 @@ h6 {
   }
 
   .footer .contents .f-meddle .fnb {
-    display: flex;
-    justify-content: space-evenly;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2.5rem;
     order: 2;
-    margin-bottom: 4rem;
+  }
+
+  .footer .contents .f-meddle .fnb ul li a {
+    font-size: 25px;
   }
 
   .footer .contents .f-meddle .sns {
     order: 3;
   }
+  
+  .footer .contents .f-meddle .sns-i {
+    justify-content: center;
+    column-gap: 2rem;
+  }
 
   .footer .contents .f-meddle .join {
+    justify-content: flex-start;
     order: 1;
     margin-bottom: 2.5rem;
   }
 
-  .footer .contents .f-meddle .join-i {
-    max-width: none;
-  }
-
-  .footer .contents .f-meddle .sns-i {
-    justify-content: flex-start;
-    column-gap: 1.5rem;
-  }
-
-  .footer .f-bottom ul {
-    position: relative;
-  }
-
   .footer .f-bottom ul li:last-child {
     position: absolute;
-    right: 0;
+    right: 1rem;
   }
-
-}
-
-
-
-/******************************************************* 
-                                      max-width : 1023px 
-*******************************************************/
-@media screen and (max-width: 1023px) {
-
-
 
 }
 
@@ -1318,18 +1377,17 @@ h6 {
 
   .header .nav-bg {
     height: 48px;
+    transition-duration: .3s;
   }
-  
-  .header .logo-box img {
-    width: 77.11px;
-    transition-duration: .5s;  
+
+  .header .nav-bg {
+    box-sizing: content-box;
   }
 
   /* main */
   .main {
     padding-top: 3.125rem;
   }
-
 
   .main-bg .img-box {
     margin-top: 0;
@@ -1355,39 +1413,115 @@ h6 {
     font-size: 100px;
   }
 
-  .main-cloud .c-box {
-    height: 60px;
+  .main .animation .character .c-img {
+    width: 50%;
+  }
+  
+  /* section-01 */
+  .section-01 .osophy {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
   }
 
-  .main-cloud .c-box:first-child {
-    width: 170px;
+  .section-01 .osophy .box {
+    padding-bottom: 4rem;
   }
-  
-  .main-cloud .c-box:nth-child(2) {
-    top: 80px;
-    width: 120px;
+
+  .section-01 .osophy .text {
+    font-size: 19px;
   }
-  
-  .main-cloud .c-box:nth-child(3) {
-    top: 148px;
-    width: 150px;
+
+  /* section-02 */
+  .section-02 {
+    padding-top: 1vw;
   }
-  
-  .main-cloud .c-box:last-child {
-    width: 100px;
+
+  .section-02 .inner {
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
-    
+
+  .section-02 .text-box {
+    padding-top: 0;
+    margin-bottom: 3rem;
+  }
+
+  .section-02 .text-box .title {
+    max-width: 80%;
+    margin-bottom: 2rem;
+    font-size: 72px;
+  }
+
+  .section-02 .text-box .t {
+    font-size: 19px;
+  }
+
+  /* section-03 */
+  .content-box {
+    position: relative;
+    padding-top: 8rem;
+    padding-bottom: 107px;
+  }
+
+  .animation-box .front {
+    bottom: -20px;
+  }
+
+  .animation-box .back {
+    transform: translateY(0) scaleX(-1)
+  }
+
+  .animation-box .character {
+    top: 1vw;
+  }
+
+  .animation-box .character .c-img {
+    width: 50%;
+  }
+
   /* footer */
+
+  .footer {
+    overflow: hidden;
+    padding-top: .375rem;
+    padding-bottom: 1rem;
+  }
+
+  .footer .inner {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .footer .cloud-box {
+    display: none;
+  }
+
+  .footer .contents .f-img {
+    margin-bottom: 1.5rem;
+  }
+
   .footer .contents .f-img .img {
     width: 100%;
+  }
+
+  .footer .contents .f-meddle .fnb {
+    display: flex;
+    margin-bottom: 4rem;
+    justify-content: space-evenly;
+  }
+
+  .footer .contents .f-meddle .join-i {
+    max-width: none;
   }
 
   .footer .contents .f-meddle .fnb ul li a {
     font-size: 25px;
   }
 
-  .footer {
-    overflow: hidden;
+  .footer .contents .f-meddle .sns-i {
+    justify-content: flex-start;
+    column-gap: 1.5rem;
   }
+
 
 }

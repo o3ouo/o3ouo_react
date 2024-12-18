@@ -138,39 +138,62 @@ https://cdn.shopify.com/s/files/1/0614/0035/0950/files/Gander_Phils_CityscapeSma
 
 
 
+사이트 선정 이유 
+ : 사실 디자인적인 요소만 보고 골랐음
+ : 효과도 구현 할만 할 것 같아서
+
+
+목표 : 실제 웹 페이지의 레이아웃과 스타일, 효과 등을 학습하며, 불필요한 코드를 걸러내고 구현할 수 있도록 하는 것
+
+
+기능선정 : 
+ - 스크롤 했을 때 Header에 Bg가 생기면서 Logo가 작아지고, 다시 스크롤이 제일 상단에 위치했을 땐 Bg가 사라지면서 Logo의 크기가 커지는 효과 구현
+ㄴ 선정 이유 : Scale, Duration을 사용해 자연스러울 때까지 수치 조절을 해봄으로써 Transform 속성을 좀 더 이해하기 위해 
+
+ - 스크롤을 내릴 때 해당 섹션의 영역에 도착하면 나타나는 기능
+ ㄴ 선정 이유 : Scroll Event의 여러 메서드들을 직접 사용해 해당 메서드의 기능?을 학습하기 위해
+
+ - Product Menu를 Mouse Over 했을 때 숨겨져있던 Sub Menu가 나타나고 Product Menu와 Sub Menu에 Mouse가 위치해 있는 동안만 Show를 지속하고 아닐 경우 Hide를 해야하는데 Product Menu와 Sub Menu의 거리 차이로 인해 Sub Menu로 마우스를 가져가기도 전에 사라지는데 그점을 보완하기 위해 setTimeout 함수를 사용해 delay 시간을 부여함
+
+ - Section1의 Menu Slide 무한 loop 기능
+ ㄴ 선정 이유 : Swiper를 사용해 무한 loop 기능을 구현하기 위해 라이브러리의 사용법을 학습하고, Swiper의 Css를 직접 수정함으로써 해당 요소에 어떤 속성을 부여해서 꾸몄는 지를 알 수 있는 경험을 하기 위해
+
+ - Section2의 무한 롤링 기능
+ ㄴ 선정 이유 : 롤링 기능을 구현하기 위해 animation과 KeyFrame을 사용하고, 무한 Loop로 만들기 위해 CloneNode 메서드를 사용해서 Css와 Script를 함께 사용해보는 경험을 위해
+
+ - Section3의 Slide (마지막 슬라이드에서 다시 처음으로 되돌아가는 기능)
+ ㄴ
+
+기술 : html / css / js / swiper
+
+
+개선 :
 1. 문제점 
- : 반응형 break point가 min-width:800px만 존재
+ : 반응형 Break Point가 min-width:800px만 존재
  ㄴ 텍스트가 잘리거나 겹쳐지는 문제가 생김
  ㄴ 개선 : max-width:1279px / max-width:1023px / max-width:767px 세 구간으로 나누어 해당 사이즈에서 최적화된 사이즈로 텍스트 및 이미지 조정
 
 2. 문제점
- : 해당 section 마다 느리게 나타나는 fact box
- ㄴ 스크롤이 페이지를 벗어날 때쯤 fact box가 나타나서 사용자가 페이지를 다시 올려서 봐야하는 불편함
- ㄴ 개선 : 스크롤에 맞춰 해당 페이지의 fact box가 나타나도록 개선
+ : 해당 Section 마다 느리게 나타나는 Fact Box
+ ㄴ 스크롤이 페이지를 벗어날 때쯤 Fact Box가 나타나서 사용자가 페이지를 다시 올려서 봐야하는 불편함
+ ㄴ 개선 : 스크롤에 맞춰 해당 페이지의 Fact Box가 나타나도록 개선
 
 3. 문제점
  : 식음료를 파는 회사에서 비위 상하는 이미지 사용
  ㄴ 개선 : 이미지를 포토샵으로 털, 손톱 등 제거
 
-목표 : 
 
-기능선정 :
+유지할 점 : 
 
-기술 : html / css / js 
+문제점 : 
 
-js : 스크롤 했을 때 header의 bg가 생기면서 logo가 작아지고, 다시 스크롤이 제일 상단에 위치했을 땐 bg가 사라지면서 logo의 크기가 커지는 효과 구현
+시도할 점 : 남은 서브 페이지 완성
 
+느낀점 
+: 쉽지 않네
+: 다들 너무 잘해서 더 열심히 해야겠따
 
-
-
-
-
-
-
-
-
-
-
+아쉬운 점 : 이미지 포토샵, 자잘한 문제점들을 수정하지 못 함
 
 
 

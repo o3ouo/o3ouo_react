@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>slide</title>
+  <style>
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    /******************************************************* 
+                                                  section-03 
+    *******************************************************/
+    .section-03 {
+      position: relative;
+      width: 100%;
+      border-top: 3px solid #000;
+      background-color: #ACFF93;
+    }
+
+    .section-03 .recipes {
+      position: relative;
+      padding-right: 2rem;
+      padding-bottom: 5rem;
+      padding-left: 2rem;
+    }
+
+    .section-03 .recipes .hidden-arrow {
+      display: none;
+      position: absolute;
+      top: 50%;
+      cursor: pointer;
+      z-index: 39;
+    }
+
+    .section-03 .recipes .hidden-arrow.l {
+      left: 2.75rem;
+    }
+
+    .section-03 .recipes .hidden-arrow.r {
+      right: 2.75rem;
+    }
+
+    .section-03 .recipes .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 3.5rem;
+      padding-top: 5rem;
+    }
+
+    .section-03 .recipes .top .title {
+      font-family: Plinc Cooper Nouveau, sans-serif;
+      font-size: 72px;
+      text-align: left;
+      line-height: 1;
+    }
+
+    .section-03 .recipes .contents {
+      overflow: hidden;
+    }
+
+    .section-03 .recipes .contents .box-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: 1.5rem;
+      width: 100%;
+    }
+
+    .section-03 .recipes .contents .box {
+      overflow: hidden;
+      border: 3px solid #000;
+      border-top-right-radius: 1.5rem;
+      border-top-left-radius: 1.5rem;
+    }
+
+    .section-03 .recipes .contents .box a {
+      display: block;
+    }
+
+    .section-03 .recipes .contents .box .img {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%;
+    }
+
+    .section-03 .recipes .contents .box .img img {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .section-03 .recipes .contents .box .text {
+      display: flex;
+      align-items: center;
+      padding: 1.7rem 1.5rem;
+      border-top: 3px solid #000;
+      font-family: Plinc Cooper Nouveau, sans-serif;
+      font-size: 2.5vw;
+      line-height: 1.1;
+    }
+
+    @media (hover: hover) { 
+      .section-03 .recipes .contents .box a:hover .text {
+        background-color: #FFE9DE;
+        transition: .3s;
+      }
+    }
+
+    .section-03 .recipes .contents .box:first-child .text {
+      background-color: #FF8080;
+    }
+
+    .section-03 .recipes .contents .box:nth-child(2) .text {
+      background-color: #9CC2FF;
+    }
+
+    .section-03 .recipes .contents .box:last-child .text {
+      background-color: #FFB040;
+    }
+
+    .section-03 .recipes .btn-box {
+      display: none;
+    }
+
+    .section-03 .recipes .btn {
+      display: block;
+      padding: .625rem 22px;
+      border: 2px solid #000;
+      border-radius: 10px;
+      background-color: #000;
+      font-size: 30px;
+      letter-spacing: -.06em;
+      line-height: 1;
+      color: #ACFF93;
+      white-space: nowrap;
+    }
+
+    @media (hover: hover) {
+      .section-03 .recipes .btn:hover {
+        background-color: transparent;
+        color: #000;
+        transition: .3s;
+      }
+    }
+
+    .section-03 .spin {
+      width: 100%;
+      padding-bottom: 106px;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .section-03 .spin .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 4rem;
+      padding-top: 1.5rem;
+      font-family: Plinc Cooper Nouveau, sans-serif;
+      font-size: 72px;
+      line-height: 1;
+    }
+
+    .section-03 .spin .contents {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .section-03 .spin .contents .btn {
+      cursor: pointer;
+    }
+
+    .section-03 .spin .content-box .box-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .section-03 .spin .con-wrap {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .section-03 .spin .con-inner {
+      display: flex;
+      width: 300%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .section-03 .spin .content-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: calc(100% / 3);
+      padding: 0 2rem;
+    }
+
+    .section-03 .spin .content-box .img {
+      overflow: hidden;
+      width: 50%;
+      border: 3px solid #000;
+      border-radius: 30px;
+    }
+
+    .section-03 .spin .content-box .i {
+      flex-shrink: 0;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .section-03 .spin .content-box .text-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      padding-left: 2.25rem;
+      padding-right: 2.25rem;
+    }
+
+    .section-03 .spin .content-box .text-box .icon {
+      margin-bottom: 1.25rem;
+    }
+
+    .section-03 .spin .content-box .text-box .text {
+      margin-bottom: 4rem;
+      font-size: 40px;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .section-03 .spin .content-box .text-box .line-btn {
+      font-family: Relative Pitch, sans-serif;
+      font-size: 22px;
+      letter-spacing: 0;
+      line-height: 1;
+      text-decoration: underline;
+    }
+
+
+    @media screen and (max-width: 1023px) {
+          
+      /* section-03 */
+      .section-03 .recipes {
+        padding-left: .75rem;
+        padding-right: .75rem;
+      }
+
+      .section-03 .recipes .hidden-arrow {
+        display: block;
+        width: 54px;
+      }
+
+      .section-03 .recipes .top .title {
+        font-size: 57px;
+        text-align: center;
+      }
+
+      .section-03 .recipes .top .pc-btn {
+        display: none;
+      }
+
+      .section-03 .recipes .contents {
+        overflow: hidden;
+      }
+
+      .section-03 .recipes .contents .box-wrap {
+        display: flex;
+        column-gap: normal;
+        width: 400%;
+      }
+
+      .section-03 .recipes .contents .box {
+        position: relative;
+        width: calc(100% / 4);
+        margin-right: .75rem;
+        margin-left: .75rem;
+      }
+
+      .section-03 .recipes .contents .box .text {
+        font-size: 32px;
+      }
+
+      .section-03 .recipes .btn-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2.5rem;
+      }
+
+      .section-03 .recipes .btn {
+        padding: 1rem 3rem;
+        font-size: 24px;
+      }
+
+      .section-03 .spin .contents {
+        justify-content: center;
+        position: relative;
+        padding: 0 2.25rem;
+      }
+
+      .section-03 .spin .contents .btn {
+        position: absolute;
+        width: 54px;
+        z-index: 39;
+      }
+
+      .section-03 .spin .contents .btn.prev {
+        left: 0;
+      }
+
+      .section-03 .spin .contents .btn.next {
+        right: 0;
+      }
+
+      .section-03 .spin .content-box {
+        flex-direction: column;
+        padding: 0;
+      }
+
+      .section-03 .spin .content-box .img {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+
+      .section-03 .spin .content-box .text-box {
+        width: 100%;
+      }
+
+      .section-03 .spin .content-box .text-box .icon {
+        margin-bottom: 1.75rem;
+      }
+
+      .section-03 .spin .content-box .text-box .text {
+        margin-bottom: 1.75rem;
+        font-size: 24px;
+      }
+
+    }
+
+    @media screen and (max-width: 767px) {
+      
+      /* section-03 */
+      .section-03 .recipes .top {
+        padding-top: 2.25rem;
+      }
+
+      .section-03 .recipes .contents .box {
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      .section-03 .recipes .hidden-arrow.l {
+        left: 1.75rem;
+      }
+
+      .section-03 .recipes .hidden-arrow.r {
+        right: 1.75rem;
+      }
+
+      .section-03 .recipes .contents .box .text {
+        height: 75px;
+        padding: 0 18px;
+      }
+
+      .section-03 .spin {
+        padding-right: .75rem;
+        padding-left: .75rem;
+      }
+
+      .section-03 .spin .title {
+        font-size: 57px;
+        text-align: center;
+      }
+
+      .section-03 .spin .contents {
+        padding: 0 .75rem;
+      }
+
+      .section-03 .spin .content-box .text-box {
+        padding-right: .5rem;
+        padding-left: .5rem;
+      }
+
+      .section-03 .spin .content-box .text-box .line-btn {
+        font-size: 16px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+      <!--------------------------------------------
+                                          section-03
+      --------------------------------------------->
+      <section class="section-03">
+        <div class="inner">
+          <!-- recipes -->
+          <div class="recipes">
+            <div class="top">
+              <h3 class="title">Get cookin' with our recipes</h3>
+              <div class="pc-btn">
+                <a href="#" class="btn">All Recipes</a>
+              </div>
+            </div>
+            <figure class="hidden-arrow l">
+              <img src="./img/section03_arrow_l.png" alt="arrow-left">
+            </figure>
+            <div class="contents">
+              <div class="box-wrap">
+                <div class="box">
+                  <a href="#">
+                    <figure class="img">
+                      <img src="./img/section03_recipe01.jpg" alt="weeknight pasta">
+                    </figure>
+                    <p class="text">Weeknight Pasta &nbsp;→</p>
+                  </a>
+                </div>
+                <div class="box">
+                  <a href="#">
+                    <figure class="img">
+                      <img src="./img/section03_recipe02.jpg" alt="Lao Curry Burger">
+                    </figure>
+                    <p class="text">Lao Curry Burger &nbsp;→</p>
+                  </a>
+                </div>
+                <div class="box">    
+                  <a href="#">
+                    <figure class="img">
+                      <img src="./img/section03_recipe03.jpg" alt="K-Beet-BQ Bow">
+                    </figure>
+                    <p class="text">K-Beet-BQ Bow &nbsp;→</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <figure class="hidden-arrow r">
+              <img src="./img/section03_arrow_r.png" alt="arrow-right">
+            </figure>
+            <div class="btn-box">
+              <a href="#" class="btn">All Recipes</a>
+            </div>
+          </div>
+          <!-- spin -->
+          <div class="spin">
+            <h3 class="title">...or show us your spin!</h3>
+            <div class="contents">
+              <figure class="prev btn">
+                <img src="./img/section03_arrow_l.png" alt="arrow-left">
+              </figure>
+              <div class="con-wrap">
+                <div class="con-inner">
+                  <div class="content-box">
+                    <figure class="img">
+                      <img src="./img/section03_slide01.jpg" alt="jim in ga" class="i">
+                    </figure>
+                    <div class="text-box">
+                      <figure class="icon">
+                        <img src="./img/section03_img.png" alt="icon">
+                      </figure>
+                      <p class="text">
+                        “I tried each one of the sausages you sent me, smothered in sautéed pepper and onions and I love them.”
+                      </p>
+                      <a href="#" class="line-btn">Jim in GA</a>
+                    </div>
+                  </div>
+                  <div class="content-box">
+                    <figure class="img">
+                      <img src="./img/section03_slide02.jpg" alt="jim in ga" class="i">
+                    </figure>
+                    <div class="text-box">
+                      <figure class="icon">
+                        <img src="./img/section03_img.png" alt="icon">
+                      </figure>
+                      <p class="text">
+                        “I tried each one of the sausages you sent me, smothered in sautéed pepper and onions and I love them.”
+                      </p>
+                      <a href="#" class="line-btn">Cindy in CA</a>
+                    </div>
+                  </div>
+                  <div class="content-box">
+                    <figure class="img">
+                      <img src="./img/section03_slide03.jpg" alt="jim in ga" class="i">
+                    </figure>
+                    <div class="text-box">
+                      <figure class="icon">
+                        <img src="./img/section03_img.png" alt="icon">
+                      </figure>
+                      <p class="text">
+                        “I tried each one of the sausages you sent me, smothered in sautéed pepper and onions and I love them.”
+                      </p>
+                      <a href="#" class="line-btn">Madeleine in OH</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <figure class="next btn">
+                <img src="./img/section03_arrow_r.png" alt="arrow-right">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- //section 03 -->
+
+      <script>
+
+        let currentIndex = 0;
+        const sliderWrap = document.querySelector(".box-wrap");
+        const slider = document.querySelectorAll(".section-03 .box");
+        const sliderClone = sliderWrap.firstElementChild.cloneNode(true);
+        sliderWrap.appendChild(sliderClone);
+        
+        const btnL = document.querySelector(".section-03 .l");
+        const btnR = document.querySelector(".section-03 .r");
+
+        btnR.addEventListener("click", () => {
+          currentIndex++;
+          sliderWrap.style.transition = "all 0.6s";
+          sliderWrap.style.marginLeft = -currentIndex * 100 + "%";
+
+          console.log(currentIndex)
+          console.log(slider)
+          console.log(slider.length)
+
+          if (currentIndex === slider.length + 1) {
+            sliderWrap.style.transition = "0s";
+            sliderWrap.style.marginLeft = "0";
+            currentIndex = 0;
+         
+          }
+        })
+
+
+
+        // setInterval(() => {
+        //   currentIndex++;
+        //   sliderWrap.style.transition = "all 0.6s";
+        //   sliderWrap.style.marginLeft = -currentIndex * 100 + "%";
+
+        //   if (currentIndex == slider.length) {
+        //     setTimeout(() => {
+        //       sliderWrap.style.transition = "0s";
+        //       sliderWrap.style.marginLeft = "0";
+        //       currentIndex = 0;
+        //     }, 700)
+        //   }
+        // }, 3000)
+        
+      </script>
+</body>
+</html>

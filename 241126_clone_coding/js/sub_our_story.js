@@ -77,7 +77,6 @@ window.addEventListener("scroll", () => {
     handleScroll(fact, 500);
   }
 
-
 });
 
 
