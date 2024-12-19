@@ -169,7 +169,7 @@ https://cdn.shopify.com/s/files/1/0614/0035/0950/files/Gander_Phils_CityscapeSma
 
 개선 :
 1. 문제점 
- : 반응형 Break Point가 min-width:800px만 존재
+ : 반응형 Break Point가 min-width:800px만 존재 / 미디어쿼리로 반응형이 잡혀있지만 헤더 부분에서 메뉴와 로고가 겹치는 문제 발생 / 첫 번째 섹션의 슬라이드 기능 되지 않음 / 텍스트 짤림
  ㄴ 텍스트가 잘리거나 겹쳐지는 문제가 생김
  ㄴ 개선 : max-width:1279px / max-width:1023px / max-width:767px 세 구간으로 나누어 해당 사이즈에서 최적화된 사이즈로 텍스트 및 이미지 조정
 
