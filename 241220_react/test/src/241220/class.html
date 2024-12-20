@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 문법</title>
+</head>
+<body>
+  <!-- 
+    클래스 컴포넌트 > 초창기에 계속 사용 / 라이플사이클 사용
+    : 유지보수를 위해 사용 (2013년부터 클래스 컴포넌트를 사용해왔기 때문에)
+
+    함수형 컴포넌트 > 라이플사이클 불가 
+    : 2019년부터 함수 컴포넌트에 라이프사이클 적용 가능
+  -->
+    
+
+  <script>
+    /*
+    class : 객체 지향 프로그래밍을 구현하기 위한 구조
+    */
+
+    // 일반적으로 객체 활용 방법
+
+    const students = []
+    students.push({name: '경희', 국어: 100, 영어: 80, 수학: 50, 과학: 70});
+    students.push({name: '유나', 국어: 100, 영어: 100, 수학: 92, 과학: 80});
+    students.push({name: '상민', 국어: 50, 영어: 80, 수학: 100, 과학: 20});
+    students.push({name: '아정', 국어: 20, 영어: 100, 수학: 30, 과학: 100});
+    students.push({name: '희정', 국어: 20, 영어: 20, 수학: 15, 과학: 100});
+
+    console.log(`┌ students라는 빈 배열에 push로 키, 값을 밀어넣음`);
+    console.log(students);
+
+    // 총점 평균
+    students.forEach(value => {
+      let total = '';
+
+      total += value['국어'] + value['영어'] + value['수학'] + value['과학'];
+
+      console.log(`${value['name']}: ${total /4}`);
+    });
+
+
+    /**************************************************************************************
+                                객체를 처리하는 함수를 활용하면 확장성을 고려했을 때 좋은 방법
+    **************************************************************************************/
+
+    function total(student) {
+      return student.국어 + student.영어 + student.수학 + student.과학;
+    }
+
+    function average(student) {
+      return total(student) / 4;
+    }
+
+    let out = '이름\t총점\t평균\n'
+
+    for(let s of students) {
+      out += `${s.name}\t${total(s)}점\t${average(s)}점\n`
+    }
+
+    console.log(`┌ 객체를 처리하는 함수를 활용하면 확장성을 고려했을 때 좋은 방법`)
+    console.log(out);
+
+
+    /**************************************************************************************
+                                                                객체의 기능을 메소드로 추가
+    **************************************************************************************/
+    // 메서드 : 객체 안에 들어있는 함수자료형
+    // this.키 : 
+
+    // 메서드를 만드는 반복문
+    for (let student2 of students) {
+      
+      student2.total2 = function(){
+        return this.국어 + this.영어 + this.수학 + this.과학;
+      }
+
+      student2.average2 = function(){
+        return this.total2() / 4
+      }
+    }
+
+    let out2 = '이름\t총점\t평균\n'
+
+    // 만든 메서드를 출력하는 기능을 가지고 있음 
+    for (let s2 of students) {
+      out2 += `${s2.name}\t${s2.total2(s2)}점\t${s2.average2(s2)}점\n`;
+    }
+
+    console.log(`┌ 객체의 기능을 메소드로 추가`)
+    console.log(out2);
+    
+    // 각각 따로 사용하는 이유는 다른 기능을 가지고 있기 때문
+    // 하나가 오류나면 다른 기능도 함께 오류가 나서 분리해 두는 것이 좋음
+
+
+   /**************************************************************************************
+                        객체의 키와 값을 생성함수를 사용해서 객체를 찍어내면 더 쉽게 사용가능
+    **************************************************************************************/
+    // 객체를 만들어주는 기계
+    function 학생(이름,국어,영어,수학,과학){
+     return{
+      이름:이름,
+      국어:국어,
+      영어:영어,
+      수학:수학,
+      과학:과학,
+      총점 (){
+        return this.국어 + this.영어 + this.수학 + this.과학;
+      },
+      평균(){
+        return this.총점()/4;
+      },
+      toString(){
+        return `${this.이름}\t${this.총점()}점\t${this.평균()}점\n`;
+      }
+    }
+    }
+    
+    // 기계를 사용해 빈 배열에 객체를 찍어냄
+    const students2 = [];
+    students2.push(학생('경희',100,80,50,70));
+    students2.push(학생('유나',100,100,92,80));
+    students2.push(학생('상민',50,80,100,20));
+    students2.push(학생('아정',20,100,30,100));
+    students2.push(학생('희정',20,90,15,100));
+
+    let out3 = `이름\t총점\t평균\n`;
+    for(let s3 of students2){
+    out3 += s3.toString();
+    }
+
+    console.log(`┌ 객체의 키와 값을 생성함수를 사용해서 객체를 찍어내면 더 쉽게 사용가능`)
+    console.log(out3);
+    
+    /*
+    객체를 처리하는 함수
+    class : 객체 지향 프로그래밍을 지원하는 es6에서 도입된 개념 (객체를 생성하기 위한 템플릿)
+
+    클래스 : 객체를 만드는 함수와 비슷한 값
+    인스턴스 : 객체를 만드는 함수로 만든 객체와 비슷한 값
+
+    문법 :
+    class 클래스이름 {
+    
+    }
+
+    클래스 이름은 첫 글자를 대문자로 지정하는 것이 약속!
+
+    // constructor : 생성자 / 클래스의 인스턴스를 생성할 때 호출되는 특별한 메서드, 객체의 초기의 상태를 설정하는 데에 사용
+
+    문법 :
+    class 클래스이름 {
+       constructor(){ 생성자 코드 }
+    }
+
+    // 클래스 함수에서 메소드를 정의
+    문법 :
+    class 클래스이름 {
+       constructor(){ 생성자 코드 }
+       method(){}
+       method(){}
+       method(){}
+    }
+    */
+    class Student {
+      constructor(이름, 국어, 영어, 수학, 과학) {
+        this.이름 = 이름
+        this.국어 = 국어
+        this.영어 = 영어
+        this.수학 = 수학
+        this.과학 = 과학
+      }
+      총점(){
+        return this.국어 + this.영어 + this.수학 + this.과학
+      }
+      평균(){
+        return this.총점() / 4
+      }
+      출력(){
+        return `${this.이름}\t${this.총점()}점\t${this.평균()}점\n`
+      }
+    }
+
+    const 학생2 = [];
+
+    학생2.push(new Student('경희',100,80,50,70));
+    학생2.push(new Student('유나',100,100,92,80));
+    학생2.push(new Student('상민',50,80,100,20));
+    학생2.push(new Student('아정',20,100,30,100));
+    학생2.push(new Student('희정',20,90,15,100));
+
+    console.log(`┌ class로 찍어낸 인스턴스를 배열에 담아놓음`);
+    console.log(학생2);
+
+    let out4 = '이름\t총점\t평균\n';
+
+    for (let s4 of 학생2) {
+      out4 += s4.출력();
+    }
+    
+    console.log(`┌ 찍어낸 인스턴스를 for of를 사용해 out4 변수에 출력이라는 키를 담음`);
+    console.log(out4);
+
+
+    /*
+    상속하여 사용하기
+    extends 키워드를 사용하여 상속을 구현
+    자식 클래스는 super 키워드를 통해 부모 클래스의 생성자를 호출하거나 메서드를 사용할 수 있음.
+
+    문법 :
+    class 클래스이름 extends 부모클래스이름 {
+    
+    }
+    */
+
+    class Animal {
+
+      constructor(name){
+        this.name = name;
+      }
+
+      size() {
+        console.log(`${this.name} 무슨 사이즈?`);
+      }
+
+      color() {
+        console.log(`${this.name} 색은 몰랑`);
+      }
+    }
+
+    // extends로 부모의 값을 상속 받았기 때문에 constructor을 한 번 더 적어주지 않아도 this.name의 값을 찾을 수 있음
+    class Dog extends Animal {
+      size() {
+        console.log(`${this.name} 몰랑`);
+      }
+    }
+
+    const an = new Dog("개");
+    console.log(`┌ Dog의 size 함수 호출`);
+    an.size();
+
+    // super : 부모의 값을 가지고 오고싶을 때 사용
+    class Size extends Animal {
+      constructor(name, size) {
+        super(name); // 부모 클래스의 생성자 호출
+        this.size = size;
+      }
+
+      color() {
+        super.color(); // 부모클래스의 메소드 호출
+        console.log(`${this.size} 몰라잉`);
+      }
+    }
+
+    const an2 =  new Size("강아지", "크기");
+    console.log(`┌ Size의 color 함수 호출`);
+    an2.color();
+
+    // 부모에 있는 값을 모두 호출해서 사용할 수 있다
+    class Abc {
+      constructor(a,b) {
+        this.a = a
+        this.b = b
+      }
+
+      out() {
+        return this.a + this.b
+      }
+    }
+
+    class Qwe extends Abc {
+      constructor(x, y) {
+        super(x, y)
+        console.log(x, y)
+      }
+    }
+
+    let 값 = new Qwe(4,2);
+    console.log(`${값.out()}`);
+
+
+    // 예제 
+    class calc {
+
+      constructor(a, b) {
+        this.a = a
+        this.b = b
+      }
+
+      total() {
+        return this.a + this.b
+      }
+    }
+
+    class add extends calc {
+
+      constructor(a, b, c) {
+        super(a, b) // 부모생성자 호출
+        this.c = c
+      }
+
+      total() {
+        return super.total() + this.c // 부모의 메소드를 호출
+      }
+
+      average() {
+        return this.total() / 3
+      }
+    }
+
+    let num = new add(11, 22, 33);
+    console.log(num.total());
+    console.log(num.average);
+
+    // 재할당
+    num = new add(12, 35, 62);
+    console.log(num.total());
+    console.log(num.average());
+
+
+    /**************************************************************************************
+                                  클래스 함수를 사용해 사각형의 둘레, 넓이 계산되는 메소드 제작
+    **************************************************************************************/
+    class quadrangle {
+
+      constructor(width, height) {
+        this.width = width
+        this.height = height
+      }
+
+      extent() {
+        return this.width * this.height
+      }
+
+      circumference() {
+        return (this.width + this.height) * 2
+      }
+    }
+
+    let quad = new quadrangle(20, 20);
+    console.log(quad.extent());
+    console.log(quad.circumference());
+
+
+  </script>
+</body>
+</html>
