@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Class from './241220/Class';
+import Props from './241223/Props';
+import ClassProps from './241223/ClassProps';
+import PropsEx from './241223/PropsEx/PropsEx';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <PropsEx />
   </React.StrictMode>
 );
 
