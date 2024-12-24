@@ -1,0 +1,56 @@
+.aside {
+  width: 20%;
+  min-width: 200px;
+  height: 100%;
+  padding: 1rem;
+  border-right: 1px solid #808080;
+}
+
+.aside .logo {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.aside .btn:nth-child(4) a {
+  border: 1px solid #808080;
+  background: transparent;
+}
+
+.aside .btn a {
+  display: block;
+  width: 100%;
+  padding: .7rem 0;
+  border-radius: 8px;
+  font-size: .8rem;
+  text-align: center;
+  background: linear-gradient(90deg, rgba(209,20,20,1) 0%, rgba(255,172,248,1) 50%, rgba(181,29,255,1) 100%);
+}
+
+.aside .nav {
+  margin: 3rem 0;
+}
+
+.aside .gnb {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.aside .first-gnb {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #808080;
+}
+
+.aside .last-gnb {
+  margin-bottom: 5rem;
+  padding-top: 3rem;
+}
+
+@media screen and (max-width: 1040px) {
+
+  .aside {
+    height: auto;
+  }
+}

@@ -3,7 +3,6 @@ import './css/Footer.css';
 function Footer() {
   return (
     <footer>
-      <div className="line"></div>
       <div className="fnb">
         <ul>
           <li><a href="#">환불</a></li>
