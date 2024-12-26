@@ -10,12 +10,13 @@ import reportWebVitals from './reportWebVitals';
 // import PropsEx from './241224/PropsEx/PropsEx';
 // import State_ex_01 from './241224/State._ex_01js';
 // import State_ex_02 from './241224/State_ex_02';
-import State_ex_02 from './241224/ClassState';
+// import State_ex_02 from './241224/ClassState';
+import Menu from './241226/Menu';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <State_ex_02 />
+    <Menu />
   </React.StrictMode>
 );
 

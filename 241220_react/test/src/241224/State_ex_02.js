@@ -21,7 +21,6 @@ function State_ex_02() {
 
   // 버튼을 클릭 했을 때 off일 경우 on으로 변하고, on일 때에는 off로 바뀌게
   const [on, setOn] = useState(false);
-
  
   let items = [
     { id: 1, category: 'fruit', name: 'apple'},

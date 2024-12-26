@@ -8,7 +8,6 @@
 function Box( {user = {name: "기본 이름", text: "기본 텍스트"}, children} ) {
   // user라는 객체에 기본 값을 설정
 
-
   // console.log(props);
   // react는 두 번씩 출력됨 (미리 적용하는 값, 실제 적용할 값)
   // 매개변수로 porps라는 이름 외에도 적용이 가능하지만 props라는 이름을 사용하기로 약속을 함
