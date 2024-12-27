@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  padding: 1rem 0;
+}
+
+.allbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.box {
+  width: 50%;
+  padding: 1rem 0;
+  border: 1px solid #000;
+}
+
+.btnbox {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+button {
+  padding: 1rem 2rem;
+}
