@@ -14,13 +14,17 @@ import reportWebVitals from './reportWebVitals';
 // import Menu from './241226/Menu';
 // import Game from './241227/Game/Game';
 // import Game2 from './241227/Game2/Game2';
-import Spread from './241227/Spread';
+// import Spread from './241227/Spread';
+// import ClassCount from './241230/ClassCount';
+// import StopWatch from './241230/StopWatch';
+// import Function from './241230/Function';
+import FCount from './241230/FCount';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Spread />
+    <FCount />
   </React.StrictMode>
 );
 
