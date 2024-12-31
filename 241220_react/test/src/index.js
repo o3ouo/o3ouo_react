@@ -18,13 +18,15 @@ import reportWebVitals from './reportWebVitals';
 // import ClassCount from './241230/ClassCount';
 // import StopWatch from './241230/StopWatch';
 // import Function from './241230/Function';
-import FCount from './241230/FCount';
-
+// import FCount from './241230/FCount';
+// import Time from './241231/Time';
+// import Event from './241231/Event';
+import Hook from './241231/Hook';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <FCount />
+    <Hook />
   </React.StrictMode>
 );
 
