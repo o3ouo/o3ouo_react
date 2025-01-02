@@ -28,6 +28,37 @@ function Ucallback() {
       <h1> 카운트 : {count} </h1>
       <button type='button' onClick={()=>setCount(count + 1)}>증가</button>
       <MemoReset Creset={Creset}/>
+
+      <br /><br /><br />
+
+      <table>
+        <tr>
+          <th>특징</th>
+          <th>useCakkback</th>
+          <th>useMemo</th>
+        </tr>
+        <tr>
+          <th>목적</th>
+          <td>특정 함수를 메모이제이션하여 동일한 참조를 유지 </td>
+          <td>계산량이 많은 값을 메모이제이션하여 동일한 값을 반환</td>
+        </tr>
+        <tr>
+          <th>반환 값</th>
+          <td>메모이제이션된 함수</td>
+          <td>메모이제이션된 값</td>
+        </tr>
+        <tr>
+          <th>사용 사례</th>
+          <td>
+            - 자식 컴포넌트에 props로 전달되는 함수 <br />
+            - 이벤트 핸들러
+          </td>
+          <td>
+            - 복잡한 계산 로직 <br />
+            - 리스트 필터링 / 정렬 등
+          </td>
+        </tr>
+      </table>
     </div>
   )
 }
@@ -36,6 +67,8 @@ function Reset({Creset}){
   console.log("렌더링")
   return(
     <button type='button' onClick={Creset}>리셋</button>
+
+    
   )
 }
 
