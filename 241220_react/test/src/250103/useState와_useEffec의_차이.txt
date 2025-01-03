@@ -1,0 +1,44 @@
+1. useState와 useEffect의 역할 차이
+- useState:
+> 상태(State)를 관리하는 데 사용
+> 상태를 업데이트하면 컴포넌트를 다시 렌더링한다.
+> 단순히 값(데이터)을 보관하거나 업데이트하려고 사용할 떄 적합하다.
+
+- useEffect:
+> "부수 효과(Side Effect)"를 처리하는 데 사용된다
+> 예를 들어, 상태가 업데이트된 후 어떤 동작(예: 콘솔 출력, API 호출, DOM 조작 등)을 해야 할 떄 적합하다.
+> useEffect는 컴포넌트가 렌더링된 후 특정 작업을 수행하도록 설계되었다. 
+
+2. 왜 useEffect를 사용하는 걸까?
+- useEffect는 단순히 상태를 업데이트하는 게 아니라, 상태의 변화에 따라 추가적인 작업을 수행하고 싶을 때 사용된다.
+
+ex. 콘솔 출력
+const [count, setCount] = useState(0);
+
+// 상태를 업데이트만 하는 코드 (useState만 사용)
+const increment = () => setCount(count + 1);
+
+> 이렇게 하면 단순히 count 값을 변경하는 작업만 수행된다. 업데이트 이후 다른 작업은 하지 않는다. 하지만, 만약 count가 변할 때마다 로그를 출력하거나, 외부 서버에 데이터를 저장해야 한다면 어떻게 해야 할까? 이 경우 useEffect가 필요하다.
+
+useEffect(() => {
+  console.log('Count has changed:', count); // 상태 변화에 따라 동작
+}, [count]);
+
+ex. 상태 변경 후 비동기 작업
+> 예를 들어, 버튼 클릭 시 새로운 데이터를 가져와야 한다면 useEffect를 사용해야 한다.
+
+const [count, setCount] = useState(0);
+const [data, setData] = useState(null);
+
+useEffect(() => {
+  fetch(`https://api.example.com/data/${count}`) // 상태 변화에 따라 API 호출
+    .then(response => response.json())
+    .then(json => setData(json));
+}, [count]); // count가 변경될 때만 실행
+
+> 이처럼 상태가 변경된 후 비동기 작업을 수행하거나 외부와 상호작용할 때 useEffect를 사용한다.
+
+3. 요약
+- useState: 상태를 변경하는 데 사용.
+- useEffect: 상태 변경 후 실행되는 추가 작업을 처리.
+

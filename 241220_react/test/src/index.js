@@ -22,12 +22,14 @@ import reportWebVitals from './reportWebVitals';
 // import Time from './241231/Time';
 // import Event from './241231/Event';
 // import Hook from './241231/Hook';
-import TodoList from './250102/TodoList';
+// import TodoList from './250102/TodoList';
+// import StateTest from './250103/StateTest';
+import EffectTest from './250103/EffectTest';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <TodoList />
+    <EffectTest />
   </React.StrictMode>
 );
 
