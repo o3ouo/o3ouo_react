@@ -101,7 +101,8 @@ button {
   transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
-.top .nav li a:hover {
+.top .nav li a:hover,
+.click {
   color: #fff;
   box-shadow: inset 200px 0 0 0 #293556;
 }

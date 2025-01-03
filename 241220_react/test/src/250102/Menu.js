@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
 
-function Menu(list, setList) {
+function Menu({ setFilterType }) {
+
   return (
     <nav className="nav">
       <ul>
-        <li><a href="#">All</a></li>
-        <li><a href="#">Checked</a></li>
-        <li><a href="#">Not Checked</a></li>
+        <li><a href="#" onClick={() => setFilterType('All')}>All</a></li>
+        <li><a href="#" onClick={() => setFilterType('Checked')}>Checked</a></li>
+        <li><a href="#" onClick={() => setFilterType('Not Checked')}>Not Checked</a></li>
       </ul>
     </nav>
   );
