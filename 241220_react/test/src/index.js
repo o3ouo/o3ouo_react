@@ -24,12 +24,15 @@ import reportWebVitals from './reportWebVitals';
 // import Hook from './241231/Hook';
 // import TodoList from './250102/TodoList';
 // import StateTest from './250103/StateTest';
-import EffectTest from './250103/EffectTest';
+// import EffectTest from './250103/EffectTest';
+// import TodoList_2 from './250106/TodoList/TodoList_2';
+// import Api from './250106/Api';
+import ApiTest from './250106/ApiTest';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <EffectTest />
+    <ApiTest />
   </React.StrictMode>
 );
 
