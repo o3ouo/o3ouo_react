@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.dm-serif-text-regular {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-text-regular-italic {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+.noto-sans-kr {
+  font-family: "Noto Sans KR", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+
+
+$border-1: 2px solid #aaa;
+
+@function font-rem($rem:1, $base:16) {
+  @return #{ $rem * $base}rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFFFEB;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+figure {
+  width: fit-content;
+  height: fit-content;
+}
+
+.header {
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    width: 90%;
+    margin: auto;
+    padding: 1rem 1.5rem;
+    border-top: $border-1;
+    border-bottom: $border-1;
+  }
+
+  .title-logo {
+    margin-bottom: 1rem;
+    font-size: calc(60px + 5vw);
+    text-align: center;
+  }
+
+  .btn-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 2rem;
+    border-left: $border-1;
+  
+    button {
+      padding-bottom: .5rem;
+      border: none;
+      border-bottom: 2px solid rgba(22, 90, 101, 0);
+      background-color: transparent;
+      cursor: pointer;
+      transition-duration: .3s;
+    
+      &:hover {
+        border-bottom: 2px solid rgba(22, 90, 101, 1);
+      }
+    }
+  }
+}
+
+.main {
+  width: 100%;
+  margin-top: 3rem;
+
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+}

@@ -1,0 +1,90 @@
+// 변수 선언 가능 (반복적으로 사용하는 값을 재사용 할 수 있음)
+//  $이름
+$w-color: #fff;
+$g-size: 32px;
+
+$default-color: #3498db;
+
+
+// 믹스인 : 반복되는 스타일 블록을 재사용할 수 있도록 정의
+@mixin button($bg-color: blue, $text-color: #fff) {
+  background-color: $bg-color;
+  color: $text-color;
+  margin: 2rem;
+  padding: 16px;
+}
+
+// 믹스인 호출 (내가 정의해놓은 값을 언제든지 불러서 사용할 수 있음) : @include
+.pbtn {
+  @include button(); // 기본값 사용시 빈 괄호
+}
+
+// 믹스인 호출 덮어쓰기
+.cbtn {
+  @include button($bg-color: red);
+  // mixin에 저장된 값은 변경할 수 있지만 include로 호출해서 사용시 괄호 안에 새로운 값을 넣은 수는 없음
+}
+
+// 상속 : 공통 스타일을 다른 선택자에 상속할 수 있음 > @extend
+.contents {
+  @extend .Allbox; // Allbox에 준 스타일을 그대로 가져올 수 있음
+  background-color: #808080;
+}
+
+// 함수 사용 가능 : @function > 함수로 계산된 값을 반환
+@function font-rem($px, $base:16) {
+  @return #{ $px / $base }rem;
+}
+
+.fbox {
+  color: $w-color;
+  margin-bottom: 100px;
+  font-size: font-rem(18);
+}
+
+// 조건문 : 조건에 따라 다른 스타일 적용
+$theme : dark;
+
+body {
+  @if $theme == dark {
+    background-color: #000;
+    color: #fff;
+  } @else {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+// 반복문 : @for
+
+// 리스트나 맵 데이터를 반복 처리 : @each
+
+.fbox {
+  width: ((100% / 4) + 10); // calc를 쓰지 않아도 계산 가능 / 단위 값이 섞일 때에는 calc를 사용해야 함
+  height: 100px;
+  background-color: salmon;
+}
+
+
+h2 {
+  color: $w-color;
+}
+
+.Allbox {
+  width: 500px;
+  height: 500px;
+  border: 1px solid $w-color;
+  margin: 30px;
+  
+  .box {
+    width: calc(100%/3 - 8px);
+    height: calc(100%/3 - 8px);
+    border: 1px solid royalblue;
+    &:first-child {
+      border: 1px solid rosybrown;
+    }
+    &:hover {
+      background-color: lightblue;
+    }
+  }
+}

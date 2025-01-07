@@ -1,0 +1,96 @@
+SCSS (Sass(Syntactically Awesome Stylesheets)의 확장 문법으로, CSS를 더 효율적이고 간결하게 작성할 수 있게 해주는 스타일링 언어. SCSS는 CSS의 문법을 그대로 따르기 때문에 기존 CSS와 호환되며, CSS보다 더 강력한 기능을 제공.
+
+- Sass 문법 지원
+ > SCSS (Sassy CSS): CSS와 거의 동일한 문법으로 친숙하고 사용하기 쉬움
+ > Sass: 증괄호 { }와 세미콜론 ;을 사용하지 않는 간결한 문법
+
+- SCSS는 CSS를 확장하여, 변수, 중첩, 믹스인, 상속 등과 같은 기능을 추가 제공함
+
+- SCSS의 주요 특징과 장점
+ 1. CSS와의 완벽한 호환성
+ > SCSS는 CSS 문법을 그대로 사용할 수 있다. 기존 CSS 파일을 SCSS로 변경해도 아무 문제 없이 작동함
+ 2. 변수 사용 가능 SCSS에서는 변수를 사용하여 색상, 글꼴 크기 등의 값을 저장하고 재사용할 수 있다.
+ > ex.
+$primary-color: #3498db;
+$font-size: 16px;
+
+body {
+	color: $primary-color;
+	font-size: $font-size;
+}
+ 3. 중첩(Nesting) SCSS는 선택자를 중첩해서 작성할 수 있어 코드의 가독성을 높임.
+ > ex.
+nav {
+	ul {
+		margin: 0;
+		padding: 0;
+		li {
+			list-style: none;
+		}
+	}
+}
+ 4. 믹스인(Mixin) 반복되는 스타일을 믹스인으로 정의하여 재사용할 수 있음.
+ > ex.
+@mixin flex-center {
+	display: plex;
+	justify-content: center;
+	align-items: center;
+}
+
+.box {
+	@include flex-center;
+	height: 100px;
+	width: 100px;
+}
+ 5. 상속(Inheritance) 기존의 스타일을 다른 클래스가 상속받아 사용할 수 있음.
+ > ex.
+.button {
+	padding: 10px 20px;
+	border: none;
+	background: $primary-color;
+}
+
+.primary-button {
+	#extend .button;
+	font-weight: bold;
+}
+ 6. 연산 기능 SCSS에서는 연산을 활용해 동적인 스타일 계산이 가능.
+$base-padding: 10px;
+
+.container {
+	padding: $vase-padding * 2; // 20px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

@@ -27,12 +27,14 @@ import reportWebVitals from './reportWebVitals';
 // import EffectTest from './250103/EffectTest';
 // import TodoList_2 from './250106/TodoList/TodoList_2';
 // import Api from './250106/Api';
-import ApiTest from './250106/ApiTest';
+// import ApiTest from './250106/ApiTest';
+// import Sass from './20250107/Sass';
+import News from './20250107/News/News';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ApiTest />
+    <News />
   </React.StrictMode>
 );
 

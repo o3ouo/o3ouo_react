@@ -1,0 +1,58 @@
+.pbtn {
+  background-color: blue;
+  color: #fff;
+  margin: 2rem;
+  padding: 16px;
+}
+
+.cbtn {
+  background-color: red;
+  color: #fff;
+  margin: 2rem;
+  padding: 16px;
+}
+
+.contents {
+  background-color: #808080;
+}
+
+.fbox {
+  color: #fff;
+  margin-bottom: 100px;
+  font-size: 1.125rem;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.fbox {
+  width: 35%;
+  height: 100px;
+  background-color: salmon;
+}
+
+h2 {
+  color: #fff;
+}
+
+.Allbox, .contents {
+  width: 500px;
+  height: 500px;
+  border: 1px solid #fff;
+  margin: 30px;
+}
+.Allbox .box, .contents .box {
+  width: calc(33.3333333333% - 8px);
+  height: calc(33.3333333333% - 8px);
+  border: 1px solid royalblue;
+}
+.Allbox .box:first-child, .contents .box:first-child {
+  border: 1px solid rosybrown;
+}
+.Allbox .box:hover, .contents .box:hover {
+  background-color: lightblue;
+}
+
+/*# sourceMappingURL=Ap.css.map */
