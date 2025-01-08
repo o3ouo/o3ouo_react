@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.dm-serif-text-regular {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-text-regular-italic {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+.noto-sans-kr {
+  font-family: "Noto Sans KR", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+// 변수 선언 가능 (반복적으로 사용하는 값을 재사용 할 수 있음) > $이름
+$border-1: 2px solid #eeedd9;
+
+// 함수 사용 가능 : @function > 함수로 계산된 값을 반환
+@function font-rem($rem:1, $base:16) {
+  @return #{ $rem / $base}rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFFFEB;
+  font-family: "DM Serif Text";
+  font-weight: 400;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+figure {
+  width: fit-content;
+  height: fit-content;
+}
+
+// header
+.header {
+  width: 100%;
+  margin: 1rem;
+  margin-top: 3rem;
+  color: #163456;
+
+  .container {
+    display: grid;
+    grid-template-columns: 3fr 6fr 3fr;
+    align-items: start;
+    justify-content: space-around;
+    gap: 1rem;
+    width: 100%;
+    margin: auto;
+    padding: .5rem;
+    padding-top: 1rem;
+    border-top: $border-1;
+    border-bottom: $border-1;
+
+    .like-link {
+      padding: 1rem;
+      font-size: font-rem(18);
+      text-align: center;
+
+      li {
+        &:first-child {
+          margin-bottom: 1rem;
+          font-size: font-rem(22);
+          font-weight: 700;
+      }      
+      }
+    }
+
+    .title-logo {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 0 2rem;
+      border-left: $border-1;
+      border-right: $border-1;
+      font-size: calc(60px + 5vw);
+      text-align: center;
+      line-height: 1.2;
+      letter-spacing: 10px;
+    }
+
+    .weather {
+      padding: 1rem;
+
+      .text {
+        &:first-child {
+          margin: 1rem 0;
+        }
+      }
+    }
+  }
+}
+
+
+// main
+.main {
+  width: 100%;
+  margin-top: 3rem;
+
+  .container {
+    display: flex;
+    width: 100%;
+    margin: auto;
+
+    // aside
+    .aside {
+      position: fixed;
+      width: 30%;
+      padding: 0 1rem;
+
+      .btn-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100vh;
+        padding-right: 2rem;
+        padding-left: 1rem;
+        border-right: $border-1;
+  
+        button {
+          display: block;
+          padding-bottom: .5rem;
+          border: none;
+          border-bottom: 2px solid rgba(22, 90, 101, 0);
+          background-color: transparent;
+          font-family: "DM Serif Text", serif;
+          cursor: pointer;
+          transition-duration: .3s;
+        
+          &:hover {
+            border-bottom: 2px solid rgba(22, 90, 101, 1);
+          }
+        }
+      }
+    }
+
+    .contents {
+      margin-left: 30%;
+    }
+  
+  }
+}

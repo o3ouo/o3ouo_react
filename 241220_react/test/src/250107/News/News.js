@@ -16,6 +16,11 @@ function News() {
     {category: 'Rechnology', link: 'category=rechnology'},
     {category: 'Business', link: 'category=business'},
     {category: 'Science', link: 'category=science'},
+    {category: 'Entertainment', link: 'category=Entertainment'},
+    {category: 'Health', link: 'category=Health'},
+    {category: 'World', link: 'category=World'},
+    {category: 'Politics', link: 'category=Politics'},
+    {category: 'Environment', link: 'category=Environment'},
   ];
 
   // API 데이터 가져오기
@@ -46,17 +51,43 @@ function News() {
 
   return (
     <div>
+      {/* header */}
       <header className="header">
         <div className="container">
-          <h1 className="title-logo"><a href="#">Live Example</a></h1>
-          <div className="btn-inner">
-            {category}
+          <ul className="like-link">
+            <li>List of favorite anime</li>
+            <li><a href="#">Jujutsu Kaisen</a></li>
+            <li><a href="#">Demon Slayer</a></li>
+            <li><a href="#">Sin: The 7 Deadly Sins</a></li>
+            <li><a href="#">Natsume Yujin-chō</a></li>
+          </ul>
+          <h1 className="title-logo">
+            <a href="#">LIVE <br /> NEWS</a>
+            </h1>
+          <div className="weather">
+            <figure className="img-box">
+              <img src="/250107_News/sun.png" alt="weather image" />
+            </figure>
+            <p className="text">대체로 맑음</p>
+            <p className="text">최고: 4℃ 최저: -4℃</p>
           </div>
         </div>
       </header>
+
       <main className="main">
+        {/* contents */}
         <div className="container">
-          <Post posts={post} menu={menuBtn}/>
+          {/* aside */}
+          <aside className="aside">
+            <nav className="nav">
+              <div className="btn-inner">
+                {category}
+              </div>
+            </nav>
+          </aside>
+          <div className="contents">
+            <Post posts={post} menu={menuBtn}/>
+          </div>
         </div>
       </main>
     </div>

@@ -29,12 +29,15 @@ import reportWebVitals from './reportWebVitals';
 // import Api from './250106/Api';
 // import ApiTest from './250106/ApiTest';
 // import Sass from './20250107/Sass';
-import News from './20250107/News/News';
+// import News from './250107/News/News';
+// import News_2 from './250108/News_2';
+// import Weather from './250108/Weather/Weather';
+import WeatherGpt from './250108/WeatherGpt/WeatherGpt';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <News />
+    <WeatherGpt />
   </React.StrictMode>
 );
 

@@ -1,0 +1,6 @@
+OpenWeather 
+
+- let : 위도
+- lon : 경도
+
+현재 위치의 값 가져오기 > 구글에 검색하셈 ex. get current location javascript

@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.l-btn {
+  padding: 0 1rem;
+}
+
+.input-wrap {
+  padding: 2rem;
+  text-align: center;
+}
+
+.input-wrap input {
+  width: 50%;
+  height: 50px;
+}
+
+.input-wrap button {
+  height: 50px;
+  padding: 0 1.5rem;
+}
