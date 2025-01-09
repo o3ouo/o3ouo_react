@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import './css/Weather.css';
+import ClipLoader from 'react-spinners';
 
 function Weather() {
 
@@ -62,6 +63,7 @@ function Weather() {
         3. 4개의 도시 버튼, 1개의 현재 위치 버튼 or input 박스, 현재 위치 버튼
         4. 도시 버튼 or 입력 시 해당 도시의 날씨 정보 표시
         5. 현재위치 버튼 클릭시 다시 현재 위치 기반 날씨 정보 표시
+        6. 로딩 스피너 라이브러리 > npm install react-spinners
       */}
 
       <header>

@@ -32,12 +32,13 @@ import reportWebVitals from './reportWebVitals';
 // import News from './250107/News/News';
 // import News_2 from './250108/News_2';
 // import Weather from './250108/Weather/Weather';
-import WeatherGpt from './250108/WeatherGpt/WeatherGpt';
+// import WeatherGpt from './250108/WeatherGpt/WeatherGpt';
+import WeatherSolo from './250109/WeatherSolo/WeatherSolo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <WeatherGpt />
+    <WeatherSolo />
   </React.StrictMode>
 );
 
