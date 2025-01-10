@@ -33,12 +33,18 @@ import reportWebVitals from './reportWebVitals';
 // import News_2 from './250108/News_2';
 // import Weather from './250108/Weather/Weather';
 // import WeatherGpt from './250108/WeatherGpt/WeatherGpt';
-import WeatherSolo from './250109/WeatherSolo/WeatherSolo';
+// import WeatherSolo from './250109/WeatherSolo/WeatherSolo';
+import { BrowserRouter } from 'react-router-dom';
+// import Tss from './250110/Tss';
+import TestRouter from './250110/RouterTest/TestRouter'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <WeatherSolo />
+    <BrowserRouter>
+      <TestRouter />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
