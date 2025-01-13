@@ -36,14 +36,16 @@ import reportWebVitals from './reportWebVitals';
 // import WeatherSolo from './250109/WeatherSolo/WeatherSolo';
 import { BrowserRouter } from 'react-router-dom';
 // import Tss from './250110/Tss';
-import TestRouter from './250110/RouterTest/TestRouter'
+// import TestRouter from './250110/RouterTest/TestRouter'
+// import App from './250113/App';
+import App from './250113/List/App';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <TestRouter />
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -23,6 +23,7 @@ export default function App() {
         keyboard={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
         className="mySwiper"
+        loop={true}
       >
         <SwiperSlide>
           <figure className="img-box">
@@ -31,10 +32,10 @@ export default function App() {
           <div className="text-box">
             <p className="title">
               Yoo <br />
-              Toung-kuk
+              Young-kuk
             </p>
-            <p>
-              산은 내 앞에 있는 것이 아니라 <br /> 내 안에 있는
+            <p className="t">
+              신은 내 앞에 있는 것이 아니라 <br /> 내 안에 있는 것이다.
             </p>
           </div>
         </SwiperSlide>
@@ -45,10 +46,10 @@ export default function App() {
           <div className="text-box">
             <p className="title">
               Yoo <br />
-              Toung-kuk
+              Young-kuk
             </p>
-            <p>
-              산은 내 앞에 있는 것이 아니라 <br /> 내 안에 있는
+            <p className="t">
+              신은 내 앞에 있는 것이 아니라 <br /> 내 안에 있는 것이다.
             </p>
           </div>
         </SwiperSlide>
@@ -59,10 +60,10 @@ export default function App() {
           <div className="text-box">
             <p className="title">
               Yoo <br />
-              Toung-kuk
+              Young-kuk
             </p>
-            <p>
-              산은 내 앞에 있는 것이 아니라 <br /> 내 안에 있는
+            <p className="t">
+              신은 내 앞에 있는 것이 아니라 <br /> 내 안에 있는 것이다.
             </p>
           </div>
         </SwiperSlide>

@@ -6,7 +6,7 @@ function Foundation() {
       <div className="inner">
         <h2>Foundation</h2>
         <figure className="section-img">
-          <img src="/250110_router_test/fabout_img01.162d7ed2.jpg" alt="foundation img-1" />
+          <img src="/250110_router_test/fabuout_img01.162d7ed2.jpg" alt="foundation img-1" />
         </figure>
 
         <div className="section-2">
