@@ -38,7 +38,9 @@ import { BrowserRouter } from 'react-router-dom';
 // import Tss from './250110/Tss';
 // import TestRouter from './250110/RouterTest/TestRouter'
 // import App from './250113/App';
-import App from './250113/List/App';
+// import App from './250113/List/App';
+// import App from './250114/App';
+import App from './250114/ShoppingTest/App';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
