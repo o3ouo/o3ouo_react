@@ -3,6 +3,8 @@ import {Route, Routes, Link, Navigate} from 'react-router-dom'
 import './css/App.css';
 import AllItem from './AllItem';
 import Login from './Login';
+import TemDetail from './TemDetail';
+
 
 
 // 1. 전체 상품 페이지, 로그인, 상품 상세페이지
@@ -27,6 +29,7 @@ function App() {
 
       <Routes>
         <Route path='/' element={<AllItem />}/>        
+        <Route path='/products/:id' element={<TemDetail />}/>
         <Route path='/Login' element={<Login />} />
       </Routes>
     </div>

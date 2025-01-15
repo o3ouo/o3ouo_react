@@ -40,7 +40,8 @@ import { BrowserRouter } from 'react-router-dom';
 // import App from './250113/App';
 // import App from './250113/List/App';
 // import App from './250114/App';
-import App from './250114/ShoppingTest/App';
+// import App from './250114/ShoppingTest/App';
+import App from './250115/App';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

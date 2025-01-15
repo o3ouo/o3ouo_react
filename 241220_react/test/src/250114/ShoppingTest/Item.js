@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Item({tem}) {
+function Item({tem, onClick}) {
   
   return (
-    <div>
+    <div onClick={onClick}>
       <img src={tem.img} alt={tem.title} />
       <h2>{tem.title}</h2>
       <h3>{tem.price}￦</h3>

@@ -13,23 +13,15 @@ function AllItem() {
   const menuList = ['티셔츠', '스웨트 셔츠', '재킷', '후드', '자켓', '팬츠'];
   const [query] = useSearchParams();
   const navigate = useNavigate();
+  const [inputText, setInputText] = useState('');
   const [login, setLogin] = useState(false);
 
   const data = async () => {
-
     const searchQuery = query.get('q') || "";
-
     try {
       const response = await axios.get(`http://localhost:5000/products?q=${searchQuery}`);
-      setItem(response.data);
-
-      console.log(item)
-
-      const filterData = response.data.filter(item => 
-        item.title.includes(searchQuery)
-      )
+      const filterData = response.data.filter(item => item.title.includes(searchQuery));
       setItem(filterData);
-
     } catch (error) {
       console.error('error 라구용');
     }
@@ -42,20 +34,36 @@ function AllItem() {
   // click event
   const Click = (select) => {
     setMenu(select);
-    navigate(`/?q=${menu}`)
+    navigate(`/?q=${select}`)
   };
+
+  const search = (e) => {
+    if (e.key === 'Enter') {
+      let keyword = e.target.value;
+      console.log(keyword)
+      navigate(`/?q=${keyword}`)
+    }
+  }
+
+  // detail move
+  const move = (tem) => {
+    navigate(`/products/${tem.id}`);
+  };
+
 
   return (
     <div>
-      <Nav menuList={menuList} menuClick={Click}/>
+      <Nav menuList={menuList} menuClick={Click} item={item} onKeyPress={search}/>
+      <form action="#">
+        <input type="text" onKeyPress={(e) => search(e)}/>
+        <button type="button" >search</button>
+      </form>
 
       <div className="contents">
         <ul>
           {
-            item.map((tem, idx) => (
-              <Link to={`http://localhost:5000/products?q=${tem.name}`}>
-                <Item key={idx} tem={tem} />
-              </Link>
+            item.map((tem) => (
+              <Item key={tem.id} tem={tem} onClick={() => move(tem)}/>
             ))
           }
         </ul>
