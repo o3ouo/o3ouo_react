@@ -47,8 +47,12 @@ import {Provider} from 'react-redux';
 // import App from './250120/App';
 // import Test from './250120/test/Test';
 // import testStore from './250120/test/testStore';
-import store from './250121/store/store';
-import App from './250121/App'
+// import App from './250121/Cart/App'
+// import store from './250121/Cart/store/store';
+// import Todo from './250121/TodoList/Todo';
+// import store from './250121/TodoList/store/strore';
+import Contact from './250121/Contact/Contact';
+import store from './250121/Contact/store/store';
 
 
 
@@ -56,7 +60,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     // <BrowserRouter>
       <Provider store={store}>
-        <App />      
+        <Contact />      
       </Provider>
     // </BrowserRouter>
 );
