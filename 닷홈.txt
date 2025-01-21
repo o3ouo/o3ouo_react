@@ -1,6 +1,14 @@
  # 내 도메인에 리액트 띄우기
- > 닷홈(anfy dydfid 500MB) - 회원가입(ID: o3ouo / PS: dkwjd026442!! / DB: dkwjd026442!!) - FTP 도메인 연결
+ > 닷홈(anfy dydfid 500MB) - 회원가입(ID: o3ouo / PS, DB, FTP: dkwjd026442!!) - FTP 도메인 연결
 
- > 파일질라 - Client 설치 (windows 64bit - (알집 설치)defind)- 
+ > 파일질라 - Client 설치 (windows 64bit - (알집 설치)defind) - 사이트 관리자 - 새폴더 - FTP - 파일 전송 프로토콜 / 호스트: o3ouo.dothome.co.kr(도메인) / 아이디, 비밀번호 닷홈에서 사용한 거랑 같이 / 확인 - FTP 접속 후 업로드 파일 및 폴더는 html(루트 폴더) 안에 넣어주시기 바랍니다 - 빌드 작업 > npm run build - build 폴더에서 전체 선택 후 파일질라 html 파일에 넣기 
 
  # git (버전 관리 프로그램)
+ > 64bit 다운로드 - 깃허브 홈페이지 오른쪽 Your repositories - new(새로 만들기) - git config -- global user.email o3ouo@daum.net(이메일 등록) - git config --global user.email(이메일 등록 확인) - git config --gloval user.name gojo(만든 리퍼지토리 등록) - vscode 해당 폴더 터미널에서 npm install gh-pages --save-dev(git 라이브러리 설치) - 해당 폴더 package.json 폴더에 "homepage" : "https://o3ouo.github.io/gojo"(주소 등록)
+
+https://my-json-server.typicode.com/ 
+: 자손 파일 땡겨오기
+
+https://www.netlify.com/
+: 깃허브랑 연결
+: Build command에서 앞에 CI=false 추가 > CI 구조를 안 나타나게 함

@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
 // import App from './App';
 // import Class from './241220/Class';
@@ -34,23 +33,32 @@ import reportWebVitals from './reportWebVitals';
 // import Weather from './250108/Weather/Weather';
 // import WeatherGpt from './250108/WeatherGpt/WeatherGpt';
 // import WeatherSolo from './250109/WeatherSolo/WeatherSolo';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 // import Tss from './250110/Tss';
 // import TestRouter from './250110/RouterTest/TestRouter'
 // import App from './250113/App';
 // import App from './250113/List/App';
 // import App from './250114/App';
 // import App from './250114/ShoppingTest/App';
-import App from './250115/App';
+// import App from './250115/App';
+import {Provider} from 'react-redux';
+// Provider : store를 props로 받아 이를 하위 컴포넌트들에게 전달함. 하위 컴포넌트들은 별도의 props 전달 없이도 store에 접근할 수 있음.
+// import store from './250120/redux/store';
+// import App from './250120/App';
+// import Test from './250120/test/Test';
+// import testStore from './250120/test/testStore';
+import store from './250121/store/store';
+import App from './250121/App'
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+    // <BrowserRouter>
+      <Provider store={store}>
+        <App />      
+      </Provider>
+    // </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
