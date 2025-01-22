@@ -53,6 +53,8 @@ import {Provider} from 'react-redux';
 // import store from './250121/TodoList/store/strore';
 import Contact from './250121/Contact/Contact';
 import store from './250121/Contact/store/store';
+// import App from './250122/App';
+// import store from './250122/store/store';
 
 
 

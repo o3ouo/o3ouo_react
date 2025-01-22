@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/Contact.css'
-import Save from './Save';
-import List from './List';
+import Save from './component/Save';
+import List from './component/List';
 
 const Contact = () => {
   return ( 
