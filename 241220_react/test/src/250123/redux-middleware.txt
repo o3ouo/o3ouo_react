@@ -1,0 +1,46 @@
+* 라이프사이클
+생성 -> constructor -> render -> componenetDidMount(함수형에선 useEffect) :
+
+- 디드마운트에서 api 콜 > 렌더를 다 한 후
+
+- 리덕스는 동기적 작업이라 ui가 만들어지기 전에 api 콜이 됨
+> 리덕스 미들 웨어 라이브러리를 사용해서 
+> 디스패치로 액션 던짐 -> 미들웨어(창고? 관문소?) 공간으로 보냄 ->
+> 덩크 : 작은 웹 서비스에서 사용 
+> saga : 어려워서 기업에서도 잘 사용하지 않음
+
+* redux-thunk
+- 설치 :
+npm install redux-thunk
+
+- 관문소 호출 :
+import { createStore, applyMiddleware } from 'redux'
+import { thunk } from 'redux-thunk'
+import rootReducer from './reducers/index'
+
+const store = createStore(rootReducer, applyMiddleware(thunk))
+
+왜 사용해야 하는가?
+- 평범한 기본 Redux 스토어를 사용하면 액션을 전송하여 간단한 동기 업데이트만 할 수 있습니다. 미들웨어는 스토어의 기능을 확장하고 스토어와 상호 작용하는 비동기 로직을 ​​작성할 수 있도록 합니다.
+
+ 렌더 후 딱 한 번만 실행 시키기 위해 사용 -> 업데이트
+
+
+1. 설치 > npm install -g json-server > 패키지에 설치되어 있는 지 확인 / src 파일과 같은 위치인지 확인
+
+2. npx json-server --watch db.json --port 5000(번호)
+
+3. App 으로 가져오기 >
+useState, useEffect > import 
+api를 가져와서 담을 data 함수 만들기
+useEffect으로 data 함수 호출
+data 안에 try, catch 문으로 코드 작성
+ex.
+  const data = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/products');
+      setList(response.data)
+    } catch(error) {
+      console.error('error');
+    }
+  }

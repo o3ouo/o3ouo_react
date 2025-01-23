@@ -11,6 +11,8 @@ function reducer (state = saveState, action) {
       return {...state, info: [...state.info,{id:Date.now(), name: payload.name, phoneNumber: payload.call, completed: false}]}
     case "SEARCH" :
       return {...state, info: state.info.filter(i => i.name === action.payload.searchText)}
+      state.keyword = payload.searchText;
+      break;
     default :
       return {...state}
   }

@@ -1,0 +1,98 @@
+1. 라우터(Router)란?
+라우터는 사용자가 방문하는 URL 경로에 따라 보여줄 컴포넌트를 결정하는 역할을 한다. 리액트 애플리케이션은 기본적으로 단일 페이지 애플리케이션(SPA)이므로 페이지를 새로고침하지 않고도 URL 변경에 따라 화면을 전환할 수 있다. 이를 가능하게 하는 것이 라우터이다.
+
+기본 설정 :
+React Router를 사용하려면 react-router-dom 패키지가 필요
+npm install react-router-dom
+
+주요 컴포넌트 :
+1. <BrowserRouter> : HTML5의 히스토리 API를 사용하여 URL을 관리.
+2.<Routes> : 라우트 경로를 설정하는 컨테이너.
+3. <Route> : 각 URL에 대해 어떤 컴포넌트를 렌더링할지 정의.
+
+ex.
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+
+ㄴ "/" 경로로 들어가면 <Home /> 컴포넌트가 렌더링.
+ㄴ "/about" 경로로 들어가면 <About /> 컴포넌트가 렌더링.
+
+
+2. useNavigate 란?
+useNavigate는 프로그래밍 방식으로 URL을 변경할 수 있게 해주는 훅이다. 사용자가 특정 동작(버튼 클릭 등)을 수행했을 때 다른 페이지로 이동하도록 만들 수 있다.
+
+ex.
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+function Home() {
+  const navigate = useNavigate();
+
+  const goToAbout = () => {
+    navigate('/about');
+  };
+
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <button onClick={goToAbout}>Go to About</button>
+    </div>
+  );
+}
+
+export default Home;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

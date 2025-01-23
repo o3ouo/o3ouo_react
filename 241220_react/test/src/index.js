@@ -51,10 +51,15 @@ import {Provider} from 'react-redux';
 // import store from './250121/Cart/store/store';
 // import Todo from './250121/TodoList/Todo';
 // import store from './250121/TodoList/store/strore';
-import Contact from './250121/Contact/Contact';
-import store from './250121/Contact/store/store';
+// import Contact from './250121/Contact/Contact';
+// import store from './250121/Contact/store/store';
 // import App from './250122/App';
 // import store from './250122/store/store';
+// import App from './250123/middle/App';
+// import store from './250123/middle/redux/store';
+import App from './250123/toolkit/App';
+import store from './250123/toolkit/redux/store';
+
 
 
 
@@ -62,7 +67,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     // <BrowserRouter>
       <Provider store={store}>
-        <Contact />      
+        <App />      
       </Provider>
     // </BrowserRouter>
 );

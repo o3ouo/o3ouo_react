@@ -1,0 +1,10 @@
+* Redux Toolkit
+
+리덕스 설치 후 사용 가능
+
+1. 툴킷 설치 : 
+npm install @reduxjs/toolkit
+
+2. configureStore() : 
+createStore간소화된 구성 옵션과 좋은 기본값을 제공하기 위해 래핑합니다. 슬라이스 리듀서를 자동으로 결합하고, 제공하는 모든 Redux 미들웨어를 추가하고, redux-thunk기본적으로 포함하고, Redux DevTools Extension을 사용할 수 있도록 한다.
+( api를 쓰기 위해서는 비동기 작업을 해야하는데 redux는 비동기 작업이 불가능하기 때문에 middlewere /  thunk 를 사용해서 비동기 작업으로 만들어서 사용. )
