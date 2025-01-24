@@ -57,10 +57,10 @@ import {Provider} from 'react-redux';
 // import store from './250122/store/store';
 // import App from './250123/middle/App';
 // import store from './250123/middle/redux/store';
-import App from './250123/toolkit/App';
-import store from './250123/toolkit/redux/store';
-
-
+// import App from './250123/toolkit/App';
+// import store from './250123/toolkit/redux/store';
+import App from './250124/App';
+import store from './250124/redux/store';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
