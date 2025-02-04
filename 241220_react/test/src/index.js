@@ -33,7 +33,7 @@ import reportWebVitals from './reportWebVitals';
 // import Weather from './250108/Weather/Weather';
 // import WeatherGpt from './250108/WeatherGpt/WeatherGpt';
 // import WeatherSolo from './250109/WeatherSolo/WeatherSolo';
-// import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 // import Tss from './250110/Tss';
 // import TestRouter from './250110/RouterTest/TestRouter'
 // import App from './250113/App';
@@ -41,7 +41,7 @@ import reportWebVitals from './reportWebVitals';
 // import App from './250114/App';
 // import App from './250114/ShoppingTest/App';
 // import App from './250115/App';
-import {Provider} from 'react-redux';
+// import {Provider} from 'react-redux';
 // Provider : store를 props로 받아 이를 하위 컴포넌트들에게 전달함. 하위 컴포넌트들은 별도의 props 전달 없이도 store에 접근할 수 있음.
 // import store from './250120/redux/store';
 // import App from './250120/App';
@@ -59,17 +59,27 @@ import {Provider} from 'react-redux';
 // import store from './250123/middle/redux/store';
 // import App from './250123/toolkit/App';
 // import store from './250123/toolkit/redux/store';
-import App from './250124/App';
-import store from './250124/redux/store';
+// import App from './250124/App';
+// import store from './250124/redux/store';
+import Reactquery from './250204/Reactquery';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const queryClient = new QueryClient();
+
 root.render(
-    // <BrowserRouter>
-      <Provider store={store}>
-        <App />      
-      </Provider>
-    // </BrowserRouter>
+    <BrowserRouter>
+      {/* // <Provider store={store}> */}
+      <QueryClientProvider client={queryClient}>
+        <Reactquery />      
+        {/* 빌드 전 지우고 빌드하면 됨 */}
+        <ReactQueryDevtools initialIsOpen={false} buttonPosition='bottom-left' /> 
+        {/* initialIsOpen={false} 처음 열었을 때 자동으로 열 건지 말 건지 > true가 기본값, 버튼의 위치는 아래쪽의 오른쪽이 기본 */}
+      </QueryClientProvider>
+      {/* // </Provider> */}
+    </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
